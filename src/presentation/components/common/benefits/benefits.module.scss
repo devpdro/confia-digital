@@ -1,0 +1,181 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 5rem 0;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: flex-start;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+        gap: 2rem;
+    }
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+
+    @media (max-width: 968px) {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    
+    svg {
+        width: 48px;
+        height: 48px;
+    }
+    
+    @media (max-width: 768px) {
+        width: 56px;
+        height: 56px;
+        
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        width: 48px;
+        height: 48px;
+        
+        svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+.title {
+    color: #010553;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: 22px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 20px;
+    }
+}
+
+.description {
+    color: #374151;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.benefit {
+    animation: fadeInUp 0.6s ease-out;
+    
+    &:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    
+    &:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    &:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+}
+
+// Hover effects sutis
+.benefit {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-4px);
+        
+        .iconWrapper svg {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+    }
+}
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .benefit {
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits {
+        gap: 1.5rem;
+    }
+    
+    .benefit {
+        gap: 1rem;
+    }
+}

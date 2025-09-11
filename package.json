@@ -1,0 +1,31 @@
+{
+  "name": "confia-digital",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "^3.34.1",
+    "framer-motion": "^12.23.12",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "next": "14.2.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-i18next": "^15.7.3",
+    "sass": "^1.92.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

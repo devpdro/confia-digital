@@ -1,0 +1,150 @@
+{
+  "menu": {
+    "services": "Soluções",
+    "impact": "Recursos", 
+    "cta": "Simular operação",
+    "language": "Idioma"
+  },
+  "header": {
+    "title": "Ajudamos empresas digitais e negócios locais a <1>escalar vendas</1> com IAs que duplicam sua equipe sem duplicar seus custos",
+    "subtitle": "Delegue até 80% das conversas para sistemas que vendem, qualificam e atendem sem SDR's caros ou Agências de Marketing que vão te deixar na mão.",
+    "cta": "Agende sua chamada de auditoria gratuita"
+  },
+  "impact": {
+    "badge": "☆ ISSO É O QUE ACONTECE NA PRÁTICA",
+    "title": "Na Capital Digital, acreditamos em vender mais com menos esforço e menos custos.",
+    "descSub": "Criamos sistemas que auxiliam sua equipe a vender com mais precisão e gerar ROI excepcional em tempo recorde.",
+    "cta": "Agende sua chamada de auditoria gratuita",
+    "stats": [
+      "viram novas formas de lucrar automatizando tarefas — já na <1>Chamada GRATUITA</1>.",
+      "sentem clareza pra tomar decisões que antes travavam o crescimento.",
+      "economizam mais de 20h por mês, deixaram de responder leads e executar tarefas repetitivas para focar no que realmente importa."
+    ]
+  },
+  "democall": {
+    "title": "Chamada de demonstração <1>gratuita</1> de 30 minutos",
+    "desc1": "Converse com um engenheiro de sistemas (normalmente R$250+ por hora). A gente vai ouvir seus objetivos com atenção e mostrar, com clareza, o que pode ser automatizado.",
+    "desc2": "Encontre um horário para agendar sua ligação hoje mesmo, estamos ansiosos para falar com você em breve!",
+    "benefitsTitle": "ESTA CHAMADA DE AUDITORIA É PERFEITA PARA:",
+    "benefits": [
+      "Você tem uma empresa local e está cansado de responder clientes manualmente.",
+      "Seu time de vendas vive sobrecarregado e você quer aliviar a operação com IA.",
+      "Você vende online e sente que está perdendo dinheiro por falta de sistema.",
+      "Você quer escalar sem depender de mais SDRs, agências ou planilhas."
+    ]
+  },
+  "faq": {
+    "title": "Tem alguma dúvida geral?",
+    "subtitle": "Se você tiver alguma dúvida geral e quiser falar com nossa equipe de especialistas, entre em contato conosco pelo e-mail: contato@igxia.com",
+    "cta": "Agende sua chamada de auditoria gratuita",
+    "questions": [
+      {
+        "q": "Preciso saber programar ou ter equipe técnica para usar as automações?",
+        "a": "Não. Nossas soluções são entregues com instruções simples e prontas pra usar, mesmo que você nunca tenha programado ou usado ferramentas técnicas antes. Seu time aprende tudo em minutos."
+      },
+      {
+        "q": "O que exatamente a Capital Digital pode automatizar no meu negócio?",
+        "a": "Automatizamos tarefas que tomam tempo e travam o crescimento como prospecção, atendimento, follow-ups e qualificação de leads. Com isso, sua equipe vende mais, com menos esforço."
+      },
+      {
+        "q": "E se a automação parar de funcionar?",
+        "a": "Se algo sair do esperado, temos rotinas de monitoramento e uma equipe pronta para agir. Assim que identificamos qualquer instabilidade, corrigimos rapidamente antes que isso impacte suas vendas ou operações."
+      },
+      {
+        "q": "Em quanto tempo meu sistema fica pronto?",
+        "a": "Em média, entregamos o sistema funcionando em até 12 dias desde o planejamento até os testes finais. Esse prazo depende da complexidade do seu projeto, mas sempre mantemos você informado durante cada etapa."
+      },
+      {
+        "q": "Como nos comunicamos durante o projeto?",
+        "a": "Acompanhamos tudo com você via WhatsApp, de forma direta, prática e sem enrolação. Você sabe o que está acontecendo em cada etapa."
+      },
+      {
+        "q": "Qual a garantia que eu tenho?",
+        "a": "Você tem 30 dias de garantia após a entrega final. Se não ficar satisfeito com os resultados, devolvemos 100% do seu investimento."
+      },
+      {
+        "q": "Como vocês criam as soluções?",
+        "a": "Planejamos com base nos seus objetivos e integramos via plataformas robustas como Make, N8N e Flowise. Tudo personalizado pro seu negócio, com padrão profissional."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Automatize suas ferramentas de trabalho <1>favoritas</1>"
+  },
+  "automations": {
+    "alt": "Depoimento {{index}}",
+    "externas": "Vendas externas",
+    "inbound": "Vendas inbound",
+    "cotacoes": "Cotações"
+  },
+  "expertise": {
+    "title": "O que nossos clientes <1>recebem?</1>",
+    "desc": "Se você quer escalar vendas sem SDRs, sem leads perdidos e sem reuniões que podiam ser automações, a Capital Digital é pra você. Nós só fazemos uma coisa: sistemas que respondem, qualificam e vendem. Se procura uma agência tradicional, gestão de tráfego ou conteúdo, tudo bem. Não somos o lugar.",
+    "cards": [
+      { "title": "Prospecção ativa", "desc": "Automatize o agendamento de chamadas com clientes ideais." },
+      { "title": "Chatbots IA", "desc": "Agentes IA que respondem rápido em qualquer canal de comunicação." },
+      { "title": "IA de ligação", "desc": "Crie agentes telefônicos IA para interações naturais em chamadas inbound e outbound." },
+      { "title": "Automações de Marketing", "desc": "Sistemas plug & play para nutrir e engajar leads automaticamente." },
+      { "title": "Criação de CRM", "desc": "Monitore a jornada do lead até a venda sem trabalho manual." },
+      { "title": "Consultoria", "desc": "Otimização do funil e oferta com estratégias testadas." }
+    ]
+  },
+  "comparison": {
+    "badge": "☆ A ESCOLHA CERTA COMEÇA COM CLAREZA",
+    "title": "Compare suas <1>opções</1>",
+    "options": [
+      { "label": "Freelancer" },
+      { "label": "Time interno" },
+      { "label": "Agências padrão" }
+    ],
+    "rows": [
+      {
+        "label": "Tempo para contratar",
+        "freelancer": "Dias ou semanas",
+        "inHouse": "Meses com burocracia",
+        "agency": "1-2 semanas (com sorte)",
+        "igx": "Poucas horas"
+      },
+      {
+        "label": "Nível do time",
+        "freelancer": "Iniciante ou amador",
+        "inHouse": "Bom, mas variável",
+        "agency": "Vai na sorte",
+        "igx": "Sênior"
+      },
+      {
+        "label": "Comunicação diária",
+        "freelancer": "Irregular",
+        "inHouse": "Muitas reuniões",
+        "agency": "Resposta lenta ou ausente",
+        "igx": "Rápida e objetiva"
+      },
+      {
+        "label": "Primeira entrega",
+        "freelancer": "Semanas",
+        "inHouse": "6-8 semanas",
+        "agency": "Demora demais",
+        "igx": "3-4 dias"
+      },
+      {
+        "label": "Rescisão",
+        "freelancer": "Complicado",
+        "inHouse": "Caro e burocrático",
+        "agency": "Contrato longo, multas",
+        "igx": "Um clique, sem custo"
+      }
+    ]
+  },
+  "footer": {
+    "nav": [
+      { "label": "Escale suas vendas", "href": "#automacoes" },
+      { "label": "Por que Capital Digital?", "href": "#impacto-igx" },
+      { "label": "Compare soluções", "href": "#compare-opcoes" }
+    ],
+    "socials": [
+      { "label": "Instagram", "href": "https://www.instagram.com/igxiasolutions/" },
+      { "label": "Linkedin", "href": "https://www.linkedin.com/company/102209808/admin/dashboard/" }
+    ],
+    "copyright": "© {{year}} Capital Digital. Todos os direitos reservados."
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "menu": {
+    "services": "Scale your sales",
+    "impact": "Why IGX?",
+    "comparison": "Compare solutions",
+    "faq": "FAQ",
+    "cta": "Book now",
+    "language": "Language"
+  },
+  "header": {
+    "title": "We help digital companies and local businesses <1>scale sales</1> with AIs that double your team without doubling your costs",
+    "subtitle": "Delegate up to 80% of conversations to systems that sell, qualify, and serve without expensive SDRs or Marketing Agencies that will let you down.",
+    "cta": "Book your free audit call"
+  },
+  "impact": {
+    "badge": "☆ THIS IS WHAT HAPPENS IN PRACTICE",
+    "title": "At IGX IA Solutions, we believe in <1>selling</1> more with less effort and lower costs.",
+    "descSub": "We create systems that help your team sell with more precision and generate exceptional ROI in record time.",
+    "cta": "Book your free audit call",
+    "stats": [
+      "saw new ways to profit by automating tasks — already in the <1>FREE Call</1>.",
+      "feel clarity to make decisions that previously blocked growth.",
+      "save more than 20h per month, stopped answering leads and doing repetitive tasks to focus on what really matters."
+    ],
+    "copyright": "© 2024 Teppa. All rights reserved."
+  },
+  "democall": {
+    "title": "Free <1>demonstration</1> call of 30 minutes",
+    "desc1": "Talk to a systems engineer (normally R$250+ per hour). We will listen to your goals carefully and show, clearly, what can be automated.",
+    "desc2": "Find a time to schedule your call today, we look forward to speaking with you soon!",
+    "benefitsTitle": "THIS AUDIT CALL IS PERFECT FOR:",
+    "benefits": [
+      "You have a local business and are tired of answering customers manually.",
+      "Your sales team is always overloaded and you want to ease operations with AI.",
+      "You sell online and feel you are losing money due to lack of systems.",
+      "You want to scale without relying on more SDRs, agencies, or spreadsheets."
+    ]
+  },
+  "faq": {
+    "title": "Do you have any general questions?",
+    "subtitle": "If you have any general questions and want to talk to our team of specialists, contact us at: contato@igxiasolutions.com",
+    "cta": "Book your free audit call",
+    "questions": [
+      {
+        "q": "Do I need to know how to program or have a technical team to use the automations?",
+        "a": "No. Our solutions come with simple, ready-to-use instructions, even if you have never programmed or used technical tools before. Your team learns everything in minutes."
+      },
+      {
+        "q": "What exactly can IGX IA automate in my business?",
+        "a": "We automate tasks that take time and block growth, such as prospecting, customer service, follow-ups, and lead qualification. This way, your team sells more with less effort."
+      },
+      {
+        "q": "What if the automation stops working?",
+        "a": "If something goes wrong, our system detects and alerts us automatically. As soon as we identify the problem, our team acts to fix it as quickly as possible — before it affects your sales or operations."
+      },
+      {
+        "q": "How long does it take to get my system ready?",
+        "a": "On average, we deliver the system working within 12 days from planning to final tests. This timeframe depends on your project's complexity, but we always keep you informed at every stage."
+      },
+      {
+        "q": "How do we communicate during the project?",
+        "a": "We keep in touch with you via WhatsApp, directly and practically. You know what's happening at every stage."
+      },
+      {
+        "q": "What guarantee do I have?",
+        "a": "You have a 30-day guarantee after final delivery. If you are not satisfied with the results, we refund 100% of your investment."
+      },
+      {
+        "q": "How do you create the solutions?",
+        "a": "We plan based on your goals and integrate via robust platforms like Make, N8N, and Flowise. Everything is customized for your business, with a professional standard."
+      }
+    ]
+  },
+  "tools": {
+    "title": "Automate your favorite <1>work tools</1>"
+  },
+  "automations": {
+    "alt": "Testimonial {{index}}",
+    "externas": "External sales",
+    "inbound": "Inbound sales",
+    "cotacoes": "Quotations"
+  },
+  "expertise": {
+    "title": "What do our clients <1>get?</1>",
+    "desc": "If you want to scale sales without SDRs, without lost leads, and without meetings that could be automations, IGX is for you.\nWe only do one thing: systems that answer, qualify, and sell.\nIf you're looking for a traditional agency, traffic management, or content, that's fine. We're not the place.",
+    "cards": [
+      { "title": "Active prospecting", "desc": "Automate scheduling calls with ideal clients." },
+      { "title": "AI chatbots", "desc": "AI agents that respond quickly on any communication channel." },
+      { "title": "AI calling", "desc": "Create AI phone agents for natural interactions on inbound and outbound calls." },
+      { "title": "Marketing automations", "desc": "Plug & play systems to nurture and engage leads automatically." },
+      { "title": "CRM creation", "desc": "Monitor the lead's journey to sale without manual work." },
+      { "title": "Consulting", "desc": "Funnel and offer optimization with proven strategies." }
+    ]
+  },
+  "comparison": {
+    "badge": "☆ THE RIGHT CHOICE STARTS WITH CLARITY",
+    "title": "Compare your <1>options</1>",
+    "options": [
+      { "label": "Freelancer" },
+      { "label": "In-house team" },
+      { "label": "Standard agencies" }
+    ],
+    "rows": [
+      {
+        "label": "Time to hire",
+        "freelancer": "Days or weeks",
+        "inHouse": "Months with bureaucracy",
+        "agency": "1-2 weeks (if lucky)",
+        "igx": "A few hours"
+      },
+      {
+        "label": "Team level",
+        "freelancer": "Beginner or amateur",
+        "inHouse": "Good, but variable",
+        "agency": "Luck of the draw",
+        "igx": "Senior"
+      },
+      {
+        "label": "Daily communication",
+        "freelancer": "Irregular",
+        "inHouse": "Many meetings",
+        "agency": "Slow or absent response",
+        "igx": "Fast and objective"
+      },
+      {
+        "label": "First delivery",
+        "freelancer": "Weeks",
+        "inHouse": "6-8 weeks",
+        "agency": "Takes too long",
+        "igx": "3-4 days"
+      },
+      {
+        "label": "Termination",
+        "freelancer": "Complicated",
+        "inHouse": "Expensive and bureaucratic",
+        "agency": "Long contract, penalties",
+        "igx": "One click, no cost"
+      }
+    ]
+  },
+  "footer": {
+    "nav": [
+      { "label": "Scale your sales", "href": "#automacoes" },
+      { "label": "Why IGX?", "href": "#impacto-igx" },
+      { "label": "Compare solutions", "href": "#compare-opcoes" }
+    ],
+    "socials": [
+      { "label": "Instagram", "href": "https://www.instagram.com/igxaisolutions/?igsh=bWU2NmI4cHpkcDE0&utm_source=qr" },
+      { "label": "Linkedin", "href": "https://www.linkedin.com/company/102209808/admin/dashboard/" }
+    ],
+    "copyright": "© {{year}} IGX. All rights reserved."
+  }
+} 

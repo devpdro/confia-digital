@@ -1,0 +1,472 @@
+/* ===== SECURITIZATION CALCULATOR - POS DEVICE MOCKUP ===== */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  
+  @media (max-width: 1024px) {
+    min-height: 400px;
+  }
+}
+
+/* Mockup do dispositivo POS - Fiel à foto */
+.posDevice {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Moldura preta do dispositivo - Exata da foto */
+.deviceFrame {
+  width: 240px;
+  height: 360px;
+  background: #1E293B;
+  border-radius: 20px;
+  padding: 8px;
+  position: relative;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  
+  @media (max-width: 1024px) {
+    width: 200px;
+    height: 300px;
+    border-radius: 16px;
+    padding: 6px;
+  }
+  
+  @media (max-width: 640px) {
+    width: 180px;
+    height: 270px;
+    border-radius: 14px;
+    padding: 5px;
+  }
+}
+
+/* Câmera/sensor no topo - Exata da foto */
+.camera {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #374151;
+  border-radius: 50%;
+  z-index: 10;
+  
+  @media (max-width: 1024px) {
+    top: 12px;
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Tela branca da calculadora - Exata da foto */
+.deviceScreen {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  @media (max-width: 1024px) {
+    border-radius: 10px;
+  }
+}
+
+/* Header da calculadora */
+.calculatorHeader {
+  padding: 16px 16px 8px;
+  text-align: center;
+  border-bottom: 1px solid #F1F5F9;
+  
+  @media (max-width: 1024px) {
+    padding: 12px 12px 6px;
+  }
+}
+
+.calculatorTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1E293B;
+  margin: 0;
+  letter-spacing: -0.01em;
+  
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+  }
+}
+
+/* Conteúdo da calculadora - Compacto para caber na tela */
+.calculatorContent {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  
+  @media (max-width: 1024px) {
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+/* Seções de input - Compactas */
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+  
+  @media (max-width: 1024px) {
+    font-size: 0.65rem;
+  }
+}
+
+/* Sliders - Compactos */
+.sliderWrapper {
+  position: relative;
+  margin: 2px 0;
+}
+
+.slider {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #E5E7EB;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 3px 8px rgba(139, 92, 246, 0.4);
+    }
+  }
+  
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 3px 8px rgba(139, 92, 246, 0.4);
+    }
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1);
+  }
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  color: #6B7280;
+  margin-top: 2px;
+}
+
+.currentValue {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1E293B;
+  text-align: center;
+  padding: 4px 6px;
+  background: #F8FAFC;
+  border-radius: 4px;
+  border: 1px solid #E2E8F0;
+  
+  @media (max-width: 1024px) {
+    font-size: 0.75rem;
+    padding: 3px 5px;
+  }
+}
+
+/* Botões Pills - Compactos */
+.pillGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pill {
+  padding: 4px 8px;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  background: white;
+  color: #374151;
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  
+  &:hover {
+    border-color: #8B5CF6;
+    color: #8B5CF6;
+    transform: translateY(-1px);
+  }
+  
+  &:focus {
+    outline: 1px solid #8B5CF6;
+    outline-offset: 1px;
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 3px 6px;
+    font-size: 0.55rem;
+  }
+}
+
+.pillActive {
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  border-color: #8B5CF6;
+  color: white;
+  box-shadow: 0 1px 4px rgba(139, 92, 246, 0.25);
+  
+  &:hover {
+    background: linear-gradient(135deg, #9333EA 0%, #8B5CF6 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.35);
+  }
+}
+
+/* Rating Pills - Compactos */
+.ratingGroup {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.ratingPill {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #E5E7EB;
+  border-radius: 50%;
+  background: white;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:hover {
+    border-color: var(--rating-color);
+    color: var(--rating-color);
+    transform: scale(1.05);
+  }
+  
+  &:focus {
+    outline: 1px solid var(--rating-color);
+    outline-offset: 1px;
+  }
+  
+  @media (max-width: 1024px) {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+}
+
+.ratingPillActive {
+  background: var(--rating-color);
+  border-color: var(--rating-color);
+  color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  
+  &:hover {
+    background: var(--rating-color);
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Resultado principal - Estilo da foto */
+.mainResult {
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  margin: 8px 0;
+  
+  @media (max-width: 1024px) {
+    padding: 10px;
+  }
+}
+
+.resultLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.resultValue {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1E293B;
+  letter-spacing: -0.02em;
+  
+  @media (max-width: 1024px) {
+    font-size: 1.1rem;
+  }
+}
+
+/* Detalhes dos resultados - Compactos */
+.resultDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: #F8FAFC;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  
+  @media (max-width: 1024px) {
+    padding: 6px;
+  }
+}
+
+.resultItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  color: #6B7280;
+  
+  span {
+    font-weight: 600;
+    
+    &:last-child {
+      color: #1E293B;
+      font-weight: 700;
+    }
+  }
+}
+
+/* Call to Action - Compacto */
+.ctaButton {
+  width: 100%;
+  padding: 8px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.25);
+  margin-top: auto;
+  
+  &:hover {
+    background: linear-gradient(135deg, #9333EA 0%, #8B5CF6 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(139, 92, 246, 0.35);
+  }
+  
+  &:focus {
+    outline: 1px solid #8B5CF6;
+    outline-offset: 1px;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 6px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Base do dispositivo - Exata da foto */
+.deviceBase {
+  width: 120%;
+  height: 20px;
+  background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%);
+  border-radius: 0 0 15px 15px;
+  margin-top: -10px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #CBD5E1, transparent);
+  }
+  
+  @media (max-width: 1024px) {
+    height: 16px;
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+/* Responsividade adicional */
+@media (max-width: 480px) {
+  .container {
+    min-height: 320px;
+  }
+  
+  .calculatorContent {
+    padding: 8px;
+    gap: 8px;
+  }
+  
+  .resultValue {
+    font-size: 1rem;
+  }
+  
+  .pillGroup {
+    flex-direction: column;
+  }
+  
+  .pill {
+    width: 100%;
+    text-align: center;
+  }
+}

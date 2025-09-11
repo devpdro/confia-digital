@@ -1,0 +1,198 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #0D447E;
+    width: 100%;
+    padding: 4rem 0;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 968px) {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.075rem;
+}
+
+.title {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 60px;
+
+    @media (max-width: 1200px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+    }
+}
+
+.subtitle {
+    color: #fff;
+    font-family: 'Domine', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.actionContent {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    @media (max-width: 968px) {
+        align-items: center;
+    }
+}
+
+.additionalInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    text-align: left;
+
+    @media (max-width: 968px) {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.infoText {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+    }
+}
+
+.linkText {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+    }
+}
+
+.link {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.textContent {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.actionContent {
+    animation: fadeInRight 0.6s ease-out 0.2s both;
+}
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .content {
+        gap: 1.5rem;
+    }
+
+    .actionContent {
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .ctaButton {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+// Estados especiais
+.section {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        pointer-events: none;
+    }
+}
+
+// Hover effect para toda a seção
+.section:hover {
+    .ctaButton {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+}

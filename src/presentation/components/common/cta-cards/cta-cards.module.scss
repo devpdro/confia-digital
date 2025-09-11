@@ -1,0 +1,259 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 5rem 0;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.card {
+    border-radius: 32px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 768px) {
+        border-radius: 24px;
+    }
+}
+
+.blue {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        background: radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        pointer-events: none;
+    }
+}
+
+.purple {
+    background: linear-gradient(135deg, #e1bee7 0%, #ce93d8 100%);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        background: radial-gradient(ellipse at top right, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        pointer-events: none;
+    }
+}
+
+.cardContent {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        padding: 2rem;
+        gap: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    svg {
+        width: 48px;
+        height: 48px;
+    }
+    
+    @media (max-width: 768px) {
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+.title {
+    color: #010553;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+
+    @media (max-width: 768px) {
+        font-size: 22px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 20px;
+    }
+}
+
+.description {
+    color: #010553;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
+}
+
+.button {
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    white-space: nowrap;
+    
+    &:hover {
+        background-color: #0d47a1;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        padding: 0.875rem 1.25rem;
+        font-size: 15px;
+    }
+
+    @media (max-width: 480px) {
+        padding: 0.75rem 1rem;
+        font-size: 14px;
+        align-self: stretch;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card {
+    &:nth-child(1) {
+        animation: slideInLeft 0.6s ease-out;
+    }
+    
+    &:nth-child(2) {
+        animation: slideInRight 0.6s ease-out 0.2s both;
+    }
+}
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .cards {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardContent {
+        text-align: center;
+    }
+    
+    .iconWrapper {
+        justify-content: center;
+    }
+}

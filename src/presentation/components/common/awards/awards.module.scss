@@ -1,0 +1,323 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #fff;
+    width: 100%;
+    padding: 4.075rem 0 5.075rem 0;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+        gap: 2rem;
+    }
+}
+
+.title {
+    color: #010553;
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: 600;
+
+    @media (max-width: 1200px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+    }
+}
+
+.mediaLogos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 2.075rem 0;
+
+    @media (max-width: 968px) {
+        gap: 2rem;
+    }
+
+    @media (max-width: 640px) {
+        gap: 1.5rem;
+    }
+}
+
+.logoImage {
+    width: 150px;
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2482%) hue-rotate(240deg) brightness(93%) contrast(106%);
+
+    @media (max-width: 768px) {
+        height: 32px;
+        width: auto;
+    }
+
+    @media (max-width: 480px) {
+        height: 28px;
+        width: auto;
+    }
+}
+
+.awards {
+    display: flex;
+    flex-direction: column;
+    gap: 4.575rem;
+    width: 100%;
+    max-width: 1340px;
+    margin-bottom: 4.075rem;
+    align-items: center;
+
+    .firstRow {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 2.5rem;
+    }
+
+    .secondRow {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 10rem;
+        position: relative;
+        left: 0;
+    }
+
+    // Removido seletores específicos que conflitavam com width: 400px
+
+    @media (max-width: 968px) {
+
+        .firstRow,
+        .secondRow {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .award:nth-child(1),
+        .award:nth-child(2),
+        .award:nth-child(3),
+        .award:nth-child(4),
+        .award:nth-child(5) {
+            flex: 1 1 calc(50% - 1rem);
+            min-width: 250px;
+            max-width: none;
+        }
+    }
+
+    @media (max-width: 640px) {
+        gap: 2rem;
+
+        .firstRow,
+        .secondRow {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .award:nth-child(1),
+        .award:nth-child(2),
+        .award:nth-child(3),
+        .award:nth-child(4),
+        .award:nth-child(5) {
+            flex: 1 1 100%;
+            min-width: auto;
+            max-width: none;
+        }
+    }
+}
+
+.award {
+    display: flex;
+    align-items: flex-start;
+    max-width: 380px;
+    gap: 1rem;
+
+    @media (max-width: 640px) {
+        gap: 0.75rem;
+    }
+}
+
+.awardIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+
+    @media (max-width: 480px) {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.awardImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.awardContent {
+    flex: 1;
+    text-align: left;
+}
+
+.awardTitle {
+    color: #010553;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0 0 0.5rem 0;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
+}
+
+.awardSource {
+    color: #010553;
+    font-family: 'Domine', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @media (max-width: 480px) {
+        font-size: 13px;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.title {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.mediaLogos {
+    animation: fadeInScale 0.6s ease-out 0.2s both;
+}
+
+.award {
+    animation: fadeInUp 0.6s ease-out;
+
+    &:nth-child(1) {
+        animation-delay: 0.3s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 0.5s;
+    }
+
+    &:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    &:nth-child(5) {
+        animation-delay: 0.7s;
+    }
+}
+
+// Hover effects removidos
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .content {
+        gap: 1.5rem;
+    }
+
+    .mediaLogos {
+        margin: 1rem 0;
+        gap: 1rem;
+    }
+
+    .awards {
+        gap: 1rem;
+    }
+}
+
+// Estados de foco para acessibilidade
+.award:focus-within {
+    outline: 2px solid rgba(26, 35, 126, 0.3);
+    outline-offset: 2px;
+}
+
+// Efeitos especiais removidos
+.mediaLogos {
+    // Linha removida conforme solicitado
+}
+
+// Variações de layout para diferentes tamanhos
+@media (min-width: 1200px) {
+    .awards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .award {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .awardContent {
+        text-align: center;
+    }
+}
