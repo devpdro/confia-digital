@@ -1,0 +1,157 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #F5F6FA;
+    width: 100%;
+    padding: 4rem 0;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 2.075rem;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+}
+
+.statistic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: 968px) {
+        align-items: center;
+    }
+}
+
+.number {
+    color: #010553;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 72px;
+}
+
+.unit {
+    color: #010553;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 72px;
+    margin: 0 0 0.5rem 0;
+
+}
+
+.description {
+    color: rgb(2, 5, 83);
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitle {
+    color: rgb(2, 5, 83);
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+
+    @media (max-width: 1200px) {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.statistic {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.text {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+}
+
+// Efeito de brilho sutil no número removido para corrigir visibilidade
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .content {
+        gap: 2rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+}

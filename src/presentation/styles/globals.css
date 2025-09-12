@@ -37,10 +37,11 @@ body {
   font-family: 'Gellix', sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /*
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
+   user-select: none; */
   white-space: pre-line;
 
 }

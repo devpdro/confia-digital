@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import S from './faq.module.scss';
 
 export interface FAQItem {
@@ -9,13 +10,13 @@ export interface FAQItem {
 }
 
 export interface FAQProps {
-    title?: string;
+    title: string;
     items: FAQItem[];
     className?: string;
 }
 
 const FAQ: React.FC<FAQProps> = ({ 
-    title = "Perguntas frequentes sobre empréstimos a prazo.", 
+    title, 
     items, 
     className 
 }) => {
@@ -31,6 +32,18 @@ const FAQ: React.FC<FAQProps> = ({
             }
             return newSet;
         });
+        
+        // Scroll suave para a pergunta
+        setTimeout(() => {
+            const element = document.getElementById(`faq-item-${id}`);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center',
+                    inline: 'nearest'
+                });
+            }
+        }, 100);
     };
 
     return (
@@ -46,6 +59,7 @@ const FAQ: React.FC<FAQProps> = ({
                             return (
                                 <div 
                                     key={item.id} 
+                                    id={`faq-item-${item.id}`}
                                     className={`${S.faqItem} ${isOpen ? S.faqItemOpen : ''}`}
                                 >
                                     <button 
@@ -59,11 +73,11 @@ const FAQ: React.FC<FAQProps> = ({
                                             className={`${S.icon} ${isOpen ? S.iconOpen : ''}`}
                                             animate={{ 
                                                 rotate: isOpen ? 45 : 0,
-                                                backgroundColor: isOpen ? '#1a237e' : 'transparent',
-                                                color: isOpen ? '#ffffff' : '#1a237e'
+                                                color: isOpen ? '#264f85' : '#264f85',
+                                                scale: isOpen ? 1.1 : 1
                                             }}
                                             transition={{ 
-                                                duration: 0.3, 
+                                                duration: 0.25, 
                                                 ease: [0.4, 0, 0.2, 1] 
                                             }}
                                         >
@@ -81,15 +95,15 @@ const FAQ: React.FC<FAQProps> = ({
                                                     height: 'auto', 
                                                     opacity: 1,
                                                     transition: {
-                                                        height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
-                                                        opacity: { duration: 0.3, delay: 0.1 }
+                                                        height: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
+                                                        opacity: { duration: 0.25, delay: 0.1 }
                                                     }
                                                 }}
                                                 exit={{ 
                                                     height: 0, 
                                                     opacity: 0,
                                                     transition: {
-                                                        height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
+                                                        height: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] },
                                                         opacity: { duration: 0.2 }
                                                     }
                                                 }}
@@ -98,13 +112,24 @@ const FAQ: React.FC<FAQProps> = ({
                                             >
                                                 <motion.div 
                                                     className={S.answerContent}
-                                                    initial={{ y: -10, opacity: 0 }}
+                                                    initial={{ y: -8, opacity: 0 }}
                                                     animate={{ 
                                                         y: 0, 
                                                         opacity: 1,
-                                                        transition: { delay: 0.2, duration: 0.3 }
+                                                        transition: { 
+                                                            delay: 0.15, 
+                                                            duration: 0.25,
+                                                            ease: [0.25, 0.46, 0.45, 0.94]
+                                                        }
                                                     }}
-                                                    exit={{ y: -10, opacity: 0 }}
+                                                    exit={{ 
+                                                        y: -8, 
+                                                        opacity: 0,
+                                                        transition: {
+                                                            duration: 0.15,
+                                                            ease: [0.25, 0.46, 0.45, 0.94]
+                                                        }
+                                                    }}
                                                 >
                                                     <p dangerouslySetInnerHTML={{ __html: item.answer }} />
                                                 </motion.div>

@@ -1,0 +1,207 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 5rem 0;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+        gap: 3rem;
+    }
+}
+
+.header {
+    text-align: center;
+}
+
+.title {
+    color: #010553;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 72px;
+
+    max-width: 1000px;
+    margin: 0 auto 1.575rem 0;
+
+    @media (max-width: 1200px) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+.subtitle {
+    text-align: center;
+    font-family: 'Domine', sans-serif;
+    color: rgb(2, 5, 83);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 500px;
+    }
+}
+
+.card {
+    background: #D8E6FF;
+    border-radius: 2px;
+    padding: 4.075rem 3.075rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardTitle {
+    color: #010553;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0 0 1rem 0;
+    position: relative;
+}
+
+.cardDescription {
+    position: relative;
+    text-align: center;
+    font-family: 'Domine', sans-serif;
+    color: rgb(2, 5, 83);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+
+        @media (max-width: 480px) {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.card {
+    animation: fadeInScale 0.6s ease-out;
+
+    &:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+}
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .content {
+        gap: 2.5rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .cards {
+        gap: 1.5rem;
+    }
+}

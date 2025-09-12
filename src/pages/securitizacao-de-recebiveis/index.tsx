@@ -1,3 +1,3 @@
-import { ReceivablesSecuritization } from 'src/presentation/pages'
+import { makeReceivablesSecuritization} from 'src/main/factories/pages'
 
-export default ReceivablesSecuritization
+export default makeReceivablesSecuritization

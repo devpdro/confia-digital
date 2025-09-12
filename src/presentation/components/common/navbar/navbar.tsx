@@ -79,6 +79,8 @@ function handleDrawerMenuClick(e: React.MouseEvent<HTMLElement, MouseEvent>, id:
 const Navbar = () => {
     const { t, i18n } = useTranslation();
     const [showLangs, setShowLangs] = useState(false);
+    const [showSolutions, setShowSolutions] = useState(false);
+    const [solutionsTimeout, setSolutionsTimeout] = useState<NodeJS.Timeout | null>(null);
     const [selectedLang, setSelectedLang] = useState(i18n.language === 'en' ? 'en' : 'pt');
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerClosing, setDrawerClosing] = useState(false);
@@ -127,6 +129,21 @@ const Navbar = () => {
         setShowLangs(false);
     };
 
+    const handleSolutionsMouseEnter = () => {
+        if (solutionsTimeout) {
+            clearTimeout(solutionsTimeout);
+            setSolutionsTimeout(null);
+        }
+        setShowSolutions(true);
+    };
+
+    const handleSolutionsMouseLeave = () => {
+        const timeout = setTimeout(() => {
+            setShowSolutions(false);
+        }, 150);
+        setSolutionsTimeout(timeout);
+    };
+
     function getCurrentYear() {
         return new Date().getFullYear();
     }
@@ -144,14 +161,101 @@ const Navbar = () => {
 
                 <div className={S.menuCapsule}>
                 <div className={S.menu}>
-                    <Link
-                        className={S.menuItem}
-                        href="#automacoes"
-                        onClick={e => handleSmoothScroll(e, 'automacoes')}
-                        scroll={false}
+                    <div 
+                        className={S.menuItemDropdown}
+                        onMouseEnter={handleSolutionsMouseEnter}
+                        onMouseLeave={handleSolutionsMouseLeave}
                     >
-                        {t('menu.services')}
-                    </Link>
+                        <span className={S.menuItem}>
+                            {t('menu.services')}
+                        </span>
+                        {showSolutions && (
+                              <div 
+                                  className={S.solutionsDropdown}
+                                  onMouseEnter={handleSolutionsMouseEnter}
+                                  onMouseLeave={handleSolutionsMouseLeave}
+                              >
+                                 <div className={S.dropdownSection}>
+                                     <div className={S.sectionHeader}>
+                                         <div className={S.sectionIcon}>
+                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                                 <rect x="2" y="4" width="20" height="16" rx="2" fill="#010553"/>
+                                             </svg>
+                                         </div>
+                                         <h3 className={S.sectionTitle}>Conta corrente empresarial</h3>
+                                     </div>
+                                     <p className={S.sectionDescription}>
+                                         Uma conta poderosa criada para pequenas empresas: ganhe juros de alto rendimento, economize em taxas e nunca mais vá ao banco.
+                                     </p>
+                                     <Link href="#conta-corrente" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Saber mais</h4>
+                                         </div>
+                                     </Link>
+                                 </div>
+                                 
+                                 <div className={S.dropdownSection}>
+                                     <h4 className={S.sectionTitle}>CARACTERÍSTICAS E BENEFÍCIOS</h4>
+                                     <Link href="#sem-taxas" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Sem taxas mensais</h4>
+                                             <p className={S.itemDescription}>Sem taxas mensais ou de cheque especial, além de transferências ACH padrão gratuitas.</p>
+                                         </div>
+                                     </Link>
+                                     <Link href="#alto-apy" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Alto APY na verificação</h4>
+                                             <p className={S.itemDescription}>Ganhe mais de 20 vezes a média nacional ou mais com plano atualizado.</p>
+                                         </div>
+                                     </Link>
+                                     <Link href="#subcontas" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Subcontas</h4>
+                                             <p className={S.itemDescription}>Gerencie orçamentos facilmente usando várias contas.</p>
+                                         </div>
+                                     </Link>
+                                     <Link href="#cartoes" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Cartões de débito físicos e virtuais</h4>
+                                             <p className={S.itemDescription}>Emita cartões de débito com limites de gastos para sua equipe.</p>
+                                         </div>
+                                     </Link>
+                                 </div>
+                                 
+                                 <div className={S.dropdownSection}>
+                                     <Link href="#links-faturamento" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Links de faturamento e pagamento</h4>
+                                             <p className={S.itemDescription}>Receba pagamentos por cartão ou carteira digital diretamente na sua conta Bluevine.</p>
+                                         </div>
+                                     </Link>
+                                     <Link href="#contas-pagar" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Contas a pagar</h4>
+                                             <p className={S.itemDescription}>Economize tempo no gerenciamento de contas e automatize seus pagamentos.</p>
+                                         </div>
+                                     </Link>
+                                     <Link href="#pagamentos-internacionais" className={S.dropdownItem}>
+                                         <div className={S.itemContent}>
+                                             <h4 className={S.itemTitle}>Pagamentos internacionais</h4>
+                                             <p className={S.itemDescription}>Envie e receba dinheiro globalmente em até 24 horas.</p>
+                                         </div>
+                                     </Link>
+                                 </div>
+                                 
+                                 <div className={S.ctaSection}>
+                                     <div className={S.ctaLinks}>
+                                         <Link href="#explorar-recursos" className={S.ctaLink}>
+                                             Explore todos os recursos
+                                         </Link>
+                                         <Link href="#planos-precos" className={S.ctaLink}>
+                                             Veja planos e preços
+                                         </Link>
+                                     </div>
+                                 </div>
+                             </div>
+                         )}
+                    </div>
                     <Link
                         className={S.menuItem}
                         href="#impacto-igx"

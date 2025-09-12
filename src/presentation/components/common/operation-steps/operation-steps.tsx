@@ -1,16 +1,17 @@
 import { IMAGE } from 'src/presentation/assets';
-import S from './how.module.scss';
 
-const How = () => {
+import S from './operation-steps.module.scss';
+
+const OperationSteps = () => {
     return (
         <section className={S.section}>
             <div className={S.container}>
                 <div className={S.content}>
                     <h2 className={S.title}>
-                        Como funciona nossa securitização na prática.
+                        Como estruturamos sua operação de securitização
                     </h2>
                     <p className={S.subtitle}>
-                        Processo estruturado que transforma seus recebíveis em capital de giro sem burocracia.²
+                        Processo institucional que converte recebíveis em liquidez através de cessão fiduciária registrada.
                     </p>
 
                     <div className={S.grid}>
@@ -26,9 +27,9 @@ const How = () => {
                             <div className={S.step}>
                                 <div className={S.stepNumber}>1</div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Mapeamento dos Recebíveis</h3>
+                                    <h3 className={S.stepTitle}>Análise de Recebíveis</h3>
                                     <p className={S.stepDescription}>
-                                        Analisamos a qualidade dos seus pagadores, histórico de inadimplência e dispersão da carteira. Due diligence completa em até 48h.
+                                        Due diligence completa: rating dos sacados, histórico de pagamento e dispersão da carteira. Análise de risco em até 48h.
                                     </p>
                                 </div>
                             </div>
@@ -36,9 +37,9 @@ const How = () => {
                             <div className={S.step}>
                                 <div className={S.stepNumber}>2</div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Estruturação Personalizada</h3>
+                                    <h3 className={S.stepTitle}>Estruturação Jurídica</h3>
                                     <p className={S.stepDescription}>
-                                        Desenhamos a operação sob medida: cessão fiduciária, conta escrow e covenants adequados ao seu perfil de risco.
+                                        Cessão fiduciária registrada, conta centralizadora e documentação CVM. Estrutura sob medida para seu perfil de crédito.
                                     </p>
                                 </div>
                             </div>
@@ -46,9 +47,9 @@ const How = () => {
                             <div className={S.step}>
                                 <div className={S.stepNumber}>3</div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Liberação Expressa</h3>
+                                    <h3 className={S.stepTitle}>Liquidação e Repasse</h3>
                                     <p className={S.stepDescription}>
-                                        Taxa transparente baseada em dados reais. Recursos liberados entre D+1 e D+3 após assinatura dos contratos.
+                                        Recursos liberados em D+1 após assinatura. Acompanhamento da cobrança através da nossa plataforma HotSys.
                                     </p>
                                 </div>
                             </div>
@@ -60,4 +61,4 @@ const How = () => {
     );
 };
 
-export default How;
+export default OperationSteps;

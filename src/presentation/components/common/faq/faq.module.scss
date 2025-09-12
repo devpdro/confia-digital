@@ -1,7 +1,6 @@
 @import 'src/presentation/styles/themes/light.scss';
 
 .section {
-    background-color: #ffffff;
     width: 100%;
     padding: 5rem 0;
 
@@ -11,9 +10,9 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1340px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.075rem;
 
     @media (max-width: 768px) {
         padding: 0 1rem;
@@ -31,12 +30,10 @@
 }
 
 .title {
-    color: #1a237e;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
-    text-align: left;
+    color: #010553;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 60px;
 
     @media (max-width: 1200px) {
         font-size: 40px;
@@ -60,19 +57,15 @@
 
 .faqItem {
     border-bottom: 1px solid #e5e7eb;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    &:last-child {
-        border-bottom: none;
-    }
-
-    &:hover {
-        background-color: #f8fafc;
-    }
 }
 
 .faqItemOpen {
     background-color: #f8fafc;
+    
+    .questionText {
+        color: #264f85;
+    }
 }
 
 .faqQuestion {
@@ -86,29 +79,37 @@
     cursor: pointer;
     text-align: left;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     &:hover {
+        background-color: rgba(38, 79, 133, 0.02);
+        
         .questionText {
-            color: #1a237e;
+            color: #264f85;
+        }
+        
+        .icon {
+            transform: scale(1.05);
+            color: #1a4d7a;
         }
     }
 
-    &:focus {
-        outline: 2px solid #1a237e;
-        outline-offset: 2px;
-    }
-
     @media (max-width: 768px) {
-        padding: 1.5rem 0;
+        padding: 1.5rem 1rem;
+        margin: 0 -0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 
 .questionText {
-    color: #374151;
-    font-size: 20px;
+    color: rgb(2, 5, 83);
+    font-size: 24px;
     font-weight: 600;
-    line-height: 1.4;
-    margin: 0;
+    line-height: 32px;
     padding-right: 2rem;
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -126,29 +127,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    color: #1a237e;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 1;
-    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    font-size: 28px;
+    color: #264f85;
     cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     @media (max-width: 480px) {
-        width: 28px;
-        height: 28px;
-        font-size: 18px;
+        width: 32px;
+        height: 32px;
+        font-size: 24px;
     }
-}
-
-.iconOpen {
-    // Estilos controlados pelo Framer Motion
-}
-
-.faqAnswer {
-    // Estilos controlados pelo Framer Motion
 }
 
 .answerContent {
@@ -156,19 +147,18 @@
     padding-bottom: 2rem;
 
     p {
-        color: #6b7280;
-        font-size: 16px;
+        color: rgb(2, 5, 83);
+        font-size: 20px;
         font-weight: 400;
-        line-height: 1.6;
-        margin: 0;
-
+        line-height: 28px;
+     
         a {
-            color: #1a237e;
+            color: #234F85;
             text-decoration: underline;
             transition: color 0.2s ease;
 
             &:hover {
-                color: #0f172a;
+                color: hsl(222, 47%, 11%);
             }
         }
 
@@ -197,6 +187,7 @@
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -207,17 +198,9 @@
     animation: fadeInUp 0.5s ease-out;
 }
 
-// Estados de foco e acessibilidade
-.faqQuestion:focus-visible {
-    outline: 2px solid #1a237e;
-    outline-offset: 2px;
-    border-radius: 4px;
-}
 
-// Hover states premium
-.faqItem:hover .faqQuestion .questionText {
-    color: #1a237e;
-}
+
+
 
 // Responsividade avançada
 @media (max-width: 640px) {
@@ -228,36 +211,5 @@
 
     .icon {
         margin-top: 0.25rem;
-    }
-}
-
-// Estados de loading (para futuras implementações)
-.faqItem.loading {
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-// Variações de tema (para futuras implementações)
-.section.dark {
-    background-color: #0f172a;
-
-    .title {
-        color: #ffffff;
-    }
-
-    .faqItem {
-        border-bottom-color: #374151;
-
-        &:hover {
-            background-color: #1e293b;
-        }
-    }
-
-    .questionText {
-        color: #e5e7eb;
-    }
-
-    .answerContent p {
-        color: #9ca3af;
     }
 }

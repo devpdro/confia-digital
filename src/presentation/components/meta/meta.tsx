@@ -12,14 +12,14 @@ export type MetaProps = {
   twitterSite?: string
 }
 
-const DEFAULT_TITLE = 'IGX – Aumente sua equipe sem aumentar seus custos'
-const DEFAULT_DESCRIPTION = 'Venda mais, todos os dias, com IAs que atendem, qualificam e fecham negócios por você — sem SDRs e sem complicação.'
-const DEFAULT_KEYWORDS = 'IA para vendas, automação comercial, chatbot IA, agência de IA, CRM com inteligência artificial, funil automatizado, prospecção com IA, robô de vendas, inteligência artificial para empresas'
-const DEFAULT_IMAGE = 'https://igxai.com/og-home.png'
+const DEFAULT_TITLE = 'Securitizadora | Transforme recebíveis em capital imediato'
+const DEFAULT_DESCRIPTION = 'Securitização de recebíveis com liquidação em até 48h. Operações estruturadas que transformam duplicatas e contratos em capital sem impactar o balanço.'
+const DEFAULT_KEYWORDS = 'securitização de recebíveis, antecipação de duplicatas, cessão fiduciária, capital de giro, securitizadora CVM, liquidez empresarial, certificados de recebíveis, CRI CRA, operações estruturadas, transformar recebíveis em dinheiro'
+const DEFAULT_IMAGE = 'https://suasecuritizadora.com/og-home.png'
 const DEFAULT_OG_TYPE = 'website'
-const DEFAULT_OG_SITE_NAME = 'IGX IA Solutions'
+const DEFAULT_OG_SITE_NAME = 'Securitizadora'
 const DEFAULT_TWITTER_CARD = 'summary_large_image'
-const DEFAULT_TWITTER_SITE = '@igxaisolutions'
+const DEFAULT_TWITTER_SITE = '@securitizadora'
 
 const Meta = ({
   title,
@@ -38,6 +38,7 @@ const Meta = ({
   const metaDescription = (description && description.length > 160)
     ? description.slice(0, 157) + '...'
     : (description || DEFAULT_DESCRIPTION)
+
   return (
     <Head>
       <title>{pageTitle}</title>
@@ -46,6 +47,7 @@ const Meta = ({
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="canonical" href={url} />
+
       {/* Open Graph */}
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={metaDescription} />
@@ -53,6 +55,7 @@ const Meta = ({
       <meta property="og:type" content={ogType || DEFAULT_OG_TYPE} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={ogSiteName || DEFAULT_OG_SITE_NAME} />
+
       {/* Twitter Card */}
       <meta name="twitter:card" content={twitterCard || DEFAULT_TWITTER_CARD} />
       <meta name="twitter:site" content={twitterSite || DEFAULT_TWITTER_SITE} />

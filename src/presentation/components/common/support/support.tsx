@@ -8,27 +8,26 @@ const Support = () => {
                 <div className={S.content}>
                     <div className={S.textContent}>
                         <h2 className={S.title}>
-                            Suporte especializado<br />
-                            quando<br />
-                            você precisar.
+                            Acompanhamento dedicado durante toda operação.
                         </h2>
-                        
+
                         <div className={S.description}>
                             <p className={S.paragraph}>
-                                O suporte personalizado que sua pequena empresa precisa está a apenas uma mensagem ou ligação de distância, com pessoas reais prontas para ajudar.
+                                Time especializado em securitização para orientar sua empresa em cada etapa: da estruturação inicial até o acompanhamento da cobrança dos recebíveis.
                             </p>
-                            
+
                             <p className={S.paragraph}>
-                                Você também pode explorar recursos autoguiados a qualquer momento em nossa{' '}
-                                <a href="#" className={S.link}>Central de Ajuda</a>.
+                                Acesse relatórios de performance em tempo real através da nossa plataforma{' '}
+                                <a href="#" className={S.link}>HotSys</a> ou consulte nosso{' '}
+                                <a href="#" className={S.link}>Centro de Conhecimento</a>.
                             </p>
                         </div>
                     </div>
-                    
+
                     <div className={S.imageContainer}>
                         <div className={S.imageWrapper}>
                             <img
-                                src={IMAGE.TEMPORARIA.src}
+                                src={IMAGE.SUPORTE.src}
                                 alt="Atendente sorrindo com headset"
                                 className={S.image}
                             />

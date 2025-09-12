@@ -13,6 +13,16 @@ import ITAU from './ITAU.webp'
 import TERCON from './TERCON.webp'
 import SINFAC from './SINFAC.webp'
 import SERASA from './SERASA.webp'
+import PESSOA_OLHANDO_FOLHA from './PESSOA_OLHANDO_FOLHA.webp'
+import TRES_PESSOAS from './TRES_PESSOAS.webp'
+import DUAS_MULHERES from './DUAS_MULHERES.webp'
+import DUAS_PESSOAS from './DUAS_PESSOAS.webp'
+import EMPRESARIO from './EMPRESARIO.webp'
+import SUPORTE from './SUPORTE.webp'
+import MONEY_VOLTA from './MONEY_VOLTA.svg'
+import PAPEL from './PAPEL.svg'
+import PROTECAO from './PROTECAO.png'
+
 
 const IMAGE = {
     LOGO,
@@ -30,6 +40,15 @@ const IMAGE = {
     TERCON,
     SINFAC,
     SERASA,
+    PESSOA_OLHANDO_FOLHA,
+    TRES_PESSOAS,
+    DUAS_MULHERES,
+    DUAS_PESSOAS,
+    EMPRESARIO,
+    SUPORTE,
+    MONEY_VOLTA,
+    PAPEL,
+    PROTECAO,
 }
 
 export default IMAGE;
