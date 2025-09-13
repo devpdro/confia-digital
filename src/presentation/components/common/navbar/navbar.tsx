@@ -161,13 +161,16 @@ const Navbar = () => {
 
                 <div className={S.menuCapsule}>
                 <div className={S.menu}>
+                    <Link className={S.menuItem} href="/">
+                        Início
+                    </Link>
                     <div 
                         className={S.menuItemDropdown}
                         onMouseEnter={handleSolutionsMouseEnter}
                         onMouseLeave={handleSolutionsMouseLeave}
                     >
                         <span className={S.menuItem}>
-                            {t('menu.services')}
+                            Soluções
                         </span>
                         {showSolutions && (
                               <div 
@@ -176,93 +179,46 @@ const Navbar = () => {
                                   onMouseLeave={handleSolutionsMouseLeave}
                               >
                                  <div className={S.dropdownSection}>
-                                     <div className={S.sectionHeader}>
-                                         <div className={S.sectionIcon}>
-                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                                 <rect x="2" y="4" width="20" height="16" rx="2" fill="#010553"/>
-                                             </svg>
-                                         </div>
-                                         <h3 className={S.sectionTitle}>Conta corrente empresarial</h3>
-                                     </div>
-                                     <p className={S.sectionDescription}>
-                                         Uma conta poderosa criada para pequenas empresas: ganhe juros de alto rendimento, economize em taxas e nunca mais vá ao banco.
-                                     </p>
-                                     <Link href="#conta-corrente" className={S.dropdownItem}>
+                                     <Link href="/conta-empresarial" className={S.dropdownItem}>
                                          <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Saber mais</h4>
+                                             <h4 className={S.itemTitle}>Conta Empresarial</h4>
                                          </div>
                                      </Link>
-                                 </div>
-                                 
-                                 <div className={S.dropdownSection}>
-                                     <h4 className={S.sectionTitle}>CARACTERÍSTICAS E BENEFÍCIOS</h4>
-                                     <Link href="#sem-taxas" className={S.dropdownItem}>
+                                     <Link href="/antecipacao-de-contratos" className={S.dropdownItem}>
                                          <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Sem taxas mensais</h4>
-                                             <p className={S.itemDescription}>Sem taxas mensais ou de cheque especial, além de transferências ACH padrão gratuitas.</p>
+                                             <h4 className={S.itemTitle}>Antecipação de Contratos</h4>
                                          </div>
                                      </Link>
-                                     <Link href="#alto-apy" className={S.dropdownItem}>
+                                     <Link href="/securitizacao-de-recebiveis" className={S.dropdownItem}>
                                          <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Alto APY na verificação</h4>
-                                             <p className={S.itemDescription}>Ganhe mais de 20 vezes a média nacional ou mais com plano atualizado.</p>
+                                             <h4 className={S.itemTitle}>Securitização de Recebíveis</h4>
                                          </div>
                                      </Link>
-                                     <Link href="#subcontas" className={S.dropdownItem}>
+                                     <Link href="/estruturacao-de-operacoes" className={S.dropdownItem}>
                                          <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Subcontas</h4>
-                                             <p className={S.itemDescription}>Gerencie orçamentos facilmente usando várias contas.</p>
+                                             <h4 className={S.itemTitle}>Estruturação de Operações</h4>
                                          </div>
                                      </Link>
-                                     <Link href="#cartoes" className={S.dropdownItem}>
+                                     <Link href="/estruturacao-customizada" className={S.dropdownItem}>
                                          <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Cartões de débito físicos e virtuais</h4>
-                                             <p className={S.itemDescription}>Emita cartões de débito com limites de gastos para sua equipe.</p>
+                                             <h4 className={S.itemTitle}>Estruturação Customizada</h4>
                                          </div>
                                      </Link>
-                                 </div>
-                                 
-                                 <div className={S.dropdownSection}>
-                                     <Link href="#links-faturamento" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Links de faturamento e pagamento</h4>
-                                             <p className={S.itemDescription}>Receba pagamentos por cartão ou carteira digital diretamente na sua conta Bluevine.</p>
-                                         </div>
-                                     </Link>
-                                     <Link href="#contas-pagar" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Contas a pagar</h4>
-                                             <p className={S.itemDescription}>Economize tempo no gerenciamento de contas e automatize seus pagamentos.</p>
-                                         </div>
-                                     </Link>
-                                     <Link href="#pagamentos-internacionais" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Pagamentos internacionais</h4>
-                                             <p className={S.itemDescription}>Envie e receba dinheiro globalmente em até 24 horas.</p>
-                                         </div>
-                                     </Link>
-                                 </div>
-                                 
-                                 <div className={S.ctaSection}>
-                                     <div className={S.ctaLinks}>
-                                         <Link href="#explorar-recursos" className={S.ctaLink}>
-                                             Explore todos os recursos
-                                         </Link>
-                                         <Link href="#planos-precos" className={S.ctaLink}>
-                                             Veja planos e preços
-                                         </Link>
-                                     </div>
                                  </div>
                              </div>
                          )}
                     </div>
-                    <Link
-                        className={S.menuItem}
-                        href="#impacto-igx"
-                        onClick={e => handleSmoothScroll(e, 'impacto-igx')}
-                        scroll={false}
-                    >
-                        {t('menu.impact')}
+                    <Link className={S.menuItem} href="/calculadora-simulacao">
+                        Calculadora
+                    </Link>
+                    <Link className={S.menuItem} href="/avaliacoes">
+                        Avaliações
+                    </Link>
+                    <Link className={S.menuItem} href="/parceiros">
+                        Parceiros
+                    </Link>
+                    <Link className={S.menuItem} href="/perguntas-frequentes">
+                        FAQ
                     </Link>
                     <div className={S.langSelect}>
                         <span className={S.flagIcon}>
@@ -314,19 +270,66 @@ const Navbar = () => {
                             <div className={S.drawerLinks}>
                                 <Link
                                     className={S.menuItem}
-                                    href="#automacoes"
-                                    onClick={e => handleDrawerMenuClick(e, 'automacoes', handleCloseDrawer)}
-                                    scroll={false}
+                                    href="/"
+                                    onClick={handleCloseDrawer}
                                 >
-                                    {t('menu.services')}
+                                    Início
                                 </Link>
                                 <Link
                                     className={S.menuItem}
-                                    href="#impacto-igx"
-                                    onClick={e => handleDrawerMenuClick(e, 'impacto-igx', handleCloseDrawer)}
-                                    scroll={false}
+                                    href="/conta-empresarial"
+                                    onClick={handleCloseDrawer}
                                 >
-                                    {t('menu.impact')}
+                                    Conta Empresarial
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/antecipacao-de-contratos"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Antecipação de Contratos
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/securitizacao-de-recebiveis"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Securitização de Recebíveis
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/estruturacao-de-operacoes"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Estruturação de Operações
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/calculadora-simulacao"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Calculadora
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/avaliacoes"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Avaliações
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/parceiros"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Parceiros
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/perguntas-frequentes"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    FAQ
                                 </Link>
                                 <div className={S.drawerLangWrap}>
                                     <p className={S.menuItemLang}>

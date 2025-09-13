@@ -1,0 +1,229 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    padding: 5rem 0;
+    background-color: #ffffff;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        gap: 2rem;
+    }
+}
+
+.textContent {
+    @media (max-width: 968px) {
+        order: 1;
+    }
+}
+
+.title {
+    color: #010553;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    margin: 0 0 2rem 0;
+
+    @media (max-width: 1200px) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.partnerList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.partnerItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    line-height: 1.6;
+}
+
+.bullet {
+    color: #4f46e5;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.partnerName {
+    color: #010553;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.imageContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 968px) {
+        order: 2;
+    }
+}
+
+.imageContainer {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 768px) {
+        max-width: 300px;
+    }
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+
+// Animações
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.textContent {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.imageContent {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+}
+
+.partnerItem {
+    animation: fadeInUp 0.6s ease-out;
+    
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.15s; }
+    &:nth-child(3) { animation-delay: 0.2s; }
+    &:nth-child(4) { animation-delay: 0.25s; }
+    &:nth-child(5) { animation-delay: 0.3s; }
+    &:nth-child(6) { animation-delay: 0.35s; }
+    &:nth-child(7) { animation-delay: 0.4s; }
+    &:nth-child(8) { animation-delay: 0.45s; }
+    &:nth-child(9) { animation-delay: 0.5s; }
+    &:nth-child(10) { animation-delay: 0.55s; }
+    &:nth-child(11) { animation-delay: 0.6s; }
+    &:nth-child(12) { animation-delay: 0.65s; }
+}
+
+// Hover effects
+.partnerItem {
+    transition: all 0.3s ease;
+    padding: 0.25rem 0;
+    border-radius: 4px;
+    
+    &:hover {
+        background-color: rgba(79, 70, 229, 0.05);
+        transform: translateX(5px);
+        
+        .bullet {
+            color: #3730a3;
+        }
+        
+        .partnerName {
+            color: #3730a3;
+        }
+    }
+}
+
+.imageContainer {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.02);
+    }
+}

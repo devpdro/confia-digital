@@ -8,6 +8,7 @@ import {
     CTA,
     FAQ,
 } from "src/presentation/components"
+import BusinessCardPromo from "src/presentation/components/common/business-card-promo/business-card-promo";
 
 const FAQ_DATA = [
     {
@@ -49,7 +50,7 @@ const FAQ_DATA = [
 
 const ReceivablesSecuritization = () => (
     <div>
-       <Meta
+        <Meta
             title="Securitização de Recebíveis | Capital em até 48h sem endividamento"
             description="Transforme duplicatas e contratos em liquidez através de securitização. Capital liberado em 48h sem impactar o balanço. Operações a partir de R$ 500 mil."
             keywords="securitização de recebíveis, antecipação de duplicatas, cessão fiduciária, capital de giro sem endividamento, securitizadora CVM, liquidez empresarial, transformar recebíveis em dinheiro, duplicatas em capital, contratos em liquidez, securitização Brasil, certificados de recebíveis, CRI CRA, operações estruturadas"
@@ -58,6 +59,7 @@ const ReceivablesSecuritization = () => (
         <SecuritizationHeader />
         <SecuritizationStats />
         <CreditAccess />
+        <BusinessCardPromo />
         <OperationSteps />
         <Support />
         <FAQ title="Perguntas frequentes sobre securitização de recebíveis." items={FAQ_DATA} />

@@ -5,9 +5,11 @@ import {
     CTA,
     FAQ,
     Process,
+    CreditAccess,
 } from "src/presentation/components"
 import BusinessCardPromo from "src/presentation/components/common/business-card-promo/business-card-promo";
 import ContractTypes from "src/presentation/components/common/contract-types/contract-types";
+import CreditBenefits from "src/presentation/components/common/credit-benefits/credit-benefits";
 
 const FAQ_DATA = [
     {
@@ -46,6 +48,7 @@ const ContractAdvancement = () => (
             image="https://suasecuritizadora.com/og-antecipacao.png"
         />
         <ContractHeader />
+        <CreditBenefits />
         <Benefits />
         <BusinessCardPromo />
         <ContractTypes />

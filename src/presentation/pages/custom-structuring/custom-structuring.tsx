@@ -1,127 +1,65 @@
-import S from 'src/presentation/styles/shared/policy-page.module.scss';
+import {
+    Meta,
+    ContractHeader,
+    Benefits,
+    CTA,
+    FAQ,
+    Process,
+    Trust,
+} from "src/presentation/components"
+import BusinessCardPromo from "src/presentation/components/common/business-card-promo/business-card-promo";
+import BusinessServices from "src/presentation/components/common/business-services/business-services";
+import ContractTypes from "src/presentation/components/common/contract-types/contract-types";
+import CTACards from "src/presentation/components/common/cta-cards/cta-cards";
+import Testimonial from "src/presentation/components/common/testimonial/testimonial";
 
-const CustomStructuring = () => {
-    return (
-        <div className={S.page}>
-            <div className={S.container}>
-                <header className={S.header}>
-                    <div className={S.headerWrapper}>
-                        <h1 className={S.title}>Estruturação Customizada</h1>
-                    </div>
-                </header>
-                
-                <div className={S.content}>
-                    <div className={S.contentWrapper}>
-                        <section className={S.section}>
-                            <p className={S.paragraph}>
-                                A <strong>Bluevine Capital Inc.</strong> oferece serviços de estruturação customizada para operações financeiras complexas, desenvolvendo soluções sob medida para atender às necessidades específicas de cada cliente.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>O que é Estruturação Customizada</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Soluções Sob Medida:</strong> Desenvolvimento de estruturas financeiras personalizadas que consideram as particularidades do negócio, setor de atuação e objetivos estratégicos da empresa.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Expertise Multidisciplinar:</strong> Nossa equipe combina conhecimentos em direito, finanças, contabilidade e regulamentação para criar estruturas robustas e eficientes.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Tipos de Estruturação</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Securitização Complexa:</strong><br/>
-                                • Múltiplas séries de certificados<br/>
-                                • Diferentes classes de subordinação<br/>
-                                • Estruturas com reforço de crédito<br/>
-                                • Operações com co-obrigação
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Fundos de Investimento:</strong><br/>
-                                • Fundos de Investimento em Direitos Creditórios (FIDC)<br/>
-                                • Fundos de Investimento em Participações (FIP)<br/>
-                                • Fundos Multimercado especializados<br/>
-                                • Estruturas de cotas seniores e subordinadas
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Setores Especializados</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Agronegócio:</strong> Estruturação de operações com recebíveis rurais, CPR financeira, warrants agropecuários e financiamento de safras.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Infraestrutura:</strong> Financiamento de projetos de longo prazo, debêntures de infraestrutura e estruturas de project finance.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Energia:</strong> Operações com recebíveis de energia elétrica, financiamento de usinas e estruturas de hedge cambial.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Imobiliário:</strong> Securitização de recebíveis imobiliários, CRI, fundos imobiliários e financiamento habitacional.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Processo de Estruturação</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Fase 1 - Diagnóstico:</strong> Análise detalhada da empresa, fluxo de caixa, necessidades de capital e objetivos estratégicos.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Fase 2 - Modelagem:</strong> Desenvolvimento de diferentes cenários e estruturas, análise de viabilidade e otimização fiscal.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Fase 3 - Estruturação:</strong> Elaboração da documentação legal, registro junto aos órgãos competentes e coordenação com prestadores de serviços.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Fase 4 - Execução:</strong> Implementação da estrutura, captação de recursos e acompanhamento pós-operação.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Vantagens da Customização</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Otimização de Custos:</strong> Estruturas desenhadas para minimizar custos financeiros e tributários, maximizando a eficiência da operação.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Flexibilidade:</strong> Adaptação às necessidades específicas do negócio, permitindo ajustes conforme evolução da empresa.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Compliance:</strong> Estruturas desenvolvidas em total conformidade com a regulamentação vigente e melhores práticas de mercado.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Parceiros Estratégicos</h2>
-                            
-                            <p className={S.paragraph}>
-                                Trabalhamos com uma rede de parceiros especializados incluindo escritórios de advocacia, consultorias tributárias, agências de rating e auditores independentes para garantir excelência em todas as etapas.
-                            </p>
-                            
-                            <p className={S.lastUpdated}>
-                                Serviços de Estruturação Customizada atualizados em: 15 de julho de 2024.
-                            </p>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
+const FAQ_DATA = [
+    {
+        id: "1",
+        question: "Quais tipos de contratos posso antecipar?",
+        answer: "Antecipamos contratos de prestação de serviços, mensalidades de software, consultorias, manutenção predial, contratos de publicidade e marketing. O contrato deve estar assinado e com parcelas definidas."
+    },
+    {
+        id: "2",
+        question: "Qual o valor mínimo e máximo para antecipação?",
+        answer: "Operamos a partir de R$ 50 mil até R$ 2 milhões por operação. Para valores maiores, nossa <a href='#'>solução de Securitização</a> pode ser mais adequada com condições especiais."
+    },
+    {
+        id: "3",
+        question: "Quanto recebo do valor total do contrato?",
+        answer: "Antecipamos entre 70% e 90% do valor presente do contrato, dependendo do prazo restante, qualidade do pagador e histórico da empresa. O percentual é calculado na simulação."
+    },
+    {
+        id: "4",
+        question: "Quanto tempo demora para receber o dinheiro?",
+        answer: "Após envio da documentação completa, a análise leva até 6 horas úteis e a liberação acontece via PIX ou TED no mesmo dia ou dia útil seguinte."
+    },
+    {
+        id: "5",
+        question: "E se meu cliente atrasar o pagamento das parcelas?",
+        answer: "Nossa equipe faz a gestão de cobrança diretamente com seu cliente, preservando o relacionamento comercial. Em casos de inadimplência, você não precisa devolver o valor antecipado."
+    }
+];
 
-export default CustomStructuring;
+const CustomStructuring = () => (
+    <div>
+        <Meta
+            title="Antecipação de Contratos | Dinheiro Hoje de R$50K a R$2M em 6h"
+            description="Antecipe seus contratos e receba de R$50K a R$2M no mesmo dia. Mais de 2.800 operações já realizadas. Taxa média de 2,8% ao mês, aprovação rápida em até 6 horas e zero burocracia."
+            keywords="dinheiro hoje, contratos dinheiro, antecipar contratos, capital mesmo dia, 6 horas aprovação, sem burocracia, R$ 50K 2M, taxa 2.8 mes"
+            image="https://suasecuritizadora.com/og-antecipacao.png"
+        />
+        <ContractHeader />
+        <BusinessServices />
+        <Testimonial />
+        <Trust />
+        <BusinessServices />
+        <Process />
+        <CTACards />
+        <FAQ title="Perguntas frequentes sobre antecipação de contratos."
+            items={FAQ_DATA} />
+        <CTA />
+    </div>
+)
+
+export default CustomStructuring
