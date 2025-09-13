@@ -19,7 +19,7 @@ const SecuritizationHeader = () => {
                         <div className={S.button}>
                             <Button
                                 typeStyle="btn1"
-                                label="Simular operação"
+                                label="Calcular minha taxa"
                                 size="md"
                                 width="240px"
                             />

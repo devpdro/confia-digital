@@ -34,7 +34,7 @@
 }
 
 body {
-  font-family: 'Gellix', sans-serif;
+  font-family: 'Gellix', Helvetica, sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
   /*

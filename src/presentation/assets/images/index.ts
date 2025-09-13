@@ -22,7 +22,7 @@ import SUPORTE from './SUPORTE.webp'
 import MONEY_VOLTA from './MONEY_VOLTA.svg'
 import PAPEL from './PAPEL.svg'
 import PROTECAO from './PROTECAO.png'
-
+import PLANTA_DINHEIRO from './PLANTA_DINHEIRO.svg'
 
 const IMAGE = {
     LOGO,
@@ -49,6 +49,7 @@ const IMAGE = {
     MONEY_VOLTA,
     PAPEL,
     PROTECAO,
+    PLANTA_DINHEIRO
 }
 
 export default IMAGE;

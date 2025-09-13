@@ -1,6 +1,7 @@
 export { default as Awards } from "./awards/awards"
 export { default as Benefits } from "./benefits/benefits"
 export { default as Calculator } from "./calculator/calculator"
+export { default as ContractHeader } from "./contract-header/contract-header"
 export { default as CreditAccess } from "./credit-access/credit-access"
 export { default as CTA } from "./cta/cta"
 export { default as FAQ } from "./faq/faq"

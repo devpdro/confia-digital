@@ -1,0 +1,274 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+
+
+.container {
+    width: 100%;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        margin: 0;
+    }
+}
+
+.header {
+    background: #D8E6FF;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 5.575rem 0 6.575rem;
+    text-align: left;
+
+
+    @media (max-width: 768px) {
+        padding: 2rem 0;
+    }
+}
+
+.headerWrapper {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.title {
+    color: rgb(2, 5, 83);
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 56px;
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+.content {
+    padding: 3rem 0;
+
+    @media (max-width: 768px) {
+        padding: 2rem 0;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1.5rem 0;
+    }
+}
+
+.contentWrapper {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.section {
+    margin-bottom: 3rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 2rem;
+    }
+}
+
+.sectionTitle {
+    color: rgb(2, 5, 83);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    margin: 0 0 1.575rem 0;
+    padding-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.paragraph {
+    color: rgb(2, 5, 83);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 1.575rem 0;
+    font-family: 'Domine', sans-serif;
+    text-align: justify;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    strong {
+        color: #010553;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 26px;
+        margin-bottom: 1.25rem;
+        text-align: left;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 1rem;
+    }
+}
+
+.lastUpdated {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 2rem 0 0 0;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 6px;
+    border-left: 4px solid #010553;
+    font-family: 'Domine', serif;
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+        margin-top: 1.5rem;
+        padding: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+        margin-top: 1rem;
+        padding: 0.5rem;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container {
+    animation: fadeInScale 0.6s ease-out;
+}
+
+.header {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.content {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+// Melhorias de legibilidade
+.paragraph {
+    // Melhor espaçamento entre palavras
+    word-spacing: 0.05em;
+
+    // Melhor quebra de linha
+    word-break: break-word;
+    hyphens: auto;
+
+    // Melhor contraste
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .container {
+        margin: 0;
+    }
+
+    .header {
+        padding: 1.5rem 0;
+    }
+
+    .content {
+        padding: 1.5rem 0;
+    }
+
+    .headerWrapper,
+    .contentWrapper {
+        padding: 0 0.75rem;
+    }
+}
+
+// Impressão
+@media print {
+    .page {
+        background-color: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .header {
+        background: white;
+        border-bottom: 2px solid #010553;
+    }
+
+    .title {
+        color: #000;
+    }
+
+    .sectionTitle {
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+    .paragraph {
+        color: #000;
+        text-align: left;
+    }
+
+    .lastUpdated {
+        background-color: white;
+        border-left-color: #000;
+        color: #000;
+    }
+}

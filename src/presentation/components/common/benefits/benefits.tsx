@@ -4,35 +4,36 @@ const BENEFITS_DATA = [
     {
         icon: (
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 3v18h18" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M18 9l-5 5-4-4-4 4" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="9" cy="14" r="2" fill="#1a237e"/>
-                <circle cx="13" cy="10" r="2" fill="#1a237e"/>
-                <path d="M7 7h3v3" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="#1a237e" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="12" cy="12" r="10" stroke="#1a237e" strokeWidth="2" fill="none" />
+                <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" stroke="#1a237e" strokeWidth="1" />
             </svg>
         ),
-        title: "Sem impacto no balanço",
-        description: "Operação de cessão de recebíveis que não gera endividamento na empresa, preservando sua capacidade de crédito."
+        title: "Aprovação em poucas horas",
+        description: "Análise simplificada baseada nos contratos já assinados. Sem necessidade de avaliar histórico complexo ou garantias adicionais."
     },
     {
         icon: (
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="#010553" strokeWidth="2" fill="none" />
-                <path d="M12 6v6l4 2" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <rect x="2" y="6" width="20" height="12" rx="4" stroke="#1a237e" strokeWidth="2" fill="none" />
+                <circle cx="8" cy="12" r="2" fill="#1a237e" />
+                <circle cx="16" cy="12" r="2" fill="#1a237e" />
+                <path d="M8 10V8a4 4 0 0 1 8 0v2" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" />
             </svg>
         ),
-        title: "Liquidação em até 48h",
-        description: "Análise expressa dos seus recebíveis e liberação do capital em até 48 horas após aprovação da documentação."
+        title: "Valores flexíveis",
+        description: "Antecipe desde R$ 50 mil até R$ 2 milhões por operação. Ideal para PMEs que precisam ajustar fluxo de caixa conforme demanda."
     },
     {
         icon: (
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#1a237e"/>
-                <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" stroke="#1a237e" strokeWidth="2" fill="none" />
+                <path d="M9 9h6v6H9z" fill="#1a237e" />
+                <path d="M12 5v4M12 15v4M7 12h4M15 12h4" stroke="#1a237e" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
         ),
-        title: "Proteção jurídica total",
-        description: "Cessão fiduciária registrada em cartório garante segurança jurídica e proteção contra riscos de cobrança."
+        title: "Sem comprometer limite bancário",
+        description: "Operação que mantém suas linhas de crédito tradicionais livres para outras necessidades estratégicas da empresa."
     }
 ];
 

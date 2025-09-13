@@ -18,7 +18,7 @@ const Header = () => {
                         <div className={S.button}>
                             <Button
                                 typeStyle="btn1"
-                                label="Calcular minha taxa"
+                                label="Simular operação"
                                 size="md"
                                 width="240px"
                             />

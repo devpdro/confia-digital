@@ -1,0 +1,243 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 5rem 0;
+    border-top: 1px solid #e5e7eb;
+
+    @media (max-width: 768px) {
+        padding: 3rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+    @media (max-width: 768px) {
+        gap: 3rem;
+    }
+}
+
+.title {
+    color: #010553;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    text-align: center;
+    margin: 0;
+    max-width: 800px;
+
+    @media (max-width: 1200px) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 600px;
+    }
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+
+    @media (max-width: 968px) {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.stepNumber {
+    width: 48px;
+    height: 48px;
+    background-color: #010553;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+
+    @media (max-width: 480px) {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+}
+
+.stepTitle {
+    color: #010553;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0 0 1rem 0;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.stepDescription {
+    color: #6b7280;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+    font-family: 'Domine', sans-serif;
+
+    @media (max-width: 480px) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+// Linha conectora entre os passos (apenas desktop)
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: -1.5rem;
+    width: 3rem;
+    height: 2px;
+    background: linear-gradient(90deg, #010553 0%, #e5e7eb 100%);
+    z-index: 1;
+
+    @media (max-width: 968px) {
+        display: none;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.title {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.step {
+    animation: scaleIn 0.6s ease-out;
+
+    &:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+}
+
+// Hover effects
+.step {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(1, 5, 83, 0.1);
+
+        .stepNumber {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(1, 5, 83, 0.3);
+        }
+    }
+}
+
+.stepNumber {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+// Responsividade avançada
+@media (max-width: 640px) {
+    .content {
+        gap: 2.5rem;
+    }
+    
+    .section {
+        padding: 2.5rem 0;
+    }
+    
+    .steps {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .step {
+        padding: 1rem 0.5rem;
+    }
+}
