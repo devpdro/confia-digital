@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'src/i18n/i18n';
 
-import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp } from '@tabler/icons-react';
+import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp } from '@tabler/icons-react';
 
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
@@ -65,25 +65,21 @@ function handleSmoothScroll(e: React.MouseEvent<HTMLElement, MouseEvent>, id: st
     }
 }
 
-function handleDrawerMenuClick(e: React.MouseEvent<HTMLElement, MouseEvent>, id: string, closeDrawer: () => void) {
-    e.preventDefault();
-    closeDrawer();
-    setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, 250); // um pouco mais que o tempo da animação
-}
-
 const Navbar = () => {
     const { t, i18n } = useTranslation();
     const [showLangs, setShowLangs] = useState(false);
-    const [showSolutions, setShowSolutions] = useState(false);
-    const [solutionsTimeout, setSolutionsTimeout] = useState<NodeJS.Timeout | null>(null);
+    const [showSecuritizacao, setShowSecuritizacao] = useState(false);
+    const [showRecursos, setShowRecursos] = useState(false);
+    const [showEmpresa, setShowEmpresa] = useState(false);
+    const [securitizacaoTimeout, setSecuritizacaoTimeout] = useState<NodeJS.Timeout | null>(null);
+    const [recursosTimeout, setRecursosTimeout] = useState<NodeJS.Timeout | null>(null);
+    const [empresaTimeout, setEmpresaTimeout] = useState<NodeJS.Timeout | null>(null);
     const [selectedLang, setSelectedLang] = useState(i18n.language === 'en' ? 'en' : 'pt');
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerClosing, setDrawerClosing] = useState(false);
+    const [mobileSecuritizacaoOpen, setMobileSecuritizacaoOpen] = useState(false);
+    const [mobileRecursosOpen, setMobileRecursosOpen] = useState(false);
+    const [mobileEmpresaOpen, setMobileEmpresaOpen] = useState(false);
 
     const selected = LANGS.find(l => l.code === selectedLang) || LANGS[0];
 
@@ -98,9 +94,6 @@ const Navbar = () => {
         };
     }, [drawerOpen, drawerClosing]);
 
-
-
-    // Fecha o drawer se a tela aumentar para desktop, com animação
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 1180 && drawerOpen) {
@@ -108,7 +101,7 @@ const Navbar = () => {
                 setTimeout(() => {
                     setDrawerOpen(false);
                     setDrawerClosing(false);
-                }, 220); // mesmo tempo da animação
+                }, 220);
             }
         };
         window.addEventListener('resize', handleResize);
@@ -129,19 +122,58 @@ const Navbar = () => {
         setShowLangs(false);
     };
 
-    const handleSolutionsMouseEnter = () => {
-        if (solutionsTimeout) {
-            clearTimeout(solutionsTimeout);
-            setSolutionsTimeout(null);
+    const handleSecuritizacaoMouseEnter = () => {
+        if (securitizacaoTimeout) {
+            clearTimeout(securitizacaoTimeout);
+            setSecuritizacaoTimeout(null);
         }
-        setShowSolutions(true);
+        // Fecha outros dropdowns
+        setShowRecursos(false);
+        setShowEmpresa(false);
+        setShowSecuritizacao(true);
     };
 
-    const handleSolutionsMouseLeave = () => {
+    const handleSecuritizacaoMouseLeave = () => {
         const timeout = setTimeout(() => {
-            setShowSolutions(false);
-        }, 150);
-        setSolutionsTimeout(timeout);
+            setShowSecuritizacao(false);
+        }, 300);
+        setSecuritizacaoTimeout(timeout);
+    };
+
+    const handleRecursosMouseEnter = () => {
+        if (recursosTimeout) {
+            clearTimeout(recursosTimeout);
+            setRecursosTimeout(null);
+        }
+        // Fecha outros dropdowns
+        setShowSecuritizacao(false);
+        setShowEmpresa(false);
+        setShowRecursos(true);
+    };
+
+    const handleRecursosMouseLeave = () => {
+        const timeout = setTimeout(() => {
+            setShowRecursos(false);
+        }, 300);
+        setRecursosTimeout(timeout);
+    };
+
+    const handleEmpresaMouseEnter = () => {
+        if (empresaTimeout) {
+            clearTimeout(empresaTimeout);
+            setEmpresaTimeout(null);
+        }
+        // Fecha outros dropdowns
+        setShowSecuritizacao(false);
+        setShowRecursos(false);
+        setShowEmpresa(true);
+    };
+
+    const handleEmpresaMouseLeave = () => {
+        const timeout = setTimeout(() => {
+            setShowEmpresa(false);
+        }, 300);
+        setEmpresaTimeout(timeout);
     };
 
     function getCurrentYear() {
@@ -151,105 +183,186 @@ const Navbar = () => {
     return (
         <nav className={S.navbar}>
             <div className={S.navbarContent}>
-                <div className={S.logo}>
+                <Link href="/" className={S.logo}>
                     <img className={S.logoImg} src={IMAGE.LOGO.src} alt="Capital Digital" />
-                </div>
+                </Link>
 
                 <button className={S.hamburger} onClick={() => setDrawerOpen(true)}>
                     <IconMenu2 size={34} />
                 </button>
 
                 <div className={S.menuCapsule}>
-                <div className={S.menu}>
-                    <Link className={S.menuItem} href="/">
-                        Início
-                    </Link>
-                    <div 
-                        className={S.menuItemDropdown}
-                        onMouseEnter={handleSolutionsMouseEnter}
-                        onMouseLeave={handleSolutionsMouseLeave}
-                    >
-                        <span className={S.menuItem}>
-                            Soluções
-                        </span>
-                        {showSolutions && (
-                              <div 
-                                  className={S.solutionsDropdown}
-                                  onMouseEnter={handleSolutionsMouseEnter}
-                                  onMouseLeave={handleSolutionsMouseLeave}
-                              >
-                                 <div className={S.dropdownSection}>
-                                     <Link href="/conta-empresarial" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Conta Empresarial</h4>
-                                         </div>
-                                     </Link>
-                                     <Link href="/antecipacao-de-contratos" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Antecipação de Contratos</h4>
-                                         </div>
-                                     </Link>
-                                     <Link href="/securitizacao-de-recebiveis" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Securitização de Recebíveis</h4>
-                                         </div>
-                                     </Link>
-                                     <Link href="/estruturacao-de-operacoes" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Estruturação de Operações</h4>
-                                         </div>
-                                     </Link>
-                                     <Link href="/estruturacao-customizada" className={S.dropdownItem}>
-                                         <div className={S.itemContent}>
-                                             <h4 className={S.itemTitle}>Estruturação Customizada</h4>
-                                         </div>
-                                     </Link>
-                                 </div>
-                             </div>
-                         )}
-                    </div>
-                    <Link className={S.menuItem} href="/calculadora-simulacao">
-                        Calculadora
-                    </Link>
-                    <Link className={S.menuItem} href="/avaliacoes">
-                        Avaliações
-                    </Link>
-                    <Link className={S.menuItem} href="/parceiros">
-                        Parceiros
-                    </Link>
-                    <Link className={S.menuItem} href="/perguntas-frequentes">
-                        FAQ
-                    </Link>
-                    <div className={S.langSelect}>
-                        <span className={S.flagIcon}>
-                            {FLAG_SVGS[selected.flag]}
-                        </span>
-                        <span
-                            className={`${S.arrowCircle} ${showLangs ? S.arrowActive : ''}`}
-                            onClick={() => setShowLangs(v => !v)}
+                    <div className={S.menu}>
+                        <div 
+                            className={`${S.menuItemDropdown} ${showSecuritizacao ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleSecuritizacaoMouseEnter}
+                            onMouseLeave={handleSecuritizacaoMouseLeave}
                         >
-                            <IconChevronDown className={S.arrowDown} />
-                        </span>
-                        {showLangs && (
-                            <div
-                                className={S.langDropdown}
-                                onMouseLeave={() => setShowLangs(false)}
-                            >
-                                {LANGS.map((lang) => (
-                                    <div
-                                        key={lang.code}
-                                        className={`${S.langOption} ${lang.code === selectedLang ? S.langActive : ''}`}
-                                        onClick={() => handleChangeLang(lang.code)}
-                                    >
-                                        <span>{lang.label}</span>
+                            <span className={S.menuItem}>
+                                Securitização
+                            </span>
+                            {showSecuritizacao && (
+                                <div 
+                                    className={S.solutionsDropdown}
+                                    onMouseEnter={handleSecuritizacaoMouseEnter}
+                                    onMouseLeave={handleSecuritizacaoMouseLeave}
+                                >
+                                    <div className={S.dropdownHeader}>
+                                        <h3 className={S.dropdownTitle}>Produtos de Securitização</h3>
+                                        <p className={S.dropdownSubtitle}>Soluções completas para transformar seus recebíveis em capital</p>
                                     </div>
-                                ))}
-                            </div>
-                        )}
+                                    
+                                    <div className={S.dropdownGrid}>
+                                        <Link href="/securitizacao-de-recebiveis" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconShield />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Securitização de Recebíveis</h4>
+                                                <p className={S.itemDescription}>Transforme recebíveis em capital de giro com segurança e agilidade</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/estruturacao-customizada" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconSettings />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Estruturação Customizada</h4>
+                                                <p className={S.itemDescription}>Soluções personalizadas e sob medida para seu negócio</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    
+                                    <div className={S.dropdownFooter}>
+                                        <Link href="/securitizacao-de-recebiveis" className={S.viewAllLink}>
+                                            Ver todos os produtos →
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        <Link className={S.menuItem} href="/antecipacao-de-contratos">
+                            Antecipação
+                        </Link>
+                        <div 
+                            className={`${S.menuItemDropdown} ${showRecursos ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleRecursosMouseEnter}
+                            onMouseLeave={handleRecursosMouseLeave}
+                        >
+                            <span className={S.menuItem}>
+                                Recursos
+                            </span>
+                            {showRecursos && (
+                                <div 
+                                    className={S.solutionsDropdown}
+                                    onMouseEnter={handleRecursosMouseEnter}
+                                    onMouseLeave={handleRecursosMouseLeave}
+                                >
+                                    <div className={S.dropdownHeader}>
+                                        <h3 className={S.dropdownTitle}>Recursos e Investimentos</h3>
+                                        <p className={S.dropdownSubtitle}>Ferramentas e oportunidades para fazer seu dinheiro render</p>
+                                    </div>
+                                    
+                                    <div className={S.dropdownGrid}>
+                                        <Link href="/calculadora-simulacao" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconCalculator />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Calculadora de Simulação</h4>
+                                                <p className={S.itemDescription}>Simule rendimentos e operações financeiras de forma rápida e precisa</p>
+                                            </div>
+                                        </Link>
+                                        
+                                        <Link href="/conta-investimentos" className={S.dropdownItem}>
+                                             <div className={S.itemIcon}>
+                                                 <IconTrendingUp />
+                                             </div>
+                                             <div className={S.itemContent}>
+                                                 <h4 className={S.itemTitle}>Conta de Investimentos</h4>
+                                                 <p className={S.itemDescription}>Oportunidades de investimento seguro com rentabilidade garantida</p>
+                                             </div>
+                                         </Link>
+                                        
+                                        <Link href="/perguntas-frequentes" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconHelp />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>FAQ</h4>
+                                                <p className={S.itemDescription}>Perguntas frequentes e suporte especializado para você</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    
+                                    <div className={S.dropdownFooter}>
+                                        <Link href="/recursos" className={S.viewAllLink}>
+                                            Ver todos os recursos →
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        <div 
+                            className={`${S.menuItemDropdown} ${showEmpresa ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleEmpresaMouseEnter}
+                            onMouseLeave={handleEmpresaMouseLeave}
+                        >
+                            <span className={S.menuItem}>
+                                Empresa
+                            </span>
+                            {showEmpresa && (
+                                <div 
+                                    className={S.solutionsDropdown}
+                                    onMouseEnter={handleEmpresaMouseEnter}
+                                    onMouseLeave={handleEmpresaMouseLeave}
+                                >
+                                    <div className={S.dropdownHeader}>
+                                        <h3 className={S.dropdownTitle}>Nossa Empresa</h3>
+                                        <p className={S.dropdownSubtitle}>Conheça mais sobre a Confia Digital e nossos valores</p>
+                                    </div>
+                                    
+                                    <div className={S.dropdownGrid}>
+                                        <Link href="/sobre-nos" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconSettings />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Sobre Nós</h4>
+                                                <p className={S.itemDescription}>Nossa história, missão e valores que nos guiam</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/avaliacoes" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconStar />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Avaliações</h4>
+                                                <p className={S.itemDescription}>Veja o que nossos clientes dizem sobre nossos serviços</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    
+                                    <div className={S.dropdownFooter}>
+                                        <Link href="/sobre-nos" className={S.viewAllLink}>
+                                            Conheça nossa empresa →
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
-                    <Button width="190px" onClick={e => handleSmoothScroll(e, 'agendamento')} typeStyle="btn1" size="sm" label={t('menu.cta')} />
                 </div>
-            </div>
+                
+                <div className={S.actionButtons}>
+                    <Button 
+                        width="190px" 
+                        onClick={e => handleSmoothScroll(e, 'solicitar-agora')} 
+                        typeStyle="btn1" 
+                        size="sm" 
+                        label="Simular operação" 
+                    />
+                </div>
             </div>
             {(drawerOpen || drawerClosing) && (
                 <>
@@ -259,78 +372,119 @@ const Navbar = () => {
                     />
                     <div className={drawerClosing ? `${S.drawer} ${S.drawerClosing}` : S.drawer}>
                         <div className={S.drawerHeader}>
-                            <div className={S.drawerLogo}>
+                            <Link href="/" className={S.drawerLogo} onClick={handleCloseDrawer}>
                                 <img className={S.drawerLogoImg} src={IMAGE.LOGO.src} alt="Capital Digital" />
-                            </div>
+                            </Link>
                             <button className={S.closeBtn} onClick={handleCloseDrawer}>
                                 <IconX size={32} />
                             </button>
                         </div>
                         <div className={S.drawerMenu}>
                             <div className={S.drawerLinks}>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Início
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/conta-empresarial"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Conta Empresarial
-                                </Link>
+                                <div className={S.drawerSubmenu}>
+                                    <div 
+                                        className={S.drawerSubmenuTitle}
+                                        onClick={() => setMobileSecuritizacaoOpen(!mobileSecuritizacaoOpen)}
+                                    >
+                                        <span>Securitização</span>
+                                        <IconChevronDown 
+                                            className={`${S.submenuArrow} ${mobileSecuritizacaoOpen ? S.submenuArrowOpen : ''}`}
+                                        />
+                                    </div>
+                                    {mobileSecuritizacaoOpen && (
+                                        <div className={S.drawerSubmenuItems}>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/securitizacao-de-recebiveis"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Securitização de Recebíveis
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/estruturacao-customizada"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Estruturação Customizada
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
+                                
                                 <Link
                                     className={S.menuItem}
                                     href="/antecipacao-de-contratos"
                                     onClick={handleCloseDrawer}
                                 >
-                                    Antecipação de Contratos
+                                    Antecipação
                                 </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/securitizacao-de-recebiveis"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Securitização de Recebíveis
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/estruturacao-de-operacoes"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Estruturação de Operações
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/calculadora-simulacao"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Calculadora
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/avaliacoes"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Avaliações
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/parceiros"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Parceiros
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/perguntas-frequentes"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    FAQ
-                                </Link>
+                                
+                                <div className={S.drawerSubmenu}>
+                                    <div 
+                                        className={S.drawerSubmenuTitle}
+                                        onClick={() => setMobileRecursosOpen(!mobileRecursosOpen)}
+                                    >
+                                        <span>Recursos</span>
+                                        <IconChevronDown 
+                                            className={`${S.submenuArrow} ${mobileRecursosOpen ? S.submenuArrowOpen : ''}`}
+                                        />
+                                    </div>
+                                    {mobileRecursosOpen && (
+                                        <div className={S.drawerSubmenuItems}>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/calculadora-simulacao"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Calculadora de Simulação
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/conta-investimentos"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Conta de Investimentos
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/perguntas-frequentes"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                FAQ
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
+                                
+                                <div className={S.drawerSubmenu}>
+                                    <div 
+                                        className={S.drawerSubmenuTitle}
+                                        onClick={() => setMobileEmpresaOpen(!mobileEmpresaOpen)}
+                                    >
+                                        <span>Empresa</span>
+                                        <IconChevronDown 
+                                            className={`${S.submenuArrow} ${mobileEmpresaOpen ? S.submenuArrowOpen : ''}`}
+                                        />
+                                    </div>
+                                    {mobileEmpresaOpen && (
+                                        <div className={S.drawerSubmenuItems}>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/sobre-nos"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Sobre Nós
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/avaliacoes"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Avaliações
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
                                 <div className={S.drawerLangWrap}>
                                     <p className={S.menuItemLang}>
                                         {t('menu.language')}
@@ -369,8 +523,7 @@ const Navbar = () => {
                         </div>
                         <div className={S.drawerFooter}>
                             <div className={S.drawerSocials}>
-                                <a href="https://www.instagram.com/igxiasolutions/" target="_blank" className={S.drawerSocialItem}><IconBrandInstagram size={34} /></a>
-                                <a href="https://www.linkedin.com/company/102209808/admin/dashboard/" target="_blank" className={S.drawerSocialItem}><IconBrandLinkedin size={34} /></a>
+                                <a href="https://www.instagram.com/confiacapitaloficial?igsh=c3JtaGJkdXh0Z2Z5" target="_blank" className={S.drawerSocialItem}><IconBrandInstagram size={34} /></a>
                             </div>
                             <div className={S.drawerCopyright}>
                                 {t('footer.copyright', { year: getCurrentYear() })}
