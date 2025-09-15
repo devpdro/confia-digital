@@ -6,9 +6,9 @@
     border-radius: 24px;
     margin: 2rem 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1184px) {
         padding: 3rem 0;
-        margin: 1.5rem 0;
+        margin: 0rem 0;
         border-radius: 16px;
     }
 }
@@ -17,10 +17,6 @@
     max-width: 1340px;
     margin: 0 auto;
     padding: 0 1.075rem;
-
-    @media (max-width: 768px) {
-        padding: 0 1rem;
-    }
 }
 
 .content {
@@ -32,23 +28,17 @@
     background-color: #98DCD7;
     border-radius: 0 0 200px 0;
 
-    @media (max-width: 1200px) {
-        padding: 3.5rem 3rem;
-    }
-
-    @media (max-width: 968px) {
-        grid-template-columns: 1fr;
+    @media (max-width: 1184px) {
+        grid-template-columns: auto 1fr;
         gap: 2rem;
-        text-align: center;
         padding: 3rem 2.5rem;
     }
 
     @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
         padding: 2.5rem 2rem;
-    }
-
-    @media (max-width: 480px) {
-        padding: 2rem 1.5rem;
     }
 }
 
@@ -59,28 +49,17 @@
     flex-shrink: 0;
 
     img {
-
+        @media (max-width: 768px) {
+            width: 130px;
+        }
     }
-    
-    @media (max-width: 968px) {
+
+    @media (max-width: 1184px) {
         justify-content: center;
     }
 }
 
-.icon {
-    width: 120px;
-    height: 120px;
 
-    @media (max-width: 768px) {
-        width: 100px;
-        height: 100px;
-    }
-
-    @media (max-width: 480px) {
-        width: 80px;
-        height: 80px;
-    }
-}
 
 .textContent {
     display: flex;
@@ -94,19 +73,15 @@
     font-weight: 600;
     line-height: 40px;
 
-    @media (max-width: 1200px) {
-        font-size: 32px;
-        line-height: 40px;
+    @media (max-width: 1184px) {
+        font-size: 34px;
+        line-height: 34px;
     }
 
     @media (max-width: 768px) {
-        font-size: 28px;
-        line-height: 36px;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 24px;
-        line-height: 32px;
+        text-align: left;
+        font-size: 34px;
+        line-height: 34px;
     }
 }
 
@@ -127,13 +102,13 @@
         vertical-align: super;
     }
 
-    @media (max-width: 768px) {
-        font-size: 16px;
-        line-height: 26px;
+    @media (max-width: 1184px) {
+        font-size: 17px;
+        line-height: 25px;
     }
 
-    @media (max-width: 480px) {
-        font-size: 15px;
+    @media (max-width: 768px) {
+        font-size: 16px;
         line-height: 24px;
     }
 }
@@ -144,84 +119,4 @@
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s ease;
-}
-
-// Animações de entrada
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.iconWrapper {
-    animation: scaleIn 0.6s ease-out;
-}
-
-.textContent {
-    animation: fadeInRight 0.8s ease-out 0.2s both;
-}
-
-// Efeito de hover sutil no ícone
-.iconWrapper {
-    transition: transform 0.3s ease;
-
-    &:hover {
-        transform: scale(1.05);
-    }
-}
-
-// Responsividade avançada
-@media (max-width: 640px) {
-    .content {
-        gap: 1.5rem;
-    }
-
-    .section {
-        padding: 2rem 0;
-        margin: 1rem 0;
-    }
-
-    .textContent {
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.75rem;
-    }
-
-    .title br {
-        display: none;
-    }
 }

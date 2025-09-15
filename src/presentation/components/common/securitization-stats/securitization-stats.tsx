@@ -6,8 +6,7 @@ const HeroStats = () => {
             <div className={S.container}>
                 <div className={S.content}>
                     <div className={S.statistic}>
-                        <h2 className={S.number}>R$ 1,8</h2>
-                        <h3 className={S.unit}>bilhões+</h3>
+                        <h2 className={S.number}>R$ 1,8 bilhões</h2>
                         <p className={S.description}>em recebíveis securitizados¹</p>
                     </div>
 

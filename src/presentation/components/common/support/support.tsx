@@ -1,4 +1,7 @@
+import Link from 'next/link';
+
 import { IMAGE } from 'src/presentation/assets';
+
 import S from './support.module.scss';
 
 const Support = () => {
@@ -18,8 +21,8 @@ const Support = () => {
 
                             <p className={S.paragraph}>
                                 Acesse relatórios de performance em tempo real através da nossa plataforma{' '}
-                                <a href="#" className={S.link}>HotSys</a> ou consulte nosso{' '}
-                                <a href="#" className={S.link}>Centro de Conhecimento</a>.
+                                <a href="https://hotsys.com.br/#/login" target="_blank" rel="noopener noreferrer" className={S.link}>HotSys</a> ou consulte nosso{' '}
+                                <Link href="/perguntas-frequentes" className={S.link}>Painel de dúvidas</Link>.
                             </p>
                         </div>
                     </div>

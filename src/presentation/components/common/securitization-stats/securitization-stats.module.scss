@@ -14,10 +14,6 @@
     max-width: 1340px;
     margin: 0 auto;
     padding: 0 1.075rem;
-
-    @media (max-width: 768px) {
-        padding: 0 1rem;
-    }
 }
 
 .content {
@@ -26,9 +22,14 @@
     align-items: center;
     gap: 2.075rem;
 
-    @media (max-width: 968px) {
+    @media (max-width: 1184px) {
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 1.575rem;
         text-align: center;
     }
 }
@@ -38,8 +39,8 @@
     flex-direction: column;
     align-items: flex-start;
 
-    @media (max-width: 968px) {
-        align-items: center;
+    @media (max-width: 1184px) {
+        align-items: flex-start;
     }
 }
 
@@ -48,15 +49,16 @@
     font-size: 72px;
     font-weight: 600;
     line-height: 72px;
-}
 
-.unit {
-    color: #010553;
-    font-size: 72px;
-    font-weight: 600;
-    line-height: 72px;
-    margin: 0 0 0.5rem 0;
+    @media (max-width: 1184px) {
+        font-size: 35px;
+        line-height: 35px;
+    }
 
+    @media (max-width: 768px) {
+        font-size: 42px;
+        line-height: 42px;
+    }
 }
 
 .description {
@@ -65,14 +67,14 @@
     line-height: 36px;
     font-weight: 400;
 
+    @media (max-width: 1184px) {
+        font-size: 17px;
+        line-height: 25px;
+    }
+
     @media (max-width: 768px) {
         font-size: 16px;
         line-height: 22px;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 14px;
-        line-height: 20px;
     }
 }
 
@@ -88,19 +90,14 @@
     line-height: 36px;
     font-weight: 400;
 
-    @media (max-width: 1200px) {
-        font-size: 22px;
-        line-height: 32px;
+    @media (max-width: 1184px) {
+        font-size: 17px;
+        line-height: 25px;
     }
 
     @media (max-width: 768px) {
-        font-size: 20px;
-        line-height: 30px;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 18px;
-        line-height: 28px;
+        font-size: 16px;
+        line-height: 24px;
     }
 }
 
@@ -135,23 +132,4 @@
 
 .text {
     animation: fadeInRight 0.8s ease-out 0.2s both;
-}
-
-// Efeito de brilho sutil no número removido para corrigir visibilidade
-
-// Responsividade avançada
-@media (max-width: 640px) {
-    .content {
-        gap: 2rem;
-    }
-
-    .section {
-        padding: 2.5rem 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.75rem;
-    }
 }

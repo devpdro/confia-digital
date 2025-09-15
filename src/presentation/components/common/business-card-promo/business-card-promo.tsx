@@ -1,6 +1,7 @@
+import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
+
 import S from './business-card-promo.module.scss';
-import { Button } from '../../form';
 
 const BusinessCardPromo = () => {
     return (
@@ -8,7 +9,7 @@ const BusinessCardPromo = () => {
             <div className={S.container}>
                 <div className={S.content}>
                     <div className={S.iconWrapper}>
-                        <img src={IMAGE.PLANTA_DINHEIRO.src} alt="" />
+                        <img src={IMAGE.PLANTA_DINHEIRO.src} alt="Ícone de planta crescendo com dinheiro representando crescimento financeiro" />
                     </div>
 
                     <div className={S.textContent}>

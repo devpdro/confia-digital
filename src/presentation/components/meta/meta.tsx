@@ -12,14 +12,14 @@ export type MetaProps = {
   twitterSite?: string
 }
 
-const DEFAULT_TITLE = 'Securitizadora | Transforme recebíveis em capital imediato'
+const DEFAULT_TITLE = 'Transforme recebíveis em capital imediato | Confia Capital'
 const DEFAULT_DESCRIPTION = 'Securitização de recebíveis com liquidação em até 48h. Operações estruturadas que transformam duplicatas e contratos em capital sem impactar o balanço.'
 const DEFAULT_KEYWORDS = 'securitização de recebíveis, antecipação de duplicatas, cessão fiduciária, capital de giro, securitizadora CVM, liquidez empresarial, certificados de recebíveis, CRI CRA, operações estruturadas, transformar recebíveis em dinheiro'
-const DEFAULT_IMAGE = 'https://suasecuritizadora.com/og-home.png'
+const DEFAULT_IMAGE = 'http://confiacapital.com.br/og-home.png'
 const DEFAULT_OG_TYPE = 'website'
-const DEFAULT_OG_SITE_NAME = 'Securitizadora'
+const DEFAULT_OG_SITE_NAME = 'Confia Capital'
 const DEFAULT_TWITTER_CARD = 'summary_large_image'
-const DEFAULT_TWITTER_SITE = '@securitizadora'
+const DEFAULT_TWITTER_SITE = '@confiacapital'
 
 const Meta = ({
   title,

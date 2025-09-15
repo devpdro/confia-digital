@@ -11,7 +11,8 @@ const Footer = () => {
                         <div className={S.navLinks}>
                             <Link href="/sobre-nos" className={S.navLink}>Sobre nós</Link>
                             <Link href="/parceiros" className={S.navLink}>Parceiros</Link>
-                            <Link href="/avaliacoes" className={S.navLink}>Avaliações de clientes</Link>
+                            <Link href="/avaliacoes" className={S.navLink}>Avaliações</Link>
+                            <Link href="/intranet" className={S.navLink}>Intranet</Link>
                         </div>
                     </div>
 
