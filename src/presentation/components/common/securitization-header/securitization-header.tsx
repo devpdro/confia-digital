@@ -26,7 +26,7 @@ const SecuritizationHeader = () => {
                         </div>
                         <div className={S.trust}>
                             <p className={S.disclaimer}>
-                                Relatórios mensais de performance. Acompanhamento em tempo real através de nossa plataforma proprietária HotSys.
+                                Relatórios mensais de performance. Acompanhamento em tempo real através de nossa plataforma proprietária <a href="https://hotsys.com.br/#/login" target="_blank" rel="noopener noreferrer" className={S.link}>HotSys</a>.
                             </p>
                         </div>
                     </div>

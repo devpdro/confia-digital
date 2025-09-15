@@ -1,38 +1,42 @@
+import { Button } from '../../form';
+import Link from 'next/link';
 import S from './cta-cards.module.scss';
 
-const CTACards = () => {
-    const cards = [
-        {
-            id: 'capital',
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="#1a237e" strokeWidth="2" fill="none"/>
-                    <circle cx="8" cy="12" r="2" fill="#1a237e"/>
-                    <path d="M14 10h4M14 14h4" stroke="#1a237e" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M2 8h20" stroke="#1a237e" strokeWidth="2"/>
-                </svg>
-            ),
-            title: "Precisa de acesso contínuo ao capital?",
-            description: "Obtenha uma linha de crédito rotativa para cobrir grandes despesas e expandir seu negócio.",
-            buttonText: "Saber mais",
-            backgroundColor: "blue"
-        },
-        {
-            id: 'sba',
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="6" width="18" height="12" rx="2" stroke="#1a237e" strokeWidth="2" fill="none"/>
-                    <rect x="7" y="2" width="10" height="4" rx="1" stroke="#1a237e" strokeWidth="2" fill="none"/>
-                    <path d="M7 10h10M7 14h8" stroke="#1a237e" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-            ),
-            title: "Procurando financiamento da SBA?",
-            description: "Fizemos uma parceria com a Fundera by NerdWallet para ajudar você a acessar empréstimos SBA 7(a) de até US$ 350.000.",
-            buttonText: "Entre em contato com as vendas",
-            backgroundColor: "purple"
-        }
-    ];
+const cards = [
+    {
+        id: 'recebiveis',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 17L12 22L22 17" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 12L12 17L22 12" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: "Transforme recebíveis em capital imediato",
+        description: "Securitização de duplicatas e contratos a partir de R$ 500 mil. Liquidez em até 48h sem comprometer o balanço patrimonial.",
+        buttonText: "Securitizar recebíveis",
+        link: "/securitizacao-de-recebiveis",
+        backgroundColor: "blue"
+    },
+    {
+        id: 'antecipacao',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#1a237e" strokeWidth="2" />
+                <polyline points="12,6 12,12 16,14" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M16 2L20 6L16 10" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20 6H12" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: "Antecipe contratos assinados hoje mesmo",
+        description: "Receba de R$ 50K a R$ 2M no mesmo dia. Contratos de prestação de serviços viram capital em até 6 horas úteis.",
+        buttonText: "Antecipar contratos",
+        link: "/antecipacao-de-contratos",
+        backgroundColor: "purple"
+    }
+];
 
+const CTACards = () => {
     return (
         <section className={S.section}>
             <div className={S.container}>
@@ -43,14 +47,19 @@ const CTACards = () => {
                                 <div className={S.iconWrapper}>
                                     {card.icon}
                                 </div>
-                                
+
                                 <h3 className={S.title}>{card.title}</h3>
-                                
+
                                 <p className={S.description}>{card.description}</p>
-                                
-                                <button className={S.button}>
-                                    {card.buttonText}
-                                </button>
+
+                                <Link href={card.link}>
+                                    <Button
+                                        typeStyle="btn1"
+                                        label={card.buttonText}
+                                        size="md"
+                                        width="250px"
+                                    />
+                                </Link>
                             </div>
                         </div>
                     ))}

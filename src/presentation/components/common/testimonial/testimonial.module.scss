@@ -4,8 +4,12 @@
     width: 100%;
     padding: 4rem 0;
 
+    @media (max-width: 1184px) {
+        padding: 2.075rem 0 5.075rem 0;
+    }
+
     @media (max-width: 768px) {
-        padding: 3rem 0;
+        padding: 1.575rem 0 3.075rem 0;
     }
 }
 
@@ -15,10 +19,6 @@
     padding: 0 1.075rem;
     display: flex;
     justify-content: center;
-
-    @media (max-width: 768px) {
-        padding: 0 1rem;
-    }
 }
 
 .card {
@@ -34,40 +34,24 @@
     position: relative;
     overflow: hidden;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-        pointer-events: none;
-    }
-
     @media (max-width: 768px) {
         padding: 2.5rem;
-        border-radius: 24px;
-    }
-
-    @media (max-width: 480px) {
-        padding: 2rem;
-        border-radius: 20px;
+        border-radius: 2px 150px 2px 150px;
     }
 }
 
 .quoteIcon {
     margin-bottom: 2rem;
-    
+
     svg {
         width: 48px;
         height: 48px;
         opacity: 0.8;
     }
-    
+
     @media (max-width: 768px) {
         margin-bottom: 1.5rem;
-        
+
         svg {
             width: 40px;
             height: 40px;
@@ -83,18 +67,15 @@
     margin: 0 0 3rem 0;
     font-family: 'Domine', sans-serif;
 
-    @media (max-width: 1200px) {
-        font-size: 24px;
+    @media (max-width: 1184px) {
+        font-size: 25px;
+        line-height: 38px;
     }
 
     @media (max-width: 768px) {
-        font-size: 20px;
-        margin-bottom: 2rem;
-    }
-
-    @media (max-width: 480px) {
         font-size: 18px;
-        margin-bottom: 1.5rem;
+        line-height: 27px;
+        margin-bottom: 2rem;
     }
 }
 
@@ -127,12 +108,14 @@
     line-height: 48px;
     font-weight: 700;
 
-    @media (max-width: 768px) {
-        font-size: 18px;
+    @media (max-width: 1184px) {
+        font-size: 12px;
+        line-height: 18px;
     }
 
-    @media (max-width: 480px) {
-        font-size: 16px;
+    @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 21px;
     }
 }
 
@@ -143,12 +126,14 @@
     line-height: 36px;
     font-family: 'Domine', sans-serif;
 
-    @media (max-width: 768px) {
-        font-size: 15px;
+    @media (max-width: 1184px) {
+        font-size: 17px;
+        line-height: 25px;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         font-size: 14px;
+        line-height: 21px;
     }
 }
 
@@ -163,7 +148,7 @@
         width: 20px;
         height: 20px;
     }
-    
+
     @media (max-width: 480px) {
         svg {
             width: 18px;
@@ -179,8 +164,14 @@
     font-weight: 600;
     white-space: nowrap;
 
-    @media (max-width: 480px) {
+    @media (max-width: 1184px) {
         font-size: 13px;
+        line-height: 13px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 16px;
     }
 }
 
@@ -190,6 +181,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -201,6 +193,7 @@
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -226,7 +219,7 @@
 // Hover effects
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 12px 40px rgba(26, 35, 126, 0.15);
@@ -238,7 +231,7 @@
     .section {
         padding: 2rem 0;
     }
-    
+
     .author {
         gap: 1rem;
     }

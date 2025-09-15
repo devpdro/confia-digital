@@ -63,7 +63,7 @@ const ReceivablesSecuritization = () => (
         <OperationSteps />
         <Support />
         <FAQ title="Perguntas frequentes sobre securitização de recebíveis." items={FAQ_DATA} />
-        <CTA 
+        <CTA
             title="Estruture sua operação de securitização hoje mesmo."
             subtitle="Nossa equipe especializada analisa seus recebíveis e apresenta a melhor estrutura em até 48h."
             buttonLabel="Solicitar análise"

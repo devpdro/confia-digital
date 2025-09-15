@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'src/i18n/i18n';
 
-import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp } from '@tabler/icons-react';
+import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers } from '@tabler/icons-react';
 
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
@@ -293,6 +293,16 @@ const Navbar = () => {
                                                 <p className={S.itemDescription}>Tire suas dúvidas sobre securitização e nossos serviços</p>
                                             </div>
                                         </Link>
+                                        
+                                        <Link href="/intranet" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconSettings />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Intranet</h4>
+                                                <p className={S.itemDescription}>Portal com ferramentas e recursos úteis</p>
+                                            </div>
+                                        </Link>
                                     </div>
                                     
                                     <div className={S.dropdownFooter}>
@@ -339,6 +349,16 @@ const Navbar = () => {
                                             <div className={S.itemContent}>
                                                 <h4 className={S.itemTitle}>Avaliações</h4>
                                                 <p className={S.itemDescription}>Veja o que nossos clientes dizem sobre nossos serviços</p>
+                                            </div>
+                                        </Link>
+                                        
+                                        <Link href="/parceiros" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconUsers />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Parceiros</h4>
+                                                <p className={S.itemDescription}>Conheça nossa rede de parceiros estratégicos</p>
                                             </div>
                                         </Link>
                                     </div>
@@ -452,6 +472,13 @@ const Navbar = () => {
                                             >
                                                 Perguntas Frequentes
                                             </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/intranet"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Intranet
+                                            </Link>
                                         </div>
                                     )}
                                 </div>
@@ -481,6 +508,13 @@ const Navbar = () => {
                                                 onClick={handleCloseDrawer}
                                             >
                                                 Avaliações
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/parceiros"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Parceiros
                                             </Link>
                                         </div>
                                     )}

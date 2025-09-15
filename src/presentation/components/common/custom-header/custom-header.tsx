@@ -1,8 +1,9 @@
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
-import S from './contract-header.module.scss';
 
-const ContractHeader = () => {
+import S from './custom-header.module.scss';
+
+const CustomHeader = () => {
     return (
         <section className={S.header}>
             <div className={S.wrapper}>
@@ -12,10 +13,10 @@ const ContractHeader = () => {
                             Estruturação sob medida
                         </span>
                         <h1 className={S.title}>
-                            Contratos hoje. Dinheiro hoje.
+                            Operações sob medida que transformam seu negócio.
                         </h1>
                         <p className={S.description}>
-                            R$ 50K a R$ 2M liberados no mesmo dia. Zero burocracia, zero espera. Seus contratos assinados viram capital em 6 horas.
+                            Operações customizadas a partir de R$ 5 milhões. CRI e CRA sob medida com condições negociadas e garantias especiais para maximizar seus resultados.
                         </p>
                         <div className={S.button}>
                             <Button
@@ -31,7 +32,7 @@ const ContractHeader = () => {
                                 <img src={IMAGE.SELO_SECURITIZADORA.src} alt="Registro Securitizadora" />
                             </div>
                             <p className={S.disclaimer}>
-                                Mais de 2.800 contratos antecipados. Taxa média 2.8% ao mês. Aprovação em 6h ou seu dinheiro de volta.
+                                Mais de R$ 150 milhões estruturados. Operações personalizadas com as melhores condições de mercado. Expertise comprovada em CRI e CRA.
                             </p>
                         </div>
                     </div>
@@ -45,4 +46,4 @@ const ContractHeader = () => {
     );
 };
 
-export default ContractHeader;
+export default CustomHeader;

@@ -1,29 +1,46 @@
 import React from 'react';
+import { Button } from 'src/presentation/components';
 import S from './business-services.module.scss';
 
 interface BusinessServicesProps {
     className?: string;
+    title?: string;
+    description?: string;
+    buttonLabel?: string;
+    imageLeft?: boolean;
+    mobileImage?: string;
+    desktopImage?: string;
+    mobileImageAlt?: string;
+    desktopImageAlt?: string;
 }
 
-const BusinessServices: React.FC<BusinessServicesProps> = ({ className }) => {
+const BusinessServices: React.FC<BusinessServicesProps> = ({ 
+    className,
+    title = "Todos os seus serviços de securitização em um só lugar.",
+    description = "Nunca mais dependa de processos burocráticos. Transforme recebíveis rapidamente, acompanhe operações, gerencie investidores e economize tempo com nossa plataforma integrada — tudo em um painel digital fácil de usar.",
+    buttonLabel = "Explorar plataforma digital",
+    imageLeft = true,
+    mobileImage = "/api/placeholder/200/400",
+    desktopImage = "/api/placeholder/400/300",
+    mobileImageAlt = "Aplicativo móvel Confia Capital",
+    desktopImageAlt = "Dashboard de securitização Confia Capital"
+}) => {
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>
-                <div className={S.content}>
+                <div className={`${S.content} ${!imageLeft ? S.reversed : ''}`}>
                     <div className={S.imageContent}>
-                        <div className={S.devicesContainer}>
-                            <div className={S.phoneDevice}>
+                        <div>
+                            <div>
                                 <img 
-                                    src="/api/placeholder/200/400" 
-                                    alt="Aplicativo móvel Bluevine"
-                                    className={S.phoneImage}
+                                    src={mobileImage} 
+                                    alt={mobileImageAlt}
                                 />
                             </div>
-                            <div className={S.desktopDevice}>
+                            <div>
                                 <img 
-                                    src="/api/placeholder/400/300" 
-                                    alt="Dashboard web Bluevine"
-                                    className={S.desktopImage}
+                                    src={desktopImage} 
+                                    alt={desktopImageAlt}
                                 />
                             </div>
                         </div>
@@ -31,22 +48,22 @@ const BusinessServices: React.FC<BusinessServicesProps> = ({ className }) => {
                     
                     <div className={S.textContent}>
                         <h2 className={S.title}>
-                            Todos os seus serviços bancários empresariais em um só lugar.
+                            {title}
                         </h2>
                         
                         <div className={S.description}>
                             <p className={S.paragraph}>
-                                Nunca mais entre em um banco. Movimente dinheiro rapidamente, 
-                                acompanhe despesas, pague contas e economize tempo com 
-                                integrações de software convenientes — tudo em um painel móvel 
-                                fácil de usar.
+                                {description}
                             </p>
                         </div>
                         
                         <div className={S.ctaContainer}>
-                            <button className={S.ctaButton}>
-                                Explorar a verificação empresarial
-                            </button>
+                            <Button
+                                typeStyle="btn2"
+                                label={buttonLabel}
+                                size="md"
+                                width="260px"
+                            />
                         </div>
                     </div>
                 </div>

@@ -71,14 +71,15 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    color: #0D447E;
+    color: 2px solid #0D447E;
+    border: 2px solid #0D447E;
     border-radius: 5px;
     transition: all 0.25s ease;
 
     width: var(--btn-width, auto);
 
     &:hover {
-        background-color: #010553;
+        background-color: #0D447E;
         color: #fff;
     }
 

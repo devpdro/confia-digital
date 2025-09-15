@@ -7,30 +7,31 @@ const Testimonial = () => {
                 <div className={S.card}>
                     <div className={S.quoteIcon}>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" fill="#1a237e"/>
+                            <path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35l.539-.222.474-.197-.485-1.938-.597.144c-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.318.142-.686.238-1.028.466-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.945-.33.358-.656.734-.909 1.162-.293.408-.492.856-.702 1.299-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539l.025.168.026-.006A4.5 4.5 0 1 0 17.5 10z" fill="#1a237e"/>
                         </svg>
                     </div>
                     
                     <blockquote className={S.quote}>
-                        "Com o Bluevine, passo menos tempo com serviços bancários e mais tempo fazendo o que amo fazer."
+                        "Precisava de capital para um novo empreendimento e os bancos só ofereciam juros absurdos. A Confia Capital estruturou nossos recebíveis de forma inteligente e conseguimos R$ 8 milhões com condições muito melhores. Recomendo de olhos fechados!"
                     </blockquote>
                     
                     <div className={S.author}>
                         <div className={S.authorInfo}>
-                            <h4 className={S.authorName}>Leila B.</h4>
-                            <p className={S.authorCompany}>Grupo Bulling Towne</p>
+                            <h4 className={S.authorName}>Carlos M.</h4>
+                            <p className={S.authorCompany}>Construtora Horizonte</p>
                         </div>
+                        
+                        <div style={{width: '2px', height: '40px', backgroundColor: '#1a237e', margin: '0 1rem'}}></div>
                         
                         <div className={S.serviceTag}>
                             <div className={S.serviceIcon}>
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="4" width="20" height="16" rx="2" fill="#1a237e"/>
-                                    <rect x="4" y="6" width="16" height="2" fill="white"/>
-                                    <rect x="4" y="10" width="8" height="2" fill="white"/>
-                                    <rect x="4" y="14" width="12" height="2" fill="white"/>
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1a237e"/>
+                                    <path d="M2 17L12 22L22 17" fill="#1a237e"/>
+                                    <path d="M2 12L12 17L22 12" fill="#1a237e"/>
                                 </svg>
                             </div>
-                            <span className={S.serviceText}>Serviços profissionais</span>
+                            <span className={S.serviceText}>Estruturação CRI</span>
                         </div>
                     </div>
                 </div>
