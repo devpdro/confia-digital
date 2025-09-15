@@ -33,6 +33,10 @@ const AWARDS = () => {
                     <h2 className={S.title}>
                         Prêmios e parceiros.
                     </h2>
+                    <h4 className={S.subtitle}>
+                        Somos amplamente reconhecidos pela excelência em securitização de recebíveis,
+                        nossos serviços especializados e parcerias estratégicas sólidas.
+                    </h4>
 
                     {/* Media Logos */}
                     <div className={S.mediaLogos}>

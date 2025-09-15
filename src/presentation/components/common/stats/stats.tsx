@@ -7,7 +7,6 @@ const Stats = () => {
                 <div className={S.content}>
                     <h2 className={S.title}>
                         A referência em securitização de recebíveis no mercado brasileiro¹
-                        {/*A securitizadora que mais cresce no mercado brasileiro¹*/}
                     </h2>
                     <div className={S.grid}>
                         <div className={S.item}>

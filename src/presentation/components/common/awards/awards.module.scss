@@ -5,8 +5,12 @@
     width: 100%;
     padding: 4.075rem 0 5.075rem 0;
 
+    @media (max-width: 1184px) {
+        padding: 2.575rem 0;
+    }
+
     @media (max-width: 768px) {
-        padding: 3rem 0;
+        padding: 2.575rem 0;
     }
 }
 
@@ -14,6 +18,10 @@
     max-width: 1340px;
     margin: 0 auto;
     padding: 0 1.075rem;
+
+    @media (max-width: 1184px) {
+        padding: 0 2rem;
+    }
 
     @media (max-width: 768px) {
         padding: 0 1rem;
@@ -25,10 +33,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 3rem;
+    gap: 2rem;
 
-    @media (max-width: 768px) {
-        gap: 2rem;
+    @media (max-width: 1184px) {
+        gap: 1.575rem;
     }
 }
 
@@ -38,49 +46,67 @@
     line-height: 72px;
     font-weight: 600;
 
-    @media (max-width: 1200px) {
-        font-size: 40px;
+    @media (max-width: 1184px) {
+        font-size: 30px;
+        line-height: 30px;
     }
 
     @media (max-width: 768px) {
-        font-size: 32px;
+        font-size: 36px;
+        line-height: 36px;
+    }
+}
+
+.subtitle {
+    color: #010553;
+    font-family: 'Domine', sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    max-width: 800px;
+
+    @media (max-width: 1184px) {
+        font-size: 15px;
+        line-height: 23px;
     }
 
-    @media (max-width: 480px) {
-        font-size: 28px;
+    @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 27px;
     }
 }
 
 .mediaLogos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 3rem;
-    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
     margin: 2.075rem 0;
 
-    @media (max-width: 968px) {
+    @media (max-width: 1184px) {
         gap: 2rem;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
 }
 
 .logoImage {
-    width: 150px;
+    width: 100%;
+    max-width: 180px;
+    height: auto;
     opacity: 1;
     filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2482%) hue-rotate(240deg) brightness(93%) contrast(106%);
 
-    @media (max-width: 768px) {
-        height: 32px;
-        width: auto;
+    @media (max-width: 1184px) {
+        max-width: 150px;
     }
 
-    @media (max-width: 480px) {
-        height: 28px;
-        width: auto;
+    @media (max-width: 768px) {
+        max-width: 120px;
     }
 }
 
@@ -109,28 +135,26 @@
         left: 0;
     }
 
-    // Removido seletores específicos que conflitavam com width: 400px
-
-    @media (max-width: 968px) {
-
-        .firstRow,
-        .secondRow {
+    @media (max-width: 1184px) {
+        .firstRow {
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
+            gap: 1.5rem;
         }
 
-        .award:nth-child(1),
-        .award:nth-child(2),
-        .award:nth-child(3),
-        .award:nth-child(4),
-        .award:nth-child(5) {
-            flex: 1 1 calc(50% - 1rem);
-            min-width: 250px;
-            max-width: none;
+        .secondRow {
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .award {
+            flex: 1 1 calc(33.333% - 1rem);
+            min-width: 280px;
+            max-width: 350px;
         }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         gap: 2rem;
 
         .firstRow,
@@ -139,11 +163,7 @@
             gap: 1.5rem;
         }
 
-        .award:nth-child(1),
-        .award:nth-child(2),
-        .award:nth-child(3),
-        .award:nth-child(4),
-        .award:nth-child(5) {
+        .award {
             flex: 1 1 100%;
             min-width: auto;
             max-width: none;
@@ -157,7 +177,7 @@
     max-width: 380px;
     gap: 1rem;
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
         gap: 0.75rem;
     }
 }
@@ -170,9 +190,9 @@
     height: 80px;
     flex-shrink: 0;
 
-    @media (max-width: 480px) {
-        width: 48px;
-        height: 48px;
+    @media (max-width: 768px) {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -181,7 +201,6 @@
     height: auto;
     object-fit: contain;
 }
-
 
 .awardContent {
     flex: 1;
@@ -195,12 +214,14 @@
     line-height: 30px;
     margin: 0 0 0.5rem 0;
 
-    @media (max-width: 768px) {
-        font-size: 15px;
+    @media (max-width: 1184px) {
+        font-size: 20px;
+        line-height: 24px;
     }
 
-    @media (max-width: 480px) {
-        font-size: 14px;
+    @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 22px;
     }
 }
 
@@ -211,12 +232,17 @@
     font-weight: 400;
     line-height: 24px;
 
-    @media (max-width: 480px) {
-        font-size: 13px;
+    @media (max-width: 1184px) {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 20px;
     }
 }
 
-// Animações de entrada
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -229,24 +255,8 @@
     }
 }
 
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 .title {
     animation: fadeInUp 0.6s ease-out;
-}
-
-.mediaLogos {
-    animation: fadeInScale 0.6s ease-out 0.2s both;
 }
 
 .award {
@@ -270,54 +280,5 @@
 
     &:nth-child(5) {
         animation-delay: 0.7s;
-    }
-}
-
-// Hover effects removidos
-
-// Responsividade avançada
-@media (max-width: 640px) {
-    .content {
-        gap: 1.5rem;
-    }
-
-    .mediaLogos {
-        margin: 1rem 0;
-        gap: 1rem;
-    }
-
-    .awards {
-        gap: 1rem;
-    }
-}
-
-// Estados de foco para acessibilidade
-.award:focus-within {
-    outline: 2px solid rgba(26, 35, 126, 0.3);
-    outline-offset: 2px;
-}
-
-// Efeitos especiais removidos
-.mediaLogos {
-    // Linha removida conforme solicitado
-}
-
-// Variações de layout para diferentes tamanhos
-@media (min-width: 1200px) {
-    .awards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .award {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .awardContent {
-        text-align: center;
     }
 }

@@ -21,7 +21,7 @@ const CTA = () => {
                             typeStyle="btn2"
                             label="Simular operação"
                             size="md"
-                            width="220px"
+                            width={{ base: "220px", xs: "100%" }}
                         />
 
                         <div className={S.additionalInfo}>
@@ -29,7 +29,7 @@ const CTA = () => {
                                 Tem dúvidas sobre o processo?
                             </p>
                             <p className={S.linkText}>
-                                Acesse nosso <a href="#" className={S.link}>Painel de Dúvidas</a>.
+                                Acesse nosso <a href="/perguntas-frequentes" className={S.link}>Painel de Dúvidas</a>.
                             </p>
                         </div>
                     </div>

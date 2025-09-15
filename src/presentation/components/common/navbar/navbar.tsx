@@ -274,7 +274,7 @@ const Navbar = () => {
                                             </div>
                                         </Link>
                                         
-                                        <Link href="/conta-investimentos" className={S.dropdownItem}>
+                                        <Link href="/investimentos" className={S.dropdownItem}>
                                              <div className={S.itemIcon}>
                                                  <IconTrendingUp />
                                              </div>
@@ -289,8 +289,8 @@ const Navbar = () => {
                                                 <IconHelp />
                                             </div>
                                             <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>FAQ</h4>
-                                                <p className={S.itemDescription}>Perguntas frequentes e suporte especializado para você</p>
+                                                <h4 className={S.itemTitle}>Perguntas Frequentes</h4>
+                                                <p className={S.itemDescription}>Tire suas dúvidas sobre securitização e nossos serviços</p>
                                             </div>
                                         </Link>
                                     </div>
@@ -450,7 +450,7 @@ const Navbar = () => {
                                                 href="/perguntas-frequentes"
                                                 onClick={handleCloseDrawer}
                                             >
-                                                FAQ
+                                                Perguntas Frequentes
                                             </Link>
                                         </div>
                                     )}

@@ -77,7 +77,7 @@ const Products = () => {
                                 typeStyle="btn1"
                                 label="Explore a securitização de recebíveis"
                                 size="sm"
-                                width="330px"
+                                width={{ base: "330px", xs: "100%" }}
                             />
                         </div>
                     </div>
@@ -142,7 +142,7 @@ const Products = () => {
                                 typeStyle="btn1"
                                 label="Explore a antecipação de contratos"
                                 size="sm"
-                                width="330px"
+                                width={{ base: "330px", xs: "100%" }}
                             />
                         </div>
                     </div>
@@ -209,7 +209,7 @@ const Products = () => {
                                 typeStyle="btn1"
                                 label="Explore a estruturação customizada"
                                 size="sm"
-                                width="330px"
+                                width={{ base: "330px", xs: "100%" }}
                             />
                         </div>
                     </div>
