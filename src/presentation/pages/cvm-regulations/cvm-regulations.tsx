@@ -1,89 +1,98 @@
+import { Meta } from "src/presentation/components";
+
 import S from 'src/presentation/styles/shared/policy-page.module.scss';
 
 const CvmRegulations = () => {
     return (
-        <div className={S.page}>
-            <div className={S.container}>
-                <header className={S.header}>
-                    <div className={S.headerWrapper}>
-                        <h1 className={S.title}>Regulamentações CVM</h1>
-                    </div>
-                </header>
-                
-                <div className={S.content}>
-                    <div className={S.contentWrapper}>
-                        <section className={S.section}>
-                            <p className={S.paragraph}>
-                                A <strong>Bluevine Capital Inc.</strong> opera como securitizadora devidamente autorizada pela <strong>Comissão de Valores Mobiliários (CVM)</strong>, cumprindo rigorosamente todas as regulamentações aplicáveis ao mercado de capitais brasileiro.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                Este documento apresenta as principais regulamentações da CVM que regem nossas atividades e como garantimos o cumprimento integral de todas as normas estabelecidas.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Autorização e Registro</h2>
-                            <p className={S.paragraph}>
-                                Nossa empresa possui registro ativo junto à CVM como securitizadora, conforme previsto na Lei nº 9.514/97 e nas Instruções CVM nº 414/04 e suas alterações posteriores.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                Mantemos atualizadas todas as informações cadastrais e operacionais exigidas pela CVM, incluindo demonstrações financeiras, relatórios de atividades e demais documentos regulamentares.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Operações de Securitização</h2>
-                            <p className={S.paragraph}>
-                                Todas as nossas operações de securitização são estruturadas em conformidade com as normas da CVM, garantindo transparência, segregação patrimonial e proteção aos investidores.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                Seguimos rigorosamente os procedimentos de due diligence, análise de crédito e estruturação de operações conforme estabelecido pelas regulamentações vigentes.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Governança Corporativa</h2>
-                            <p className={S.paragraph}>
-                                Adotamos as melhores práticas de governança corporativa estabelecidas pela CVM, incluindo políticas de compliance, gestão de riscos e controles internos.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                Nossa estrutura organizacional atende aos requisitos de independência e qualificação técnica exigidos para administradores e conselheiros de securitizadoras.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Transparência e Divulgação</h2>
-                            <p className={S.paragraph}>
-                                Cumprimos integralmente as obrigações de divulgação de informações estabelecidas pela CVM, mantendo investidores e o mercado informados sobre nossas atividades e performance.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                Publicamos regularmente relatórios financeiros, comunicados ao mercado e demais informações relevantes conforme cronograma estabelecido pela regulamentação.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Compliance e Auditoria</h2>
-                            <p className={S.paragraph}>
-                                Mantemos estrutura robusta de compliance e controles internos, com auditoria independente e monitoramento contínuo do cumprimento das normas regulamentares.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                Realizamos treinamentos periódicos para nossa equipe sobre as regulamentações da CVM e melhores práticas do mercado de capitais.
-                            </p>
-                            
-                            <p className={S.lastUpdated}>
-                                Última atualização das Regulamentações CVM: 10 de abril de 2024.
-                            </p>
-                        </section>
+        <>
+            <Meta
+                title="Regulamentações CVM | Confia Capital"
+                description="Regulamentações da CVM que regem as atividades da Confia Capital Securitizadora. Marco regulatório da securitização no Brasil."
+                keywords="regulamentações CVM, securitização, Lei 9.514/97, Instrução CVM 414/04, CRI, CRA, compliance"
+            />
+            <div className={S.page}>
+                <div className={S.container}>
+                    <header className={S.header}>
+                        <div className={S.headerWrapper}>
+                            <h1 className={S.title}>Regulamentações CVM</h1>
+                        </div>
+                    </header>
+
+                    <div className={S.content}>
+                        <div className={S.contentWrapper}>
+                            <section className={S.section}>
+                                <p className={S.paragraph}>
+                                    A <strong>Confia Capital Securitizadora S.A.</strong> opera em conformidade com as regulamentações da <strong>Comissão de Valores Mobiliários (CVM)</strong>, seguindo rigorosamente todas as normas aplicáveis às operações de securitização de recebíveis no mercado de capitais brasileiro.
+                                </p>
+
+                                <p className={S.paragraph}>
+                                    Este documento apresenta o arcabouço regulatório que rege nossas atividades, demonstrando nosso compromisso com a transparência, proteção aos investidores e integridade do mercado de capitais.
+                                </p>
+                            </section>
+
+                            <section className={S.section}>
+                                <h2 className={S.sectionTitle}>Marco Regulatório da Securitização</h2>
+                                <p className={S.paragraph}>
+                                    Nossas operações são regidas pela <strong>Lei nº 9.514/97</strong> (Lei do SFI), <strong>Instrução CVM nº 414/04</strong> (registro de companhias securitizadoras), <strong>Instrução CVM nº 476/09</strong> (ofertas públicas com esforços restritos) e <strong>Resolução CVM nº 30/21</strong> (sandbox regulatório). Também observamos as diretrizes do <strong>Conselho Monetário Nacional (CMN)</strong> e <strong>Banco Central do Brasil (BACEN)</strong>.
+                                </p>
+
+                                <p className={S.paragraph}>
+                                    Mantemos registro atualizado junto aos órgãos competentes e cumprimos integralmente as obrigações de prestação de informações, incluindo demonstrações financeiras auditadas, relatórios de atividades e comunicações de fatos relevantes conforme cronograma regulatório.
+                                </p>
+                            </section>
+
+                            <section className={S.section}>
+                                <h2 className={S.sectionTitle}>Estruturação de Operações CRI e CRA</h2>
+                                <p className={S.paragraph}>
+                                    Estruturamos <strong>Certificados de Recebíveis Imobiliários (CRI)</strong> e <strong>Certificados de Recebíveis do Agronegócio (CRA)</strong> em conformidade com as Instruções CVM nº 414/04 e 600/18. Todas as operações passam por rigoroso processo de due diligence, incluindo análise de crédito dos sacados, avaliação da dispersão da carteira, verificação da documentação dos recebíveis e estruturação jurídica adequada.
+                                </p>
+
+                                <p className={S.paragraph}>
+                                    Garantimos a <strong>segregação patrimonial</strong> através de patrimônio separado, assegurando que os recebíveis cedidos não se confundam com o patrimônio da securitizadora. Utilizamos agentes fiduciários independentes e mantemos contas centralizadoras para maior transparência e proteção aos investidores, conforme exigido pela regulamentação.
+                                </p>
+                            </section>
+
+                            <section className={S.section}>
+                                <h2 className={S.sectionTitle}>Compliance e Gestão de Riscos</h2>
+                                <p className={S.paragraph}>
+                                    Mantemos estrutura robusta de <strong>compliance</strong> com políticas de prevenção à lavagem de dinheiro (PLD), combate ao financiamento do terrorismo (CFT) e programa de integridade corporativa. Nossa equipe é certificada e treinada regularmente sobre as regulamentações CVM, BACEN e demais normas aplicáveis ao mercado de capitais.
+                                </p>
+
+                                <p className={S.paragraph}>
+                                    Implementamos sistema integrado de <strong>gestão de riscos</strong> abrangendo risco de crédito, mercado, liquidez e operacional. Utilizamos modelos quantitativos para precificação, stress testing e monitoramento contínuo das carteiras, com relatórios periódicos aos órgãos reguladores e comitês internos de risco.
+                                </p>
+                            </section>
+
+                            <section className={S.section}>
+                                <h2 className={S.sectionTitle}>Transparência e Prestação de Informações</h2>
+                                <p className={S.paragraph}>
+                                    Cumprimos rigorosamente as obrigações de <strong>prestação de informações</strong> estabelecidas pela Instrução CVM nº 414/04, incluindo relatórios mensais de atividades, demonstrações financeiras trimestrais e anuais auditadas, e comunicação imediata de fatos relevantes. Mantemos canal direto com investidores através de relatórios de performance das operações.
+                                </p>
+
+                                <p className={S.paragraph}>
+                                    Disponibilizamos no site da CVM e em nossa plataforma digital todos os <strong>documentos obrigatórios</strong>, incluindo prospectos de emissão, termos de securitização, relatórios de classificação de risco e demonstrações financeiras. Garantimos acesso transparente às informações sobre performance das carteiras e eventos de pagamento dos certificados.
+                                </p>
+                            </section>
+
+                            <section className={S.section}>
+                                <h2 className={S.sectionTitle}>Supervisão e Monitoramento Regulatório</h2>
+                                <p className={S.paragraph}>
+                                    Submetemo-nos regularmente à <strong>supervisão da CVM</strong> através de inspeções, análises documentais e monitoramento contínuo de nossas atividades. Mantemos auditoria externa independente credenciada pela CVM e controles internos certificados por organismos reconhecidos. Nossa estrutura de compliance é supervisionada por comitê independente com participação de conselheiros externos.
+                                </p>
+
+                                <p className={S.paragraph}>
+                                    Investimos continuamente em <strong>capacitação técnica</strong> com certificações CPA-20, CEA e CGA para nossa equipe. Participamos ativamente de associações setoriais como ANBIMA e ABECIP, contribuindo para o desenvolvimento das melhores práticas do mercado de securitização. Mantemos canal direto com a CVM para esclarecimentos regulatórios e consultas técnicas.
+                                </p>
+
+                                <p className={S.lastUpdated}>
+                                    Última atualização das Regulamentações CVM: 15 de janeiro de 2024.
+                                </p>
+                            </section>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

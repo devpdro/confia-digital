@@ -33,7 +33,7 @@ const CardActivation = () => {
                         <div className={S.card}>
                             <h3 className={S.cardTitle}>Pelo telefone</h3>
                             <p className={S.cardDescription}>
-                                Ligue para (888) 234-7998 para confirmar os detalhes do seu cartão.
+                                Ligue para "(888) 234-7998" para confirmar os detalhes do seu cartão.
                             </p>
                             <div className={S.cardButton}>
                                 <Button

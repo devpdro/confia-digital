@@ -9,6 +9,7 @@
     width: 100%;
     background-color: #ffffff;
     overflow: hidden;
+    padding: 0 1.075rem;
 
     @media (max-width: 768px) {
         margin: 0;
@@ -19,22 +20,17 @@
     background: #D8E6FF;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    padding: 5.575rem 0 6.575rem;
+    padding: 5.575rem 0 8.075rem 0;
     text-align: left;
 
     @media (max-width: 768px) {
-        padding: 2rem 0;
+        padding: 1.375rem 0 3.475rem 0 !important;
     }
 }
 
 .headerWrapper {
     max-width: 1340px;
     margin: 0 auto;
-    padding: 0 1.075rem;
-
-    @media (max-width: 768px) {
-        padding: 0 1rem;
-    }
 }
 
 .title {
@@ -43,15 +39,16 @@
     font-weight: 600;
     line-height: 56px;
     margin: 0;
+    padding-left: 1.375rem;
+
+    @media (max-width: 1330px) {
+        padding-left: 2.375rem;
+    }
 
     @media (max-width: 768px) {
         font-size: 32px;
         line-height: 40px;
-    }
-
-    @media (max-width: 480px) {
-        font-size: 28px;
-        line-height: 36px;
+        padding-left: 1.375rem;
     }
 }
 
@@ -172,6 +169,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -183,6 +181,7 @@
         opacity: 0;
         transform: scale(0.98);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -205,11 +204,11 @@
 .paragraph {
     // Melhor espaçamento entre palavras
     word-spacing: 0.05em;
-    
+
     // Melhor quebra de linha
     word-break: break-word;
     hyphens: auto;
-    
+
     // Melhor contraste
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -221,15 +220,15 @@
     .container {
         margin: 0;
     }
-    
+
     .header {
         padding: 1.5rem 0;
     }
-    
+
     .content {
         padding: 1.5rem 0;
     }
-    
+
     .headerWrapper,
     .contentWrapper {
         padding: 0 0.75rem;
@@ -242,32 +241,32 @@
         background-color: white;
         padding: 0;
     }
-    
+
     .container {
         box-shadow: none;
         border-radius: 0;
         margin: 0;
     }
-    
+
     .header {
         background: white;
         border-bottom: 2px solid #010553;
     }
-    
+
     .title {
         color: #000;
     }
-    
+
     .sectionTitle {
         color: #000;
         border-bottom-color: #000;
     }
-    
+
     .paragraph {
         color: #000;
         text-align: left;
     }
-    
+
     .lastUpdated {
         background-color: white;
         border-left-color: #000;
