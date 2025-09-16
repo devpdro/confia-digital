@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'src/presentation/components';
 import S from './client-testimonials.module.scss';
 
 interface Testimonial {
@@ -19,109 +20,100 @@ interface ClientTestimonialsProps {
 
 const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) => {
     const [showMore, setShowMore] = useState(false);
-    
+
     const testimonials: Testimonial[] = [
         {
             id: '1',
-            quote: 'Bluevine is made for people who live on the go. Since switching, we\'ve saved countless hours on mobile check deposits.',
+            quote: 'Eu não acreditava que ia conseguir R$ 10 milhões tão rápido. A equipe da Confia é top, me atenderam até no final de semana! Agora posso tocar 3 obras ao mesmo tempo.',
             author: {
-                name: 'Tara P.',
-                title: 'VP & Co-owner',
-                company: 'Timberdoodle Co.',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'João Pedro R.',
+                title: 'Diretor',
+                company: 'JP Construções',
+                avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '2',
-            quote: 'Bluevine\'s dashboard is clean and simple, with all the features I need. And I can manage my checking accounts and bills from one place.',
+            quote: 'Eu estava desconfiado no início, né? Mas depois que vi como funciona a securitização, nossa... mudou tudo! Consegui R$ 5 milhões sem comprometer meu balanço. Agora posso investir pesado na expansão.',
             author: {
-                name: 'Michael T.',
-                title: 'Founder',
-                company: 'Tech & Services',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Ana Paula S.',
+                title: 'Diretora Financeira',
+                company: 'Grupo Inovação',
+                avatar: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '3',
-            quote: 'The connectivity made it worth it — the ability to quickly draw straight to my business checking account and make repayments directly from there. It\'s seamless and I can see everything. I liked the ability to have it all in one place.',
+            quote: 'Cara, a Confia Capital salvou minha empresa! Estava com o caixa apertado e precisava de grana rápido. Em 3 dias consegui R$ 2 milhões antecipando meus contratos. Sem burocracia, sem enrolação.',
             author: {
-                name: 'Graydon Y.',
-                title: 'Tech Lead',
-                company: 'Tech Startup',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Carlos M.',
+                title: 'CEO',
+                company: 'Construtora Horizonte',
+                avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '4',
-            quote: 'Every month, I get a notification that I met the interest requirements, so I know that as money is coming into my account, I\'m also earning interest on it.',
+            quote: 'Mano, que diferença! Os bancos queriam me cobrar 3% ao mês, a Confia conseguiu 1,2%. Economizei mais de R$ 800 mil em juros. O pessoal lá entende do negócio mesmo.',
             author: {
-                name: 'Grace D.',
-                title: 'Owner',
-                company: 'Retail Business',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Roberto L.',
+                title: 'Sócio-Fundador',
+                company: 'TechStart Solutions',
+                avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '5',
-            quote: 'The customer service is exceptional. They\'re always available when I need them and provide solutions quickly.',
+            quote: 'Eu estava com medo de não conseguir por ser uma empresa pequena, mas eles me trataram super bem. Consegui R$ 500 mil e já estou planejando a segunda operação.',
             author: {
-                name: 'Robert K.',
-                title: 'CEO',
-                company: 'Manufacturing Co.',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Fernanda T.',
+                title: 'Sócia',
+                company: 'Consultoria Estratégica',
+                avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '6',
-            quote: 'Bluevine has transformed how we handle our business finances. The integration with our accounting software is seamless.',
+            quote: 'Sinceramente? Melhor decisão que tomei. Estava pagando 2,8% no banco, aqui consegui 1,5%. A diferença no final das contas é absurda. Recomendo de olhos fechados!',
             author: {
-                name: 'Sarah M.',
+                name: 'Patricia K.',
                 title: 'CFO',
-                company: 'Digital Agency',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                company: 'Agência Digital Pro',
+                avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '7',
-            quote: 'The line of credit feature has been a game-changer for our cash flow management. We can access funds instantly when needed.',
+            quote: 'Cara, que processo transparente! Eles me mostraram cada passo, cada taxa, cada prazo. Nada de letra miúda ou surpresa no final. Assim que é bom trabalhar.',
             author: {
-                name: 'David L.',
-                title: 'Founder',
-                company: 'E-commerce Store',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Eduardo M.',
+                title: 'Fundador',
+                company: 'E-commerce Brasil',
+                avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '8',
-            quote: 'What impressed me most is the transparency. No hidden fees, clear terms, and straightforward processes.',
+            quote: 'Olha, eu já tinha tentado em outros lugares e sempre dava problema. Aqui foi diferente - o pessoal me explicou tudo direitinho, sem pegadinha. Em 15 dias estava com a grana na conta.',
             author: {
-                name: 'Jennifer W.',
-                title: 'Owner',
-                company: 'Consulting Firm',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Mariana F.',
+                title: 'Proprietária',
+                company: 'Rede Bella Vista',
+                avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face'
+            }
         },
         {
             id: '9',
-            quote: 'The mobile app is incredibly user-friendly. I can manage everything on the go, which is perfect for my busy schedule.',
+            quote: 'Rapaz, que agilidade! Mandei os documentos na segunda, na quarta já estava tudo aprovado. Nunca vi nada igual. O pessoal da Confia não brinca em serviço.',
             author: {
-                name: 'Carlos R.',
-                title: 'Director',
-                company: 'Construction LLC',
-                avatar: '/api/placeholder/60/60'
-            },
-            readMoreLink: '#'
+                name: 'Marcos V.',
+                title: 'Diretor Geral',
+                company: 'MV Empreendimentos',
+                avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face'
+            }
         }
     ];
-    
+
     const visibleTestimonials = showMore ? testimonials : testimonials.slice(0, 3);
 
     return (
@@ -132,18 +124,18 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
                         <div key={testimonial.id} className={S.testimonialCard}>
                             <div className={S.quoteIcon}>
                                 <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
                                 </svg>
                             </div>
-                            
+
                             <blockquote className={S.quote}>
                                 {testimonial.quote}
                             </blockquote>
-                            
+
                             <div className={S.authorInfo}>
                                 <div className={S.authorAvatar}>
-                                    <img 
-                                        src={testimonial.author.avatar} 
+                                    <img
+                                        src={testimonial.author.avatar}
                                         alt={testimonial.author.name}
                                         className={S.avatarImage}
                                     />
@@ -154,24 +146,23 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
                                     <div className={S.authorCompany}>{testimonial.author.company}</div>
                                 </div>
                             </div>
-                            
-                            {testimonial.readMoreLink && (
-                                <a href={testimonial.readMoreLink} className={S.readMoreLink}>
-                                    Read the story
-                                </a>
-                            )}
                         </div>
                     ))}
+                    
+
                 </div>
-                
-                <div className={S.showMoreContainer}>
-                    <button 
-                        className={S.showMoreButton}
-                        onClick={() => setShowMore(!showMore)}
-                    >
-                        {showMore ? 'Ver menos' : 'Ver mais'}
-                    </button>
-                </div>
+
+                {!showMore && (
+                    <div className={S.showMoreContainer}>
+                        <Button
+                            typeStyle="btn3"
+                            label="Ver mais depoimentos"
+                            size="md"
+                            width="220px"
+                            onClick={() => setShowMore(true)}
+                        />
+                    </div>
+                )}
             </div>
         </section>
     );

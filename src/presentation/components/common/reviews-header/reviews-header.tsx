@@ -7,17 +7,18 @@ interface PartnersHeaderProps {
 
 const ReviewsHeader: React.FC<PartnersHeaderProps> = ({ className }) => {
     return (
-        <section className={`${S.section} ${className || ''}`}>
-            <div className={S.container}>
-                <div className={S.content}>
-                    <h1 className={S.title}>Depoimentos de clientes.</h1>
-                    <p className={S.subtitle}>
-                        Junte-se a nós para expandir seus negócios e dar aos seus clientes acesso às 
-                        soluções financeiras de que eles precisam.
+        <section className={`${S.header} ${className || ''}`}>
+            <div className={S.wrapper}>
+                <div className={S.centeredContent}>
+                    <div className={S.badge}>
+                        DEPOIMENTOS
+                    </div>
+                    <h1 className={S.title}>
+                        O que nossos clientes dizem.
+                    </h1>
+                    <p className={S.description}>
+                        Conheça as experiências reais de empresas que transformaram seus resultados com nossas soluções financeiras inovadoras e personalizadas.
                     </p>
-                    <button className={S.ctaButton}>
-                        Começar
-                    </button>
                 </div>
             </div>
         </section>

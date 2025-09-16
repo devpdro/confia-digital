@@ -7,40 +7,40 @@ const CardActivation = () => {
             <div className={S.container}>
                 <div className={S.content}>
                     <h2 className={S.title}>
-                        Já é titular de um cartão de crédito empresarial Bluevine ?
+                        Precisa de acesso às nossas plataformas?
                     </h2>
                     
                     <p className={S.description}>
-                        Aqui estão duas maneiras simples de ativar seu novo Bluevine Business Cashback Mastercard.
+                        Aqui estão duas maneiras simples de solicitar acesso ou resolver problemas com suas credenciais.
                     </p>
                     
                     <div className={S.cards}>
                         <div className={S.card}>
-                            <h3 className={S.cardTitle}>On-line</h3>
+                            <h3 className={S.cardTitle}>Por e-mail</h3>
                             <p className={S.cardDescription}>
-                                Entre e ative no seu painel do Bluevine.
+                                Envie um e-mail solicitando acesso ou recuperação de credenciais.
                             </p>
                             <div className={S.cardButton}>
                                 <Button
                                     typeStyle="btn1"
-                                    label="Ativar cartão"
+                                    label="Solicitar acesso"
                                     size="sm"
-                                    width="140px"
+                                    width="200px"
                                 />
                             </div>
                         </div>
                         
                         <div className={S.card}>
-                            <h3 className={S.cardTitle}>Pelo telefone</h3>
+                            <h3 className={S.cardTitle}>WhatsApp</h3>
                             <p className={S.cardDescription}>
-                                Ligue para "(888) 234-7998" para confirmar os detalhes do seu cartão.
+                                Entre em contato via WhatsApp para suporte rápido e direto.
                             </p>
                             <div className={S.cardButton}>
                                 <Button
                                     typeStyle="btn1"
-                                    label="Ligue agora"
+                                    label="Entrar em contato"
                                     size="sm"
-                                    width="140px"
+                                    width="200px"
                                 />
                             </div>
                         </div>

@@ -1,7 +1,21 @@
 import { IMAGE } from 'src/presentation/assets';
 import S from './credit-access.module.scss';
 
-const CREDIT_ACCESS_DATA = [
+interface CreditAccessCard {
+    image: any;
+    alt: string;
+    title: string;
+    description: string;
+    link?: string;
+}
+
+interface CreditAccessProps {
+    title?: string;
+    subtitle?: string;
+    cards?: CreditAccessCard[];
+}
+
+const DEFAULT_CREDIT_ACCESS_DATA = [
     {
         image: IMAGE.PAPEL,
         alt: "Ícone de documentos e papéis",
@@ -22,31 +36,48 @@ const CREDIT_ACCESS_DATA = [
     }
 ];
 
-const CreditAccess = () => {
+const CreditAccess: React.FC<CreditAccessProps> = ({ 
+    title = "Acesso rápido e fácil a uma linha de crédito empresarial.",
+    subtitle = "Acesse o financiamento flexível que você precisa para administrar e expandir seu negócio sem problemas, com taxas de juros competitivas e pagamentos automáticos.",
+    cards = DEFAULT_CREDIT_ACCESS_DATA
+}) => {
     return (
         <section className={S.section}>
             <div className={S.container}>
                 <div className={S.content}>
                     <div className={S.header}>
                         <h2 className={S.title}>
-                            Acesso rápido e fácil a uma linha de crédito empresarial.
+                            {title}
                         </h2>
                         <p className={S.subtitle}>
-                            Acesse o financiamento flexível que você precisa para administrar e expandir seu negócio sem problemas,
-                            com taxas de juros competitivas e pagamentos automáticos.
+                            {subtitle}
                         </p>
                     </div>
 
                     <div className={S.cards}>
-                        {CREDIT_ACCESS_DATA.map((item, index) => (
+                        {cards.map((item: CreditAccessCard, index: number) => (
                             <div key={index} className={S.card}>
-                                <div className={S.iconWrapper}>
-                                    <img src={item.image.src} alt={item.alt} />
-                                </div>
-                                <h3 className={S.cardTitle}>{item.title}</h3>
-                                <p className={S.cardDescription}>
-                                    {item.description}
-                                </p>
+                                {item.link ? (
+                                    <a href={item.link} target="_blank" rel="noopener noreferrer" className={S.cardLink}>
+                                        <div className={S.iconWrapper}>
+                                            <img src={item.image.src} alt={item.alt} />
+                                        </div>
+                                        <h3 className={S.cardTitle}>{item.title}</h3>
+                                        <p className={S.cardDescription}>
+                                            {item.description}
+                                        </p>
+                                    </a>
+                                ) : (
+                                    <>
+                                        <div className={S.iconWrapper}>
+                                            <img src={item.image.src} alt={item.alt} />
+                                        </div>
+                                        <h3 className={S.cardTitle}>{item.title}</h3>
+                                        <p className={S.cardDescription}>
+                                            {item.description}
+                                        </p>
+                                    </>
+                                )}
                             </div>
                         ))}
                     </div>

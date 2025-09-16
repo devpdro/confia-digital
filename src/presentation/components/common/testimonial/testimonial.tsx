@@ -1,6 +1,26 @@
 import S from './testimonial.module.scss';
 
-const Testimonial = () => {
+interface TestimonialProps {
+    quote?: string;
+    authorName?: string;
+    authorCompany?: string;
+    serviceText?: string;
+    serviceIcon?: React.ReactNode;
+}
+
+const Testimonial: React.FC<TestimonialProps> = ({
+    quote = "Precisava de capital para um novo empreendimento e os bancos só ofereciam juros absurdos. A Confia Capital estruturou nossos recebíveis de forma inteligente e conseguimos R$ 8 milhões com condições muito melhores. Recomendo de olhos fechados!",
+    authorName = "Carlos M.",
+    authorCompany = "Construtora Horizonte",
+    serviceText = "Estruturação CRI",
+    serviceIcon = (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1a237e"/>
+            <path d="M2 17L12 22L22 17" fill="#1a237e"/>
+            <path d="M2 12L12 17L22 12" fill="#1a237e"/>
+        </svg>
+    )
+}) => {
     return (
         <section className={S.section}>
             <div className={S.container}>
@@ -12,26 +32,22 @@ const Testimonial = () => {
                     </div>
                     
                     <blockquote className={S.quote}>
-                        "Precisava de capital para um novo empreendimento e os bancos só ofereciam juros absurdos. A Confia Capital estruturou nossos recebíveis de forma inteligente e conseguimos R$ 8 milhões com condições muito melhores. Recomendo de olhos fechados!"
+                        "{quote}"
                     </blockquote>
                     
                     <div className={S.author}>
                         <div className={S.authorInfo}>
-                            <h4 className={S.authorName}>Carlos M.</h4>
-                            <p className={S.authorCompany}>Construtora Horizonte</p>
+                            <h4 className={S.authorName}>{authorName}</h4>
+                            <p className={S.authorCompany}>{authorCompany}</p>
                         </div>
                         
                         <div style={{width: '2px', height: '40px', backgroundColor: '#1a237e', margin: '0 1rem'}}></div>
                         
                         <div className={S.serviceTag}>
                             <div className={S.serviceIcon}>
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1a237e"/>
-                                    <path d="M2 17L12 22L22 17" fill="#1a237e"/>
-                                    <path d="M2 12L12 17L22 12" fill="#1a237e"/>
-                                </svg>
+                                {serviceIcon}
                             </div>
-                            <span className={S.serviceText}>Estruturação CRI</span>
+                            <span className={S.serviceText}>{serviceText}</span>
                         </div>
                     </div>
                 </div>
