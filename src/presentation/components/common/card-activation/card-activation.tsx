@@ -1,4 +1,4 @@
-import { Button } from 'src/presentation/components';
+import { Button } from 'src/presentation/components/form';
 import Link from 'next/link';
 import S from './card-activation.module.scss';
 
@@ -27,7 +27,7 @@ const CardActivation: React.FC<CardActivationProps> = ({
             title: "WhatsApp",
             description: "Entre em contato via WhatsApp para suporte rápido e direto.",
             buttonLabel: "Entrar em contato",
-            buttonLink: "https://wa.me/5511999999999"
+            buttonLink: "https://wa.me/5511987654321"
         }
     ]
 }) => {

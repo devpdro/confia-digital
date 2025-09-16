@@ -69,6 +69,40 @@
     }
 }
 
+.cardButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+    
+    button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(13, 68, 126, 0.25);
+        }
+        
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

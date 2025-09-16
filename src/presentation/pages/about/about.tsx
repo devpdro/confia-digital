@@ -26,12 +26,12 @@ const About = () => {
                         title: "Fale conosco",
                         description: "Entre em contato direto com nossa equipe para esclarecer dúvidas sobre nossa empresa.",
                         buttonLabel: "Entrar em contato",
-                        buttonLink: "mailto:contato@confiacapital.com.br"
+                        buttonLink: "https://wa.me/5511987654321?text=Olá! Gostaria de saber mais sobre a Confia Capital."
                     },
                     {
-                        title: "Agende uma reunião",
-                        description: "Marque uma conversa com nossos especialistas para conhecer nossas soluções.",
-                        buttonLabel: "Agendar reunião",
+                        title: "Solicite uma proposta",
+                        description: "Preencha nosso formulário e receba uma proposta personalizada para sua empresa.",
+                        buttonLabel: "Solicitar proposta",
                         buttonLink: "/solicitar-proposta"
                     }
                 ]}

@@ -16,9 +16,7 @@ const ClientReviews = () => {
                 description="Junte-se a centenas de empresas que já descobriram como acelerar o crescimento com nossas soluções financeiras personalizadas. Desde startups até grandes corporações, nossos clientes conquistam resultados excepcionais."
                 buttonLabel="Simular operação"
                 imageLeft={false}
-                mobileImage="/api/placeholder/200/400"
                 desktopImage="/api/placeholder/400/300"
-                mobileImageAlt="Aplicativo Confia Capital - Resultados"
                 desktopImageAlt="Dashboard de performance - Confia Capital"
             />
             <HelpCompany />
