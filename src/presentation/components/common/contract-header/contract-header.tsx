@@ -9,7 +9,7 @@ const ContractHeader = () => {
                 <div className={S.grid}>
                     <div className={S.text}>
                         <span className={S.subtitle}>
-                            Estruturação sob medida
+                            Antecipação de contratos
                         </span>
                         <h1 className={S.title}>
                             Contratos hoje. Dinheiro hoje.

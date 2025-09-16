@@ -1,0 +1,438 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: 100vh;
+
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+}
+
+// Lado Esquerdo - Informações
+.leftColumn {
+    background: #0A0F5C;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+
+    @media (max-width: 968px) {
+        order: 1;
+        padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+    }
+}
+
+.leftContent {
+    max-width: 500px;
+    margin: 0 0 0 auto;
+    width: 100%;
+    padding-right: 2rem;
+
+    @media (max-width: 968px) {
+        margin: 0 auto;
+        padding-right: 0;
+    }
+}
+
+.title {
+    color: #fff;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+
+    @media (max-width: 1200px) {
+        font-size: 36px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+}
+
+.benefitsList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+}
+
+.benefitItem {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 0.575rem;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        margin-bottom: 1rem;
+    }
+}
+
+.checkIcon {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(215, 231, 255);
+
+    svg {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.trustBadges {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.badge {
+    text-align: center;
+}
+
+.badgeText {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.badgeSubtext {
+    display: block;
+    font-size: 12px;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: rgb(255, 255, 255);
+    opacity: 0.7;
+    
+    p {
+        margin: 0 0 0.75rem 0;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Lado Direito - Formulário
+.rightColumn {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+
+    @media (max-width: 968px) {
+        order: 2;
+        padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+    }
+}
+
+.rightContent {
+    max-width: 450px;
+    margin: 0 auto 0 0;
+    width: 100%;
+    padding-left: 2rem;
+
+    @media (max-width: 968px) {
+        margin: 0 auto;
+        padding-left: 0;
+    }
+}
+
+.contactInfo {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 2rem;
+
+    @media (max-width: 968px) {
+        text-align: center;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formGroup {
+    position: relative;
+}
+
+.input {
+    width: 100%;
+    padding: 1rem 0 0.75rem 0;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-bottom-color: #0A0F5C;
+    }
+
+    &.inputError {
+        border-bottom-color: #dc3545;
+    }
+
+    &::placeholder {
+        color: #999;
+    }
+
+    // Remove default select styling
+    &[type="select"] {
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23999" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 0.5rem center;
+        background-size: 12px;
+        padding-right: 2rem;
+    }
+}
+
+select.input {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23999" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 12px;
+    padding-right: 2rem;
+}
+
+.passwordWrapper {
+    position: relative;
+}
+
+.eyeButton {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 0.5rem;
+    
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        color: #666;
+    }
+}
+
+.checkboxGroup {
+    margin: 1rem 0;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #666;
+}
+
+.checkbox {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.checkboxText {
+    flex: 1;
+}
+
+.link {
+    color: #0A0F5C;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+        color: #080A40;
+        text-decoration: none;
+    }
+}
+
+.primaryButton {
+    background: #0A0F5C;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    &:hover:not(:disabled) {
+        background: #080A40;
+    }
+
+    &:disabled {
+        background: #9CA3AF;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+
+    &.loading {
+        background: #9CA3AF;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.separator {
+    text-align: center;
+    position: relative;
+    margin: 1.5rem 0;
+    color: #999;
+    font-size: 14px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #E0E0E0;
+        z-index: 1;
+    }
+
+    span {
+        background: white;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.secondaryButton {
+    background: #28A745;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: #218838;
+    }
+}
+
+// Animações
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.leftContent {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.rightContent {
+    animation: fadeInRight 0.8s ease-out 0.2s both;
+}
+
+.errorMessage {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.inputError {
+    border-bottom-color: #dc3545 !important;
+}

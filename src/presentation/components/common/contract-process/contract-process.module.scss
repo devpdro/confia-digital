@@ -1,0 +1,184 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 4rem 0;
+
+    @media (max-width: 1184px) {
+        padding: 1.575rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @media (max-width: 1184px) {
+        gap: 1.5rem;
+    }
+}
+
+.title {
+    text-align: left;
+    color: #010553;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 72px;
+
+    @media (max-width: 1184px) {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 36px;
+        line-height: 36px;
+        text-align: center;
+    }
+}
+
+.subtitle {
+    text-align: left;
+    font-family: 'Domine', sans-serif;
+    color: rgb(2, 5, 83);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    margin-top: 0.5rem;
+
+    @media (max-width: 1184px) {
+        font-size: 17px;
+        line-height: 25px;
+        margin-top: 0rem;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 0rem;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    img {
+        width: 550px;
+        border-radius: 300px 300px 0 0;
+    }
+
+    @media (max-width: 768px) {
+        order: -1;
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+.steps {
+    display: flex;
+    gap: 3.075rem;
+    align-items: center;
+    flex-direction: column;
+}
+
+.step {
+    display: flex;
+    gap: 1.575rem;
+    align-items: flex-start;
+}
+
+.stepNumber {
+    background: none;
+    border: 3px solid #010553;
+    color: #010553;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1.075rem;
+
+    @media (max-width: 1184px) {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.stepContent {
+    flex: 1;
+    padding-top: 2px;
+}
+
+.stepTitle {
+    color: #010553;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 1.575rem;
+
+    @media (max-width: 1184px) {
+        font-size: 27px;
+        line-height: 27px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
+
+.stepDescription {
+    color: rgb(2, 5, 83);
+    font-family: 'Domine', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+
+    @media (max-width: 1184px) {
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        line-height: 23px;
+    }
+}

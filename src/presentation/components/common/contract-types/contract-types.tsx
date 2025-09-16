@@ -6,88 +6,82 @@ const ContractTypes = () => {
             <div className={S.container}>
                 <div className={S.content}>
                     <h2 className={S.title}>
-                        Descubra o melhor financiamento para o seu negócio.
+                        Tipos de contratos que antecipamos.
                     </h2>
                     
                     <div className={S.grid}>
                         {/* Primeira linha - 3 cards */}
                         <div className={S.card}>
-                            <div className={S.iconWrapper}>
-                                <svg viewBox="0 0 48 48" className={S.icon}>
-                                    <circle cx="24" cy="24" r="20" fill="#1a237e"/>
-                                    <path d="M24 8v8M24 32v8M8 24h8M32 24h8" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                                    <circle cx="24" cy="24" r="6" fill="white"/>
-                                    <text x="24" y="28" textAnchor="middle" fill="#1a237e" fontSize="8" fontWeight="bold">$</text>
-                                </svg>
-                            </div>
-                            <h3 className={S.cardTitle}>Acesse o financiamento que você precisa</h3>
+                            <svg viewBox="0 0 48 48" className={S.icon}>
+                                <path d="M6 8h36v32H6z" fill="#010553"/>
+                                <path d="M10 12h28M10 16h24M10 20h20M10 24h16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                                <circle cx="38" cy="12" r="2" fill="white"/>
+                                <path d="M12 30l6 6 12-12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            <h3 className={S.cardTitle}>Contratos de Prestação de Serviços</h3>
                             <p className={S.cardDescription}>
-                                Empréstimos comerciais com taxas de juros e condições de pagamento competitivas.
+                                Consultorias, assessorias, serviços técnicos e profissionais com parcelas mensais definidas.
                             </p>
                         </div>
 
                         <div className={S.card}>
-                            <div className={S.iconWrapper}>
-                                <svg viewBox="0 0 48 48" className={S.icon}>
-                                    <circle cx="24" cy="24" r="20" fill="#1a237e"/>
-                                    <path d="M16 20h16M20 16v16M28 16v16" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                                    <circle cx="24" cy="24" r="4" fill="white"/>
-                                    <path d="M20 28l4-4 4 4" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3 className={S.cardTitle}>Economize tempo com uma aplicação fácil</h3>
+                            <svg viewBox="0 0 48 48" className={S.icon}>
+                                <rect x="8" y="10" width="32" height="28" rx="4" fill="#010553"/>
+                                <rect x="12" y="14" width="24" height="16" rx="2" fill="white"/>
+                                <path d="M14 17h8M14 20h12M14 23h6" stroke="#010553" strokeWidth="1.5" strokeLinecap="round"/>
+                                <circle cx="30" cy="17" r="1.5" fill="#010553"/>
+                                <rect x="12" y="32" width="6" height="4" rx="1" fill="white"/>
+                                <rect x="20" y="32" width="6" height="4" rx="1" fill="white"/>
+                                <rect x="28" y="32" width="8" height="4" rx="1" fill="white"/>
+                            </svg>
+                            <h3 className={S.cardTitle}>Mensalidades de Software</h3>
                             <p className={S.cardDescription}>
-                                Uma única solicitação de empréstimo empresarial e decisão rápida.*
+                                SaaS, licenças de software, plataformas digitais e sistemas com cobrança recorrente.
                             </p>
                         </div>
 
                         <div className={S.card}>
-                            <div className={S.iconWrapper}>
-                                <svg viewBox="0 0 48 48" className={S.icon}>
-                                    <path d="M24 4L4 14v20c0 11.1 7.68 19.48 18 22 10.32-2.52 18-10.9 18-22V14L24 4z" fill="#1a237e"/>
-                                    <circle cx="24" cy="26" r="8" fill="white"/>
-                                    <path d="M20 26l3 3 6-6" stroke="#1a237e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3 className={S.cardTitle}>Aplicar sem impacto no crédito pessoal</h3>
+                            <svg viewBox="0 0 48 48" className={S.icon}>
+                                <path d="M10 12h28v24H10z" fill="#010553"/>
+                                <path d="M14 16h20M14 20h16M14 24h12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                                <path d="M20 28h8" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                                <circle cx="32" cy="20" r="6" fill="white"/>
+                                <path d="M29 17l2 2 4-4" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                <path d="M24 6l-4 6 4 6 4-6z" fill="#010553"/>
+                            </svg>
+                            <h3 className={S.cardTitle}>Contratos de Manutenção</h3>
                             <p className={S.cardDescription}>
-                                Envie uma solicitação sem impacto no seu crédito pessoal.
+                                Manutenção predial, equipamentos, sistemas e serviços continuados com pagamento parcelado.
                             </p>
                         </div>
 
                         {/* Segunda linha - 2 cards centralizados */}
                         <div className={S.card}>
-                            <div className={S.iconWrapper}>
-                                <svg viewBox="0 0 48 48" className={S.icon}>
-                                    <circle cx="24" cy="24" r="20" fill="#1a237e"/>
-                                    <path d="M14 24h20M24 14v20" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-                                    <circle cx="18" cy="18" r="3" fill="white"/>
-                                    <circle cx="30" cy="18" r="3" fill="white"/>
-                                    <circle cx="18" cy="30" r="3" fill="white"/>
-                                    <circle cx="30" cy="30" r="3" fill="white"/>
-                                    <path d="M16 32c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" strokeWidth="2" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3 className={S.cardTitle}>Ganhe liberdade e flexibilidade</h3>
+                            <svg viewBox="0 0 48 48" className={S.icon}>
+                                <rect x="6" y="14" width="36" height="20" rx="3" fill="#010553"/>
+                                <path d="M10 18h28M10 22h24M10 26h20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                                <circle cx="24" cy="6" r="4" fill="#010553"/>
+                                <path d="M24 10l-8 4M24 10l8 4M24 10v4" stroke="#010553" strokeWidth="2" strokeLinecap="round"/>
+                                <path d="M12 38l6-6 6 6M30 38l6-6 6 6" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            <h3 className={S.cardTitle}>Contratos de Marketing</h3>
                             <p className={S.cardDescription}>
-                                Use seu empréstimo para qualquer coisa, desde investimentos até reserva de fluxo de pagamento e muito mais.
+                                Publicidade, marketing digital, campanhas e serviços de comunicação com parcelas definidas.
                             </p>
                         </div>
 
                         <div className={S.card}>
-                            <div className={S.iconWrapper}>
-                                <svg viewBox="0 0 48 48" className={S.icon}>
-                                    <circle cx="24" cy="24" r="20" fill="#1a237e"/>
-                                    <path d="M12 24l6 6 12-12" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                    <circle cx="16" cy="16" r="2" fill="white"/>
-                                    <circle cx="32" cy="16" r="2" fill="white"/>
-                                    <circle cx="24" cy="32" r="2" fill="white"/>
-                                    <path d="M20 12h8M16 20h16M20 36h8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                                </svg>
-                            </div>
-                            <h3 className={S.cardTitle}>Abra novas oportunidades</h3>
+                            <svg viewBox="0 0 48 48" className={S.icon}>
+                                <path d="M8 16h32v20H8z" fill="#010553"/>
+                                <path d="M12 20h24M12 24h20M12 28h16M12 32h12" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                                <path d="M24 4l-8 12h16z" fill="#010553"/>
+                                <circle cx="24" cy="10" r="2" fill="white"/>
+                                <rect x="20" y="38" width="8" height="6" fill="#010553"/>
+                                <path d="M16 38h4M28 38h4" stroke="#010553" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                            <h3 className={S.cardTitle}>Contratos Governamentais</h3>
                             <p className={S.cardDescription}>
-                                Empresas de propriedade de mulheres, empresas de propriedade de minorias e empreendedores veteranos são incentivados a se inscrever.
+                                Contratos com órgãos públicos municipais, estaduais e federais com condições especiais.
                             </p>
                         </div>
                     </div>

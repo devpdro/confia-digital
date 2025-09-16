@@ -5,34 +5,32 @@ const CreditBenefits = () => {
         {
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                    <path d="M12 6v6l4 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+            ),
+            title: "Aprovação em 6 horas",
+            description: "Análise rápida e aprovação no mesmo dia útil para você ter o dinheiro quando precisar."
+        },
+        {
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1v6m0 6v6m6-12h-6m-6 0h6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                     <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M8 12h8M12 8v8" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
             ),
-            title: "Sem anuidade",
-            description: "Invista menos em taxas anuais e mais em escala e crescimento."
+            title: "Taxa média 2,8% ao mês",
+            description: "Condições competitivas do mercado com transparência total nos custos da operação."
         },
         {
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="white" strokeWidth="2" fill="none"/>
-                    <circle cx="8" cy="12" r="2" fill="white"/>
-                    <path d="M14 10h4M14 14h4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M2 8h20" stroke="white" strokeWidth="2"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.66 0 3.22.45 4.56 1.23" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             ),
-            title: "1,5% de dinheiro de volta",
-            description: "Ganhe 1,5% de dinheiro de volta ilimitado em compras comerciais diárias."
-        },
-        {
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3v18l4-4 4 4 4-4 4 4V3" stroke="white" strokeWidth="2" fill="none"/>
-                    <path d="M7 8h10M7 12h8M7 16h6" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-            ),
-            title: "Construir crédito empresarial",
-            description: "Melhore o crédito da sua empresa com pagamentos consistentes e pontuais."
+            title: "Sem garantias pessoais",
+            description: "Operação baseada na qualidade do seu contrato, sem necessidade de avalistas ou garantias."
         }
     ];
 
@@ -42,9 +40,9 @@ const CreditBenefits = () => {
                 <div className={S.content}>
                     <div className={S.titleSection}>
                         <h2 className={S.title}>
-                            Economize, ganhe<br />
-                            e construa seu<br />
-                            crédito comercial.
+                            Antecipe contratos<br />
+                            e tenha dinheiro<br />
+                            no mesmo dia.
                         </h2>
                     </div>
                     
