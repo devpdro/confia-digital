@@ -26,7 +26,7 @@ const About = () => {
                         title: "Fale conosco",
                         description: "Entre em contato direto com nossa equipe para esclarecer dúvidas sobre nossa empresa.",
                         buttonLabel: "Entrar em contato",
-                        buttonLink: "https://wa.me/5511987654321?text=Olá! Gostaria de saber mais sobre a Confia Capital."
+                        buttonLink: "https://wa.me/5511987654321?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Confia%20Capital."
                     },
                     {
                         title: "Solicite uma proposta",

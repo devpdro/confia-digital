@@ -1,4 +1,5 @@
 import { IMAGE } from 'src/presentation/assets';
+import { motion } from 'framer-motion';
 
 import S from './partners-target.module.scss';
 
@@ -29,28 +30,97 @@ const PartnersTarget: React.FC<PartnersTargetProps> = ({ className }) => {
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>
-                <div className={S.content}>
-                    <div className={S.textContent}>
-                        <h2 className={S.title}>Quem é nosso parceiro?</h2>
-                        <ul className={S.partnerList}>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <motion.div 
+                        className={S.textContent}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                    >
+                        <motion.h2 
+                            className={S.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                        >
+                            Quem é nosso parceiro?
+                        </motion.h2>
+                        <motion.ul 
+                            className={S.partnerList}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                        >
                             {partnerTypes.map((partner, index) => (
-                                <li key={index} className={S.partnerItem}>
-                                    <span className={S.bullet}>•</span>
+                                <motion.li 
+                                    key={index} 
+                                    className={S.partnerItem}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.5, 
+                                        ease: "easeOut", 
+                                        delay: 0.5 + (index * 0.05) 
+                                    }}
+                                    whileHover={{ 
+                                        x: 5, 
+                                        transition: { duration: 0.2, ease: "easeOut" } 
+                                    }}
+                                >
+                                    <motion.span 
+                                        className={S.bullet}
+                                        initial={{ opacity: 0, scale: 0.5 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.3, 
+                                            ease: "easeOut", 
+                                            delay: 0.6 + (index * 0.05) 
+                                        }}
+                                    >
+                                        •
+                                    </motion.span>
                                     <span className={S.partnerName}>{partner.name}</span>
-                                </li>
+                                </motion.li>
                             ))}
-                        </ul>
-                    </div>
-                    <div className={S.imageContent}>
-                        <div className={S.imageContainer}>
+                        </motion.ul>
+                    </motion.div>
+                    <motion.div 
+                        className={S.imageContent}
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                    >
+                        <motion.div 
+                            className={S.imageContainer}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                            whileHover={{ 
+                                scale: 1.02, 
+                                transition: { duration: 0.3, ease: "easeOut" } 
+                            }}
+                        >
                             <img 
-                                src={IMAGE.HOMEM_COMPUTADOR.src}
-                                alt="Profissional trabalhando no computador"
+                                src={IMAGE.PESSOA_OLHANDO_FOLHA.src}
+                                alt="Profissional analisando documentos - Diversos tipos de parceiros"
                                 className={S.image}
                             />
-                        </div>
-                    </div>
-                </div>
+                        </motion.div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import S from './intranet-platforms.module.scss';
 import { Button } from '../../form';
 
@@ -57,34 +58,105 @@ const IntranetPlatforms: React.FC<IntranetPlatformsProps> = ({
     return (
         <section className={S.section} data-section="intranet-platforms">
             <div className={S.container}>
-                <div className={S.content}>
-                    <div className={S.cards}>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                >
+                    <motion.div 
+                        className={S.cards}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    >
                         {platforms.map((platform, index) => (
-                            <div key={index} className={S.card}>
+                            <motion.div 
+                                key={index} 
+                                className={S.card}
+                                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 0.6, 
+                                    ease: "easeOut", 
+                                    delay: 0.3 + (index * 0.1) 
+                                }}
+                                whileHover={{ 
+                                    y: -8, 
+                                    scale: 1.02,
+                                    transition: { duration: 0.3, ease: "easeOut" } 
+                                }}
+                            >
                                 <a
                                     href={platform.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={S.cardLink}
                                 >
-                                    <div className={S.iconWrapper}>
+                                    <motion.div 
+                                        className={S.iconWrapper}
+                                        initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                                        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.5, 
+                                            ease: "easeOut", 
+                                            delay: 0.4 + (index * 0.1) 
+                                        }}
+                                    >
                                         {platform.icon}
-                                    </div>
-                                    <h3 className={S.cardTitle}>{platform.title}</h3>
-                                    <p className={S.cardDescription}>
+                                    </motion.div>
+                                    <motion.h3 
+                                        className={S.cardTitle}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.6, 
+                                            ease: "easeOut", 
+                                            delay: 0.5 + (index * 0.1) 
+                                        }}
+                                    >
+                                        {platform.title}
+                                    </motion.h3>
+                                    <motion.p 
+                                        className={S.cardDescription}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.6, 
+                                            ease: "easeOut", 
+                                            delay: 0.6 + (index * 0.1) 
+                                        }}
+                                    >
                                         {platform.description}
-                                    </p>
-                                    <Button
-                                        typeStyle="btn3"
-                                        label="Acessar plataforma"
-                                        size="sm"
-                                        width="240px"
-                                    />
+                                    </motion.p>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 15 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.8, 
+                                            ease: "easeOut", 
+                                            delay: 0.7 + (index * 0.1) 
+                                        }}
+                                    >
+                                        <Button
+                                            typeStyle="btn3"
+                                            label="Acessar plataforma"
+                                            size="sm"
+                                            width="240px"
+                                        />
+                                    </motion.div>
                                 </a>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

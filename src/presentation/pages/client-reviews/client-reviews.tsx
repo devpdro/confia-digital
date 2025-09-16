@@ -1,4 +1,5 @@
 import { Meta, ReviewsHeader, ClientTestimonials, Awards, BusinessServices, HelpCompany, CTA, CTACards } from 'src/presentation/components';
+import { IMAGE } from 'src/presentation/assets';
 
 const ClientReviews = () => {
     return (
@@ -14,17 +15,17 @@ const ClientReviews = () => {
             <BusinessServices
                 title="Transforme seus resultados como nossos clientes."
                 description="Junte-se a centenas de empresas que já descobriram como acelerar o crescimento com nossas soluções financeiras personalizadas. Desde startups até grandes corporações, nossos clientes conquistam resultados excepcionais."
-                buttonLabel="Simular operação"
+                buttonLabel="Solicitar proposta"
                 imageLeft={false}
-                desktopImage="/api/placeholder/400/300"
-                desktopImageAlt="Dashboard de performance - Confia Capital"
+                desktopImage={IMAGE.PESSOAS_SORRINDO.src}
+                desktopImageAlt="Clientes satisfeitos - Empresas que transformaram resultados com Confia Capital"
             />
             <HelpCompany />
             <Awards />
             <CTA
                 title="Pronto para se juntar aos nossos clientes de sucesso?"
                 subtitle="Descubra como centenas de empresas já transformaram seus resultados. Solicite uma proposta personalizada e comece sua jornada de crescimento hoje mesmo."
-                buttonLabel="Simular operação"
+                buttonLabel="Solicitar proposta"
             />
         </div>
     );

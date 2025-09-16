@@ -4,7 +4,8 @@
 .navbar {
     width: 100%;
     background-color: #D8E6FF;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 9999;
 
     .navbarContent {
         display: flex;

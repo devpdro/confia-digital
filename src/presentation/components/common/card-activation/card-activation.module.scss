@@ -71,15 +71,21 @@
 
 .cardButton {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin-top: auto;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
     
     a {
         cursor: pointer;
         text-decoration: none;
         display: inline-block;
         transition: all 0.3s ease;
+        pointer-events: auto;
+        position: relative;
+        z-index: 11;
         
         &:hover {
             transform: translateY(-1px);
@@ -91,6 +97,9 @@
         border: none;
         outline: none;
         transition: all 0.3s ease;
+        pointer-events: auto;
+        position: relative;
+        z-index: 12;
         
         &:hover {
             transform: translateY(-1px);
@@ -124,6 +133,9 @@
     box-shadow: 0 4px 12px rgba(1, 5, 83, 0.08);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
     &::before {
         content: '';
@@ -135,6 +147,8 @@
         background: linear-gradient(135deg, rgba(1, 5, 83, 0.02) 0%, rgba(59, 130, 246, 0.02) 100%);
         opacity: 0;
         transition: opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 1;
     }
 
     &:hover {
@@ -158,6 +172,8 @@
     font-weight: 600;
     line-height: 40px;
     margin: 0 0 1.575rem 0;
+    position: relative;
+    z-index: 5;
 
     @media (max-width: 1184px) {
         font-size: 24px;
@@ -180,6 +196,7 @@
     margin: 0 0 1.575rem 0;
     font-family: 'Domine', sans-serif;
     position: relative;
+    z-index: 5;
 
     @media (max-width: 1184px) {
         font-size: 13px;

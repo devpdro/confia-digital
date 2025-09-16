@@ -1,132 +1,98 @@
-import S from 'src/presentation/styles/shared/policy-page.module.scss';
+import {
+    Meta,
+    InvestmentsHeader,
+    Stats,
+    ContractTypes,
+    Trust,
+    CTACards,
+    CTA,
+} from "src/presentation/components"
 
-const BusinessAccount = () => {
-    return (
-        <div className={S.page}>
-            <div className={S.container}>
-                <header className={S.header}>
-                    <div className={S.headerWrapper}>
-                        <h1 className={S.title}>Conta Empresarial</h1>
-                    </div>
-                </header>
-                
-                <div className={S.content}>
-                    <div className={S.contentWrapper}>
-                        <section className={S.section}>
-                            <p className={S.paragraph}>
-                                A <strong>Conta Empresarial Bluevine</strong> oferece soluções bancárias completas para empresas que buscam eficiência, tecnologia e atendimento especializado para suas operações financeiras.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Benefícios da Conta Empresarial</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Gestão Financeira Integrada:</strong> Plataforma digital completa que integra conta corrente, investimentos, pagamentos e recebimentos em um só lugar.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Taxas Competitivas:</strong> Tarifas reduzidas para operações bancárias, transferências e serviços financeiros, com condições especiais para clientes Bluevine.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Atendimento Especializado:</strong> Gerente de relacionamento dedicado com conhecimento específico do seu segmento de atuação.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Serviços Disponíveis</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Conta Corrente Digital:</strong><br/>
-                                • Movimentação 24/7 via internet banking e app<br/>
-                                • Transferências ilimitadas entre contas Bluevine<br/>
-                                • Extrato em tempo real com categorização automática<br/>
-                                • Cartão de débito empresarial sem anuidade
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Pagamentos e Recebimentos:</strong><br/>
-                                • PIX empresarial com limites elevados<br/>
-                                • Boletos de cobrança personalizados<br/>
-                                • Débito automático para fornecedores<br/>
-                                • Link de pagamento para vendas online
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Investimentos Empresariais</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>CDB Empresarial:</strong> Rentabilidade acima da poupança com liquidez diária para reserva de emergência da empresa.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Fundos de Investimento:</strong> Carteira diversificada de fundos adequados ao perfil de risco e prazo da empresa.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Tesouro Direto:</strong> Investimento em títulos públicos com diferentes prazos e indexadores para planejamento financeiro.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Crédito Empresarial</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Linha de Crédito Pré-Aprovada:</strong> Limite disponível baseado no relacionamento e movimentação da conta, com uso conforme necessidade.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Antecipação de Recebíveis:</strong> Integração direta com as operações de antecipação, facilitando o processo e reduzindo prazos.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Capital de Giro:</strong> Empréstimos para necessidades pontuais com taxas preferenciais para correntistas.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Tecnologia e Segurança</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Plataforma Digital:</strong> Interface intuitiva com dashboard executivo, relatórios gerenciais e integração com sistemas de gestão (ERP).
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Segurança Bancária:</strong> Criptografia de ponta, autenticação multifator e monitoramento 24/7 para proteção das operações.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>API Banking:</strong> Integração via API para empresas que desejam conectar seus sistemas internos com a conta bancária.
-                            </p>
-                        </section>
-                        
-                        <section className={S.section}>
-                            <h2 className={S.sectionTitle}>Como Abrir sua Conta</h2>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Processo 100% Digital:</strong> Abertura de conta em até 24 horas com envio de documentos pela plataforma digital.
-                            </p>
-                            
-                            <p className={S.paragraph}>
-                                <strong>Documentos Necessários:</strong><br/>
-                                • Contrato social atualizado<br/>
-                                • Cartão CNPJ<br/>
-                                • Documentos dos sócios<br/>
-                                • Comprovante de endereço da empresa<br/>
-                                • Faturamento dos últimos 3 meses
-                            </p>
-                            
-                            <p className={S.lastUpdated}>
-                                Informações da Conta Empresarial atualizadas em: 10 de julho de 2024.
-                            </p>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
+const BusinessAccount = () => (
+    <div>
+        <Meta
+            title="Conta Digital e Investimentos HotInvest | Confia Capital"
+            description="Banco digital sem tarifas com investimentos que rendem mais que a poupança. Conta gratuita, cartão sem anuidade e produtos financeiros inteligentes para fazer seu dinheiro crescer."
+            keywords="banco digital, conta digital gratuita, investimentos rentáveis, cartão sem anuidade, transferências gratuitas, rendimento automático, produtos financeiros, conta sem tarifa, HotInvest, banco online, aplicativo financeiro, investir dinheiro"
+            image="http://confiacapital.com.br/og-investimentos.png"
+        />
+        <InvestmentsHeader />
+        <Stats 
+            title="Por que milhões de pessoas escolhem o HotInvest"
+            stats={[
+                {
+                    value: 1000000,
+                    suffix: "+",
+                    label: "clientes ativos",
+                    duration: 3.0
+                },
+                {
+                    value: 0,
+                    prefix: "R$ ",
+                    suffix: "",
+                    label: "taxa de manutenção",
+                    duration: 1.5
+                },
+                {
+                    value: 150,
+                    suffix: "%",
+                    label: "rendimento acima da poupança",
+                    duration: 2.5
+                },
+                {
+                    value: 24,
+                    suffix: "h",
+                    label: "atendimento disponível",
+                    duration: 2.0
+                }
+            ]}
+        />
+        <ContractTypes />
+        <Trust 
+            title="Segurança e confiança que você merece."
+            cards={[
+                {
+                    icon: (
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 12L11 14L15 10" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    ),
+                    title: "Regulamentação Banco Central",
+                    description: "Instituição financeira regulamentada e supervisionada pelo Banco Central do Brasil, seguindo todas as normas de segurança e proteção."
+                },
+                {
+                    icon: (
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="11" width="18" height="10" rx="2" ry="2" stroke="#010553" strokeWidth="2" />
+                            <circle cx="12" cy="16" r="1" fill="#010553" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#010553" strokeWidth="2" />
+                        </svg>
+                    ),
+                    title: "Proteção Total dos Dados",
+                    description: "Criptografia de ponta a ponta, autenticação biométrica e conformidade total com LGPD para máxima segurança das suas informações."
+                },
+                {
+                    icon: (
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M13 8H7" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                            <path d="M17 12H7" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                    ),
+                    title: "Suporte 24h Disponível",
+                    description: "Atendimento humanizado disponível 24 horas por dia através do app, chat online e telefone para resolver qualquer dúvida rapidamente."
+                }
+            ]}
+        />
+        <CTACards />
+        <CTA 
+            title="Abra sua conta digital gratuita agora mesmo."
+            subtitle="Sem tarifas, sem burocracia e com investimentos que rendem mais que a poupança. Comece a fazer seu dinheiro trabalhar para você."
+            buttonLabel="Abrir minha conta"
+            buttonLink="https://hotinvest.dbs.moneyp.com.br/login"
+        />
+    </div>
+)
 
-export default BusinessAccount;
+export default BusinessAccount

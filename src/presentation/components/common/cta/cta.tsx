@@ -13,7 +13,7 @@ interface CTAProps {
 const CTA: React.FC<CTAProps> = ({
     title = "Pronto para transformar seus recebíveis em capital imediato?",
     subtitle = "Faça uma simulação sem compromisso e descubra quanto pode receber pelos seus recebíveis.",
-    buttonLabel = "Simular operação",
+    buttonLabel = "Solicite uma proposta",
     buttonLink = "/solicitar-proposta"
 }) => {
     return (

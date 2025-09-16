@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from 'src/presentation/components';
 import S from './client-testimonials.module.scss';
 
@@ -119,41 +120,108 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>
-                <div className={S.testimonialsGrid}>
-                    {visibleTestimonials.map((testimonial) => (
-                        <div key={testimonial.id} className={S.testimonialCard}>
-                            <div className={S.quoteIcon}>
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
-                                </svg>
-                            </div>
+                <motion.div 
+                    className={S.testimonialsGrid}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <AnimatePresence>
+                        {visibleTestimonials.map((testimonial, index) => (
+                            <motion.div 
+                                key={testimonial.id} 
+                                className={S.testimonialCard}
+                                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 0.6, 
+                                    ease: "easeOut", 
+                                    delay: index * 0.1 
+                                }}
+                                whileHover={{ 
+                                    y: -5, 
+                                    transition: { duration: 0.3, ease: "easeOut" } 
+                                }}
+                            >
+                                <motion.div 
+                                    className={S.quoteIcon}
+                                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.5, 
+                                        ease: "easeOut", 
+                                        delay: (index * 0.1) + 0.2 
+                                    }}
+                                >
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                                    </svg>
+                                </motion.div>
 
-                            <blockquote className={S.quote}>
-                                {testimonial.quote}
-                            </blockquote>
+                                <motion.blockquote 
+                                    className={S.quote}
+                                    initial={{ opacity: 0, y: 15 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.6, 
+                                        ease: "easeOut", 
+                                        delay: (index * 0.1) + 0.3 
+                                    }}
+                                >
+                                    {testimonial.quote}
+                                </motion.blockquote>
 
-                            <div className={S.authorInfo}>
-                                <div className={S.authorAvatar}>
-                                    <img
-                                        src={testimonial.author.avatar}
-                                        alt={testimonial.author.name}
-                                        className={S.avatarImage}
-                                    />
-                                </div>
-                                <div className={S.authorDetails}>
-                                    <div className={S.authorName}>{testimonial.author.name}</div>
-                                    <div className={S.authorTitle}>{testimonial.author.title}</div>
-                                    <div className={S.authorCompany}>{testimonial.author.company}</div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-
-
-                </div>
+                                <motion.div 
+                                    className={S.authorInfo}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.6, 
+                                        ease: "easeOut", 
+                                        delay: (index * 0.1) + 0.4 
+                                    }}
+                                >
+                                    <motion.div 
+                                        className={S.authorAvatar}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.5, 
+                                            ease: "easeOut", 
+                                            delay: (index * 0.1) + 0.5 
+                                        }}
+                                    >
+                                        <img
+                                            src={testimonial.author.avatar}
+                                            alt={testimonial.author.name}
+                                            className={S.avatarImage}
+                                        />
+                                    </motion.div>
+                                    <div className={S.authorDetails}>
+                                        <div className={S.authorName}>{testimonial.author.name}</div>
+                                        <div className={S.authorTitle}>{testimonial.author.title}</div>
+                                        <div className={S.authorCompany}>{testimonial.author.company}</div>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
 
                 {!showMore && (
-                    <div className={S.showMoreContainer}>
+                    <motion.div 
+                        className={S.showMoreContainer}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                    >
                         <Button
                             typeStyle="btn3"
                             label="Ver mais depoimentos"
@@ -161,7 +229,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
                             width="220px"
                             onClick={() => setShowMore(true)}
                         />
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </section>

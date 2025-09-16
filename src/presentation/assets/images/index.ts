@@ -15,6 +15,7 @@ import GRAFENO from './GRAFENO.webp'
 import GRAFICO from './GRAFICO.png'
 import GRAFICO_MONEY from './GRAFICO_MONEY.webp'
 import HEADER from './HEADER.webp'
+import HEADER_IMAGE from './HEADER_IMAGE.jpg'
 import HOMEM_COMPUTADOR from './HOMEM_COMPUTADOR.webp'
 import HOMEM_MACBOOK from './HOMEM_MACBOOK.webp'
 import IDEIAS from './IDEIAS.webp'
@@ -44,6 +45,7 @@ import TERCON from './TERCON.webp'
 import TRES_PESSOAS from './TRES_PESSOAS.webp'
 
 const IMAGE = {
+    HEADER_IMAGE,
     AWARD,
     AWARDS_BAGDES,
     BMP,

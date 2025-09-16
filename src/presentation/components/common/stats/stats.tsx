@@ -39,7 +39,51 @@ const AnimatedCounter = ({ value, suffix = '', prefix = '', duration = 2 }: {
     );
 };
 
-const Stats = () => {
+interface StatItem {
+    value: number;
+    suffix?: string;
+    prefix?: string;
+    label: string;
+    duration?: number;
+}
+
+interface StatsProps {
+    title?: string;
+    stats?: StatItem[];
+}
+
+const DEFAULT_STATS: StatItem[] = [
+    {
+        value: 500,
+        suffix: "+",
+        label: "empresas financiadas",
+        duration: 2.5
+    },
+    {
+        value: 2.8,
+        prefix: "R$ ",
+        suffix: "Bi",
+        label: "em recebíveis estruturados²",
+        duration: 2.8
+    },
+    {
+        value: 48,
+        suffix: "h",
+        label: "tempo médio de liberação",
+        duration: 2.2
+    },
+    {
+        value: 98,
+        suffix: "%",
+        label: "taxa de aprovação³",
+        duration: 2.6
+    }
+];
+
+const Stats: React.FC<StatsProps> = ({ 
+    title = "A referência em securitização de recebíveis no mercado brasileiro¹",
+    stats = DEFAULT_STATS 
+}) => {
     return (
         <section className={S.section}>
             <div className={S.container}>
@@ -57,61 +101,30 @@ const Stats = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                     >
-                        A referência em securitização de recebíveis no mercado brasileiro¹
+                        {title}
                     </motion.h2>
                     
                     <div className={S.grid}>
-                        <motion.div 
-                            className={S.item}
-                            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                        >
-                            <div className={S.number}>
-                                <AnimatedCounter value={500} suffix="+" duration={2.5} />
-                            </div>
-                            <div className={S.label}>empresas financiadas</div>
-                        </motion.div>
-
-                        <motion.div 
-                            className={S.item}
-                            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-                        >
-                            <div className={S.number}>
-                                R$ <AnimatedCounter value={2.8} suffix="Bi" duration={2.8} />
-                            </div>
-                            <div className={S.label}>em recebíveis estruturados²</div>
-                        </motion.div>
-
-                        <motion.div 
-                            className={S.item}
-                            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-                        >
-                            <div className={S.number}>
-                                <AnimatedCounter value={48} suffix="h" duration={2.2} />
-                            </div>
-                            <div className={S.label}>tempo médio de liberação</div>
-                        </motion.div>
-
-                        <motion.div 
-                            className={S.item}
-                            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-                        >
-                            <div className={S.number}>
-                                <AnimatedCounter value={98} suffix="%" duration={2.6} />
-                            </div>
-                            <div className={S.label}>taxa de aprovação³</div>
-                        </motion.div>
+                        {stats.map((stat, index) => (
+                            <motion.div 
+                                key={index}
+                                className={S.item}
+                                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 + (index * 0.1) }}
+                            >
+                                <div className={S.number}>
+                                    <AnimatedCounter 
+                                        value={stat.value} 
+                                        prefix={stat.prefix || ''}
+                                        suffix={stat.suffix || ''} 
+                                        duration={stat.duration || 2.5} 
+                                    />
+                                </div>
+                                <div className={S.label}>{stat.label}</div>
+                            </motion.div>
+                        ))}
                     </div>
                 </motion.div>
             </div>

@@ -35,6 +35,7 @@ const Intranet = () => (
             title="Dúvidas sobre as plataformas?"
             subtitle="Entre em contato conosco para esclarecimentos sobre o uso das ferramentas ou problemas de acesso às plataformas."
             buttonLabel="Entrar em contato"
+            buttonLink="https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Confia%20Digital!"
         />
         <CardActivation />
     </div>

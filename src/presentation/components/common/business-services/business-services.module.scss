@@ -60,6 +60,10 @@
     justify-content: center;
     align-items: center;
 
+    img {
+        border-radius: 250px 0 250px 0;
+    }
+
     @media (max-width: 768px) {
         order: 1;
     }
