@@ -44,7 +44,7 @@ const CTA: React.FC<CTAProps> = ({
                                 Tem dúvidas sobre o processo?
                             </p>
                             <p className={S.linkText}>
-                                Acesse nosso <a href="/perguntas-frequentes" className={S.link}>Painel de Dúvidas</a>.
+                                Acesse nosso <Link href="/perguntas-frequentes" className={S.link}>Painel de Dúvidas</Link>.
                             </p>
                         </div>
                     </div>

@@ -86,7 +86,7 @@ const ContractHeader = () => {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
-                        <img className={S.img} src={IMAGE.HEADER.src} alt="Estruturação customizada de operações" />
+                        <img className={S.img} src={IMAGE.CONTRATO_DINHEIRO.src} alt="Antecipação de contratos - transforme contratos em dinheiro" />
                     </motion.div>
                 </motion.div>
             </div>

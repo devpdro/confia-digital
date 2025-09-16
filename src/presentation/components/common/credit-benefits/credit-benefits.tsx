@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import S from './credit-benefits.module.scss';
 
 const CreditBenefits = () => {
@@ -37,31 +38,84 @@ const CreditBenefits = () => {
     return (
         <section className={S.section}>
             <div className={S.container}>
-                <div className={S.content}>
-                    <div className={S.titleSection}>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.div 
+                        className={S.titleSection}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                    >
                         <h2 className={S.title}>
                             Antecipe contratos<br />
                             e tenha dinheiro<br />
                             no mesmo dia.
                         </h2>
-                    </div>
+                    </motion.div>
                     
-                    <div className={S.benefitsSection}>
+                    <motion.div 
+                        className={S.benefitsSection}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    >
                         <div className={S.benefits}>
                             {benefits.map((benefit, index) => (
-                                <div key={index} className={S.benefit}>
-                                    <div className={S.iconWrapper}>
+                                <motion.div 
+                                    key={index} 
+                                    className={S.benefit}
+                                    initial={{ opacity: 0, y: 25, scale: 0.95 }}
+                                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.6, 
+                                        ease: "easeOut", 
+                                        delay: 0.3 + (index * 0.1) 
+                                    }}
+                                    whileHover={{ 
+                                        y: -3, 
+                                        transition: { duration: 0.3, ease: "easeOut" } 
+                                    }}
+                                >
+                                    <motion.div 
+                                        className={S.iconWrapper}
+                                        initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                                        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.5, 
+                                            ease: "easeOut", 
+                                            delay: 0.4 + (index * 0.1) 
+                                        }}
+                                    >
                                         {benefit.icon}
-                                    </div>
-                                    <div className={S.benefitContent}>
+                                    </motion.div>
+                                    <motion.div 
+                                        className={S.benefitContent}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.6, 
+                                            ease: "easeOut", 
+                                            delay: 0.5 + (index * 0.1) 
+                                        }}
+                                    >
                                         <h3 className={S.benefitTitle}>{benefit.title}</h3>
                                         <p className={S.benefitDescription}>{benefit.description}</p>
-                                    </div>
-                                </div>
+                                    </motion.div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

@@ -73,7 +73,7 @@ const ContractAdvancement = () => (
         <CTA 
             title="Pronto para antecipar seus contratos e ter dinheiro hoje?"
             subtitle="Faça uma simulação gratuita e descubra quanto pode receber pelos seus contratos em até 6 horas."
-            buttonLabel="Simular antecipação"
+            buttonLabel="Solicitar antecipação"
         />
     </div>
 )
