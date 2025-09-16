@@ -2,9 +2,10 @@ import {
     Meta,
     InvestmentsHeader,
     Stats,
-    ContractTypes,
+    PricingTable,
     Trust,
     CTACards,
+    FAQ,
     CTA,
 } from "src/presentation/components"
 
@@ -17,7 +18,7 @@ const BusinessAccount = () => (
             image="http://confiacapital.com.br/og-investimentos.png"
         />
         <InvestmentsHeader />
-        <Stats 
+        <Stats
             title="Por que milhões de pessoas escolhem o HotInvest"
             stats={[
                 {
@@ -47,8 +48,8 @@ const BusinessAccount = () => (
                 }
             ]}
         />
-        <ContractTypes />
-        <Trust 
+        <PricingTable />
+        <Trust
             title="Segurança e confiança que você merece."
             cards={[
                 {
@@ -86,7 +87,57 @@ const BusinessAccount = () => (
             ]}
         />
         <CTACards />
-        <CTA 
+        <FAQ
+            title="Dúvidas sobre o HotInvest?"
+            items={[
+                {
+                    id: "1",
+                    question: "Como abrir minha conta no HotInvest?",
+                    answer: "É super simples! Baixe o app, toque em 'Criar conta', preencha seus dados pessoais, escolha seu tipo de conta e pronto! Sua conta fica ativa em poucos minutos, sem burocracia."
+                },
+                {
+                    id: "2",
+                    question: "A conta é realmente gratuita? Não tem pegadinha?",
+                    answer: "100% gratuita, sem pegadinhas! Zero taxa de manutenção, zero anuidade do cartão, transferências gratuitas e PIX sem custo. Não cobramos nada que os bancos tradicionais cobram."
+                },
+                {
+                    id: "3",
+                    question: "Meu dinheiro rende automaticamente?",
+                    answer: "Sim! Seu saldo rende automaticamente acima da poupança, sem você fazer nada. É liquidez diária com rentabilidade real, muito melhor que deixar parado na conta corrente."
+                },
+                {
+                    id: "4",
+                    question: "Como funciona o cartão sem anuidade?",
+                    answer: "Você recebe cartão de débito e crédito sem pagar anuidade. Ainda ganha cashback real nas compras e controla tudo pelo app. Sem taxas escondidas, sem surpresas no final do mês."
+                },
+                {
+                    id: "5",
+                    question: "O PIX funciona 24 horas mesmo?",
+                    answer: "Funciona 24h, 7 dias por semana! Transfere na madrugada, no feriado, no domingo. Sem limite de horário, sem burocracia, sem enrolação. PIX instantâneo de verdade."
+                },
+                {
+                    id: "6",
+                    question: "O HotInvest é seguro? É regulamentado?",
+                    answer: "Totalmente seguro! Somos regulamentados pelo Banco Central, com criptografia de ponta a ponta, autenticação biométrica e conformidade total com LGPD. Sua segurança é nossa prioridade."
+                },
+                {
+                    id: "7",
+                    question: "Como funciona o atendimento?",
+                    answer: "Atendimento 24h com pessoas reais! Sem robô, sem espera, sem transferência. Você fala direto com especialistas que resolvem seu problema em minutos, não em dias."
+                },
+                {
+                    id: "8",
+                    question: "Posso receber meu salário na conta?",
+                    answer: "Claro! Você pode receber salário, fazer transferências, pagar contas, boletos, usar PIX e ainda investir. Todas as funcionalidades de um banco completo, só que melhor."
+                },
+                {
+                    id: "9",
+                    question: "Como saco dinheiro sem agência?",
+                    answer: "Use seu cartão em qualquer caixa eletrônico da rede Banco24Horas em todo o Brasil. São milhares de pontos disponíveis, muito mais conveniente que filas de agência."
+                }
+            ]}
+        />
+        <CTA
             title="Abra sua conta digital gratuita agora mesmo."
             subtitle="Sem tarifas, sem burocracia e com investimentos que rendem mais que a poupança. Comece a fazer seu dinheiro trabalhar para você."
             buttonLabel="Abrir minha conta"

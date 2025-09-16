@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
 import 'src/i18n/i18n';
 
 import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers, IconBuilding } from '@tabler/icons-react';
@@ -67,6 +68,8 @@ function handleSmoothScroll(e: React.MouseEvent<HTMLElement, MouseEvent>, id: st
 
 const Navbar = () => {
     const { t, i18n } = useTranslation();
+    const router = useRouter();
+    const isFaqPage = router.pathname === '/perguntas-frequentes';
     const [showLangs, setShowLangs] = useState(false);
     const [showSecuritizacao, setShowSecuritizacao] = useState(false);
     const [showRecursos, setShowRecursos] = useState(false);
@@ -181,7 +184,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className={S.navbar}>
+        <nav className={`${S.navbar} ${isFaqPage ? S.faqPage : ''}`}>
             <div className={S.navbarContent}>
                 <Link href="/" className={S.logo}>
                     <img className={S.logoImg} src={IMAGE.LOGO.src} alt="Capital Digital" />
@@ -504,7 +507,8 @@ const Navbar = () => {
                                         </div>
                                     )}
                                 </div>
-                                <div className={S.drawerLangWrap}>
+                                {/* Idiomas temporariamente comentados */}
+                                {/* <div className={S.drawerLangWrap}>
                                     <p className={S.menuItemLang}>
                                         {t('menu.language')}
                                     </p>
@@ -537,7 +541,7 @@ const Navbar = () => {
                                             </div>
                                         )}
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className={S.drawerFooter}>
@@ -549,7 +553,7 @@ const Navbar = () => {
                             </div>
                             <div className={S.drawerButtonWrap}>
                                 <Link href="/solicitar-proposta" onClick={handleCloseDrawer}>
-                                    <Button width="90%" typeStyle="btn1" size="sm" 
+                                    <Button width="100%" typeStyle="btn1" size="sm" 
                                         label="Solicitar proposta" />
                                 </Link>
                             </div>

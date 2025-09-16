@@ -1,98 +1,153 @@
+import { motion } from 'framer-motion';
 import S from './pricing-table.module.scss';
 
 const PricingTable = () => {
     const tableData = [
         {
-            service: "Depósito mínimo de abertura",
-            bluevine: "$ 0",
-            competitors: "$ 0-$ 250"
-        },
-        {
-            service: "Taxas de serviço mensais",
-            bluevine: "$ 0 (para o plano Standard)",
+            service: "Taxa de manutenção (anual)",
+            bluevine: "R$ 0,00",
             bluevineNote: true,
-            competitors: "$ 0-$ 15"
+            competitors: "R$ 180 - R$ 540 perdidos"
         },
         {
-            service: "Transações",
-            bluevine: "Transações ilimitadas",
+            service: "Anuidade do cartão (anual)",
+            bluevine: "R$ 0,00 para sempre",
             bluevineNote: true,
-            competitors: "Limites e/ou taxas de transação"
+            competitors: "R$ 120 - R$ 600 cobrados"
         },
         {
-            service: "Taxas de cheque especial",
-            bluevine: "$ 0",
-            competitors: "$ 0-$ 35"
-        },
-        {
-            service: "Taxas ACH padrão",
-            bluevine: "$ 0",
-            competitors: "Fora: $0-$1"
-        },
-        {
-            service: "Taxas de transferência eletrônica de entrada",
-            bluevine: "$ 0",
-            competitors: "$ 0-$ 15"
-        },
-        {
-            service: "Taxas de caixa eletrônico",
-            bluevine: "Sem taxas de caixas eletrônicos na rede",
+            service: "Rendimento do seu dinheiro",
+            bluevine: "150% acima da poupança",
             bluevineNote: true,
-            competitors: "N / D"
+            competitors: "0% - não rende nada"
         },
         {
-            service: "Faturamento",
-            bluevine: "Grátis, ilimitado",
-            competitors: "Podem ser aplicadas taxas e limites"
+            service: "PIX e transferências",
+            bluevine: "Ilimitado 24h gratuito",
+            bluevineNote: true,
+            competitors: "Limitado ou com taxas"
+        },
+        {
+            service: "Atendimento ao cliente",
+            bluevine: "Pessoas reais em minutos",
+            bluevineNote: true,
+            competitors: "Robôs e filas intermináveis"
+        },
+        {
+            service: "Abertura de conta",
+            bluevine: "3 minutos pelo celular",
+            competitors: "Agência + documentos + espera"
+        },
+        {
+            service: "Saques mensais (10x)",
+            bluevine: "R$ 0,00 sempre",
+            competitors: "R$ 30 - R$ 80 em taxas"
+        },
+        {
+            service: "Cashback nas compras",
+            bluevine: "Dinheiro de volta real",
+            competitors: "Inexistente ou mínimo"
         }
     ];
 
     return (
         <section className={S.section}>
             <div className={S.container}>
-                <div className={S.content}>
-                    <h2 className={S.title}>
-                        Receba mais e pague menos.
-                    </h2>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.h2 
+                        className={S.title}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                    >
+                        Seu banco está sugando seu dinheiro.
+                    </motion.h2>
                     
-                    <p className={S.subtitle}>
-                        O dinheiro que você conquistou com tanto esforço deve continuar sendo seu. É por isso que não cobramos muitas das taxas cobradas por outras contas correntes comerciais.
-                    </p>
+                    <motion.p 
+                        className={S.subtitle}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                    >
+                        Você paga mais de R$ 1.000 por ano em taxas desnecessárias. No HotInvest, seu dinheiro cresce em vez de diminuir. Veja a diferença:
+                    </motion.p>
                     
-                    <div className={S.tableWrapper}>
+                    <motion.div 
+                        className={S.tableWrapper}
+                        initial={{ opacity: 0, y: 20, scale: 0.98 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                    >
                         <table className={S.table}>
                             <thead>
                                 <tr className={S.headerRow}>
                                     <th className={S.serviceHeader}></th>
                                     <th className={S.bluevineHeader}>
-                                        <span className={S.brandName}>bluevine</span>
+                                        <span className={S.brandName}>HotInvest</span>
                                     </th>
                                     <th className={S.competitorsHeader}>
-                                        Outras contas correntes comerciais<sup>1</sup>
+                                        Bancos tradicionais<sup>1</sup>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {tableData.map((row, index) => (
-                                    <tr key={index} className={S.dataRow}>
+                                    <motion.tr 
+                                        key={index} 
+                                        className={S.dataRow}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.6, 
+                                            ease: "easeOut", 
+                                            delay: 0.5 + (index * 0.08) 
+                                        }}
+                                    >
                                         <td className={S.serviceCell}>{row.service}</td>
                                         <td className={`${S.bluevineCell} ${row.bluevineNote ? S.highlighted : ''}`}>
                                             {row.bluevine}
                                             {row.bluevineNote && <sup>2</sup>}
                                         </td>
                                         <td className={S.competitorsCell}>{row.competitors}</td>
-                                    </tr>
+                                    </motion.tr>
                                 ))}
                             </tbody>
                         </table>
-                    </div>
+                    </motion.div>
                     
-                    <div className={S.footer}>
-                        <a href="#" className={S.detailsLink}>
-                            Veja nossa tabela de preços detalhada
-                        </a>
-                    </div>
-                </div>
+                    <motion.div 
+                        className={S.footer}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+                    >
+                        <motion.a 
+                            href="https://hotinvest.dbs.moneyp.com.br/login" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className={S.detailsLink}
+                            whileHover={{ 
+                                scale: 1.02,
+                                color: "#0d47a1"
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
+                            Abra sua conta gratuita e pare de perder dinheiro
+                        </motion.a>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

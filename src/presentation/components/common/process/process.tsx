@@ -41,7 +41,7 @@ const Process = () => {
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
                         >
                             <img
-                                src={IMAGE.HOMEM_COMPUTADOR.src}
+                                src={IMAGE.MULHER_ESCREVENDO.src}
                                 alt="Mulher trabalhando no computador"
                                 className={S.image}
                             />

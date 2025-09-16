@@ -33,6 +33,34 @@
   box-sizing: border-box;
 }
 
+/* Desabilita barras e toolbars do navegador mobile */
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+  overflow-x: hidden;
+}
+
+/* Força viewport sem barras do navegador */
+@media screen and (max-width: 768px) {
+  html {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    height: 100vh;
+    height: -webkit-fill-available;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Remove barra de endereço e toolbar */
+  .viewport-fix {
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+}
+
 body {
   font-family: 'Gellix', Helvetica, sans-serif;
   scroll-behavior: smooth;
@@ -43,7 +71,22 @@ body {
   -ms-user-select: none;
    user-select: none; */
   white-space: pre-line;
-
+  
+  /* Desabilita barra inferior do navegador mobile */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  /* Remove highlight ao tocar em elementos */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  
+  /* Força altura total da viewport */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 input,

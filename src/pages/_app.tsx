@@ -20,11 +20,11 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <>
       <Meta
-        title="América Financeira - Sua Aliada na Jornada Financeira"
-        description="A América Financeira oferece soluções personalizadas para suas necessidades financeiras, desde empréstimos consignados até a antecipação de FGTS."
-        keywords="empréstimo, consignado, FGTS, antecipação, financeira, bancos, seguros"
+        title="Transforme recebíveis em capital imediato | Confia Capital"
+        description="Securitização de recebíveis com liquidação em até 48h. Operações estruturadas que transformam duplicatas e contratos em capital sem impactar o balanço."
+        keywords="securitização de recebíveis, antecipação de duplicatas, cessão fiduciária, capital de giro, securitizadora CVM, liquidez empresarial, certificados de recebíveis, CRI CRA, operações estruturadas, transformar recebíveis em dinheiro"
       />
-
+      
       {getLayout(<Component {...pageProps} />)}
     </>
   )

@@ -7,6 +7,10 @@
     position: relative;
     z-index: 9999;
 
+    &.faqPage {
+        background-color: #ffffff;
+    }
+
     .navbarContent {
         display: flex;
         align-items: center;
@@ -678,8 +682,7 @@
                 margin-top: 0.2rem;
 
                 button {
-                    width: 90%;
-                    max-width: 320px;
+                    width: 100%;
                     font-size: 1.08rem;
                 }
             }

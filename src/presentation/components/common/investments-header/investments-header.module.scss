@@ -39,6 +39,10 @@
                 gap: 1rem;
                 z-index: 2;
 
+                @media (max-width: 768px) {
+                    order: 2;
+                }
+
                 .title {
                     color: #010553;
                     font-size: 80px;
@@ -172,7 +176,7 @@
                 }
 
                 @media (max-width: 768px) {
-                    order: 2;
+                    order: 1;
                 }
             }
         }

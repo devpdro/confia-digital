@@ -1,17 +1,34 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Meta } from 'src/presentation/components';
 import S from './faq.module.scss';
 
 const Faq = () => {
-    const [activeCategory, setActiveCategory] = useState('conta-corrente');
+    const [activeCategory, setActiveCategory] = useState('geral');
     const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
     const toggleItem = (itemId: string) => {
+        const isCurrentlyOpen = expandedItems.includes(itemId);
+        
         setExpandedItems(prev => 
             prev.includes(itemId) 
                 ? prev.filter(id => id !== itemId)
                 : [...prev, itemId]
         );
+
+        // Scroll suave para a pergunta apenas quando estiver abrindo
+        if (!isCurrentlyOpen) {
+            setTimeout(() => {
+                const element = document.getElementById(`faq-item-${itemId}`);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                }
+            }, 100);
+        }
     };
 
     const scrollToSection = (sectionId: string) => {
@@ -23,7 +40,7 @@ const Faq = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const sections = ['conta-corrente', 'emprestimos', 'cartao', 'seguranca'];
+            const sections = ['geral', 'conta-digital', 'securitizacao', 'estruturacao-customizada', 'antecipacao', 'parcerias', 'intranet'];
             const scrollPosition = window.scrollY + 200;
 
             for (let i = sections.length - 1; i >= 0; i--) {
@@ -33,6 +50,8 @@ const Faq = () => {
                     break;
                 }
             }
+
+
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -40,135 +59,225 @@ const Faq = () => {
     }, []);
 
     const categories = [
-        { id: 'conta-corrente', name: 'Conta corrente empresarial' },
-        { id: 'emprestimos', name: 'Empréstimos empresariais' },
-        { id: 'cartao', name: 'Cartão de crédito' },
-        { id: 'seguranca', name: 'Segurança' }
+        { id: 'geral', name: 'Geral' },
+        { id: 'conta-digital', name: 'Conta Digital HotInvest' },
+        { id: 'securitizacao', name: 'Securitização de Recebíveis' },
+        { id: 'estruturacao-customizada', name: 'Estruturação Customizada' },
+        { id: 'antecipacao', name: 'Antecipação de Contratos' },
+        { id: 'parcerias', name: 'Parcerias e Comissões' },
+        { id: 'intranet', name: 'Intranet e Plataformas' }
     ];
 
     const faqData = {
         geral: [
             {
-                id: 'o-que-e-bluevine',
-                question: 'O que é Bluevine?',
-                answer: 'A Bluevine é uma plataforma financeira poderosa e segura, desenvolvida especificamente para o sucesso empresarial. Através de um conjunto crescente de soluções de conta corrente empresarial, empréstimos e crédito, oferecemos aos proprietários de empresas as ferramentas financeiras necessárias para administrar seus negócios de forma eficiente e crescer em seus próprios termos.'
+                id: 'o-que-e-confia',
+                question: 'O que é a Confia Capital?',
+                answer: 'A Confia Capital é uma securitizadora autorizada pela CVM que transforma recebíveis em liquidez imediata para empresas. Oferecemos também o HotInvest, banco digital gratuito com investimentos automáticos que rendem 150% acima da poupança.'
             },
             {
-                id: 'bluevine-e-banco',
-                question: 'O Bluevine é um banco?',
-                answer: 'A Bluevine é uma empresa de tecnologia financeira, não um banco. Nossos serviços bancários são fornecidos pelo Coastal Community Bank, Membro FDIC. A Linha de Crédito Bluevine é emitida pelo Celtic Bank. Ser uma empresa fintech nos permite cobrar taxas menores e mais baixas, e tornar nossos serviços financeiros mais acessíveis aos proprietários de empresas novas, pequenas ou geograficamente remotas.'
+                id: 'servicos-oferecidos',
+                question: 'Quais serviços a Confia Capital oferece?',
+                answer: 'Oferecemos securitização de recebíveis (CRI/CRA), antecipação de contratos, conta digital gratuita HotInvest, programa de parcerias, intranet para clientes e soluções completas de liquidez empresarial.'
             },
             {
-                id: 'quantas-empresas',
-                question: 'Quantas empresas usam o Bluevine?',
-                answer: 'Tendo atendido 750.000 empresas em todo o Brasil desde o lançamento, a Bluevine é confiável com mais de R$ 8 bilhões em depósitos gerenciados de clientes e mais de R$ 80 bilhões em empréstimos entregues.'
+                id: 'diferencial-mercado',
+                question: 'Qual o diferencial da Confia Capital no mercado?',
+                answer: 'Somos a única securitizadora que combina tecnologia avançada, processos 100% digitais, taxas competitivas e um banco digital integrado. Transformamos recebíveis em liquidez em até 48h com total transparência.'
             },
             {
-                id: 'empresa-pequena-grande',
-                question: 'Minha empresa é muito pequena ou muito grande para usar o Bluevine?',
-                answer: 'Não, a Bluevine pode ser uma excelente plataforma bancária para empresas de todos os tamanhos. Na verdade, a Conta Corrente Empresarial Bluevine oferece múltiplos planos que podem ser adequados para você, cada um com a oportunidade de ganhar juros de alto rendimento e economizar em taxas de pagamento, juntamente com o suporte e segurança necessários para operar com confiança.'
+                id: 'seguranca-regulamentacao',
+                question: 'A Confia Capital é regulamentada?',
+                answer: 'Sim, somos uma securitizadora autorizada pela CVM (Comissão de Valores Mobiliários) e o HotInvest é regulamentado pelo Banco Central. Seguimos todas as normas de segurança e compliance do mercado financeiro.'
             },
             {
-                id: 'enviar-dinheiro-zelle',
-                question: 'Posso enviar dinheiro com o Zelle?',
-                answer: 'Não, a Bluevine não está atualmente integrada com o Zelle. O Zelle é de propriedade e operado pela Early Warning Services (EWS), uma empresa de propriedade de um grupo de grandes bancos brasileiros. Embora o Zelle possa ser uma ferramenta útil para clientes desses bancos tradicionais, o serviço não foi disponibilizado para clientes de empresas de tecnologia financeira como a Bluevine. No entanto, você ainda tem muitas opções para enviar e receber dinheiro com a Conta Corrente Empresarial Bluevine.'
+                id: 'como-comecar',
+                question: 'Como começar a usar os serviços da Confia Capital?',
+                answer: 'É simples: acesse nosso site, solicite uma proposta ou abra sua conta HotInvest. Nossa equipe analisa seu perfil e oferece as melhores soluções para suas necessidades de liquidez e investimento.'
             }
         ],
-        'conta-corrente': [
+        'conta-digital': [
             {
-                id: 'o-que-oferece',
-                question: 'O que a Bluevine Business Checking oferece?',
-                answer: 'Com a Conta Corrente Empresarial Bluevine, desfrute de taxas mensais zero, sem taxas de cheque especial, sem taxas de transferência ACH ou wire domésticas recebidas, sem taxas de ATM da rede, sem requisitos de saldo mínimo, transações ilimitadas e talões de cheque gratuitos, além de suporte ao vivo dedicado de nossa equipe. Além disso, clientes elegíveis podem ganhar até 3,7% APY com um de nossos planos de conta corrente empresarial.'
+                id: 'conta-gratuita',
+                question: 'A conta HotInvest é realmente gratuita?',
+                answer: '100% gratuita! Zero taxa de manutenção, zero anuidade do cartão, transferências e PIX gratuitos 24h. Não cobramos nada que os bancos tradicionais cobram. Seu dinheiro ainda rende automaticamente 150% acima da poupança.'
             },
             {
-                id: 'ganhar-juros',
-                question: 'Como posso ganhar juros sobre meus saldos da conta Bluevine Business Checking?',
-                answer: 'Clientes elegíveis podem ganhar até 3,7% de rendimento percentual anual (APY) em seus saldos de conta corrente. Com nosso plano Standard, você pode ganhar 1,5% APY em saldos de até R$ 1.250.000 quando atender a um dos seguintes requisitos mensais de elegibilidade: Gaste R$ 2.500 por mês com seu Cartão de Débito Empresarial Bluevine Mastercard® e/ou Cartão Empresarial Bluevine Cashback Mastercard OU Receba ou deposite R$ 12.500 por mês em pagamentos de clientes em sua conta corrente Bluevine ou subcontas.'
+                id: 'rendimento-automatico',
+                question: 'Como funciona o rendimento automático?',
+                answer: 'Seu saldo rende automaticamente todos os dias, sem você fazer nada. O rendimento é 150% superior à poupança, com liquidez diária. Não precisa aplicar ou resgatar - o dinheiro fica disponível e rendendo simultaneamente.'
             },
             {
-                id: 'como-calculados-juros',
-                question: 'Como os juros são calculados?',
-                answer: 'Calculamos juros simples diariamente e os creditamos em sua conta mensalmente. O APY é calculado com base no ano civil. Pagamos juros apenas em centavos inteiros, então qualquer juro que seja uma fração de um centavo será arredondado para cima ou para baixo para o centavo mais próximo.'
+                id: 'abrir-conta-hotinvest',
+                question: 'Como abrir minha conta no HotInvest?',
+                answer: 'Super simples! Baixe o app, toque em "Criar conta", preencha seus dados pessoais, escolha seu tipo de conta e pronto! Sua conta fica ativa em poucos minutos, sem burocracia ou análise de crédito.'
             },
             {
-                id: 'taxa-valor-minimo',
-                question: 'Há alguma taxa ou valor mínimo?',
-                answer: 'Não há taxas mensais, taxas de manutenção ou requisitos de saldo mínimo para manter sua conta Bluevine Business Checking. Também não cobramos taxas por transferências ACH recebidas, wires domésticos recebidos ou uso de ATMs da nossa rede.'
+                id: 'cartao-sem-anuidade',
+                question: 'O cartão HotInvest tem anuidade?',
+                answer: 'Não! Cartão de débito e crédito sem anuidade para sempre. Ainda ganha cashback real nas compras e controla tudo pelo app. Sem taxas escondidas, sem surpresas no final do mês.'
             },
             {
-                id: 'solicitar-conta',
-                question: 'O que preciso para solicitar uma conta corrente empresarial Bluevine?',
-                answer: 'Para abrir uma conta, você precisará fornecer informações básicas sobre sua empresa, incluindo CNPJ, documentos de constituição, comprovante de endereço comercial e documentos pessoais dos sócios. O processo é 100% digital e pode ser concluído em poucos minutos.'
-            },
-            {
-                id: 'quem-pode-obter',
-                question: 'Quem pode obter uma conta corrente empresarial Bluevine?',
-                answer: 'Empresas brasileiras legalmente constituídas, incluindo MEI, LTDA, SA e outras modalidades empresariais. Avaliamos cada solicitação individualmente, considerando o perfil da empresa e histórico comercial.'
-            },
-            {
-                id: 'enviar-receber-dinheiro',
-                question: 'Como faço para enviar e receber dinheiro em uma conta corrente empresarial da Bluevine?',
-                answer: 'Você pode enviar dinheiro através de PIX, TED, DOC, transferências ACH e wire transfers. Para receber, aceite PIX, transferências bancárias, depósitos em cheque e pagamentos de cartão. Todas as operações podem ser realizadas através do nosso app ou internet banking.'
-            },
-            {
-                id: 'depositar-dinheiro-cheques',
-                question: 'Posso depositar dinheiro ou cheques?',
-                answer: 'Sim, você pode fazer depósitos em dinheiro em agências parceiras e caixas eletrônicos da rede. Para cheques, oferecemos depósito móvel através do app, onde você fotografa o cheque para processamento automático.'
-            },
-            {
-                id: 'tempo-fundos-disponiveis',
-                question: 'Quanto tempo demora para meus fundos ficarem disponíveis depois que eu deposito um cheque?',
-                answer: 'Depósitos de cheques via app móvel ficam disponíveis em até 1 dia útil para valores até R$ 10.000. Para valores maiores, o prazo pode ser de até 2 dias úteis. PIX e transferências eletrônicas são processados instantaneamente.'
+                id: 'pix-24h',
+                question: 'O PIX funciona 24 horas mesmo?',
+                answer: 'Sim! PIX gratuito 24h, 7 dias por semana. Transfere na madrugada, no feriado, no domingo. Sem limite de horário, sem burocracia, sem enrolação. PIX instantâneo de verdade.'
             }
         ],
-        emprestimos: [
+        securitizacao: [
             {
-                id: 'tipos-emprestimos',
-                question: 'Que tipos de empréstimos a Bluevine oferece?',
-                answer: 'A Bluevine oferece linhas de crédito empresariais flexíveis, empréstimos a prazo e antecipação de recebíveis. Nossas soluções são projetadas para atender às diversas necessidades de capital de giro das empresas, desde financiamento de estoque até expansão de negócios.'
+                id: 'o-que-e-securitizacao',
+                question: 'O que é securitização de recebíveis?',
+                answer: 'É transformar seus recebíveis futuros em dinheiro hoje. Antecipamos contratos, notas fiscais e outros direitos creditórios com taxas competitivas. Você recebe o valor à vista e nós aguardamos o vencimento dos títulos.'
             },
             {
-                id: 'requisitos-emprestimo',
-                question: 'Quais são os requisitos para obter um empréstimo?',
-                answer: 'Os requisitos básicos incluem: empresa em operação há pelo menos 6 meses, faturamento mínimo mensal, documentação empresarial atualizada e boa situação creditícia. Cada produto tem critérios específicos que são avaliados durante o processo de análise.'
+                id: 'tipos-recebiveis',
+                question: 'Quais tipos de recebíveis podem ser securitizados?',
+                answer: 'Antecipamos contratos de prestação de serviços, mensalidades de software, contratos de manutenção, marketing, governamentais e diversos outros. Avaliamos cada caso para oferecer a melhor solução de liquidez.'
+            },
+            {
+                id: 'prazo-liberacao',
+                question: 'Qual o prazo para liberação dos recursos?',
+                answer: 'Após aprovação da documentação, liberamos os recursos em até 48 horas. Nosso processo é 100% digital e otimizado para máxima agilidade, sem burocracia desnecessária.'
+            },
+            {
+                id: 'valor-minimo-securitizacao',
+                question: 'Qual o valor mínimo para securitização?',
+                answer: 'Trabalhamos com operações a partir de R$ 100.000. Para valores menores, oferecemos antecipação de recebíveis com condições especiais através de nossos produtos alternativos.'
+            },
+            {
+                id: 'documentos-necessarios',
+                question: 'Quais documentos preciso para securitizar?',
+                answer: 'Documentos da empresa (CNPJ, contrato social), comprovantes dos recebíveis (contratos, notas fiscais), demonstrações financeiras e documentos dos sócios. Nossa equipe orienta todo o processo.'
             }
         ],
-        cartao: [
+        parcerias: [
             {
-                id: 'cartao-credito-disponivel',
-                question: 'A Bluevine oferece cartão de crédito empresarial?',
-                answer: 'Sim, oferecemos o Cartão Empresarial Bluevine Cashback Mastercard com cashback em todas as compras, sem anuidade e limites competitivos. O cartão é integrado à sua conta corrente empresarial para facilitar o controle financeiro.'
+                id: 'como-ser-parceiro',
+                question: 'Como me tornar parceiro da Confia Capital?',
+                answer: 'Para se tornar nosso parceiro, você precisa ter CNPJ ativo, experiência no mercado financeiro ou relacionamento com empresas que precisam de capital. Após o cadastro, nossa equipe avalia o perfil e libera o acesso à plataforma de parceiros.'
             },
             {
-                id: 'beneficios-cartao',
-                question: 'Quais são os benefícios do cartão Bluevine?',
-                answer: 'O cartão oferece cashback de até 2% em todas as compras, sem anuidade, programa de recompensas, controle de gastos em tempo real através do app, e integração completa com sua conta corrente empresarial Bluevine.'
+                id: 'estrutura-comissoes',
+                question: 'Qual é a estrutura de comissões para parceiros?',
+                answer: 'Oferecemos comissões competitivas que variam de 0,5% a 2% sobre o valor das operações estruturadas, dependendo do volume mensal e tipo de cliente. Parceiros com maior volume têm acesso a bônus adicionais e condições especiais.'
+            },
+            {
+                id: 'conhecimento-tecnico',
+                question: 'Preciso ter conhecimento técnico em securitização?',
+                answer: 'Não é obrigatório. Fornecemos treinamento completo sobre securitização, materiais técnicos e suporte especializado. Nossa equipe acompanha você em todas as etapas até que se sinta confortável para atuar de forma independente.'
+            },
+            {
+                id: 'valor-minimo-comissao',
+                question: 'Qual o valor mínimo de operação para gerar comissão?',
+                answer: 'Operações a partir de R$ 50.000 já geram comissão para parceiros. Temos uma estrutura progressiva que premia o volume e a qualidade das indicações, com bônus especiais para grandes operações.'
+            },
+            {
+                id: 'suporte-parceiros',
+                question: 'Que tipo de suporte vocês oferecem aos parceiros?',
+                answer: 'Oferecemos treinamento inicial, materiais de apoio, plataforma exclusiva para acompanhamento, suporte técnico dedicado e reuniões periódicas para alinhamento de estratégias e melhores práticas.'
             }
         ],
-        seguranca: [
+        intranet: [
             {
-                id: 'seguranca-conta',
-                question: 'Como a Bluevine protege minha conta?',
-                answer: 'Utilizamos criptografia de nível bancário, autenticação de dois fatores, monitoramento 24/7 de transações suspeitas e seguimos todos os protocolos de segurança exigidos pelos órgãos reguladores. Seus depósitos são protegidos pelo FDIC até R$ 15.000.000 por depositante.'
+                id: 'acesso-intranet',
+                question: 'Como acessar a intranet da Confia Capital?',
+                answer: 'Clientes ativos recebem credenciais de acesso por email após a primeira operação. A intranet permite acompanhar operações em tempo real, baixar relatórios e acessar documentos importantes de forma segura.'
             },
             {
-                id: 'protecao-fraude',
-                question: 'Que proteções contra fraude vocês oferecem?',
-                answer: 'Oferecemos monitoramento em tempo real de transações, alertas instantâneos por SMS e email, bloqueio imediato de cartões suspeitos, e uma equipe dedicada de prevenção à fraude disponível 24/7 para resolver qualquer problema de segurança.'
+                id: 'funcionalidades-intranet',
+                question: 'Quais funcionalidades estão disponíveis na intranet?',
+                answer: 'Acompanhamento de operações, relatórios de performance, gestão de recebíveis, histórico de transações, documentos contratuais, calendário de vencimentos e comunicação direta com nossa equipe.'
+            },
+            {
+                id: 'plataformas-integradas',
+                question: 'Quais plataformas estão integradas na intranet?',
+                answer: 'Temos integração com sistemas de gestão empresarial, plataformas de pagamento, bancos digitais e ferramentas de análise financeira. Tudo centralizado para facilitar sua gestão diária.'
+            },
+            {
+                id: 'seguranca-intranet',
+                question: 'A intranet é segura?',
+                answer: 'Sim! Utilizamos criptografia de ponta a ponta, autenticação de dois fatores, monitoramento 24/7 e backup automático. Todos os dados são protegidos conforme normas da LGPD e regulamentações financeiras.'
+            },
+            {
+                id: 'suporte-tecnico-intranet',
+                question: 'Há suporte técnico para a intranet?',
+                answer: 'Oferecemos suporte técnico especializado via chat, email e telefone. Nossa equipe está disponível para resolver dúvidas, orientar sobre funcionalidades e garantir a melhor experiência na plataforma.'
+            }
+        ],
+        'estruturacao-customizada': [
+            {
+                id: 'o-que-e-estruturacao',
+                question: 'O que é estruturação customizada de operações?',
+                answer: 'É o desenvolvimento de soluções financeiras sob medida para necessidades específicas da sua empresa. Criamos estruturas únicas de CRI/CRA que se adaptam perfeitamente ao seu fluxo de recebíveis e objetivos de liquidez.'
+            },
+            {
+                id: 'diferenca-estruturacao-padrao',
+                question: 'Qual a diferença entre estruturação customizada e padrão?',
+                answer: 'A estruturação padrão segue modelos pré-definidos, enquanto a customizada é desenvolvida especificamente para seu negócio. Analisamos seu perfil, recebíveis e necessidades para criar uma solução única e otimizada.'
+            },
+            {
+                id: 'prazo-estruturacao-customizada',
+                question: 'Qual o prazo para desenvolver uma estruturação customizada?',
+                answer: 'O prazo varia de 15 a 45 dias, dependendo da complexidade da operação. Nosso time trabalha de forma ágil para entregar a estrutura ideal sem comprometer a qualidade e compliance necessários.'
+            },
+            {
+                id: 'valor-minimo-customizada',
+                question: 'Qual o valor mínimo para estruturação customizada?',
+                answer: 'Trabalhamos com operações customizadas a partir de R$ 500.000. Para valores menores, oferecemos nossas soluções padronizadas que também são altamente eficientes e competitivas.'
+            },
+            {
+                id: 'vantagens-estruturacao-customizada',
+                question: 'Quais as vantagens da estruturação customizada?',
+                answer: 'Taxas otimizadas para seu perfil, prazos flexíveis, estrutura jurídica adequada ao seu negócio, maior eficiência fiscal e condições que se adaptam perfeitamente ao seu fluxo de caixa e necessidades específicas.'
+            }
+        ],
+        antecipacao: [
+            {
+                id: 'como-funciona-antecipacao',
+                question: 'Como funciona a antecipação de contratos?',
+                answer: 'Antecipamos o valor dos seus contratos futuros com desconto competitivo. Você recebe o dinheiro hoje e nós aguardamos o vencimento natural dos contratos. Processo 100% digital e sem burocracia.'
+            },
+            {
+                id: 'tipos-contratos-antecipacao',
+                question: 'Quais tipos de contratos podem ser antecipados?',
+                answer: 'Antecipamos contratos de prestação de serviços, software, manutenção, marketing digital, consultorias, contratos governamentais e diversos outros. Avaliamos cada caso individualmente.'
+            },
+            {
+                id: 'prazo-antecipacao-contratos',
+                question: 'Qual o prazo para antecipação de contratos?',
+                answer: 'Após análise e aprovação da documentação, liberamos os recursos em até 24 horas. Nossa análise é rápida e eficiente, focada em agilidade sem comprometer a segurança da operação.'
+            },
+            {
+                id: 'percentual-antecipacao',
+                question: 'Qual percentual do contrato pode ser antecipado?',
+                answer: 'Antecipamos até 85% do valor do contrato, dependendo do perfil do pagador, prazo de vencimento e histórico de relacionamento. Oferecemos as melhores condições do mercado para maximizar sua liquidez.'
+            },
+            {
+                id: 'documentos-antecipacao-contratos',
+                question: 'Quais documentos preciso para antecipar contratos?',
+                answer: 'Contrato assinado, documentos da empresa contratante, comprovante de entrega/prestação do serviço, documentos da sua empresa e dados bancários. Nossa equipe orienta todo o processo.'
             }
         ]
     };
 
     const allFaqs = [
         ...faqData.geral,
-        ...faqData['conta-corrente'],
-        ...faqData.emprestimos,
-        ...faqData.cartao,
-        ...faqData.seguranca
+        ...faqData['conta-digital'],
+        ...faqData.securitizacao,
+        ...faqData['estruturacao-customizada'],
+        ...faqData.antecipacao,
+        ...faqData.parcerias,
+        ...faqData.intranet
     ];
 
     return (
         <div className={S.page}>
+            <Meta
+                title="Perguntas Frequentes | Confia Capital - Tire suas dúvidas"
+                description="Encontre respostas para as principais dúvidas sobre securitização, conta digital HotInvest, parcerias e nossos serviços financeiros. Suporte completo para empresas."
+                keywords="perguntas frequentes, FAQ, dúvidas securitização, conta digital, HotInvest, parcerias, CRI CRA, recebíveis, suporte financeiro, Confia Capital"
+                image="https://confiacapital.com.br/og-faq.png"
+            />
             <div className={S.container}>
                 <aside className={S.sidebar}>
                     <h2 className={S.sidebarTitle}>Perguntas frequentes</h2>
@@ -188,7 +297,8 @@ const Faq = () => {
 
                 <main className={S.content}>
                     {/* Seção Em Geral */}
-                    <section className={S.faqSection}>
+                    <section id="geral" className={S.faqSection}>
+                        <h2 className={S.contentTitle}>Geral</h2>
                         {faqData.geral.map(faq => (
                             <div 
                                 key={faq.id} 
@@ -272,12 +382,15 @@ const Faq = () => {
                             </div>
                         ))}
                          
-                         <a href="#top" className={S.backToTop}>
+                         <button 
+                             className={S.backToTop}
+                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                         >
                              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                              </svg>
                              Voltar ao topo
-                         </a>
+                         </button>
                      </section>
 
                     {/* Seções com títulos */}
@@ -370,12 +483,15 @@ const Faq = () => {
                                     </div>
                                 ))}
                          
-                         <a href="#top" className={S.backToTop}>
+                         <button 
+                             className={S.backToTop}
+                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                         >
                              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                              </svg>
                              Voltar ao topo
-                         </a>
+                         </button>
                             </section>
                         );
                     })}
