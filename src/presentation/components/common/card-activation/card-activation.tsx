@@ -1,4 +1,5 @@
 import { Button } from 'src/presentation/components';
+import Link from 'next/link';
 import S from './card-activation.module.scss';
 
 interface CardActivationProps {
@@ -8,6 +9,7 @@ interface CardActivationProps {
         title: string;
         description: string;
         buttonLabel: string;
+        buttonLink?: string;
     }[];
 }
 
@@ -18,12 +20,14 @@ const CardActivation: React.FC<CardActivationProps> = ({
         {
             title: "Por e-mail",
             description: "Envie um e-mail solicitando acesso ou recuperação de credenciais.",
-            buttonLabel: "Solicitar acesso"
+            buttonLabel: "Solicitar acesso",
+            buttonLink: "mailto:suporte@confiacapital.com.br"
         },
         {
             title: "WhatsApp",
             description: "Entre em contato via WhatsApp para suporte rápido e direto.",
-            buttonLabel: "Entrar em contato"
+            buttonLabel: "Entrar em contato",
+            buttonLink: "https://wa.me/5511999999999"
         }
     ]
 }) => {
@@ -47,12 +51,23 @@ const CardActivation: React.FC<CardActivationProps> = ({
                                     {card.description}
                                 </p>
                                 <div className={S.cardButton}>
-                                    <Button
-                                        typeStyle="btn1"
-                                        label={card.buttonLabel}
-                                        size="sm"
-                                        width="200px"
-                                    />
+                                    {card.buttonLink ? (
+                                        <Link href={card.buttonLink}>
+                                            <Button
+                                                typeStyle="btn1"
+                                                label={card.buttonLabel}
+                                                size="sm"
+                                                width="200px"
+                                            />
+                                        </Link>
+                                    ) : (
+                                        <Button
+                                            typeStyle="btn1"
+                                            label={card.buttonLabel}
+                                            size="sm"
+                                            width="200px"
+                                        />
+                                    )}
                                 </div>
                             </div>
                         ))}

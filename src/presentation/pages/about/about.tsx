@@ -16,6 +16,7 @@ const About = () => {
                 title="Quer fazer parte da nossa jornada como parceiro?"
                 subtitle="Junte-se a nós e descubra como podemos crescer juntos. Conheça as oportunidades de parceria e faça parte do nosso ecossistema de sucesso."
                 buttonLabel="Seja nosso parceiro"
+                buttonLink="/parceiros"
             />
             <CardActivation
                 title="Quer saber mais sobre nossa empresa?"
@@ -24,12 +25,14 @@ const About = () => {
                     {
                         title: "Fale conosco",
                         description: "Entre em contato direto com nossa equipe para esclarecer dúvidas sobre nossa empresa.",
-                        buttonLabel: "Entrar em contato"
+                        buttonLabel: "Entrar em contato",
+                        buttonLink: "mailto:contato@confiacapital.com.br"
                     },
                     {
                         title: "Agende uma reunião",
                         description: "Marque uma conversa com nossos especialistas para conhecer nossas soluções.",
-                        buttonLabel: "Agendar reunião"
+                        buttonLabel: "Agendar reunião",
+                        buttonLink: "/solicitar-proposta"
                     }
                 ]}
             />

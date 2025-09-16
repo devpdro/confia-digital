@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import S from './about-values.module.scss';
 import { IMAGE } from 'src/presentation/assets';
 
@@ -106,57 +107,132 @@ const AboutValues: React.FC<AboutValuesProps> = ({ className }) => {
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>
-                <div className={S.header}>
-                    <h2 className={S.title}>Nossos valores.</h2>
-                    <p className={S.description}>
+                <motion.div 
+                    className={S.header}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.h2 
+                        className={S.title}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                    >
+                        Nossos valores.
+                    </motion.h2>
+                    <motion.p 
+                        className={S.description}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    >
                         Nossos valores estão no centro de tudo o que fazemos e nos mantêm focados em causar um impacto positivo para nossos clientes, membros da equipe e comunidade.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
-                <div className={S.topIcons}>
+                <motion.div 
+                    className={S.topIcons}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                >
                     {topIcons.map((item, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             className={`${S.topIcon} ${index === currentSlide ? S.active : ''}`}
                             onClick={() => setCurrentSlide(index)}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ 
+                                duration: 0.5, 
+                                ease: "easeOut", 
+                                delay: 0.4 + (index * 0.1) 
+                            }}
+                            whileHover={{ 
+                                scale: 1.1, 
+                                transition: { duration: 0.2, ease: "easeOut" } 
+                            }}
+                            whileTap={{ scale: 0.95 }}
                         >
                             {item.icon}
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
-                <div className={S.sliderContainer}>
+                <motion.div 
+                    className={S.sliderContainer}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
+                >
                     <div className={S.valueCard}>
-                        <div className={S.cardContent}>
-                            <h3 className={S.cardTitle}>{values[currentSlide].title}</h3>
-                            <p className={S.cardDescription}>{values[currentSlide].description}</p>
-                        </div>
+                        <AnimatePresence mode="wait">
+                            <motion.div 
+                                key={currentSlide}
+                                className={S.cardContent}
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -20 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                            >
+                                <h3 className={S.cardTitle}>{values[currentSlide].title}</h3>
+                                <p className={S.cardDescription}>{values[currentSlide].description}</p>
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
 
-                    <div className={S.navigation}>
-                        <button className={S.navButton} onClick={prevSlide}>
+                    <motion.div 
+                        className={S.navigation}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+                    >
+                        <motion.button 
+                            className={S.navButton} 
+                            onClick={prevSlide}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor" />
                             </svg>
-                        </button>
+                        </motion.button>
 
                         <div className={S.indicators}>
                             {values.map((_, index) => (
-                                <div
+                                <motion.div
                                     key={index}
                                     className={`${S.indicator} ${index === currentSlide ? S.active : ''}`}
                                     onClick={() => setCurrentSlide(index)}
+                                    whileHover={{ scale: 1.2 }}
+                                    whileTap={{ scale: 0.8 }}
+                                    transition={{ duration: 0.2, ease: "easeOut" }}
                                 />
                             ))}
                         </div>
 
-                        <button className={S.navButton} onClick={nextSlide}>
+                        <motion.button 
+                            className={S.navButton} 
+                            onClick={nextSlide}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                        >
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="currentColor" />
                             </svg>
-                        </button>
-                    </div>
-                </div>
+                        </motion.button>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );
