@@ -7,10 +7,10 @@ const PartnersBenefits = () => {
             <div className={S.container}>
                 <div className={S.content}>
                     <h2 className={S.title}>
-                        Por que fazer parceria conosco?
+                        O que nossos parceiros já conquistaram.
                     </h2>
                     <p className={S.subtitle}>
-                        Benefícios exclusivos que transformam sua empresa em um parceiro estratégico da Bluevine.
+                        Mais de 200 parceiros já expandiram seus negócios e aumentaram sua receita com nossas soluções de securitização. Veja os benefícios reais.
                     </p>
 
                     <div className={S.grid}>
@@ -30,9 +30,9 @@ const PartnersBenefits = () => {
                                     </svg>
                                 </div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Soluções bancárias e de empréstimos que seus clientes vão adorar</h3>
+                                    <h3 className={S.stepTitle}>Soluções de securitização que seus clientes vão adorar</h3>
                                     <p className={S.stepDescription}>
-                                        Ofereça aos seus clientes acesso a produtos financeiros inovadores e competitivos que atendem às suas necessidades empresariais.
+                                        Ofereça aos seus clientes acesso a estruturas CRI e CRA inovadoras que transformam recebíveis em capital imediato com condições competitivas.
                                     </p>
                                 </div>
                             </div>
@@ -44,9 +44,9 @@ const PartnersBenefits = () => {
                                     </svg>
                                 </div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Processo de checkout online perfeito</h3>
+                                    <h3 className={S.stepTitle}>Processo de estruturação ágil e eficiente</h3>
                                     <p className={S.stepDescription}>
-                                        Integração simples e eficiente que permite aos seus clientes acessar nossos serviços diretamente através da sua plataforma.
+                                        Plataforma digital integrada que permite análise, estruturação e aprovação de operações de securitização em tempo recorde.
                                     </p>
                                 </div>
                             </div>
@@ -58,9 +58,9 @@ const PartnersBenefits = () => {
                                     </svg>
                                 </div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Suporte e recursos dedicados</h3>
+                                    <h3 className={S.stepTitle}>Suporte especializado em securitização</h3>
                                     <p className={S.stepDescription}>
-                                        Equipe especializada e materiais de apoio para garantir o sucesso da parceria e o melhor atendimento aos clientes.
+                                        Equipe de especialistas em mercado de capitais e materiais técnicos para capacitar sua equipe e garantir o sucesso das operações.
                                     </p>
                                 </div>
                             </div>
@@ -72,9 +72,9 @@ const PartnersBenefits = () => {
                                     </svg>
                                 </div>
                                 <div className={S.stepContent}>
-                                    <h3 className={S.stepTitle}>Oportunidades para receita incremental</h3>
+                                    <h3 className={S.stepTitle}>Receita recorrente e escalável</h3>
                                     <p className={S.stepDescription}>
-                                        Gere receita adicional através de comissões atrativas e programas de incentivo para parceiros qualificados.
+                                        Modelo de remuneração atrativo com comissões por operação estruturada e bônus por volume, garantindo crescimento sustentável.
                                     </p>
                                 </div>
                             </div>

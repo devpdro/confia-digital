@@ -23,10 +23,12 @@ import MONEY_VOLTA from './MONEY_VOLTA.svg'
 import PAPEL from './PAPEL.svg'
 import PROTECAO from './PROTECAO.png'
 import PLANTA_DINHEIRO from './PLANTA_DINHEIRO.svg'
+import AWARDS_BAGDES from './AWARDS_BAGDES.png'
 
 const IMAGE = {
     LOGO,
     SELO_INVESTIMENTO,
+    AWARDS_BAGDES,
     GRAFICO,
     SELO_SECURITIZADORA,
     HEADER,
@@ -49,7 +51,7 @@ const IMAGE = {
     MONEY_VOLTA,
     PAPEL,
     PROTECAO,
-    PLANTA_DINHEIRO
+    PLANTA_DINHEIRO,
 }
 
 export default IMAGE;

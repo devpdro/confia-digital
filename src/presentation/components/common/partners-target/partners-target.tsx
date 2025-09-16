@@ -1,4 +1,5 @@
-import React from 'react';
+import { IMAGE } from 'src/presentation/assets';
+
 import S from './partners-target.module.scss';
 
 interface PartnerType {
@@ -11,18 +12,18 @@ interface PartnersTargetProps {
 
 const PartnersTarget: React.FC<PartnersTargetProps> = ({ className }) => {
     const partnerTypes: PartnerType[] = [
-        { name: 'Contadores' },
-        { name: 'Editores de conteúdo' },
-        { name: 'Sites afiliados' },
-        { name: 'Mercados de empréstimos comerciais' },
-        { name: 'Corretores de arrendamento de equipamentos' },
-        { name: 'Provedores de serviços comerciais ou ISOs' },
-        { name: 'Fornecedores de software e tecnologia' },
-        { name: 'Mercados B2B e B2C' },
-        { name: 'Prestadores de serviços financeiros' },
-        { name: 'Prestadores de serviços de formação empresarial' },
-        { name: 'Marcas de varejo' },
-        { name: 'Seguradoras e corretoras' }
+        { name: 'Contadores e escritórios contábeis' },
+        { name: 'Consultores financeiros' },
+        { name: 'Assessores de investimentos' },
+        { name: 'Corretoras de valores' },
+        { name: 'Bancos de investimento' },
+        { name: 'Gestoras de recursos' },
+        { name: 'Fintechs de crédito' },
+        { name: 'Plataformas de empréstimos' },
+        { name: 'Correspondentes bancários' },
+        { name: 'Consultorias empresariais' },
+        { name: 'Escritórios de advocacia' },
+        { name: 'Empresas de factoring' }
     ];
 
     return (
@@ -43,8 +44,8 @@ const PartnersTarget: React.FC<PartnersTargetProps> = ({ className }) => {
                     <div className={S.imageContent}>
                         <div className={S.imageContainer}>
                             <img 
-                                src="/api/placeholder/400/300" 
-                                alt="Profissional trabalhando no escritório"
+                                src={IMAGE.HOMEM_COMPUTADOR.src}
+                                alt="Profissional trabalhando no computador"
                                 className={S.image}
                             />
                         </div>

@@ -94,7 +94,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
         },
         {
             id: '8',
-            quote: 'Olha, eu já tinha tentado em outros lugares e sempre dava problema. Aqui foi diferente - o pessoal me explicou tudo direitinho, sem pegadinha. Em 15 dias estava com a grana na conta.',
+            quote: 'Nossa, que diferença! Estava há meses correndo atrás de crédito e só encontrava taxa abusiva. A Confia me ofereceu condições justas e em 10 dias já estava com R$ 1,2 milhão na conta. Salvaram meu negócio!',
             author: {
                 name: 'Mariana F.',
                 title: 'Proprietária',
@@ -148,7 +148,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
                             </div>
                         </div>
                     ))}
-                    
+
 
                 </div>
 
@@ -157,7 +157,7 @@ const ClientTestimonials: React.FC<ClientTestimonialsProps> = ({ className }) =>
                         <Button
                             typeStyle="btn3"
                             label="Ver mais depoimentos"
-                            size="md"
+                            size="sm"
                             width="220px"
                             onClick={() => setShowMore(true)}
                         />

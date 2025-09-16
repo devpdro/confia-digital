@@ -1,11 +1,15 @@
 @import 'src/presentation/styles/themes/light.scss';
 
 .section {
-    background-color: #1e1b4b;
-    padding: 4rem 0;
-    
+    background-color: #010553;
+    padding: 6rem 0;
+
+    @media (max-width: 1184px) {
+        padding: 5rem 0;
+    }
+
     @media (max-width: 768px) {
-        padding: 3rem 0;
+        padding: 4rem 0;
     }
 }
 
@@ -13,23 +17,19 @@
     max-width: 1340px;
     margin: 0 auto;
     padding: 0 1.075rem;
-    
-    @media (max-width: 768px) {
-        padding: 0 1rem;
-    }
 }
 
 .statsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 4rem;
-    
+
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.075rem;
         text-align: center;
     }
-    
+
     @media (max-width: 1024px) and (min-width: 769px) {
         gap: 2rem;
     }
@@ -37,41 +37,45 @@
 
 .statItem {
     text-align: center;
-    
+
     @media (max-width: 768px) {
         padding: 1rem 0;
     }
 }
 
 .statLabel {
-    color: #a5b4fc;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.5rem;
-    
-    @media (max-width: 768px) {
+    color: rgb(215, 231, 255);
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    margin-bottom: 0.875rem;
+
+    @media (max-width: 1184px) {
         font-size: 13px;
+        line-height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 0.575rem;
     }
 }
 
 .statValue {
-    color: white;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.1;
-    
-    @media (max-width: 1200px) {
-        font-size: 40px;
+    color: rgb(215, 231, 255);
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 80px;
+
+    @media (max-width: 1184px) {
+        font-size: 35px;
+        line-height: 35px;
     }
-    
+
     @media (max-width: 768px) {
-        font-size: 36px;
-    }
-    
-    @media (max-width: 480px) {
-        font-size: 32px;
+        font-size: 42px;
+        line-height: 42px;
     }
 }
 
@@ -81,6 +85,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -92,6 +97,7 @@
         opacity: 0;
         transform: scale(0.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -100,15 +106,15 @@
 
 .statItem {
     animation: fadeInUp 0.6s ease-out;
-    
+
     &:nth-child(1) {
         animation-delay: 0.1s;
     }
-    
+
     &:nth-child(2) {
         animation-delay: 0.2s;
     }
-    
+
     &:nth-child(3) {
         animation-delay: 0.3s;
     }

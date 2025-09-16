@@ -1,3 +1,4 @@
+export { default as About } from './about/about'
 export { default as BusinessAccount } from './business-account/business-account'
 export { default as ClientReviews } from './client-reviews/client-reviews'
 export { default as CodeOfConduct } from './code-of-conduct/code-of-conduct'
@@ -12,7 +13,5 @@ export { default as OperationStructuring } from './operation-structuring/operati
 export { default as Partners } from './partners/partners'
 export { default as PrivacyPolicy } from './privacy-policy/privacy-policy'
 export { default as ReceivablesSecuritization } from './receivables-securitization/receivables-securitization'
-export { default as SimulationCalculator } from './simulation-calculator/simulation-calculator'
-export { default as Solutions } from './solutions/solutions'
 export { default as StandardContracts } from './standard-contracts/standard-contracts'
 export { default as TermsOfUse } from './terms-of-use/terms-of-use'

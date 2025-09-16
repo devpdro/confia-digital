@@ -3,6 +3,12 @@ import { Meta, ReviewsHeader, ClientTestimonials, Awards, BusinessServices, Help
 const ClientReviews = () => {
     return (
         <div>
+            <Meta
+                title="Depoimentos de Clientes | Confia Capital"
+                description="Veja o que nossos clientes falam sobre nossas soluções de securitização. Histórias reais de empresas que transformaram recebíveis em capital com a Confia Capital."
+                keywords="depoimentos clientes confia capital, avaliações securitização, testemunhos empresas, casos de sucesso securitizadora, feedback clientes CRI CRA, experiências transformação recebíveis"
+                image="https://confiacapital.com.br/og-client-reviews.png"
+            />
             <ReviewsHeader />
             <ClientTestimonials />
             <BusinessServices

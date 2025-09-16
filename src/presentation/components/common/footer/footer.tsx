@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 import S from './footer.module.scss';
 
 const Footer = () => {
@@ -35,7 +36,6 @@ const Footer = () => {
                             <div className={S.column}>
                                 <h3 className={S.columnTitle}>Recursos</h3>
                                 <ul className={S.linkList}>
-                                    <li><Link href="/calculadora-simulacao" className={S.link}>Calculadora de Simulação</Link></li>
                                     <li><Link href="/investimentos" className={S.link}>Conta de Investimentos</Link></li>
                                     <li><Link href="/perguntas-frequentes" className={S.link}>Perguntas Frequentes</Link></li>
                                 </ul>

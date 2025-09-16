@@ -1,3 +1,4 @@
+export * from './about'
 export * from './business-account'
 export * from './client-reviews'
 export * from './code-of-conduct'

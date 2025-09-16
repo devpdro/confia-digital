@@ -1,4 +1,3 @@
-import React from 'react';
 import S from './partners-stats.module.scss';
 
 interface Stat {
@@ -10,22 +9,23 @@ interface PartnersStatsProps {
     className?: string;
 }
 
-const PartnersStats: React.FC<PartnersStatsProps> = ({ className }) => {
-    const stats: Stat[] = [
-        {
-            label: 'Customers',
-            value: '750K+'
-        },
-        {
-            label: 'On Deposit',
-            value: '$1.6B+'
-        },
-        {
-            label: 'Loans Funded',
-            value: '$16B+'
-        }
-    ];
+const stats: Stat[] = [
+    {
+        label: 'Parceiros Ativos',
+        value: '200+'
+    },
+    {
+        label: 'Volume Securitizado',
+        value: 'R$ 1,8B+'
+    },
+    {
+        label: 'Operações Realizadas',
+        value: '1.200+'
+    }
+];
 
+
+const PartnersStats: React.FC<PartnersStatsProps> = ({ className }) => {
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>

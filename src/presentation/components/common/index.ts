@@ -1,3 +1,6 @@
+export { default as AboutHeader } from "./about-header/about-header"
+export { default as AboutValues } from "./about-values/about-values"
+export { default as AboutAwards } from "./about-awards/about-awards"
 export { default as Awards } from "./awards/awards"
 export { default as Benefits } from "./benefits/benefits"
 export { default as BusinessCardPromo } from "./business-card-promo/business-card-promo"

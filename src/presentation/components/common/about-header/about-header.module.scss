@@ -24,10 +24,6 @@
     margin: 0 auto;
     padding: 0 1.075rem;
     width: 100%;
-
-    @media (max-width: 768px) {
-        padding: 0 1rem;
-    }
 }
 
 .centeredContent {
@@ -91,7 +87,6 @@
     max-width: 1000px;
     text-align: center;
     font-family: 'Domine', sans-serif;
-    margin-bottom: 1.575rem;
 
     sup {
         font-size: 12px;
@@ -101,7 +96,6 @@
     @media (max-width: 1184px) {
         font-size: 17px;
         line-height: 25px;
-        margin-bottom: 1.075rem;
     }
 
     @media (max-width: 768px) {
