@@ -20,7 +20,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: 1.3fr 1.5fr;
+            grid-template-columns: 1.3fr 1.2fr;
             align-items: center;
 
             @media (max-width: 1184px) {
@@ -87,7 +87,7 @@
                     @media (max-width: 768px) {
                         align-self: stretch;
                         width: 100%;
-                        
+
                         button {
                             width: 100% !important;
                         }
@@ -164,6 +164,12 @@
             }
 
             .visual {
+
+                img {
+                    width:100%;
+                    border-radius: 300px 0 300px 300px
+                }
+
                 @media (max-width: 768px) {
                     order: 2;
                 }

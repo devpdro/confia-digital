@@ -53,18 +53,46 @@ const FAQ: React.FC<FAQProps> = ({
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>
-                <div className={S.content}>
-                    <h2 className={S.title}>{title}</h2>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.h2 
+                        className={S.title}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    >
+                        {title}
+                    </motion.h2>
 
-                    <div className={S.faqList}>
-                        {items.map((item) => {
+                    <motion.div 
+                        className={S.faqList}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                    >
+                        {items.map((item, index) => {
                             const isOpen = openItems.has(item.id);
 
                             return (
-                                <div
+                                <motion.div
                                     key={item.id}
                                     id={`faq-item-${item.id}`}
                                     className={`${S.faqItem} ${isOpen ? S.faqItemOpen : ''}`}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.5, 
+                                        ease: "easeOut", 
+                                        delay: 0.3 + (index * 0.1) 
+                                    }}
                                 >
                                     <button
                                         className={S.faqQuestion}
@@ -140,11 +168,11 @@ const FAQ: React.FC<FAQProps> = ({
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
-                                </div>
+                                </motion.div>
                             );
                         })}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </section>
     );

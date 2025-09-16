@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import 'src/i18n/i18n';
 
-import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers } from '@tabler/icons-react';
+import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers, IconBuilding } from '@tabler/icons-react';
 
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
@@ -234,8 +234,8 @@ const Navbar = () => {
                                     </div>
                                     
                                     <div className={S.dropdownFooter}>
-                                        <Link href="/securitizacao-de-recebiveis" className={S.viewAllLink}>
-                                            Ver todos os produtos →
+                                        <Link href="/solicitar-proposta" className={S.viewAllLink}>
+                                            Solicitar proposta →
                                         </Link>
                                     </div>
                                 </div>
@@ -264,16 +264,6 @@ const Navbar = () => {
                                     </div>
                                     
                                     <div className={S.dropdownGrid}>
-                                        <Link href="/calculadora-simulacao" className={S.dropdownItem}>
-                                            <div className={S.itemIcon}>
-                                                <IconCalculator />
-                                            </div>
-                                            <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>Calculadora de Simulação</h4>
-                                                <p className={S.itemDescription}>Simule rendimentos e operações financeiras de forma rápida e precisa</p>
-                                            </div>
-                                        </Link>
-                                        
                                         <Link href="/investimentos" className={S.dropdownItem}>
                                              <div className={S.itemIcon}>
                                                  <IconTrendingUp />
@@ -306,8 +296,8 @@ const Navbar = () => {
                                     </div>
                                     
                                     <div className={S.dropdownFooter}>
-                                        <Link href="/recursos" className={S.viewAllLink}>
-                                            Ver todos os recursos →
+                                        <Link href="/solicitar-proposta" className={S.viewAllLink}>
+                                            Solicitar proposta →
                                         </Link>
                                     </div>
                                 </div>
@@ -333,15 +323,6 @@ const Navbar = () => {
                                     </div>
                                     
                                     <div className={S.dropdownGrid}>
-                                        <Link href="/sobre-nos" className={S.dropdownItem}>
-                                            <div className={S.itemIcon}>
-                                                <IconSettings />
-                                            </div>
-                                            <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>Sobre Nós</h4>
-                                                <p className={S.itemDescription}>Nossa história, missão e valores que nos guiam</p>
-                                            </div>
-                                        </Link>
                                         <Link href="/avaliacoes" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconStar />
@@ -349,6 +330,16 @@ const Navbar = () => {
                                             <div className={S.itemContent}>
                                                 <h4 className={S.itemTitle}>Avaliações</h4>
                                                 <p className={S.itemDescription}>Veja o que nossos clientes dizem sobre nossos serviços</p>
+                                            </div>
+                                        </Link>
+                                        
+                                        <Link href="/sobre-nos" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconBuilding />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Sobre Nós</h4>
+                                                <p className={S.itemDescription}>Nossa história, missão e valores que nos guiam</p>
                                             </div>
                                         </Link>
                                         
@@ -375,13 +366,14 @@ const Navbar = () => {
                 </div>
                 
                 <div className={S.actionButtons}>
-                    <Button 
-                        width="190px" 
-                        onClick={e => handleSmoothScroll(e, 'solicitar-agora')} 
-                        typeStyle="btn1" 
-                        size="sm" 
-                        label="Simular operação" 
-                    />
+                    <Link href="/solicitar-proposta">
+                        <Button 
+                            width="190px" 
+                            typeStyle="btn1" 
+                            size="sm" 
+                            label="Solicitar proposta" 
+                        />
+                    </Link>
                 </div>
             </div>
             {(drawerOpen || drawerClosing) && (
@@ -453,14 +445,7 @@ const Navbar = () => {
                                         <div className={S.drawerSubmenuItems}>
                                             <Link
                                                 className={S.drawerSubmenuItem}
-                                                href="/calculadora-simulacao"
-                                                onClick={handleCloseDrawer}
-                                            >
-                                                Calculadora de Simulação
-                                            </Link>
-                                            <Link
-                                                className={S.drawerSubmenuItem}
-                                                href="/conta-investimentos"
+                                                href="/investimentos"
                                                 onClick={handleCloseDrawer}
                                             >
                                                 Conta de Investimentos
@@ -497,17 +482,17 @@ const Navbar = () => {
                                         <div className={S.drawerSubmenuItems}>
                                             <Link
                                                 className={S.drawerSubmenuItem}
-                                                href="/sobre-nos"
-                                                onClick={handleCloseDrawer}
-                                            >
-                                                Sobre Nós
-                                            </Link>
-                                            <Link
-                                                className={S.drawerSubmenuItem}
                                                 href="/avaliacoes"
                                                 onClick={handleCloseDrawer}
                                             >
                                                 Avaliações
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/sobre-nos"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Sobre Nós
                                             </Link>
                                             <Link
                                                 className={S.drawerSubmenuItem}
@@ -563,8 +548,10 @@ const Navbar = () => {
                                 {t('footer.copyright', { year: getCurrentYear() })}
                             </div>
                             <div className={S.drawerButtonWrap}>
-                                <Button width="90%" typeStyle="btn1" size="sm" onClick={e => { handleSmoothScroll(e, 'agendamento'); handleCloseDrawer(); }}
-                                    label={t('menu.cta')} />
+                                <Link href="/solicitar-proposta" onClick={handleCloseDrawer}>
+                                    <Button width="90%" typeStyle="btn1" size="sm" 
+                                        label="Solicitar proposta" />
+                                </Link>
                             </div>
                         </div>
                     </div>

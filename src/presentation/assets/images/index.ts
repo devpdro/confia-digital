@@ -1,57 +1,93 @@
-import LOGO from './LOGO.png'
-import SELO_INVESTIMENTO from './SELO_INVESTIMENTOS.png'
-import GRAFICO from './GRAFICO.png'
-import SELO_SECURITIZADORA from './SELO_SECURITIZADORA.png'
-import HEADER from './HEADER.webp'
-import MULHER_ESCREVENDO from './MULHER_ESCREVENDO.webp'
-import HOMEM_COMPUTADOR from './HOMEM_COMPUTADOR.webp'
-import TEMPORARIA from './TEMPORARIA.webp'
 import AWARD from './AWARD.svg'
-import GRAFENO from './GRAFENO.webp'
+import AWARDS_BAGDES from './AWARDS_BAGDES.png'
 import BMP from './BMP.webp'
-import ITAU from './ITAU.webp'
-import TERCON from './TERCON.webp'
-import SINFAC from './SINFAC.webp'
-import SERASA from './SERASA.webp'
-import PESSOA_OLHANDO_FOLHA from './PESSOA_OLHANDO_FOLHA.webp'
-import TRES_PESSOAS from './TRES_PESSOAS.webp'
+import CELULAR from './CELULAR.webp'
+import CONTRATO_DINHEIRO from './CONTRATO_DINHEIRO.webp'
+import DINHEIRO from './DINHEIRO.webp'
 import DUAS_MULHERES from './DUAS_MULHERES.webp'
 import DUAS_PESSOAS from './DUAS_PESSOAS.webp'
+import DUAS_PESSOAS_TABLET from './DUAS_PESSOAS_TABLET.webp'
 import EMPRESARIO from './EMPRESARIO.webp'
-import SUPORTE from './SUPORTE.webp'
+import ESTRUTURACAO from './ESTRUTURACAO.webp'
+import ESTRUTURACAO_CUSTOMIZADA from './ESTRUTURACAO_CUSTOMIZADA.webp'
+import ESTRUTURACAO_DOIS from './ESTRUTURACAO_DOIS.webp'
+import GRAFENO from './GRAFENO.webp'
+import GRAFICO from './GRAFICO.png'
+import GRAFICO_MONEY from './GRAFICO_MONEY.webp'
+import HEADER from './HEADER.webp'
+import HOMEM_COMPUTADOR from './HOMEM_COMPUTADOR.webp'
+import HOMEM_MACBOOK from './HOMEM_MACBOOK.webp'
+import IDEIAS from './IDEIAS.webp'
+import ITAU from './ITAU.webp'
+import LOGO from './LOGO.png'
 import MONEY_VOLTA from './MONEY_VOLTA.svg'
+import MULHERES_MORENAS from './MULHERES_MORENAS.webp'
+import MULHER_ESCREVENDO from './MULHER_ESCREVENDO.webp'
+import MULHER_ESCREVENDO_JAPONESA from './MULHER_ESCREVENDO_JAPONESA.webp'
+import NO_MORE from './no-more.webp'
 import PAPEL from './PAPEL.svg'
-import PROTECAO from './PROTECAO.png'
+import PESSOAS_SORRINDO from './PESSOAS_SORRINDO.webp'
+import PESSOA_OLHANDO_FOLHA from './PESSOA_OLHANDO_FOLHA.webp'
+import PESSOA_RINDO_AVENTAL from './PESSOA_RINDO_AVENTAL.webp'
+import PLANTA from './PLANTA.webp'
 import PLANTA_DINHEIRO from './PLANTA_DINHEIRO.svg'
-import AWARDS_BAGDES from './AWARDS_BAGDES.png'
+import PROTECAO from './PROTECAO.png'
+import REUNIAO from './REUNIAO.webp'
+import REUNIAO_DOIS from './REUNIAO_DOIS.png'
+import SELO_INVESTIMENTO from './SELO_INVESTIMENTOS.png'
+import SELO_SECURITIZADORA from './SELO_SECURITIZADORA.png'
+import SERASA from './SERASA.webp'
+import SINFAC from './SINFAC.webp'
+import SUPORTE from './SUPORTE.webp'
+import TEMPORARIA from './TEMPORARIA.webp'
+import TERCON from './TERCON.webp'
+import TRES_PESSOAS from './TRES_PESSOAS.webp'
 
 const IMAGE = {
-    LOGO,
-    SELO_INVESTIMENTO,
-    AWARDS_BAGDES,
-    GRAFICO,
-    SELO_SECURITIZADORA,
-    HEADER,
-    MULHER_ESCREVENDO,
-    HOMEM_COMPUTADOR,
-    TEMPORARIA,
     AWARD,
-    GRAFENO,
+    AWARDS_BAGDES,
     BMP,
-    ITAU,
-    TERCON,
-    SINFAC,
-    SERASA,
-    PESSOA_OLHANDO_FOLHA,
-    TRES_PESSOAS,
+    CELULAR,
+    CONTRATO_DINHEIRO,
+    DINHEIRO,
     DUAS_MULHERES,
     DUAS_PESSOAS,
+    DUAS_PESSOAS_TABLET,
     EMPRESARIO,
-    SUPORTE,
+    ESTRUTURACAO,
+    ESTRUTURACAO_CUSTOMIZADA,
+    ESTRUTURACAO_DOIS,
+    GRAFENO,
+    GRAFICO,
+    GRAFICO_MONEY,
+    HEADER,
+    HOMEM_COMPUTADOR,
+    HOMEM_MACBOOK,
+    IDEIAS,
+    ITAU,
+    LOGO,
     MONEY_VOLTA,
+    MULHERES_MORENAS,
+    MULHER_ESCREVENDO,
+    MULHER_ESCREVENDO_JAPONESA,
+    NO_MORE,
     PAPEL,
-    PROTECAO,
+    PESSOAS_SORRINDO,
+    PESSOA_OLHANDO_FOLHA,
+    PESSOA_RINDO_AVENTAL,
+    PLANTA,
     PLANTA_DINHEIRO,
+    PROTECAO,
+    REUNIAO,
+    REUNIAO_DOIS,
+    SELO_INVESTIMENTO,
+    SELO_SECURITIZADORA,
+    SERASA,
+    SINFAC,
+    SUPORTE,
+    TEMPORARIA,
+    TERCON,
+    TRES_PESSOAS,
 }
 
 export default IMAGE;

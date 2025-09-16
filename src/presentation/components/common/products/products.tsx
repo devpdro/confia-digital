@@ -1,5 +1,7 @@
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import S from './products.module.scss';
 
@@ -7,27 +9,64 @@ const Products = () => {
     return (
         <section className={S.productsSection}>
             <div className={S.wrapper}>
-                <div className={S.header}>
-                    <h2 className={S.mainTitle}>
+                <motion.div 
+                    className={S.header}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <motion.h2 
+                        className={S.mainTitle}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                    >
                         Tudo o que você precisa para transformar recebíveis em capital.
-                    </h2>
-                    <p className={S.subtitle}>
+                    </motion.h2>
+                    <motion.p 
+                        className={S.subtitle}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+                    >
                         Securitização, antecipação e estruturação de operações totalmente integradas a partir de uma plataforma especializada.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
                 <div className={S.productsContainer}>
                     {/* Primeiro Card - Securitização de Recebíveis */}
-                    <div className={S.productCard}>
-                        <div className={S.imageArea}>
+                    <motion.div 
+                        className={S.productCard}
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                        whileHover={{ y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
+                    >
+                        <motion.div 
+                            className={S.imageArea}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                        >
                             <img
-                                src={IMAGE.TEMPORARIA.src}
+                                src={IMAGE.GRAFICO_MONEY.src}
                                 alt="Dashboard de securitização de recebíveis"
                                 className={S.productImage}
                             />
-                        </div>
+                        </motion.div>
 
-                        <div className={S.contentArea}>
+                        <motion.div 
+                            className={S.contentArea}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+                        >
                             <h3 className={S.productTitle}>
                                 Securitização de recebíveis que transforma contratos em liquidez.
                             </h3>
@@ -73,26 +112,47 @@ const Products = () => {
                                 </div>
                             </div>
 
-                            <Button
-                                typeStyle="btn1"
-                                label="Explore a securitização de recebíveis"
-                                size="sm"
-                                width={{ base: "330px", xs: "100%" }}
-                            />
-                        </div>
-                    </div>
+                            <Link href="/securitizacao-de-recebiveis">
+                                <Button
+                                    typeStyle="btn1"
+                                    label="Explore a securitização de recebíveis"
+                                    size="sm"
+                                    width={{ base: "330px", xs: "100%" }}
+                                />
+                            </Link>
+                        </motion.div>
+                    </motion.div>
 
                     {/* Segundo Card - Antecipação de Contratos */}
-                    <div className={S.productCard}>
-                        <div className={S.imageArea}>
+                    <motion.div 
+                        className={S.productCard}
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        whileHover={{ y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
+                    >
+                        <motion.div 
+                            className={S.imageArea}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                        >
                             <img
-                                src={IMAGE.TEMPORARIA.src}
+                                src={IMAGE.CONTRATO_DINHEIRO.src}
                                 alt="Antecipação de contratos futuros"
                                 className={S.productImage}
                             />
-                        </div>
+                        </motion.div>
 
-                        <div className={S.contentArea}>
+                        <motion.div 
+                            className={S.contentArea}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.5 }}
+                        >
                             <h3 className={S.productTitle}>
                                 Antecipação de contratos para capital de giro imediato.
                             </h3>
@@ -138,26 +198,47 @@ const Products = () => {
                                 </div>
                             </div>
 
-                            <Button
-                                typeStyle="btn1"
-                                label="Explore a antecipação de contratos"
-                                size="sm"
-                                width={{ base: "330px", xs: "100%" }}
-                            />
-                        </div>
-                    </div>
+                            <Link href="/antecipacao-de-contratos">
+                                <Button
+                                    typeStyle="btn1"
+                                    label="Explore a antecipação de contratos"
+                                    size="sm"
+                                    width={{ base: "330px", xs: "100%" }}
+                                />
+                            </Link>
+                        </motion.div>
+                    </motion.div>
 
                     {/* Terceiro Card - Estruturação Customizada */}
-                    <div className={S.productCard}>
-                        <div className={S.imageArea}>
+                    <motion.div 
+                        className={S.productCard}
+                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        whileHover={{ y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
+                    >
+                        <motion.div 
+                            className={S.imageArea}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                        >
                             <img
-                                src={IMAGE.TEMPORARIA.src}
+                                src={IMAGE.ESTRUTURACAO_CUSTOMIZADA.src}
                                 alt="Estruturação de operações complexas"
                                 className={S.productImage}
                             />
-                        </div>
+                        </motion.div>
 
-                        <div className={S.contentArea}>
+                        <motion.div 
+                            className={S.contentArea}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
+                        >
                             <h3 className={S.productTitle}>
                                 Estruturação sob medida para operações complexas.
                             </h3>
@@ -205,14 +286,16 @@ const Products = () => {
                                 </div>
                             </div>
 
-                            <Button
-                                typeStyle="btn1"
-                                label="Explore a estruturação customizada"
-                                size="sm"
-                                width={{ base: "330px", xs: "100%" }}
-                            />
-                        </div>
-                    </div>
+                            <Link href="/estruturacao-customizada">
+                                <Button
+                                    typeStyle="btn1"
+                                    label="Explore a estruturação customizada"
+                                    size="sm"
+                                    width={{ base: "330px", xs: "100%" }}
+                                />
+                            </Link>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </div>
         </section>

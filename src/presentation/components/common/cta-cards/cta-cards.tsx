@@ -1,5 +1,8 @@
-import { Button } from '../../form';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+import { Button } from 'src/presentation/components';
+
 import S from './cta-cards.module.scss';
 
 const cards = [
@@ -40,30 +43,97 @@ const CTACards = () => {
     return (
         <section className={S.section}>
             <div className={S.container}>
-                <div className={S.cards}>
-                    {cards.map((card) => (
-                        <div key={card.id} className={`${S.card} ${S[card.backgroundColor]}`}>
+                <motion.div
+                    className={S.cards}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    {cards.map((card, index) => (
+                        <motion.div
+                            key={card.id}
+                            className={`${S.card} ${S[card.backgroundColor]}`}
+                            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 0.7,
+                                ease: "easeOut",
+                                delay: 0.1 + (index * 0.2)
+                            }}
+                            whileHover={{
+                                y: -5,
+                                transition: { duration: 0.3, ease: "easeOut" }
+                            }}
+                        >
                             <div className={S.cardContent}>
-                                <div className={S.iconWrapper}>
+                                <motion.div
+                                    className={S.iconWrapper}
+                                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                        delay: 0.2 + (index * 0.2)
+                                    }}
+                                >
                                     {card.icon}
-                                </div>
+                                </motion.div>
 
-                                <h3 className={S.title}>{card.title}</h3>
+                                <motion.h3
+                                    className={S.title}
+                                    initial={{ opacity: 0, y: 15 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                        delay: 0.3 + (index * 0.2)
+                                    }}
+                                >
+                                    {card.title}
+                                </motion.h3>
 
-                                <p className={S.description}>{card.description}</p>
+                                <motion.p
+                                    className={S.description}
+                                    initial={{ opacity: 0, y: 15 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                        delay: 0.4 + (index * 0.2)
+                                    }}
+                                >
+                                    {card.description}
+                                </motion.p>
 
-                                <Link href={card.link}>
-                                    <Button
-                                        typeStyle="btn1"
-                                        label={card.buttonText}
-                                        size="md"
-                                        width="250px"
-                                    />
-                                </Link>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        duration: 0.5,
+                                        ease: "easeOut",
+                                        delay: 0.5 + (index * 0.2)
+                                    }}
+                                    whileHover={{ scale: 1.02 }}
+                                >
+                                    <Link href={card.link}>
+                                        <Button
+                                            typeStyle="btn1"
+                                            label={card.buttonText}
+                                            size="md"
+                                            width="250px"
+                                        />
+                                    </Link>
+                                </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

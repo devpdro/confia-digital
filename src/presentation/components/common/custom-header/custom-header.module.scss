@@ -191,6 +191,9 @@
             }
 
             .visual {
+                .img {
+                    border-radius: 400px 300px 0 300px;
+                }
                 @media (max-width: 768px) {
                     order: -1;
                 }

@@ -66,7 +66,8 @@ const ReceivablesSecuritization = () => (
         <CTA
             title="Estruture sua operação de securitização hoje mesmo."
             subtitle="Nossa equipe especializada analisa seus recebíveis e apresenta a melhor estrutura em até 48h."
-            buttonLabel="Solicitar análise"
+            buttonLabel="Solicitar proposta"
+            buttonLink="/solicitar-proposta"
         />
     </div>
 )

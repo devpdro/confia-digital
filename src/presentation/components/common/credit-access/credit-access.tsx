@@ -1,4 +1,5 @@
 import { IMAGE } from 'src/presentation/assets';
+import { motion } from 'framer-motion';
 import S from './credit-access.module.scss';
 
 interface CreditAccessCard {
@@ -44,19 +45,46 @@ const CreditAccess: React.FC<CreditAccessProps> = ({
     return (
         <section className={S.section}>
             <div className={S.container}>
-                <div className={S.content}>
-                    <div className={S.header}>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.div 
+                        className={S.header}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                    >
                         <h2 className={S.title}>
                             {title}
                         </h2>
                         <p className={S.subtitle}>
                             {subtitle}
                         </p>
-                    </div>
+                    </motion.div>
 
                     <div className={S.cards}>
                         {cards.map((item: CreditAccessCard, index: number) => (
-                            <div key={index} className={S.card}>
+                            <motion.div 
+                                key={index} 
+                                className={S.card}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ 
+                                    duration: 0.5, 
+                                    ease: "easeOut", 
+                                    delay: 0.2 + (index * 0.1) 
+                                }}
+                                whileHover={{ 
+                                    y: -2, 
+                                    transition: { duration: 0.2, ease: "easeOut" } 
+                                }}
+                            >
                                 {item.link ? (
                                     <a href={item.link} target="_blank" rel="noopener noreferrer" className={S.cardLink}>
                                         <div className={S.iconWrapper}>
@@ -78,10 +106,10 @@ const CreditAccess: React.FC<CreditAccessProps> = ({
                                         </p>
                                     </>
                                 )}
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

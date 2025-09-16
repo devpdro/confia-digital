@@ -9,6 +9,7 @@ import {
     CTA,
     CustomHeader,
 } from "src/presentation/components"
+import { IMAGE } from "src/presentation/assets"
 
 const FAQ_DATA = [
     {
@@ -76,7 +77,10 @@ const CustomStructuring = () => (
             title="Plataforma completa para estruturação customizada"
             description="Gerencie todo o processo de estruturação em uma única plataforma. Desde a análise inicial até a gestão pós-emissão, nossa tecnologia simplifica operações complexas de CRI e CRA personalizados."
             buttonLabel="Solicitar estruturação"
+            buttonLink="/solicitar-proposta"
             imageLeft={true}
+            desktopImage={IMAGE.ESTRUTURACAO_CUSTOMIZADA.src}
+            desktopImageAlt="Plataforma de estruturação customizada de operações CRI e CRA"
         />
         <Testimonial />
         <Trust
@@ -120,7 +124,10 @@ const CustomStructuring = () => (
             title="Acompanhamento em tempo real das suas operações"
             description="Monitore o desempenho dos seus CRI e CRA com dashboards intuitivos. Relatórios automáticos, alertas personalizados e comunicação direta com investidores em uma interface moderna e responsiva."
             buttonLabel="Acessar dashboard"
+            buttonLink="https://hotsys.com.br"
             imageLeft={false}
+            desktopImage={IMAGE.GRAFICO_MONEY.src}
+            desktopImageAlt="Dashboard de acompanhamento em tempo real de CRI e CRA"
         />
         <Process />
         <CTACards />

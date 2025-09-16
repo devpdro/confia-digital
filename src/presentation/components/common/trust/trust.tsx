@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import S from './trust.module.scss';
 
 interface TrustCard {
@@ -53,25 +54,84 @@ const Trust: React.FC<TrustProps> = ({
     return (
         <section className={S.section}>
             <div className={S.container}>
-                <div className={S.content}>
-                    <h2 className={S.title}>
+                <motion.div 
+                    className={S.content}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <motion.h2 
+                        className={S.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+                    >
                         {title}
-                    </h2>
+                    </motion.h2>
 
                     <div className={S.grid}>
                         {cards.map((card, index) => (
-                            <div key={index} className={S.card}>
-                                <div className={S.iconContainer}>
+                            <motion.div 
+                                key={index} 
+                                className={S.card}
+                                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                viewport={{ once: true, margin: "-80px" }}
+                                transition={{ 
+                                    duration: 0.6, 
+                                    ease: "easeOut", 
+                                    delay: 0.2 + (index * 0.1) 
+                                }}
+                                whileHover={{ 
+                                    y: -3, 
+                                    transition: { duration: 0.3, ease: "easeOut" } 
+                                }}
+                            >
+                                <motion.div 
+                                    className={S.iconContainer}
+                                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.5, 
+                                        ease: "easeOut", 
+                                        delay: 0.4 + (index * 0.1) 
+                                    }}
+                                >
                                     {card.icon}
-                                </div>
-                                <h3 className={S.cardTitle}>{card.title}</h3>
-                                <p className={S.cardDescription}>
+                                </motion.div>
+                                <motion.h3 
+                                    className={S.cardTitle}
+                                    initial={{ opacity: 0, x: -15 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.6, 
+                                        ease: "easeOut", 
+                                        delay: 0.5 + (index * 0.1) 
+                                    }}
+                                >
+                                    {card.title}
+                                </motion.h3>
+                                <motion.p 
+                                    className={S.cardDescription}
+                                    initial={{ opacity: 0, x: -15 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ 
+                                        duration: 0.7, 
+                                        ease: "easeOut", 
+                                        delay: 0.6 + (index * 0.1) 
+                                    }}
+                                >
                                     {card.description}
-                                </p>
-                            </div>
+                                </motion.p>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

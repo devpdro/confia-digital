@@ -21,7 +21,12 @@ const Home = () => (
         <Products />
         <Trust />
         <Awards />
-        <CTA />
+        <CTA 
+            title="Transforme seus recebíveis em capital hoje mesmo."
+            subtitle="Nossa equipe especializada analisa suas necessidades e apresenta a melhor solução financeira em até 24h."
+            buttonLabel="Solicitar proposta"
+            buttonLink="/solicitar-proposta"
+        />
     </div>
 )
 
