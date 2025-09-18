@@ -112,22 +112,22 @@ const RequestForm: React.FC = () => {
     } = useForm<FormData>({
         resolver: yupResolver(schema),
         defaultValues: {
-            financingType: '',
-            amount: '',
-            companyName: '',
-            cnpj: '',
-            responsibleName: '',
-            position: '',
-            phone: '',
-            email: '',
-            monthlyRevenue: '',
-            activityTime: '',
-            agreeTerms: false
+            financingType: 'receivables',
+            amount: '50000000', // R$ 500.000,00
+            companyName: 'Empresa Teste LTDA',
+            cnpj: '57.696.336/0001-58',
+            responsibleName: 'João Silva',
+            position: 'Diretor Financeiro',
+            phone: '(11) 99999-9999',
+            email: 'joao@empresateste.com.br',
+            monthlyRevenue: '500k-2m',
+            activityTime: '3-10-years',
+            agreeTerms: true
         }
     });
     
-    const handleSystemConnect = () => {
-        window.open('https://hotsys.com.br/', '_blank');
+    const handlePartnerConnect = () => {
+        window.open('https://americafinanceira.com.br/formulario-seja-parceiro', '_blank');
     };
 
     const onSubmit = async (data: FormData) => {
@@ -244,7 +244,7 @@ const RequestForm: React.FC = () => {
                 <div className={S.rightColumn}>
                     <div className={S.rightContent}>
                         <div className={S.contactInfo}>
-                            Dúvidas? Ligue (11) 3000-0000
+                            Dúvidas? Ligue (19) 98106-2535
                         </div>
                         
                         <Toaster />
@@ -413,7 +413,7 @@ const RequestForm: React.FC = () => {
                                         Enviando...
                                     </>
                                 ) : (
-                                    'Simular Operação'
+                                    'Solicitar Proposta'
                                 )}
                             </button>
                             {errors.agreeTerms && <span className={S.errorMessage}>{errors.agreeTerms.message}</span>}
@@ -422,8 +422,8 @@ const RequestForm: React.FC = () => {
                                 <span>OU</span>
                             </div>
                             
-                            <button type="button" className={S.secondaryButton} onClick={handleSystemConnect}>
-                                 Conectar ao Sistema Contábil
+                            <button type="button" className={S.secondaryButton} onClick={handlePartnerConnect}>
+                                 Seja Nosso Parceiro
                              </button>
                         </form>
                     </div>

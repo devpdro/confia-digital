@@ -22,6 +22,7 @@
     "react-hot-toast": "^2.6.0",
     "react-i18next": "^15.7.3",
     "react-input-mask": "^2.0.4",
+    "resend": "^6.1.0",
     "sass": "^1.92.1",
     "yup": "^1.7.0"
   },

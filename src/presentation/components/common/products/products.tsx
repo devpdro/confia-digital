@@ -54,7 +54,7 @@ const Products = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         >
                             <img
-                                src={IMAGE.GRAFICO_MONEY.src}
+                                src={IMAGE.SECURITIZACAO.src}
                                 alt="Dashboard de securitização de recebíveis"
                                 className={S.productImage}
                             />
@@ -140,7 +140,7 @@ const Products = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                         >
                             <img
-                                src={IMAGE.CONTRATO_DINHEIRO.src}
+                                src={IMAGE.CALCULADORA_CONTRATO.src}
                                 alt="Antecipação de contratos futuros"
                                 className={S.productImage}
                             />
@@ -226,7 +226,7 @@ const Products = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
                         >
                             <img
-                                src={IMAGE.ESTRUTURACAO_CUSTOMIZADA.src}
+                                src={IMAGE.ESTRUTURACAO_AZUL.src}
                                 alt="Estruturação de operações complexas"
                                 className={S.productImage}
                             />

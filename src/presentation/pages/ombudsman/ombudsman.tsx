@@ -45,7 +45,7 @@ const Ombudsman = () => {
                                 <h2 className={S.sectionTitle}>Canais de Atendimento</h2>
                                 <p className={S.paragraph}>
                                     <strong>E-mail:</strong> ouvidoria@confiacapital.com.br<br />
-                                    <strong>Telefone:</strong> 0800-555-0123 (ligação gratuita)<br />
+                                    <strong>Telefone:</strong> 0800-000-0120 (ligação gratuita)<br />
                                     <strong>WhatsApp:</strong> "(19) 98106-2535"<br />
                                 </p>
 
