@@ -110,20 +110,7 @@ const RequestForm: React.FC = () => {
         watch,
         reset
     } = useForm<FormData>({
-        resolver: yupResolver(schema),
-        defaultValues: {
-            financingType: 'receivables',
-            amount: '50000000', // R$ 500.000,00
-            companyName: 'Empresa Teste LTDA',
-            cnpj: '57.696.336/0001-58',
-            responsibleName: 'João Silva',
-            position: 'Diretor Financeiro',
-            phone: '(11) 99999-9999',
-            email: 'joao@empresateste.com.br',
-            monthlyRevenue: '500k-2m',
-            activityTime: '3-10-years',
-            agreeTerms: true
-        }
+        resolver: yupResolver(schema)
     });
     
     const handlePartnerConnect = () => {
