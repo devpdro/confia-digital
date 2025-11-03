@@ -365,6 +365,9 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
+                        <Link className={S.menuItem} href="/contato" onClick={(e) => e.preventDefault()}>
+                            Contato
+                        </Link>
                     </div>
                 </div>
                 
@@ -504,10 +507,17 @@ const Navbar = () => {
                                             >
                                                 Parceiros
                                             </Link>
-                                        </div>
-                                    )}
                                 </div>
-                                {/* Idiomas temporariamente comentados */}
+                            )}
+                        </div>
+                        <Link
+                            className={S.menuItem}
+                            href="#"
+                            onClick={(e) => e.preventDefault()}
+                        >
+                            Contato
+                        </Link>
+                        {/* Idiomas temporariamente comentados */}
                                 {/* <div className={S.drawerLangWrap}>
                                     <p className={S.menuItemLang}>
                                         {t('menu.language')}
@@ -546,7 +556,7 @@ const Navbar = () => {
                         </div>
                         <div className={S.drawerFooter}>
                             <div className={S.drawerSocials}>
-                                <a href="https://www.instagram.com/confiacapitaloficial?igsh=c3JtaGJkdXh0Z2Z5" target="_blank" className={S.drawerSocialItem}><IconBrandInstagram size={34} /></a>
+                                <a href="https://www.instagram.com/confiacapitaloficial/" target="_blank" className={S.drawerSocialItem}><IconBrandInstagram size={34} /></a>
                             </div>
                             <div className={S.drawerCopyright}>
                                 {t('footer.copyright', { year: getCurrentYear() })}
