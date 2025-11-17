@@ -16,3 +16,4 @@ export { default as ReceivablesSecuritization } from './receivables-securitizati
 export { default as RequestSecuritization } from './request-securitization/request-securitization'
 export { default as StandardContracts } from './standard-contracts/standard-contracts'
 export { default as TermsOfUse } from './terms-of-use/terms-of-use'
+export { default as HotInvest } from './hot-invest/hot-invest'

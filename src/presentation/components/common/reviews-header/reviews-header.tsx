@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { motion } from 'framer-motion';
+
 import S from './reviews-header.module.scss';
 
 interface PartnersHeaderProps {

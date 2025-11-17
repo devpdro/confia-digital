@@ -10,8 +10,12 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@tabler/icons-react": "^3.34.1",
+    "@react-three/drei": "^9.79.2",
+    "@react-three/fiber": "^8.15.16",
+    "@tabler/icons-react": "^3.35.0",
     "@types/nodemailer": "^7.0.1",
+    "embla-carousel-react": "^8.6.0",
+    "embla-carousel-wheel-gestures": "^8.1.0",
     "framer-motion": "^12.23.12",
     "i18next-browser-languagedetector": "^8.2.0",
     "next": "14.2.0",
@@ -24,6 +28,7 @@
     "react-input-mask": "^2.0.4",
     "resend": "^6.1.0",
     "sass": "^1.92.1",
+    "three": "^0.160.0",
     "yup": "^1.7.0"
   },
   "devDependencies": {

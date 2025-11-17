@@ -13,18 +13,20 @@ export interface FAQProps {
     title: string;
     items: FAQItem[];
     className?: string;
+    themeColor?: string;
 }
 
 const FAQ: React.FC<FAQProps> = ({
     title,
     items,
-    className
+    className,
+    themeColor
 }) => {
     const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
     const toggleItem = (id: string) => {
         const isCurrentlyOpen = openItems.has(id);
-        
+
         setOpenItems(prev => {
             const newSet = new Set(prev);
             if (newSet.has(id)) {
@@ -53,15 +55,16 @@ const FAQ: React.FC<FAQProps> = ({
     return (
         <section className={`${S.section} ${className || ''}`}>
             <div className={S.container}>
-                <motion.div 
+                <motion.div
                     className={S.content}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <motion.h2 
+                    <motion.h2
                         className={S.title}
+                        style={themeColor ? { color: themeColor } : undefined}
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -70,7 +73,7 @@ const FAQ: React.FC<FAQProps> = ({
                         {title}
                     </motion.h2>
 
-                    <motion.div 
+                    <motion.div
                         className={S.faqList}
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -88,10 +91,10 @@ const FAQ: React.FC<FAQProps> = ({
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ 
-                                        duration: 0.5, 
-                                        ease: "easeOut", 
-                                        delay: 0.3 + (index * 0.1) 
+                                    transition={{
+                                        duration: 0.5,
+                                        ease: "easeOut",
+                                        delay: 0.3 + (index * 0.1)
                                     }}
                                 >
                                     <button
@@ -100,12 +103,12 @@ const FAQ: React.FC<FAQProps> = ({
                                         aria-expanded={isOpen}
                                         aria-controls={`faq-answer-${item.id}`}
                                     >
-                                        <span className={S.questionText}>{item.question}</span>
+                                        <span className={S.questionText} style={themeColor ? { color: themeColor } : undefined}>{item.question}</span>
                                         <motion.div
                                             className={`${S.icon} ${isOpen ? S.iconOpen : ''}`}
                                             animate={{
                                                 rotate: isOpen ? 45 : 0,
-                                                color: isOpen ? '#264f85' : '#264f85',
+                                                color: themeColor ? themeColor : '#264f85',
                                                 scale: isOpen ? 1.1 : 1
                                             }}
                                             transition={{

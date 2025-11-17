@@ -1,0 +1,212 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Confia Capital azul */
+  background: radial-gradient(at 50% 60%, #0D447E 0%, #0A0F1E 100%);
+  overflow: hidden;
+  color: #fff;
+}
+
+.gradientOverlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* fica abaixo do conteúdo (cartão) */
+  background: radial-gradient(600px 450px at var(--glow-x, 50%) var(--glow-y, 50%),
+      rgba(255, 255, 255, 0.10),
+      rgba(255, 255, 255, 0.03) 40%,
+      transparent 70%);
+  transition: opacity 300ms ease;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  z-index: 1;
+  /* garante que o cartão fique acima da luz de fundo */
+}
+
+.badge {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.title {
+  margin-top: 0.5rem;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 64px;
+
+  @media (max-width: 1184px) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  opacity: 0.92;
+}
+
+.cardWrap {
+  margin: 4rem auto 3rem;
+  width: 440px;
+  height: 680px;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: visible;
+}
+
+.cardImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  border-radius: 0;
+  transform: scale(1.18);
+}
+
+@media (max-width: 768px) {
+  .cardImg {
+    transform: scale(1);
+  }
+}
+
+.cardSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.cardCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.chip {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 44px;
+  height: 34px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #b7c0c8 0%, #7c8591 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.brandText {
+  position: absolute;
+  top: 110px;
+  left: 22px;
+  right: 22px;
+  font-weight: 500;
+  font-size: 42px;
+  letter-spacing: 2px;
+  line-height: 1.05;
+  color: rgba(255, 255, 255, 0.12);
+}
+
+/* Ícones de benefícios */
+.icons {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* centraliza ícone + texto */
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  Backdrop-filter: saturate(120%) blur(2px);
+  text-align: center;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  color: #CFE3FF;
+  /* stroke dos Tabler usa currentColor */
+  flex: 0 0 auto;
+}
+
+.iconText {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #EAF2FE;
+}
+
+.iconGold {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #0D447E 0%, #0A0F1E 100%);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12) inset;
+  flex: 0 0 auto;
+}
+
+.iconText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #EAF2FE;
+}
+
+@media (max-width: 768px) {
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .iconText {
+    font-size: 14px;
+  }
+
+  .iconItem {
+    padding: 8px 12px;
+  }
+}

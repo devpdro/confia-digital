@@ -43,30 +43,16 @@
                     color: #0D447E;
                     font-size: 20px;
                     line-height: 20px;
-                    font-weight: 700;
+                    font-weight: 500;
                     text-transform: uppercase;
                     letter-spacing: 5px;
                     margin-bottom: 0.775rem;
-
-                    @media (max-width: 1184px) {
-                        font-size: 14px;
-                        line-height: 17px;
-                        margin-bottom: 0.575rem;
-
-                    }
-
-                    @media (max-width: 768px) {
-                        text-align: left;
-                        font-size: 16px;
-                        line-height: 15px;
-                        margin-bottom: 0.575rem;
-                    }
                 }
 
                 .title {
                     color: #010553;
                     font-size: 80px;
-                    font-weight: 600;
+                    font-weight: 500;
                     line-height: 80px;
                     margin-bottom: 1.575rem;
 
@@ -184,7 +170,7 @@
                             text-decoration: underline;
                             cursor: pointer;
                             color: #010553;
-                            font-weight: 700;
+                            font-weight: 500;
                         }
                     }
                 }

@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0D447E;
+    background-color: var(--btn1-bg, #0D447E);
     color: #fff;
     border-radius: 5px;
     transition: all 0.25s ease;
@@ -71,15 +71,15 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    color: 2px solid #0D447E;
-    border: 2px solid #0D447E;
+    color: var(--btn2-color, #0D447E);
+    border: 2px solid var(--btn2-color, #0D447E);
     border-radius: 5px;
     transition: all 0.25s ease;
 
     width: var(--btn-width, auto);
 
     &:hover {
-        background-color: #0D447E;
+        background-color: var(--btn2-color, #0D447E);
         color: #fff;
     }
 
@@ -114,14 +114,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #010553;
-    border: 2px solid #010553;
+    color: var(--btn3-color, #010553);
+    border: 2px solid var(--btn3-color, #010553);
     border-radius: 5px;
     transition: all 0.25s ease;
     width: var(--btn-width, auto);
 
     &:hover {
-        background-color: #010553;
+        background-color: var(--btn3-color, #010553);
         color: #fff;
     }
 

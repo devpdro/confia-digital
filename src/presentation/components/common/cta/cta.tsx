@@ -8,16 +8,20 @@ interface CTAProps {
     subtitle?: string;
     buttonLabel?: string;
     buttonLink?: string;
+    themeColor?: string;
+    buttonColor?: string;
 }
 
 const CTA: React.FC<CTAProps> = ({
     title = "Pronto para transformar seus recebíveis em capital imediato?",
     subtitle = "Faça uma simulação sem compromisso e descubra quanto pode receber pelos seus recebíveis.",
     buttonLabel = "Solicite uma proposta",
-    buttonLink = "/solicitar-proposta"
+    buttonLink = "/solicitar-proposta",
+    themeColor,
+    buttonColor
 }) => {
     return (
-        <section className={S.section}>
+        <section className={S.section} style={themeColor ? { backgroundColor: themeColor } : undefined}>
             <div className={S.container}>
                 <div className={S.content}>
                     <div className={S.textContent}>
@@ -36,6 +40,7 @@ const CTA: React.FC<CTAProps> = ({
                                 label={buttonLabel}
                                 size="md"
                                 width={{ base: "220px", xs: "100%" }}
+                                accentColor={buttonColor}
                             />
                         </Link>
 

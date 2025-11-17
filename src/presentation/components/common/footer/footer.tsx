@@ -2,19 +2,22 @@ import Link from 'next/link';
 
 import S from './footer.module.scss';
 
-const Footer = () => {
+interface FooterProps {
+    themeColor?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ themeColor }) => {
     return (
-        <footer className={S.footer}>
+        <footer className={S.footer} style={themeColor ? { backgroundColor: themeColor } : undefined}>
             <div className={S.container}>
                 <div className={S.content}>
                     {/* Navigation Links */}
                     <div className={S.topSection}>
                         <div className={S.navLinks}>
+                            <Link href="/hot-invest" className={S.navLink}>Hot Invest</Link>
                             <Link href="/sobre-nos" className={S.navLink}>Sobre nós</Link>
                             <Link href="/parceiros" className={S.navLink}>Parceiros</Link>
                             <Link href="/avaliacoes" className={S.navLink}>Avaliações</Link>
-                            <Link href="/contato" className={S.navLink}>Contato</Link>
-                            <Link href="/intranet" className={S.navLink}>Intranet</Link>
                         </div>
                     </div>
 

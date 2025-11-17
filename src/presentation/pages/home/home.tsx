@@ -6,6 +6,7 @@ import {
     Trust,
     Awards,
     CTA,
+    CreditCard,
 } from "src/presentation/components"
 
 const Home = () => (

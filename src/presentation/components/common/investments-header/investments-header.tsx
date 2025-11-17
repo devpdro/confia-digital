@@ -1,6 +1,6 @@
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
-import Link from 'next/link';
+
 import { motion } from 'framer-motion';
 
 import S from './investments-header.module.scss';
@@ -48,7 +48,7 @@ const InvestmentsHeader = () => {
                             >
                                 <Button
                                     typeStyle="btn1"
-                                    label="Abrir minha conta"
+                                    label="Acessar minha conta"
                                     size="md"
                                     width="240px"
                                 />

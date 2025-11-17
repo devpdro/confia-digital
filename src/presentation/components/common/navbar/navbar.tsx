@@ -247,6 +247,9 @@ const Navbar = () => {
                         <Link className={S.menuItem} href="/antecipacao-de-contratos">
                             Antecipação
                         </Link>
+                        <Link className={S.menuItem} href="/hot-invest">
+                            HotInvest
+                        </Link>
                         <div 
                             className={`${S.menuItemDropdown} ${showRecursos ? S.dropdownOpen : ''}`}
                             onMouseEnter={handleRecursosMouseEnter}
@@ -267,16 +270,6 @@ const Navbar = () => {
                                     </div>
                                     
                                     <div className={S.dropdownGrid}>
-                                        <Link href="/investimentos" className={S.dropdownItem}>
-                                             <div className={S.itemIcon}>
-                                                 <IconTrendingUp />
-                                             </div>
-                                             <div className={S.itemContent}>
-                                                 <h4 className={S.itemTitle}>Conta de Investimentos</h4>
-                                                 <p className={S.itemDescription}>Oportunidades de investimento seguro com rentabilidade garantida</p>
-                                             </div>
-                                         </Link>
-                                        
                                         <Link href="/perguntas-frequentes" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconHelp />
@@ -436,6 +429,13 @@ const Navbar = () => {
                                 >
                                     Antecipação
                                 </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/investimentos"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    HotInvest
+                                </Link>
                                 
                                 <div className={S.drawerSubmenu}>
                                     <div 
@@ -449,13 +449,6 @@ const Navbar = () => {
                                     </div>
                                     {mobileRecursosOpen && (
                                         <div className={S.drawerSubmenuItems}>
-                                            <Link
-                                                className={S.drawerSubmenuItem}
-                                                href="/investimentos"
-                                                onClick={handleCloseDrawer}
-                                            >
-                                                Conta de Investimentos
-                                            </Link>
                                             <Link
                                                 className={S.drawerSubmenuItem}
                                                 href="/perguntas-frequentes"

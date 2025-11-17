@@ -1,6 +1,7 @@
 @import './fonts/stylesheet.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -62,7 +63,7 @@ html {
 }
 
 body {
-  font-family: 'Gellix', Helvetica, sans-serif;
+  font-family: 'Geist', Helvetica, sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
   /*
@@ -115,7 +116,7 @@ h4,
 h5,
 h6,
 strong {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 a {

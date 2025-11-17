@@ -133,7 +133,7 @@ const PricingTable = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
                     >
                         <motion.a 
-                            href="https://hotinvest.dbs.moneyp.com.br/login" 
+                            href="https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Confia%20Capital%20e%20queria%20abrir%20minha%20conta%20na%20HotInvest!" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className={S.detailsLink}

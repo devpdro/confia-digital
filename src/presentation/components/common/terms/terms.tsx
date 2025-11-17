@@ -1,8 +1,12 @@
 import S from './terms.module.scss';
 
-const Terms = () => {
+interface TermsProps {
+    themeColor?: string;
+}
+
+const Terms: React.FC<TermsProps> = ({ themeColor }) => {
     return (
-        <section className={S.section}>
+        <section className={S.section} style={themeColor ? { backgroundColor: themeColor } : undefined}>
             <div className={S.container}>
                 <div className={S.content}>
                     <div className={S.disclaimer}>

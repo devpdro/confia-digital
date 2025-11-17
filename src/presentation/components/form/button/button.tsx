@@ -10,9 +10,10 @@ export type ButtonProps = {
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
     icon?: ReactNode;
     id?: string;
+    accentColor?: string;
 };
 
-const Button = ({ typeStyle, label, width, onClick, icon, size = 'md', id }: ButtonProps) => {
+const Button = ({ typeStyle, label, width, onClick, icon, size = 'md', id, accentColor }: ButtonProps) => {
     const buttonClasses = {
         btn1: S.btn1,
         btn2: S.btn2,
@@ -39,8 +40,16 @@ const Button = ({ typeStyle, label, width, onClick, icon, size = 'md', id }: But
 
     const combinedClass = `${S.btn} ${buttonClasses[typeStyle]} ${sizeClasses[size]}`;
 
+    const getAccentVars = (): CSSProperties => {
+        if (!accentColor) return {};
+        if (typeStyle === 'btn1') return { ['--btn1-bg' as any]: accentColor };
+        if (typeStyle === 'btn2') return { ['--btn2-color' as any]: accentColor };
+        if (typeStyle === 'btn3') return { ['--btn3-color' as any]: accentColor };
+        return {};
+    };
+
     return (
-        <button id={id} className={combinedClass} style={getResponsiveWidthVars(width)} onClick={onClick}>
+        <button id={id} className={combinedClass} style={{ ...getResponsiveWidthVars(width), ...getAccentVars() }} onClick={onClick}>
             {icon && <span className={S.icon}>{icon}</span>}
             {label}
         </button>
