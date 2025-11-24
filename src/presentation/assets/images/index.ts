@@ -46,9 +46,11 @@ import TRES_PESSOAS from './TRES_PESSOAS.webp'
 import ESTRUTURACAO_AZUL from './ESTRUTURACAO_AZUL.webp'
 import SECURITIZACAO from './SECURITIZACAO.webp'
 import CALCULADORA_CONTRATO from './CALCULADORA_CONTRATO.webp'
-import CARTAO from './CARTAO.png'              
+import CARTAO from './CARTAO.png'
+import APP_STORE from './APP_STORE.svg'              
 
 const IMAGE = {
+    APP_STORE,
     CARTAO,
     ESTRUTURACAO_AZUL,
     SECURITIZACAO,

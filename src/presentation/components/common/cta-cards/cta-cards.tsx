@@ -17,8 +17,8 @@ const cards = [
         ),
         title: "Transforme recebíveis em capital imediato",
         description: "Securitização de duplicatas e contratos a partir de R$ 500 mil. Liquidez em até 48h sem comprometer o balanço patrimonial.",
-        buttonText: "Securitizar recebíveis",
-        link: "/securitizacao-de-recebiveis",
+        buttonText: "Antecipar recebíveis",
+        link: "/antecipacao-de-recebiveis",
         backgroundColor: "blue"
     },
     {
@@ -36,6 +36,40 @@ const cards = [
         buttonText: "Antecipar contratos",
         link: "/antecipacao-de-contratos",
         backgroundColor: "purple"
+    },
+    {
+        id: 'capital-giro',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="#1a237e" strokeWidth="2" />
+                <path d="M12 6V12L16 14" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8 8L12 4L16 8" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M8 16L12 20L16 16" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+        ),
+        title: "Capital de giro para impulsionar seu negócio",
+        description: "Recursos financeiros flexíveis para cobrir despesas operacionais, investir em crescimento e aproveitar oportunidades de mercado. Soluções sob medida para sua empresa.",
+        buttonText: "Solicitar capital de giro",
+        link: "/capital-de-giro",
+        backgroundColor: "green"
+    },
+    {
+        id: 'conta-escrow',
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="18" rx="2" stroke="#1a237e" strokeWidth="2" />
+                <path d="M3 10H21" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" />
+                <path d="M8 4V8" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" />
+                <path d="M16 4V8" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" />
+                <path d="M9 14L12 17L15 14" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="12" cy="19" r="1.5" fill="#1a237e" />
+            </svg>
+        ),
+        title: "Conta Escrow: segurança em suas transações",
+        description: "Proteja negociações complexas com uma conta de garantia. Os fundos ficam seguros até o cumprimento de todas as condições acordadas, garantindo transparência e confiança para todas as partes.",
+        buttonText: "Conhecer Conta Escrow",
+        link: "/conta-escrow",
+        backgroundColor: "orange"
     }
 ];
 
@@ -126,7 +160,7 @@ const CTACards = () => {
                                             typeStyle="btn1"
                                             label={card.buttonText}
                                             size="md"
-                                            width="250px"
+                                            width="275px"
                                         />
                                     </Link>
                                 </motion.div>

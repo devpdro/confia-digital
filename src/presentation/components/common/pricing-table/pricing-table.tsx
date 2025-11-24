@@ -16,12 +16,6 @@ const PricingTable = () => {
             competitors: "R$ 120 - R$ 600 cobrados"
         },
         {
-            service: "Rendimento do seu dinheiro",
-            bluevine: "150% acima da poupança",
-            bluevineNote: true,
-            competitors: "0% - não rende nada"
-        },
-        {
             service: "PIX e transferências",
             bluevine: "Ilimitado 24h gratuito",
             bluevineNote: true,
@@ -47,20 +41,25 @@ const PricingTable = () => {
             service: "Cashback nas compras",
             bluevine: "Dinheiro de volta real",
             competitors: "Inexistente ou mínimo"
+        },
+        {
+            service: "Segurança e proteção",
+            bluevine: "Criptografia e garantia FGC",
+            competitors: "Segurança básica"
         }
     ];
 
     return (
         <section className={S.section}>
             <div className={S.container}>
-                <motion.div 
+                <motion.div
                     className={S.content}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <motion.h2 
+                    <motion.h2
                         className={S.title}
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -69,18 +68,18 @@ const PricingTable = () => {
                     >
                         Seu banco está sugando seu dinheiro.
                     </motion.h2>
-                    
-                    <motion.p 
+
+                    <motion.p
                         className={S.subtitle}
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                     >
-                        Você paga mais de R$ 1.000 por ano em taxas desnecessárias. No HotInvest, seu dinheiro cresce em vez de diminuir. Veja a diferença:
+                        Você paga mais de R$ 1.000 por ano em taxas desnecessárias. Aqui, seu dinheiro trabalha para você em vez de ser sugado por taxas. Veja a diferença:
                     </motion.p>
-                    
-                    <motion.div 
+
+                    <motion.div
                         className={S.tableWrapper}
                         initial={{ opacity: 0, y: 20, scale: 0.98 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -92,7 +91,7 @@ const PricingTable = () => {
                                 <tr className={S.headerRow}>
                                     <th className={S.serviceHeader}></th>
                                     <th className={S.bluevineHeader}>
-                                        <span className={S.brandName}>HotInvest</span>
+                                        <span className={S.brandName}>Confia Capital</span>
                                     </th>
                                     <th className={S.competitorsHeader}>
                                         Bancos tradicionais<sup>1</sup>
@@ -101,16 +100,16 @@ const PricingTable = () => {
                             </thead>
                             <tbody>
                                 {tableData.map((row, index) => (
-                                    <motion.tr 
-                                        key={index} 
+                                    <motion.tr
+                                        key={index}
                                         className={S.dataRow}
                                         initial={{ opacity: 0, x: -10 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ 
-                                            duration: 0.6, 
-                                            ease: "easeOut", 
-                                            delay: 0.5 + (index * 0.08) 
+                                        transition={{
+                                            duration: 0.6,
+                                            ease: "easeOut",
+                                            delay: 0.5 + (index * 0.08)
                                         }}
                                     >
                                         <td className={S.serviceCell}>{row.service}</td>
@@ -124,20 +123,20 @@ const PricingTable = () => {
                             </tbody>
                         </table>
                     </motion.div>
-                    
-                    <motion.div 
+
+                    <motion.div
                         className={S.footer}
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
                     >
-                        <motion.a 
-                            href="https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Confia%20Capital%20e%20queria%20abrir%20minha%20conta%20na%20HotInvest!" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <motion.a
+                            href="https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Vim%20do%20site%20da%20Confia%20Capital%20e%20queria%20abrir%20minha%20conta!"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={S.detailsLink}
-                            whileHover={{ 
+                            whileHover={{
                                 scale: 1.02,
                                 color: "#0d47a1"
                             }}

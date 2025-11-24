@@ -3,10 +3,10 @@
 .section {
     background-color: #0D447E;
     width: 100%;
-    padding: 4rem 0;
+    padding: 2rem 0;
 
     @media (max-width: 768px) {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
 }
 
@@ -148,6 +148,47 @@
 
     &:hover {
         color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        gap: 0.75rem;
+    }
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'Domine', sans-serif;
+
+    @media (max-width: 1184px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.8);
+        transform: translateX(4px);
+    }
+
+    svg {
+        flex-shrink: 0;
     }
 }
 

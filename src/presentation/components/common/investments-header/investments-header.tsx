@@ -22,7 +22,7 @@ const InvestmentsHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
                         >
-                            Conta digital gratuita com investimentos que rendem mais
+                            Seu banco completo na palma da mão
                         </motion.h1>
 
                         <motion.p
@@ -31,7 +31,7 @@ const InvestmentsHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                         >
-                            Zero tarifas, cartão sem anuidade e seu dinheiro rendendo automaticamente acima da poupança. Tudo no seu celular, sem burocracia.
+                            Zero tarifas, cartão sem anuidade, PIX ilimitado e transferências gratuitas. Gerencie suas finanças com praticidade e segurança, tudo no seu celular.
                         </motion.p>
 
                         <motion.div
@@ -41,7 +41,7 @@ const InvestmentsHeader = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                             whileHover={{ scale: 1.02 }}
                         >
-                            <a 
+                            <a
                                 href="https://hotinvest.dbs.moneyp.com.br/login"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -62,7 +62,7 @@ const InvestmentsHeader = () => {
                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                         >
                             <p className={S.disclaimer}>
-                                Banco digital regulamentado pelo <span className={S.link}>Banco Central</span>. Conta 100% gratuita, sem análise de crédito e para todos os perfis.
+                                Banco Digital regulamentado pelo Banco Central do Brasil. Operações protegidas por criptografia e garantia do FGC para depósitos de até R$ 250 mil.
                             </p>
                         </motion.div>
                     </div>
@@ -73,7 +73,7 @@ const InvestmentsHeader = () => {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
-                        <img className={S.img} src={IMAGE.HEADER_IMAGE.src} alt="Aplicativo HotInvest - Banco digital no seu celular" />
+                        <img className={S.img} src={IMAGE.HEADER_IMAGE.src} alt="Aplicativo Conta Digital - Banco digital no seu celular" />
                     </motion.div>
                 </motion.div>
             </div>

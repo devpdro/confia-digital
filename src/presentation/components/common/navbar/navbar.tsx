@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import 'src/i18n/i18n';
 
-import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers, IconBuilding } from '@tabler/icons-react';
+import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers, IconBuilding, IconDeviceMobile } from '@tabler/icons-react';
 
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
@@ -71,17 +71,14 @@ const Navbar = () => {
     const router = useRouter();
     const isFaqPage = router.pathname === '/perguntas-frequentes';
     const [showLangs, setShowLangs] = useState(false);
-    const [showSecuritizacao, setShowSecuritizacao] = useState(false);
-    const [showRecursos, setShowRecursos] = useState(false);
+    const [showAntecipacao, setShowAntecipacao] = useState(false);
     const [showEmpresa, setShowEmpresa] = useState(false);
-    const [securitizacaoTimeout, setSecuritizacaoTimeout] = useState<NodeJS.Timeout | null>(null);
-    const [recursosTimeout, setRecursosTimeout] = useState<NodeJS.Timeout | null>(null);
+    const [antecipacaoTimeout, setAntecipacaoTimeout] = useState<NodeJS.Timeout | null>(null);
     const [empresaTimeout, setEmpresaTimeout] = useState<NodeJS.Timeout | null>(null);
     const [selectedLang, setSelectedLang] = useState(i18n.language === 'en' ? 'en' : 'pt');
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerClosing, setDrawerClosing] = useState(false);
-    const [mobileSecuritizacaoOpen, setMobileSecuritizacaoOpen] = useState(false);
-    const [mobileRecursosOpen, setMobileRecursosOpen] = useState(false);
+    const [mobileAntecipacaoOpen, setMobileAntecipacaoOpen] = useState(false);
     const [mobileEmpresaOpen, setMobileEmpresaOpen] = useState(false);
 
     const selected = LANGS.find(l => l.code === selectedLang) || LANGS[0];
@@ -125,40 +122,21 @@ const Navbar = () => {
         setShowLangs(false);
     };
 
-    const handleSecuritizacaoMouseEnter = () => {
-        if (securitizacaoTimeout) {
-            clearTimeout(securitizacaoTimeout);
-            setSecuritizacaoTimeout(null);
+    const handleAntecipacaoMouseEnter = () => {
+        if (antecipacaoTimeout) {
+            clearTimeout(antecipacaoTimeout);
+            setAntecipacaoTimeout(null);
         }
         // Fecha outros dropdowns
-        setShowRecursos(false);
         setShowEmpresa(false);
-        setShowSecuritizacao(true);
+        setShowAntecipacao(true);
     };
 
-    const handleSecuritizacaoMouseLeave = () => {
+    const handleAntecipacaoMouseLeave = () => {
         const timeout = setTimeout(() => {
-            setShowSecuritizacao(false);
+            setShowAntecipacao(false);
         }, 300);
-        setSecuritizacaoTimeout(timeout);
-    };
-
-    const handleRecursosMouseEnter = () => {
-        if (recursosTimeout) {
-            clearTimeout(recursosTimeout);
-            setRecursosTimeout(null);
-        }
-        // Fecha outros dropdowns
-        setShowSecuritizacao(false);
-        setShowEmpresa(false);
-        setShowRecursos(true);
-    };
-
-    const handleRecursosMouseLeave = () => {
-        const timeout = setTimeout(() => {
-            setShowRecursos(false);
-        }, 300);
-        setRecursosTimeout(timeout);
+        setAntecipacaoTimeout(timeout);
     };
 
     const handleEmpresaMouseEnter = () => {
@@ -167,8 +145,7 @@ const Navbar = () => {
             setEmpresaTimeout(null);
         }
         // Fecha outros dropdowns
-        setShowSecuritizacao(false);
-        setShowRecursos(false);
+        setShowAntecipacao(false);
         setShowEmpresa(true);
     };
 
@@ -196,32 +173,32 @@ const Navbar = () => {
 
                 <div className={S.menuCapsule}>
                     <div className={S.menu}>
-                        <div 
-                            className={`${S.menuItemDropdown} ${showSecuritizacao ? S.dropdownOpen : ''}`}
-                            onMouseEnter={handleSecuritizacaoMouseEnter}
-                            onMouseLeave={handleSecuritizacaoMouseLeave}
+                        <div
+                            className={`${S.menuItemDropdown} ${showAntecipacao ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleAntecipacaoMouseEnter}
+                            onMouseLeave={handleAntecipacaoMouseLeave}
                         >
                             <span className={S.menuItem}>
-                                Securitização
+                                Antecipação
                             </span>
-                            {showSecuritizacao && (
-                                <div 
+                            {showAntecipacao && (
+                                <div
                                     className={S.solutionsDropdown}
-                                    onMouseEnter={handleSecuritizacaoMouseEnter}
-                                    onMouseLeave={handleSecuritizacaoMouseLeave}
+                                    onMouseEnter={handleAntecipacaoMouseEnter}
+                                    onMouseLeave={handleAntecipacaoMouseLeave}
                                 >
                                     <div className={S.dropdownHeader}>
-                                        <h3 className={S.dropdownTitle}>Produtos de Securitização</h3>
+                                        <h3 className={S.dropdownTitle}>Antecipação de Recebíveis</h3>
                                         <p className={S.dropdownSubtitle}>Soluções completas para transformar seus recebíveis em capital</p>
                                     </div>
-                                    
+
                                     <div className={S.dropdownGrid}>
-                                        <Link href="/securitizacao-de-recebiveis" className={S.dropdownItem}>
+                                        <Link href="/antecipacao-de-recebiveis" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconShield />
                                             </div>
                                             <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>Securitização de Recebíveis</h4>
+                                                <h4 className={S.itemTitle}>Antecipação de Recebíveis</h4>
                                                 <p className={S.itemDescription}>Transforme recebíveis em capital de giro com segurança e agilidade</p>
                                             </div>
                                         </Link>
@@ -235,7 +212,7 @@ const Navbar = () => {
                                             </div>
                                         </Link>
                                     </div>
-                                    
+
                                     <div className={S.dropdownFooter}>
                                         <Link href="/solicitar-proposta" className={S.viewAllLink}>
                                             Solicitar proposta →
@@ -244,31 +221,34 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-                        <Link className={S.menuItem} href="/antecipacao-de-contratos">
-                            Antecipação
+                        <Link className={S.menuItem} href="/capital-de-giro">
+                            Capital de Giro
                         </Link>
-                        <Link className={S.menuItem} href="/hot-invest">
-                            HotInvest
+                        <Link className={S.menuItem} href="/conta-digital">
+                            Conta Digital
                         </Link>
-                        <div 
-                            className={`${S.menuItemDropdown} ${showRecursos ? S.dropdownOpen : ''}`}
-                            onMouseEnter={handleRecursosMouseEnter}
-                            onMouseLeave={handleRecursosMouseLeave}
+                        <Link className={S.menuItem} href="/baixe-o-app">
+                            Baixe o App
+                        </Link>
+                        <div
+                            className={`${S.menuItemDropdown} ${showEmpresa ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleEmpresaMouseEnter}
+                            onMouseLeave={handleEmpresaMouseLeave}
                         >
                             <span className={S.menuItem}>
-                                Recursos
+                                Empresa
                             </span>
-                            {showRecursos && (
-                                <div 
+                            {showEmpresa && (
+                                <div
                                     className={S.solutionsDropdown}
-                                    onMouseEnter={handleRecursosMouseEnter}
-                                    onMouseLeave={handleRecursosMouseLeave}
+                                    onMouseEnter={handleEmpresaMouseEnter}
+                                    onMouseLeave={handleEmpresaMouseLeave}
                                 >
                                     <div className={S.dropdownHeader}>
-                                        <h3 className={S.dropdownTitle}>Recursos e Investimentos</h3>
-                                        <p className={S.dropdownSubtitle}>Ferramentas e oportunidades para fazer seu dinheiro render</p>
+                                        <h3 className={S.dropdownTitle}>Nossa Empresa</h3>
+                                        <p className={S.dropdownSubtitle}>Conheça mais sobre a Confia Digital e nossos valores</p>
                                     </div>
-                                    
+
                                     <div className={S.dropdownGrid}>
                                         <Link href="/perguntas-frequentes" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
@@ -276,10 +256,10 @@ const Navbar = () => {
                                             </div>
                                             <div className={S.itemContent}>
                                                 <h4 className={S.itemTitle}>Perguntas Frequentes</h4>
-                                                <p className={S.itemDescription}>Tire suas dúvidas sobre securitização e nossos serviços</p>
+                                                <p className={S.itemDescription}>Tire suas dúvidas sobre antecipação e nossos serviços</p>
                                             </div>
                                         </Link>
-                                        
+
                                         <Link href="/intranet" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconSettings />
@@ -289,36 +269,7 @@ const Navbar = () => {
                                                 <p className={S.itemDescription}>Portal com ferramentas e recursos úteis</p>
                                             </div>
                                         </Link>
-                                    </div>
-                                    
-                                    <div className={S.dropdownFooter}>
-                                        <Link href="/solicitar-proposta" className={S.viewAllLink}>
-                                            Solicitar proposta →
-                                        </Link>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                        <div 
-                            className={`${S.menuItemDropdown} ${showEmpresa ? S.dropdownOpen : ''}`}
-                            onMouseEnter={handleEmpresaMouseEnter}
-                            onMouseLeave={handleEmpresaMouseLeave}
-                        >
-                            <span className={S.menuItem}>
-                                Empresa
-                            </span>
-                            {showEmpresa && (
-                                <div 
-                                    className={S.solutionsDropdown}
-                                    onMouseEnter={handleEmpresaMouseEnter}
-                                    onMouseLeave={handleEmpresaMouseLeave}
-                                >
-                                    <div className={S.dropdownHeader}>
-                                        <h3 className={S.dropdownTitle}>Nossa Empresa</h3>
-                                        <p className={S.dropdownSubtitle}>Conheça mais sobre a Confia Digital e nossos valores</p>
-                                    </div>
-                                    
-                                    <div className={S.dropdownGrid}>
+
                                         <Link href="/avaliacoes" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconStar />
@@ -328,7 +279,7 @@ const Navbar = () => {
                                                 <p className={S.itemDescription}>Veja o que nossos clientes dizem sobre nossos serviços</p>
                                             </div>
                                         </Link>
-                                        
+
                                         <Link href="/sobre-nos" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconBuilding />
@@ -338,7 +289,7 @@ const Navbar = () => {
                                                 <p className={S.itemDescription}>Nossa história, missão e valores que nos guiam</p>
                                             </div>
                                         </Link>
-                                        
+
                                         <Link href="/parceiros" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconUsers />
@@ -349,7 +300,7 @@ const Navbar = () => {
                                             </div>
                                         </Link>
                                     </div>
-                                    
+
                                     <div className={S.dropdownFooter}>
                                         <Link href="/sobre-nos" className={S.viewAllLink}>
                                             Conheça nossa empresa →
@@ -358,19 +309,19 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-                        <Link className={S.menuItem} href="/contato" onClick={(e) => e.preventDefault()}>
+                        <Link className={S.menuItem} href="/contato">
                             Contato
                         </Link>
                     </div>
                 </div>
-                
+
                 <div className={S.actionButtons}>
                     <Link href="/solicitar-proposta">
-                        <Button 
-                            width="190px" 
-                            typeStyle="btn1" 
-                            size="sm" 
-                            label="Solicitar proposta" 
+                        <Button
+                            width="190px"
+                            typeStyle="btn1"
+                            size="sm"
+                            label="Solicitar proposta"
                         />
                     </Link>
                 </div>
@@ -393,23 +344,23 @@ const Navbar = () => {
                         <div className={S.drawerMenu}>
                             <div className={S.drawerLinks}>
                                 <div className={S.drawerSubmenu}>
-                                    <div 
+                                    <div
                                         className={S.drawerSubmenuTitle}
-                                        onClick={() => setMobileSecuritizacaoOpen(!mobileSecuritizacaoOpen)}
+                                        onClick={() => setMobileAntecipacaoOpen(!mobileAntecipacaoOpen)}
                                     >
-                                        <span>Securitização</span>
-                                        <IconChevronDown 
-                                            className={`${S.submenuArrow} ${mobileSecuritizacaoOpen ? S.submenuArrowOpen : ''}`}
+                                        <span>Antecipação</span>
+                                        <IconChevronDown
+                                            className={`${S.submenuArrow} ${mobileAntecipacaoOpen ? S.submenuArrowOpen : ''}`}
                                         />
                                     </div>
-                                    {mobileSecuritizacaoOpen && (
+                                    {mobileAntecipacaoOpen && (
                                         <div className={S.drawerSubmenuItems}>
                                             <Link
                                                 className={S.drawerSubmenuItem}
-                                                href="/securitizacao-de-recebiveis"
+                                                href="/antecipacao-de-recebiveis"
                                                 onClick={handleCloseDrawer}
                                             >
-                                                Securitização de Recebíveis
+                                                Antecipação de Recebíveis
                                             </Link>
                                             <Link
                                                 className={S.drawerSubmenuItem}
@@ -421,33 +372,40 @@ const Navbar = () => {
                                         </div>
                                     )}
                                 </div>
-                                
+
                                 <Link
                                     className={S.menuItem}
-                                    href="/antecipacao-de-contratos"
+                                    href="/capital-de-giro"
                                     onClick={handleCloseDrawer}
                                 >
-                                    Antecipação
+                                    Capital de Giro
                                 </Link>
                                 <Link
                                     className={S.menuItem}
-                                    href="/investimentos"
+                                    href="/conta-digital"
                                     onClick={handleCloseDrawer}
                                 >
-                                    HotInvest
+                                    Conta Digital
                                 </Link>
-                                
+                                <Link
+                                    className={S.menuItem}
+                                    href="/baixe-o-app"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Baixe o App
+                                </Link>
+
                                 <div className={S.drawerSubmenu}>
-                                    <div 
+                                    <div
                                         className={S.drawerSubmenuTitle}
-                                        onClick={() => setMobileRecursosOpen(!mobileRecursosOpen)}
+                                        onClick={() => setMobileEmpresaOpen(!mobileEmpresaOpen)}
                                     >
-                                        <span>Recursos</span>
-                                        <IconChevronDown 
-                                            className={`${S.submenuArrow} ${mobileRecursosOpen ? S.submenuArrowOpen : ''}`}
+                                        <span>Empresa</span>
+                                        <IconChevronDown
+                                            className={`${S.submenuArrow} ${mobileEmpresaOpen ? S.submenuArrowOpen : ''}`}
                                         />
                                     </div>
-                                    {mobileRecursosOpen && (
+                                    {mobileEmpresaOpen && (
                                         <div className={S.drawerSubmenuItems}>
                                             <Link
                                                 className={S.drawerSubmenuItem}
@@ -463,22 +421,6 @@ const Navbar = () => {
                                             >
                                                 Intranet
                                             </Link>
-                                        </div>
-                                    )}
-                                </div>
-                                
-                                <div className={S.drawerSubmenu}>
-                                    <div 
-                                        className={S.drawerSubmenuTitle}
-                                        onClick={() => setMobileEmpresaOpen(!mobileEmpresaOpen)}
-                                    >
-                                        <span>Empresa</span>
-                                        <IconChevronDown 
-                                            className={`${S.submenuArrow} ${mobileEmpresaOpen ? S.submenuArrowOpen : ''}`}
-                                        />
-                                    </div>
-                                    {mobileEmpresaOpen && (
-                                        <div className={S.drawerSubmenuItems}>
                                             <Link
                                                 className={S.drawerSubmenuItem}
                                                 href="/avaliacoes"
@@ -500,17 +442,17 @@ const Navbar = () => {
                                             >
                                                 Parceiros
                                             </Link>
+                                        </div>
+                                    )}
                                 </div>
-                            )}
-                        </div>
-                        <Link
-                            className={S.menuItem}
-                            href="#"
-                            onClick={(e) => e.preventDefault()}
-                        >
-                            Contato
-                        </Link>
-                        {/* Idiomas temporariamente comentados */}
+                                <Link
+                                    className={S.menuItem}
+                                    href="/contato"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Contato
+                                </Link>
+                                {/* Idiomas temporariamente comentados */}
                                 {/* <div className={S.drawerLangWrap}>
                                     <p className={S.menuItemLang}>
                                         {t('menu.language')}
@@ -556,7 +498,7 @@ const Navbar = () => {
                             </div>
                             <div className={S.drawerButtonWrap}>
                                 <Link href="/solicitar-proposta" onClick={handleCloseDrawer}>
-                                    <Button width="100%" typeStyle="btn1" size="sm" 
+                                    <Button width="100%" typeStyle="btn1" size="sm"
                                         label="Solicitar proposta" />
                                 </Link>
                             </div>

@@ -1,0 +1,27 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.globeContainer {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+}
+
+.globeCanvas {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    contain: layout paint size;
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+}

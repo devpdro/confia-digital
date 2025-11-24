@@ -73,7 +73,7 @@ const HeroStats = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                         >
-                            em recebíveis securitizados¹
+                            em recebíveis antecipados¹
                         </motion.p>
                     </motion.div>
 
@@ -85,7 +85,7 @@ const HeroStats = () => {
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
                     >
                         <p className={S.subtitle}>
-                            Mais de <AnimatedCounter value={280} duration={2.8} /> operações de securitização estruturadas para empresas
+                            Mais de <AnimatedCounter value={280} duration={2.8} /> operações de antecipação estruturadas para empresas
                             de todos os setores. Transformamos duplicatas, contratos e recebíveis
                             confirmados em capital disponível através de cessão fiduciária registrada.
                         </p>

@@ -9,36 +9,36 @@ const Products = () => {
     return (
         <section className={S.productsSection}>
             <div className={S.wrapper}>
-                <motion.div 
+                <motion.div
                     className={S.header}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <motion.h2 
+                    <motion.h2
                         className={S.mainTitle}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
                     >
-                        Tudo o que você precisa para transformar recebíveis em capital.
+                        Soluções financeiras completas para impulsionar seu negócio.
                     </motion.h2>
-                    <motion.p 
+                    <motion.p
                         className={S.subtitle}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                     >
-                        Securitização, antecipação e estruturação de operações totalmente integradas a partir de uma plataforma especializada.
+                        Capital de giro, antecipação e estruturação de operações totalmente integradas a partir de uma plataforma especializada.
                     </motion.p>
                 </motion.div>
 
                 <div className={S.productsContainer}>
-                    {/* Primeiro Card - Securitização de Recebíveis */}
-                    <motion.div 
+                    {/* Primeiro Card - Capital de Giro */}
+                    <motion.div
                         className={S.productCard}
                         initial={{ opacity: 0, y: 40, scale: 0.95 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -46,7 +46,7 @@ const Products = () => {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
                         whileHover={{ y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
                     >
-                        <motion.div 
+                        <motion.div
                             className={S.imageArea}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -54,13 +54,13 @@ const Products = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                         >
                             <img
-                                src={IMAGE.SECURITIZACAO.src}
-                                alt="Dashboard de securitização de recebíveis"
+                                src={IMAGE.GRAFICO_MONEY.src}
+                                alt="Capital de giro para impulsionar seu negócio"
                                 className={S.productImage}
                             />
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className={S.contentArea}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -68,11 +68,11 @@ const Products = () => {
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
                         >
                             <h3 className={S.productTitle}>
-                                Securitização de recebíveis que transforma contratos em liquidez.
+                                Capital de giro para impulsionar o crescimento do seu negócio.
                             </h3>
 
                             <p className={S.productDescription}>
-                                Estruture operações a partir de R$ 500 mil com taxa baseada no risco real dos seus pagadores e liberação expressa em até 48h.
+                                Recursos financeiros flexíveis para cobrir despesas operacionais, investir em crescimento e aproveitar oportunidades de mercado. Soluções sob medida para sua empresa.
                             </p>
 
                             <div className={S.benefitsList}>
@@ -83,19 +83,18 @@ const Products = () => {
                                         </svg>
                                     </div>
                                     <div className={S.benefitText}>
-                                        <h4 className={S.benefitTitle}>Operações a partir de R$ 500 mil com taxa competitiva</h4>
+                                        <h4 className={S.benefitTitle}>Condições flexíveis adaptadas às suas necessidades</h4>
                                     </div>
                                 </div>
 
                                 <div className={S.benefit}>
                                     <div className={S.benefitIcon}>
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-                                            <path d="m9 12 2 2 4-4"></path>
+                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                                         </svg>
                                     </div>
                                     <div className={S.benefitText}>
-                                        <h4 className={S.benefitTitle}>Não afeta o balanço patrimonial da empresa</h4>
+                                        <h4 className={S.benefitTitle}>Aproveite oportunidades de mercado com agilidade</h4>
                                     </div>
                                 </div>
 
@@ -107,15 +106,15 @@ const Products = () => {
                                         </svg>
                                     </div>
                                     <div className={S.benefitText}>
-                                        <h4 className={S.benefitTitle}>Liberação em D+1 a D+3 após aprovação</h4>
+                                        <h4 className={S.benefitTitle}>Liberação rápida para manter o fluxo operacional</h4>
                                     </div>
                                 </div>
                             </div>
 
-                            <Link href="/securitizacao-de-recebiveis">
+                            <Link href="/capital-de-giro">
                                 <Button
                                     typeStyle="btn1"
-                                    label="Explore a securitização de recebíveis"
+                                    label="Solicitar capital de giro"
                                     size="sm"
                                     width={{ base: "330px", xs: "100%" }}
                                 />
@@ -124,7 +123,7 @@ const Products = () => {
                     </motion.div>
 
                     {/* Segundo Card - Antecipação de Contratos */}
-                    <motion.div 
+                    <motion.div
                         className={S.productCard}
                         initial={{ opacity: 0, y: 40, scale: 0.95 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -132,7 +131,7 @@ const Products = () => {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                         whileHover={{ y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
                     >
-                        <motion.div 
+                        <motion.div
                             className={S.imageArea}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -146,7 +145,7 @@ const Products = () => {
                             />
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className={S.contentArea}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -210,7 +209,7 @@ const Products = () => {
                     </motion.div>
 
                     {/* Terceiro Card - Estruturação Customizada */}
-                    <motion.div 
+                    <motion.div
                         className={S.productCard}
                         initial={{ opacity: 0, y: 40, scale: 0.95 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -218,7 +217,7 @@ const Products = () => {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                         whileHover={{ y: -5, transition: { duration: 0.3, ease: "easeOut" } }}
                     >
-                        <motion.div 
+                        <motion.div
                             className={S.imageArea}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -232,7 +231,7 @@ const Products = () => {
                             />
                         </motion.div>
 
-                        <motion.div 
+                        <motion.div
                             className={S.contentArea}
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}

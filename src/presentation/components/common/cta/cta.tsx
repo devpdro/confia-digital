@@ -1,4 +1,5 @@
 import { Button } from 'src/presentation/components';
+import { IconMail, IconBrandWhatsapp } from '@tabler/icons-react';
 import Link from 'next/link';
 
 import S from './cta.module.scss';
@@ -10,6 +11,9 @@ interface CTAProps {
     buttonLink?: string;
     themeColor?: string;
     buttonColor?: string;
+    showContact?: boolean;
+    contactEmail?: string;
+    contactWhatsApp?: string;
 }
 
 const CTA: React.FC<CTAProps> = ({
@@ -18,7 +22,10 @@ const CTA: React.FC<CTAProps> = ({
     buttonLabel = "Solicite uma proposta",
     buttonLink = "/solicitar-proposta",
     themeColor,
-    buttonColor
+    buttonColor,
+    showContact = false,
+    contactEmail = "sac@confiacapital.com.br",
+    contactWhatsApp = "5519981062535"
 }) => {
     return (
         <section className={S.section} style={themeColor ? { backgroundColor: themeColor } : undefined}>
@@ -44,14 +51,32 @@ const CTA: React.FC<CTAProps> = ({
                             />
                         </Link>
 
-                        <div className={S.additionalInfo}>
-                            <p className={S.infoText}>
-                                Tem dúvidas sobre o processo?
-                            </p>
-                            <p className={S.linkText}>
-                                Acesse nosso <Link href="/perguntas-frequentes" className={S.link}>Painel de Dúvidas</Link>.
-                            </p>
-                        </div>
+                        {showContact ? (
+                            <div className={S.contactInfo}>
+                                <a href={`mailto:${contactEmail}`} className={S.contactLink}>
+                                    <IconMail size={18} />
+                                    <span>{contactEmail}</span>
+                                </a>
+                                <a
+                                    href={`https://api.whatsapp.com/send?phone=${contactWhatsApp}&text=Ol%C3%A1!%20Vim%20do%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista%20da%20Confia%20Capital!`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={S.contactLink}
+                                >
+                                    <IconBrandWhatsapp size={18} />
+                                    <span>19 98106-2535</span>
+                                </a>
+                            </div>
+                        ) : (
+                            <div className={S.additionalInfo}>
+                                <p className={S.infoText}>
+                                    Tem dúvidas sobre o processo?
+                                </p>
+                                <p className={S.linkText}>
+                                    Acesse nosso <Link href="/perguntas-frequentes" className={S.link}>Painel de Dúvidas</Link>.
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

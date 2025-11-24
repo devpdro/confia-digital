@@ -1,0 +1,50 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.iphoneContainer {
+    width: 100%;
+    max-width: 434px;
+    aspect-ratio: 434 / 896;
+    position: relative;
+}
+
+.iphoneFrame {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30%;
+        height: 25px;
+        background: #1a1a1a;
+        border-radius: 0 0 20px 20px;
+        z-index: 2;
+    }
+}
+
+.iphoneScreen {
+    width: 100%;
+    height: 100%;
+    border-radius: 42px;
+    overflow: hidden;
+    background: transparent;
+    position: relative;
+}
+
+.iphoneImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

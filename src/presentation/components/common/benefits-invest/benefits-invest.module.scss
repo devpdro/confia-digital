@@ -48,10 +48,14 @@
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
     .carouselViewport {
       overflow: hidden;
-      padding: 0.25rem 2.75rem 0.75rem 0;
+      padding: 0.25rem 0 0.75rem 0;
+      flex: 1;
 
       .carouselTrack {
         display: flex;
@@ -150,9 +154,6 @@
     }
 
     .navButton {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       width: 44px;
       height: 44px;
       border-radius: 999px;
@@ -167,16 +168,21 @@
       cursor: pointer;
       transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
       z-index: 2;
+      flex-shrink: 0;
 
       &:hover {
-        transform: translateY(-50%) scale(1.03);
+        transform: scale(1.03);
         box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
         background: #f9fbff;
       }
     }
 
+    .navLeft {
+      order: -1;
+    }
+
     .navRight {
-      right: 0;
+      order: 1;
     }
   }
 
