@@ -1,4 +1,5 @@
-import { Meta, CTA, CreditCard, FAQ, EscrowHeader, PricingTable, Stats, BenefitsInvest, CTACards } from 'src/presentation/components'
+import { Meta, CTA, FAQ, EscrowHeader, Stats, EscrowBenefits, BusinessServices } from 'src/presentation/components'
+import { IMAGE } from 'src/presentation/assets'
 
 const ContaEscrow = () => (
     <div>
@@ -10,59 +11,62 @@ const ContaEscrow = () => (
         />
         <EscrowHeader />
         <Stats
-            title="Por que milhões de pessoas escolhem nosso banco digital"
+            title="Segurança e transparência em cada transação"
             stats={[
                 {
-                    value: 1000000,
-                    suffix: "+",
-                    label: "clientes ativos",
-                    duration: 3.0
+                    value: 100,
+                    suffix: "%",
+                    label: "proteção dos fundos",
+                    duration: 2.0
                 },
                 {
                     value: 0,
                     prefix: "R$ ",
                     suffix: "",
-                    label: "taxa de manutenção",
+                    label: "taxa de abertura",
                     duration: 1.5
-                },
-                {
-                    value: 100,
-                    suffix: "%",
-                    label: "gratuita para sempre",
-                    duration: 2.5
                 },
                 {
                     value: 24,
                     suffix: "h",
-                    label: "atendimento disponível",
+                    label: "suporte disponível",
                     duration: 2.0
+                },
+                {
+                    value: 100,
+                    suffix: "%",
+                    label: "regulamentado pelo BC",
+                    duration: 2.5
                 }
             ]}
         />
-        <BenefitsInvest />
-        <CreditCard title="Gerencie suas finanças com praticidade e segurança" subtitle="CONTA DIGITAL" />
-        <PricingTable />
-        <CTACards />
+        <EscrowBenefits />
+        <BusinessServices
+            title="Transforme seus resultados como nossos clientes."
+            description="Junte-se a centenas de empresas que já descobriram como acelerar o crescimento com nossas soluções financeiras personalizadas. Desde startups até grandes corporações, nossos clientes conquistam resultados excepcionais."
+            buttonLabel="Solicitar proposta"
+            imageLeft={false}
+            desktopImage={IMAGE.PESSOAS_SORRINDO.src}
+            desktopImageAlt="Clientes satisfeitos - Empresas que transformaram resultados com Confia Capital"
+        />
         <FAQ
-            title="Perguntas frequentes sobre Conta Digital"
+            title="Perguntas frequentes sobre Conta Escrow"
             themeColor="#16487E"
             items={[
-                { id: 'q1', question: 'A Conta Digital cobra taxas de abertura ou manutenção?', answer: 'Não. A conta digital é 100% gratuita, sem tarifas de abertura, sem mensalidade e sem custos ocultos. Você só paga pelo que usar, com transparência total.' },
-                { id: 'q2', question: 'Como a Conta Digital garante segurança?', answer: 'Seguimos as mais rigorosas práticas de proteção de dados, criptografia de ponta a ponta e conformidade regulatória. Todas as operações são monitoradas e você acompanha tudo pelo app com autenticação de dois fatores.' },
-                { id: 'q3', question: 'Posso fazer PIX e transferências gratuitas?', answer: 'Sim. Nossa conta digital oferece PIX ilimitado e transferências gratuitas para qualquer banco. Você movimenta seu dinheiro quando e como quiser, sem pagar taxas.' },
-                { id: 'q4', question: 'Quem pode abrir uma Conta Digital?', answer: 'Qualquer pessoa física ou jurídica pode abrir uma conta digital. O processo é rápido, 100% digital e sem análise de crédito. Basta ter os documentos em mãos.' },
-                { id: 'q5', question: 'Quais funcionalidades estão disponíveis?', answer: 'Você tem acesso a conta digital completa, cartão de débito sem anuidade, PIX ilimitado, transferências gratuitas, pagamento de contas e boletos, além de investimentos e produtos financeiros diversos.' },
-                { id: 'q6', question: 'Como funciona o cartão de débito?', answer: 'O cartão de débito é enviado gratuitamente para sua casa. Você pode usar em qualquer estabelecimento, sacar em caixas eletrônicos da rede Banco24Horas e fazer compras online com total segurança.' },
-                { id: 'q7', question: 'Posso receber salário e pagar contas pelo app?', answer: 'Sim. Você pode receber salário, pagar contas e boletos, fazer PIX e transferências diretamente pelo app. Tudo organizado de forma inteligente com alertas de vencimento e controle financeiro completo.' },
-                { id: 'q8', question: 'Consigo sacar dinheiro em caixas eletrônicos?', answer: 'Sim. Você pode sacar em qualquer caixa eletrônico da rede Banco24Horas em todo o Brasil usando seu cartão de débito, sem custos adicionais.' },
-                { id: 'q9', question: 'Como faço para abrir minha conta?', answer: 'É simples e rápido. Clique em "Acessar minha conta" ou "Solicitar proposta", preencha seus dados, envie os documentos necessários e em poucos minutos sua conta estará ativa e pronta para uso.' },
-                { id: 'q10', question: 'Preciso de algum valor mínimo para manter a conta?', answer: 'Não. Não há valor mínimo para abrir ou manter a conta. Você pode começar com qualquer valor e usar todos os recursos disponíveis desde o primeiro dia.' },
+                { id: 'q1', question: 'O que é uma Conta Escrow e para que serve?', answer: 'Conta Escrow é uma conta de garantia onde os fundos ficam protegidos até que todas as condições acordadas sejam cumpridas. É ideal para transações imobiliárias, fusões, aquisições e negociações complexas que exigem segurança e transparência para todas as partes.' },
+                { id: 'q2', question: 'Como funciona a liberação dos fundos na Conta Escrow?', answer: 'Os fundos permanecem protegidos na conta até que todas as condições estabelecidas no contrato sejam cumpridas. Assim que todas as condições forem atendidas, a liberação é feita de forma rápida e automática, sem burocracias desnecessárias.' },
+                { id: 'q3', question: 'A Conta Escrow é segura e regulamentada?', answer: 'Sim. Nossa Conta Escrow é totalmente regulamentada pelo Banco Central do Brasil e opera em conformidade com todas as normas vigentes. Os fundos ficam protegidos e todas as operações são rastreáveis e transparentes.' },
+                { id: 'q4', question: 'Quais são as taxas da Conta Escrow?', answer: 'Não cobramos taxa de abertura. Nossas taxas são transparentes e variam conforme o tipo e complexidade da transação. Todas as condições são apresentadas de forma clara antes da contratação, sem custos ocultos.' },
+                { id: 'q5', question: 'Quanto tempo leva para abrir uma Conta Escrow?', answer: 'O processo de abertura é rápido e pode ser feito em poucos dias úteis. Nossa equipe especializada auxilia em todas as etapas, desde a documentação até a configuração da conta, garantindo agilidade sem comprometer a segurança.' },
+                { id: 'q6', question: 'Posso usar Conta Escrow para transações imobiliárias?', answer: 'Sim. A Conta Escrow é amplamente utilizada em transações imobiliárias, garantindo que o comprador tenha segurança de que o valor estará disponível e o vendedor tenha garantia de recebimento quando todas as condições forem cumpridas.' },
+                { id: 'q7', question: 'O que acontece se alguma condição não for cumprida?', answer: 'Os fundos permanecem protegidos na conta até que todas as condições sejam cumpridas ou até que as partes acordem sobre a destinação dos valores. Nossa equipe auxilia na resolução de impasses e garante transparência em todo o processo.' },
+                { id: 'q8', question: 'A Conta Escrow oferece suporte durante a transação?', answer: 'Sim. Oferecemos suporte especializado durante toda a transação, com equipe dedicada para auxiliar em questões técnicas, documentais e operacionais, garantindo que o processo seja conduzido com segurança e eficiência.' },
             ]}
         />
         <CTA
-            title="Abra sua Conta Digital agora mesmo"
-            subtitle="Processo 100% digital, rápido e sem burocracia. Comece a usar em poucos minutos."
-            buttonLabel="Abrir conta agora"
+            title="Proteja suas transações com Conta Escrow"
+            subtitle="Segurança, transparência e agilidade para negociações complexas. Abra sua Conta Escrow e garanta proteção total dos fundos até o cumprimento de todas as condições."
+            buttonLabel="Solicitar Conta Escrow"
             buttonLink="/solicitar-proposta"
             buttonColor="#16487E"
         />

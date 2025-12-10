@@ -1,4 +1,4 @@
-import { Meta, CTA, CreditCard, FAQ, CapitalGiroHeader, PricingTable, Stats, BenefitsInvest, CTACards, CapitalGiroSteps } from 'src/presentation/components'
+import { Meta, CTA, CreditCard, FAQ, CapitalGiroHeader, PricingTable, Stats, BenefitsInvest, CTACards, CapitalGiroSteps, HelpCompany } from 'src/presentation/components'
 import { TestimonialSlider } from 'src/components/ui/testimonial-slider-1'
 
 const CapitalDeGiro = () => (
@@ -41,6 +41,7 @@ const CapitalDeGiro = () => (
             ]}
         />
         <CapitalGiroSteps />
+        <HelpCompany />
         <TestimonialSlider
             reviews={[
                 {

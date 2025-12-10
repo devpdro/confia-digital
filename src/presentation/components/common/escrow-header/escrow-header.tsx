@@ -1,13 +1,12 @@
 import { Button } from 'src/presentation/components';
-import StackedImageHover from '../stacked-image-hover/stacked-image-hover';
+import { IMAGE } from 'src/presentation/assets';
+import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 
 import S from './escrow-header.module.scss';
 
 const EscrowHeader = () => {
-    const moneyImage = "https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg";
-
     return (
         <section className={S.header}>
             <div className={S.wrapper}>
@@ -17,6 +16,15 @@ const EscrowHeader = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
+                    <motion.div
+                        className={S.visual}
+                        initial={{ opacity: 0, scale: 0.98, x: -30 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                    >
+                        <img className={S.img} src={IMAGE.PROTECAO.src} alt="Conta Escrow - Segurança em transações" />
+                    </motion.div>
+
                     <div className={S.text}>
                         <motion.h1
                             className={S.title}
@@ -24,7 +32,7 @@ const EscrowHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
                         >
-                            Seu banco completo na palma da mão
+                            Conta Escrow: segurança em suas transações
                         </motion.h1>
 
                         <motion.p
@@ -33,7 +41,7 @@ const EscrowHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                         >
-                            Zero tarifas, cartão sem anuidade, PIX ilimitado e transferências gratuitas. Gerencie suas finanças com praticidade e segurança, tudo no seu celular.
+                            Proteja negociações complexas com uma conta de garantia. Os fundos ficam seguros até o cumprimento de todas as condições acordadas, garantindo transparência e confiança para todas as partes.
                         </motion.p>
 
                         <motion.div
@@ -43,18 +51,14 @@ const EscrowHeader = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                             whileHover={{ scale: 1.02 }}
                         >
-                            <a
-                                href="https://hotinvest.dbs.moneyp.com.br/login"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <Link href="/solicitar-proposta">
                                 <Button
                                     typeStyle="btn1"
-                                    label="Acessar minha conta"
+                                    label="Solicitar Conta Escrow"
                                     size="md"
                                     width="240px"
                                 />
-                            </a>
+                            </Link>
                         </motion.div>
 
                         <motion.div
@@ -64,24 +68,11 @@ const EscrowHeader = () => {
                             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                         >
                             <p className={S.disclaimer}>
-                                Banco Digital regulamentado pelo Banco Central do Brasil. Operações protegidas por criptografia e garantia do FGC para depósitos de até R$ 250 mil.
+                                Conta Escrow regulamentada pelo Banco Central do Brasil. Fundos protegidos até o cumprimento de todas as condições acordadas. Consulte taxas e condições.
                             </p>
                         </motion.div>
                     </div>
 
-                    <motion.div
-                        className={S.visual}
-                        initial={{ opacity: 0, scale: 0.98, x: 30 }}
-                        animate={{ opacity: 1, scale: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                    >
-                        <StackedImageHover
-                            images={[moneyImage, moneyImage, moneyImage, moneyImage]}
-                            width={640}
-                            height={400}
-                            backgroundColor="transparent"
-                        />
-                    </motion.div>
                 </motion.div>
             </div>
         </section>
