@@ -16,8 +16,7 @@ const AppHeader = () => {
                 titleComponent={
                     <div className={S.titleContent}>
                         <h1 className={S.title}>
-                            Gerencie seu capital de giro <br />
-                            direto pelo app
+                            Gerencie seu capital de giro direto pelo app
                         </h1>
                     </div>
                 }

@@ -57,7 +57,7 @@ const PartnersHeader: React.FC<PartnersHeaderProps> = ({ className }) => {
                                 typeStyle="btn1"
                                 label="Quero ser parceiro"
                                 size="md"
-                                width="220px"
+                                width="320px"
                             />
                         </a>
                     </motion.div>
