@@ -52,9 +52,9 @@ const schema = yup.object({
     financingType: yup.string().required('Campo obrigatório'),
     amount: yup.string()
         .required('Campo obrigatório')
-        .test('min-value', 'Valor mínimo: R$ 50.000', (value) => {
+        .test('min-value', 'Valor mínimo: R$ 1.000', (value) => {
             const numericValue = parseInt(value?.replace(/\D/g, '') || '0') / 100;
-            return numericValue >= 50000;
+            return numericValue >= 1000;
         })
         .test('max-value', 'Valor máximo: R$ 50.000.000', (value) => {
             const numericValue = parseInt(value?.replace(/\D/g, '') || '0') / 100;

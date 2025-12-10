@@ -1,4 +1,4 @@
-import { Meta, CTA, FAQ, EscrowHeader, Stats, EscrowBenefits, BusinessServices } from 'src/presentation/components'
+import { Meta, CTA, FAQ, EscrowHeader, EscrowBenefits, BusinessServices, Testimonial } from 'src/presentation/components'
 import { IMAGE } from 'src/presentation/assets'
 
 const ContaEscrow = () => (
@@ -10,37 +10,20 @@ const ContaEscrow = () => (
             image="http://confiacapital.com.br/og-conta-escrow.png"
         />
         <EscrowHeader />
-        <Stats
-            title="Segurança e transparência em cada transação"
-            stats={[
-                {
-                    value: 100,
-                    suffix: "%",
-                    label: "proteção dos fundos",
-                    duration: 2.0
-                },
-                {
-                    value: 0,
-                    prefix: "R$ ",
-                    suffix: "",
-                    label: "taxa de abertura",
-                    duration: 1.5
-                },
-                {
-                    value: 24,
-                    suffix: "h",
-                    label: "suporte disponível",
-                    duration: 2.0
-                },
-                {
-                    value: 100,
-                    suffix: "%",
-                    label: "regulamentado pelo BC",
-                    duration: 2.5
-                }
-            ]}
-        />
         <EscrowBenefits />
+        <Testimonial
+            quote="Fizemos uma transação imobiliária de alto valor e a Conta Escrow foi essencial. O dinheiro ficou protegido até que todas as condições fossem cumpridas, dando segurança tanto para nós quanto para o comprador. Processo transparente e sem complicações."
+            authorName="Mariana Costa"
+            authorCompany="Diretora Jurídica - Imobiliária Premium"
+            serviceText="Cliente Conta Escrow"
+            serviceIcon={
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    <path d="M2 17L12 22L22 17" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    <path d="M2 12L12 17L22 12" stroke="#1a237e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </svg>
+            }
+        />
         <BusinessServices
             title="Transforme seus resultados como nossos clientes."
             description="Junte-se a centenas de empresas que já descobriram como acelerar o crescimento com nossas soluções financeiras personalizadas. Desde startups até grandes corporações, nossos clientes conquistam resultados excepcionais."

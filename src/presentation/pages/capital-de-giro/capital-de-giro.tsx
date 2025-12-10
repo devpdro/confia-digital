@@ -46,14 +46,6 @@ const CapitalDeGiro = () => (
             reviews={[
                 {
                     id: 1,
-                    name: "Ana Paula S.",
-                    affiliation: "Grupo Inovação",
-                    quote: "Estava com o caixa apertado e precisava de capital rápido. Em menos de 24h o dinheiro estava na conta. Zero taxas escondidas e condições transparentes desde o início.",
-                    imageSrc: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=600&fit=crop&q=80",
-                    thumbnailSrc: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=100&h=120&fit=crop&q=80",
-                },
-                {
-                    id: 2,
                     name: "Carlos M.",
                     affiliation: "Construtora Horizonte",
                     quote: "Como MEI, consegui capital de giro sem garantias. Foi exatamente o que eu precisava para investir no crescimento da empresa. Processo simples e rápido!",
@@ -61,20 +53,36 @@ const CapitalDeGiro = () => (
                     thumbnailSrc: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=120&fit=crop&q=80",
                 },
                 {
-                    id: 3,
-                    name: "Roberto L.",
-                    affiliation: "TechStart Solutions",
-                    quote: "A flexibilidade de pagamento em até 18x foi fundamental. Pude cobrir as despesas operacionais sem comprometer o fluxo de caixa. Recomendo!",
-                    imageSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=600&fit=crop&q=80",
-                    thumbnailSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=120&fit=crop&q=80",
-                },
-                {
-                    id: 4,
+                    id: 2,
                     name: "Fernanda T.",
                     affiliation: "Consultoria Estratégica",
                     quote: "Nunca mais perdi uma oportunidade por falta de capital. Com aprovação em 24h e processo 100% online, consigo focar no que realmente importa: fazer meu negócio crescer.",
                     imageSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=600&fit=crop&q=80",
                     thumbnailSrc: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=120&fit=crop&q=80",
+                },
+                {
+                    id: 5,
+                    name: "Marcos Silva",
+                    affiliation: "Comércio Varejista",
+                    quote: "A aprovação foi super rápida e o dinheiro caiu na conta em menos de 24 horas. Isso salvou minha empresa em um momento crítico. Recomendo muito!",
+                    imageSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&q=80",
+                    thumbnailSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=120&fit=crop&q=80",
+                },
+                {
+                    id: 6,
+                    name: "Patrícia Santos",
+                    affiliation: "Serviços de Consultoria",
+                    quote: "Sem burocracia, sem complicação. O processo todo foi digital e muito transparente. As condições foram as melhores que encontrei no mercado.",
+                    imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80",
+                    thumbnailSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=120&fit=crop&q=80",
+                },
+                {
+                    id: 7,
+                    name: "Ricardo Oliveira",
+                    affiliation: "Indústria Têxtil",
+                    quote: "Consegui capital de giro para expandir minha produção sem precisar de garantias. O atendimento foi excelente e tudo foi resolvido rapidamente.",
+                    imageSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop&q=80",
+                    thumbnailSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=120&fit=crop&q=80",
                 },
             ]}
         />

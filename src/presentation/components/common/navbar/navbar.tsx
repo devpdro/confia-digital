@@ -302,6 +302,16 @@ const Navbar = () => {
                                                 <p className={S.itemDescription}>Conheça nossa rede de parceiros estratégicos</p>
                                             </div>
                                         </Link>
+
+                                        <Link href="/contato" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconDeviceMobile />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Contato</h4>
+                                                <p className={S.itemDescription}>Entre em contato conosco</p>
+                                            </div>
+                                        </Link>
                                     </div>
 
                                     <div className={S.dropdownFooter}>
@@ -312,9 +322,6 @@ const Navbar = () => {
                                 </div>
                             )}
                         </div>
-                        <Link className={S.menuItem} href="/contato">
-                            Contato
-                        </Link>
                     </div>
                 </div>
 
@@ -452,16 +459,16 @@ const Navbar = () => {
                                             >
                                                 Parceiros
                                             </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/contato"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Contato
+                                            </Link>
                                         </div>
                                     )}
                                 </div>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/contato"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Contato
-                                </Link>
                                 {/* Idiomas temporariamente comentados */}
                                 {/* <div className={S.drawerLangWrap}>
                                     <p className={S.menuItemLang}>
@@ -497,20 +504,6 @@ const Navbar = () => {
                                         )}
                                     </div>
                                 </div> */}
-                            </div>
-                        </div>
-                        <div className={S.drawerFooter}>
-                            <div className={S.drawerSocials}>
-                                <a href="https://www.instagram.com/confiacapitaloficial/" target="_blank" className={S.drawerSocialItem}><IconBrandInstagram size={34} /></a>
-                            </div>
-                            <div className={S.drawerCopyright}>
-                                {t('footer.copyright', { year: getCurrentYear() })}
-                            </div>
-                            <div className={S.drawerButtonWrap}>
-                                <Link href="/solicitar-proposta" onClick={handleCloseDrawer}>
-                                    <Button width="100%" typeStyle="btn1" size="sm"
-                                        label="Solicitar proposta" />
-                                </Link>
                             </div>
                         </div>
                     </div>

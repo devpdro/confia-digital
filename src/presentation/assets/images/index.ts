@@ -48,8 +48,16 @@ import SECURITIZACAO from './SECURITIZACAO.webp'
 import CALCULADORA_CONTRATO from './CALCULADORA_CONTRATO.webp'
 import CARTAO from './CARTAO.png'
 import APP_STORE from './APP_STORE.svg'
+import APP_HEADER from './APP_HEADER.png'
+import LOGIN_IMAGE from './LOGIN.png'
+import TELA_1_APP from './TELA_1_APP.png'
+import TELA_2_APP from './TELA_2_APP.png'
 
 const IMAGE = {
+    LOGIN_IMAGE,
+    TELA_1_APP,
+    TELA_2_APP,
+    APP_HEADER,
     APP_STORE,
     CARTAO,
     ESTRUTURACAO_AZUL,

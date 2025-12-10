@@ -22,7 +22,7 @@ const EscrowHeader = () => {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
-                        <img className={S.img} src={IMAGE.PROTECAO.src} alt="Conta Escrow - Segurança em transações" />
+                        <img className={S.img} src={IMAGE.DUAS_PESSOAS_TABLET.src} alt="Conta Escrow - Segurança em transações" />
                     </motion.div>
 
                     <div className={S.text}>
@@ -32,7 +32,7 @@ const EscrowHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
                         >
-                            Conta Escrow: segurança em suas transações
+                            Proteja negociações de alto valor com conta garantida
                         </motion.h1>
 
                         <motion.p
@@ -41,7 +41,7 @@ const EscrowHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                         >
-                            Proteja negociações complexas com uma conta de garantia. Os fundos ficam seguros até o cumprimento de todas as condições acordadas, garantindo transparência e confiança para todas as partes.
+                            Compre ou venda com segurança: o dinheiro fica bloqueado até o cumprimento do acordo. Transparência total para ambas as partes.
                         </motion.p>
 
                         <motion.div
@@ -56,20 +56,9 @@ const EscrowHeader = () => {
                                     typeStyle="btn1"
                                     label="Solicitar Conta Escrow"
                                     size="md"
-                                    width="240px"
+                                    width="300px"
                                 />
                             </Link>
-                        </motion.div>
-
-                        <motion.div
-                            className={S.trust}
-                            initial={{ opacity: 0, y: 15 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        >
-                            <p className={S.disclaimer}>
-                                Conta Escrow regulamentada pelo Banco Central do Brasil. Fundos protegidos até o cumprimento de todas as condições acordadas. Consulte taxas e condições.
-                            </p>
                         </motion.div>
                     </div>
 

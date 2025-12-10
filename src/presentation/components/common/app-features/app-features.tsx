@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Iphone } from "src/presentation/components";
+import { Iphone, Button } from "src/presentation/components";
 import Link from "next/link";
 
 import S from './app-features.module.scss';
@@ -14,6 +14,7 @@ export interface AppFeature {
     description: string;
     ctaLabel: string;
     ctaLink: string;
+    imageSrc?: string;
 }
 
 export interface AppFeaturesProps {
@@ -58,16 +59,26 @@ const AppFeatures: React.FC<AppFeaturesProps> = ({
                             }}
                         >
                             <div className={S.phoneContainer}>
-                                <Iphone alt={`Mockup ${feature.title}`} />
+                                <Iphone 
+                                    src={feature.imageSrc}
+                                    alt={`Mockup ${feature.title}`} 
+                                />
                             </div>
                             <div className={S.content}>
                                 <span className={S.featureHeader}>{feature.header}</span>
                                 <h3 className={S.featureTitle}>{feature.title}</h3>
                                 <h4 className={S.featureSubtitle}>{feature.subtitle}</h4>
                                 <p className={S.featureDescription}>{feature.description}</p>
-                                <Link href={feature.ctaLink} className={S.ctaButton}>
-                                    {feature.ctaLabel}
-                                </Link>
+                                <div className={S.ctaWrapper}>
+                                    <Link href={feature.ctaLink}>
+                                        <Button
+                                            typeStyle="btn1"
+                                            label={feature.ctaLabel}
+                                            size="md"
+                                            width="200px"
+                                        />
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
