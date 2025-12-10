@@ -1,11 +1,13 @@
 import { Button } from 'src/presentation/components';
-import { IMAGE } from 'src/presentation/assets';
+import StackedImageHover from '../stacked-image-hover/stacked-image-hover';
 
 import { motion } from 'framer-motion';
 
-import S from './investments-header.module.scss';
+import S from './escrow-header.module.scss';
 
-const InvestmentsHeader = () => {
+const EscrowHeader = () => {
+    const moneyImage = "https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg";
+
     return (
         <section className={S.header}>
             <div className={S.wrapper}>
@@ -54,6 +56,17 @@ const InvestmentsHeader = () => {
                                 />
                             </a>
                         </motion.div>
+
+                        <motion.div
+                            className={S.trust}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                        >
+                            <p className={S.disclaimer}>
+                                Banco Digital regulamentado pelo Banco Central do Brasil. Operações protegidas por criptografia e garantia do FGC para depósitos de até R$ 250 mil.
+                            </p>
+                        </motion.div>
                     </div>
 
                     <motion.div
@@ -62,7 +75,12 @@ const InvestmentsHeader = () => {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
-                        <img className={S.img} src={IMAGE.HEADER_IMAGE.src} alt="Aplicativo Conta Digital - Banco digital no seu celular" />
+                        <StackedImageHover
+                            images={[moneyImage, moneyImage, moneyImage, moneyImage]}
+                            width={640}
+                            height={400}
+                            backgroundColor="transparent"
+                        />
                     </motion.div>
                 </motion.div>
             </div>
@@ -70,4 +88,5 @@ const InvestmentsHeader = () => {
     );
 };
 
-export default InvestmentsHeader;
+export default EscrowHeader;
+

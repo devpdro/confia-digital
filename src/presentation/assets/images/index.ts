@@ -47,7 +47,7 @@ import ESTRUTURACAO_AZUL from './ESTRUTURACAO_AZUL.webp'
 import SECURITIZACAO from './SECURITIZACAO.webp'
 import CALCULADORA_CONTRATO from './CALCULADORA_CONTRATO.webp'
 import CARTAO from './CARTAO.png'
-import APP_STORE from './APP_STORE.svg'              
+import APP_STORE from './APP_STORE.svg'
 
 const IMAGE = {
     APP_STORE,

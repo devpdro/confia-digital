@@ -18,4 +18,6 @@ export { default as RequestSecuritization } from './request-securitization/reque
 export { default as StandardContracts } from './standard-contracts/standard-contracts'
 export { default as TermsOfUse } from './terms-of-use/terms-of-use'
 export { default as ContaDigital } from './conta-digital/conta-digital'
+export { default as ContaEscrow } from './conta-escrow/conta-escrow'
 export { default as BaixeOApp } from './baixe-o-app/baixe-o-app'
+export { default as CapitalDeGiro } from './capital-de-giro/capital-de-giro'

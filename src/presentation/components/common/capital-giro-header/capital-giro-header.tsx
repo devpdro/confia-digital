@@ -1,11 +1,14 @@
 import { Button } from 'src/presentation/components';
-import { IMAGE } from 'src/presentation/assets';
+import { StackedImageHover } from 'src/components/ui/hover-deck-fx';
+import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 
-import S from './investments-header.module.scss';
+import S from './capital-giro-header.module.scss';
 
-const InvestmentsHeader = () => {
+const CapitalGiroHeader = () => {
+    const money = "https://upload.wikimedia.org/wikipedia/commons/7/7b/Obverse_of_the_series_2009_%24100_Federal_Reserve_Note.jpg";
+
     return (
         <section className={S.header}>
             <div className={S.wrapper}>
@@ -22,7 +25,7 @@ const InvestmentsHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
                         >
-                            Seu banco completo na palma da mão
+                            Nunca mais perca oportunidades por falta de capital de giro
                         </motion.h1>
 
                         <motion.p
@@ -31,7 +34,7 @@ const InvestmentsHeader = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                         >
-                            Zero tarifas, cartão sem anuidade, PIX ilimitado e transferências gratuitas. Gerencie suas finanças com praticidade e segurança, tudo no seu celular.
+                            Seja para aproveitar uma oportunidade de compra, cobrir um gap de fluxo de caixa ou investir no crescimento da empresa - tenha acesso rápido ao capital que seu negócio precisa, com condições transparentes e aprovação ágil.
                         </motion.p>
 
                         <motion.div
@@ -41,18 +44,25 @@ const InvestmentsHeader = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                             whileHover={{ scale: 1.02 }}
                         >
-                            <a
-                                href="https://hotinvest.dbs.moneyp.com.br/login"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+                            <Link href="/solicitar-proposta">
                                 <Button
                                     typeStyle="btn1"
-                                    label="Acessar minha conta"
+                                    label="Simular capital de giro"
                                     size="md"
-                                    width="240px"
+                                    width="280px"
                                 />
-                            </a>
+                            </Link>
+                        </motion.div>
+
+                        <motion.div
+                            className={S.trust}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                        >
+                            <p className={S.disclaimer}>
+                                Banco Digital regulamentado pelo Banco Central do Brasil. Crédito sujeito a análise. Consulte taxas e condições.
+                            </p>
                         </motion.div>
                     </div>
 
@@ -62,7 +72,15 @@ const InvestmentsHeader = () => {
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     >
-                        <img className={S.img} src={IMAGE.HEADER_IMAGE.src} alt="Aplicativo Conta Digital - Banco digital no seu celular" />
+                        <div className={S.moneyStack}>
+                            <StackedImageHover
+                                images={[money, money, money, money]}
+                                width={640}
+                                height={260}
+                                backgroundColor="transparent"
+                                ariaLabel="Notas de dinheiro empilhadas"
+                            />
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>
@@ -70,4 +88,5 @@ const InvestmentsHeader = () => {
     );
 };
 
-export default InvestmentsHeader;
+export default CapitalGiroHeader;
+

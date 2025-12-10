@@ -96,7 +96,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 1180 && drawerOpen) {
+            if (window.innerWidth >= 1024 && drawerOpen) {
                 setDrawerClosing(true);
                 setTimeout(() => {
                     setDrawerOpen(false);
@@ -226,6 +226,9 @@ const Navbar = () => {
                         </Link>
                         <Link className={S.menuItem} href="/conta-digital">
                             Conta Digital
+                        </Link>
+                        <Link className={S.menuItem} href="/conta-escrow">
+                            Conta Escrow
                         </Link>
                         <Link className={S.menuItem} href="/baixe-o-app">
                             Baixe o App
@@ -386,6 +389,13 @@ const Navbar = () => {
                                     onClick={handleCloseDrawer}
                                 >
                                     Conta Digital
+                                </Link>
+                                <Link
+                                    className={S.menuItem}
+                                    href="/conta-escrow"
+                                    onClick={handleCloseDrawer}
+                                >
+                                    Conta Escrow
                                 </Link>
                                 <Link
                                     className={S.menuItem}

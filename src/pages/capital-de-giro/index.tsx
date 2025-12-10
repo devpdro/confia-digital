@@ -1,5 +1,3 @@
-import { makeReceivablesSecuritization } from 'src/main/factories/pages'
+import { makeCapitalDeGiro } from 'src/main/factories/pages'
 
-export default makeReceivablesSecuritization
-
-
+export default makeCapitalDeGiro

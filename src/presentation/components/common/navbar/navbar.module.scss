@@ -52,7 +52,7 @@
         cursor: pointer;
         color: #0D447E;
 
-        @media (max-width: 1184px) {
+        @media (max-width: 1024px) {
             display: block;
             padding: 1rem 0;
         }
@@ -64,7 +64,7 @@
         flex: 1;
         justify-content: center;
 
-        @media (max-width: 1184px) {
+        @media (max-width: 1024px) {
             display: none;
         }
 

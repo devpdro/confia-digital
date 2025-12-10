@@ -18,6 +18,18 @@ const BaixeOApp = () => {
         offset: ["start 0.8", "end 0.2"]
     });
 
+    // Cria os transforms para cada iPhone antes do map (hooks devem estar no nível superior)
+    // Índice 0 e 4: mais baixo (offset positivo = 120px)
+    // Índice 1 e 3: meio (offset positivo = 60px)
+    // Índice 2: mais alto (offset = 0px)
+    const yOffset0 = useTransform(scrollYProgress, [0, 1], [120, 0]);
+    const yOffset1 = useTransform(scrollYProgress, [0, 1], [60, 0]);
+    const yOffset2 = useTransform(scrollYProgress, [0, 1], [0, 0]);
+    const yOffset3 = useTransform(scrollYProgress, [0, 1], [60, 0]);
+    const yOffset4 = useTransform(scrollYProgress, [0, 1], [120, 0]);
+    
+    const yOffsets = [yOffset0, yOffset1, yOffset2, yOffset3, yOffset4];
+
     // Features do aplicativo
     const appFeatures = [
         {
@@ -165,26 +177,11 @@ const BaixeOApp = () => {
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
                     >
                         {Array.from({ length: iphoneCount }).map((_, index) => {
-                            // Calcula a posição inicial da escada (meio mais alto)
-                            // Índice 0 e 4: mais baixo (offset positivo = 120px) - começam mais baixos
-                            // Índice 1 e 3: meio (offset positivo = 60px) - começam no meio
-                            // Índice 2: mais alto (offset = 0px) - já está no topo
-                            const initialOffset = index === 2 ? 0 : index < 2 ? (2 - index) * 60 : (index - 2) * 60;
-
-                            // Transforma o scroll progress em offset Y
-                            // Quando scrollProgress = 0: escada completa (valores iniciais positivos = mockups mais baixos)
-                            // Quando scrollProgress = 1: todos nivelados (todos em 0) - mockups mais baixos SOBEM para se alinhar
-                            const yOffset = useTransform(
-                                scrollYProgress,
-                                [0, 1],
-                                [initialOffset, 0]
-                            );
-
                             return (
                                 <motion.div
                                     key={index}
                                     className={S.phoneWrapper}
-                                    style={{ y: yOffset }}
+                                    style={{ y: yOffsets[index] }}
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{

@@ -16,7 +16,7 @@ const cards = [
             </svg>
         ),
         title: "Transforme recebíveis em capital imediato",
-        description: "Securitização de duplicatas e contratos a partir de R$ 500 mil. Liquidez em até 48h sem comprometer o balanço patrimonial.",
+        description: "Securitização de Duplicatas e Contratos. Liquidez em até 48h sem comprometer o balanço patrimonial",
         buttonText: "Antecipar recebíveis",
         link: "/antecipacao-de-recebiveis",
         backgroundColor: "blue"

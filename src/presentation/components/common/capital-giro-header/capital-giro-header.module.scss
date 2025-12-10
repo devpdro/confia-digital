@@ -1,7 +1,7 @@
 @import 'src/presentation/styles/themes/light.scss';
 
 .header {
-    background-color: #0B0F1E; // HotInvest dark base
+    background-color: #D8E6FF;
     display: flex;
     align-items: center;
 
@@ -18,7 +18,7 @@
             margin: 1rem auto;
         }
 
-            .grid {
+        .grid {
             display: grid;
             grid-template-columns: 1.3fr 1.2fr;
             align-items: center;
@@ -39,12 +39,8 @@
                 gap: 1rem;
                 z-index: 2;
 
-                @media (max-width: 768px) {
-                    order: 2;
-                }
-
                 .title {
-                    color: #FFFFFF;
+                    color: #010553;
                     font-size: 80px;
                     font-weight: 500;
                     line-height: 80px;
@@ -63,7 +59,7 @@
                 }
 
                 .description {
-                    color: #E6E9EF;
+                    color: #010553;
                     font-family: 'Domine', sans-serif;
                     font-size: 16px;
                     font-weight: 400;
@@ -138,7 +134,7 @@
                         font-size: 12px;
                         line-height: 15px;
                         font-weight: 400;
-                        color: #C7D0D9;
+                        color: #010553;
                         margin: 0;
                         flex: 1;
                         max-width: 380px;
@@ -162,16 +158,19 @@
 
             .visual {
 
-                img {
-                    height: 600px;
-                    object-fit: cover;
-                    border-radius: 400px 400px 400px 0
-                }
+                .moneyStack {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
 
-                @media (max-width: 768px) {
-                    order: 1;
+                    :global(.stack-container) {
+                        margin-top: 0 !important;
+                        width: 100% !important;
+                    }
                 }
             }
         }
     }
 }
+

@@ -18,7 +18,7 @@
             margin: 1rem auto;
         }
 
-            .grid {
+        .grid {
             display: grid;
             grid-template-columns: 1.3fr 1.2fr;
             align-items: center;
@@ -161,12 +161,9 @@
             }
 
             .visual {
-
-                img {
-                    height: 600px;
-                    object-fit: cover;
-                    border-radius: 400px 400px 400px 0
-                }
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 @media (max-width: 768px) {
                     order: 1;
@@ -175,3 +172,4 @@
         }
     }
 }
+

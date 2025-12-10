@@ -243,8 +243,11 @@ const RequestForm: React.FC = () => {
                                     className={`${S.input} ${errors.financingType ? S.inputError : ''}`}
                                 >
                                     <option value="">Tipo de securitização</option>
-                                    <option value="receivables">Securitização de Recebíveis</option>
+                                    <option value="receivables">Antecipação de Recebíveis</option>
                                     <option value="contracts">Antecipação de Contratos</option>
+                                    <option value="capital-giro">Capital de Giro</option>
+                                    <option value="abertura-conta">Abertura de Conta</option>
+                                    <option value="conta-escrow">Conta Escrow</option>
                                     <option value="custom">Estruturação Customizada</option>
                                 </select>
                             </div>

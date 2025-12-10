@@ -48,8 +48,11 @@ const activityTimeMap: Record<string, string> = {
 
 // Mapeia os tipos de financiamento para texto legível
 const financingTypeMap: Record<string, string> = {
-  'receivables': 'Securitização de Recebíveis',
+  'receivables': 'Antecipação de Recebíveis',
   'contracts': 'Antecipação de Contratos',
+  'capital-giro': 'Capital de Giro',
+  'abertura-conta': 'Abertura de Conta',
+  'conta-escrow': 'Conta Escrow',
   'custom': 'Estruturação Customizada'
 };
 
@@ -189,7 +192,7 @@ export default async function handler(
     // Envia o email usando o Resend
     const { data, error } = await resend.emails.send({
       from: `${process.env.RESEND_FROM_NAME || 'Confia Capital'} <${process.env.RESEND_FROM_EMAIL || 'no-reply@confiacapital.com.br'}>`,
-      to: [email, process.env.DESTINATION_EMAIL || 'sac@confiacapital.com.br'], // Envia para o cliente e para a empresa
+      to: [email, process.env.DESTINATION_EMAIL || 'contratos@confiacapital.com.br'], // Envia para o cliente e para a empresa
       subject: 'Recebemos sua solicitação de proposta - Confia Capital',
       html: emailHtml,
     });
