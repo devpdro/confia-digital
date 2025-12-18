@@ -16,6 +16,7 @@ import GRAFICO from './GRAFICO.png'
 import GRAFICO_MONEY from './GRAFICO_MONEY.webp'
 import HEADER from './HEADER.webp'
 import HEADER_IMAGE from './HEADER_IMAGE.jpg'
+import HEADER_IMAGE_MAO from './HEADER_IMAGE_MAO.jpg'
 import HOMEM_COMPUTADOR from './HOMEM_COMPUTADOR.webp'
 import HOMEM_MACBOOK from './HOMEM_MACBOOK.webp'
 import IDEIAS from './IDEIAS.webp'
@@ -54,6 +55,7 @@ import TELA_1_APP from './TELA_1_APP.png'
 import TELA_2_APP from './TELA_2_APP.png'
 
 const IMAGE = {
+    HEADER_IMAGE_MAO,
     LOGIN_IMAGE,
     TELA_1_APP,
     TELA_2_APP,

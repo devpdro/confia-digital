@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import 'src/i18n/i18n';
 
-import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers, IconBuilding, IconDeviceMobile } from '@tabler/icons-react';
+import { IconChevronDown, IconMenu2, IconX, IconBrandInstagram, IconShield, IconSettings, IconCalculator, IconTrendingUp, IconStar, IconHelp, IconUsers, IconBuilding, IconDeviceMobile, IconCreditCard, IconFileInvoice, IconCar, IconLock, IconDownload, IconServer } from '@tabler/icons-react';
 
 import { Button } from 'src/presentation/components';
 import { IMAGE } from 'src/presentation/assets';
@@ -72,13 +72,19 @@ const Navbar = () => {
     const isFaqPage = router.pathname === '/perguntas-frequentes';
     const [showLangs, setShowLangs] = useState(false);
     const [showAntecipacao, setShowAntecipacao] = useState(false);
+    const [showEmprestimos, setShowEmprestimos] = useState(false);
+    const [showContaDigital, setShowContaDigital] = useState(false);
     const [showEmpresa, setShowEmpresa] = useState(false);
     const [antecipacaoTimeout, setAntecipacaoTimeout] = useState<NodeJS.Timeout | null>(null);
+    const [emprestimosTimeout, setEmprestimosTimeout] = useState<NodeJS.Timeout | null>(null);
+    const [contaDigitalTimeout, setContaDigitalTimeout] = useState<NodeJS.Timeout | null>(null);
     const [empresaTimeout, setEmpresaTimeout] = useState<NodeJS.Timeout | null>(null);
     const [selectedLang, setSelectedLang] = useState(i18n.language === 'en' ? 'en' : 'pt');
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerClosing, setDrawerClosing] = useState(false);
     const [mobileAntecipacaoOpen, setMobileAntecipacaoOpen] = useState(false);
+    const [mobileEmprestimosOpen, setMobileEmprestimosOpen] = useState(false);
+    const [mobileContaDigitalOpen, setMobileContaDigitalOpen] = useState(false);
     const [mobileEmpresaOpen, setMobileEmpresaOpen] = useState(false);
 
     const selected = LANGS.find(l => l.code === selectedLang) || LANGS[0];
@@ -128,6 +134,8 @@ const Navbar = () => {
             setAntecipacaoTimeout(null);
         }
         // Fecha outros dropdowns
+        setShowEmprestimos(false);
+        setShowContaDigital(false);
         setShowEmpresa(false);
         setShowAntecipacao(true);
     };
@@ -139,6 +147,44 @@ const Navbar = () => {
         setAntecipacaoTimeout(timeout);
     };
 
+    const handleEmprestimosMouseEnter = () => {
+        if (emprestimosTimeout) {
+            clearTimeout(emprestimosTimeout);
+            setEmprestimosTimeout(null);
+        }
+        // Fecha outros dropdowns
+        setShowAntecipacao(false);
+        setShowContaDigital(false);
+        setShowEmpresa(false);
+        setShowEmprestimos(true);
+    };
+
+    const handleEmprestimosMouseLeave = () => {
+        const timeout = setTimeout(() => {
+            setShowEmprestimos(false);
+        }, 300);
+        setEmprestimosTimeout(timeout);
+    };
+
+    const handleContaDigitalMouseEnter = () => {
+        if (contaDigitalTimeout) {
+            clearTimeout(contaDigitalTimeout);
+            setContaDigitalTimeout(null);
+        }
+        // Fecha outros dropdowns
+        setShowAntecipacao(false);
+        setShowEmprestimos(false);
+        setShowEmpresa(false);
+        setShowContaDigital(true);
+    };
+
+    const handleContaDigitalMouseLeave = () => {
+        const timeout = setTimeout(() => {
+            setShowContaDigital(false);
+        }, 300);
+        setContaDigitalTimeout(timeout);
+    };
+
     const handleEmpresaMouseEnter = () => {
         if (empresaTimeout) {
             clearTimeout(empresaTimeout);
@@ -146,6 +192,8 @@ const Navbar = () => {
         }
         // Fecha outros dropdowns
         setShowAntecipacao(false);
+        setShowEmprestimos(false);
+        setShowContaDigital(false);
         setShowEmpresa(true);
     };
 
@@ -193,13 +241,22 @@ const Navbar = () => {
                                     </div>
 
                                     <div className={S.dropdownGrid}>
-                                        <Link href="/antecipacao-de-recebiveis" className={S.dropdownItem}>
+                                        <Link href="/antecipacao-de-duplicatas" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconFileInvoice />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Antecipação de Duplicatas</h4>
+                                                <p className={S.itemDescription}>Transforme suas duplicatas em capital de giro com segurança e agilidade</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/antecipacao-de-contratos" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
                                                 <IconShield />
                                             </div>
                                             <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>Antecipação de Recebíveis</h4>
-                                                <p className={S.itemDescription}>Transforme recebíveis em capital de giro com segurança e agilidade</p>
+                                                <h4 className={S.itemTitle}>Antecipação de Contratos</h4>
+                                                <p className={S.itemDescription}>Antecipe recebíveis de contratos e melhore seu fluxo de caixa</p>
                                             </div>
                                         </Link>
                                         <Link href="/estruturacao-customizada" className={S.dropdownItem}>
@@ -207,8 +264,65 @@ const Navbar = () => {
                                                 <IconSettings />
                                             </div>
                                             <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>Estruturação Customizada</h4>
+                                                <h4 className={S.itemTitle}>Operações Estruturadas</h4>
                                                 <p className={S.itemDescription}>Soluções personalizadas e sob medida para seu negócio</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+
+                                    <div className={S.dropdownFooter}>
+                                        <Link href="/solicitar-proposta" className={S.viewAllLink}>
+                                            Solicitar proposta →
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        <div
+                            className={`${S.menuItemDropdown} ${showEmprestimos ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleEmprestimosMouseEnter}
+                            onMouseLeave={handleEmprestimosMouseLeave}
+                        >
+                            <span className={S.menuItem}>
+                                Empréstimos
+                            </span>
+                            {showEmprestimos && (
+                                <div
+                                    className={S.solutionsDropdown}
+                                    onMouseEnter={handleEmprestimosMouseEnter}
+                                    onMouseLeave={handleEmprestimosMouseLeave}
+                                >
+                                    <div className={S.dropdownHeader}>
+                                        <h3 className={S.dropdownTitle}>Empréstimos</h3>
+                                        <p className={S.dropdownSubtitle}>Soluções de crédito para suas necessidades</p>
+                                    </div>
+
+                                    <div className={S.dropdownGrid}>
+                                        <Link href="/emprestimo-pessoal" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconCreditCard />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Empréstimo Pessoal</h4>
+                                                <p className={S.itemDescription}>Crédito pessoal rápido e descomplicado para suas necessidades</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/emprestimo-veiculo" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconCar />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Empréstimo Pessoal com Garantia de veículo - Car Equity</h4>
+                                                <p className={S.itemDescription}>Use seu veículo como garantia e obtenha crédito com condições especiais</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/financiamento-veiculo" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconCalculator />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Financiamento de Veículo</h4>
+                                                <p className={S.itemDescription}>Financie seu veículo com as melhores condições do mercado</p>
                                             </div>
                                         </Link>
                                     </div>
@@ -224,17 +338,68 @@ const Navbar = () => {
                         <Link className={S.menuItem} href="/capital-de-giro">
                             Capital de Giro
                         </Link>
-                        <Link className={S.menuItem} href="/conta-digital">
-                            Conta Digital
-                        </Link>
-                        <Link className={S.menuItem} href="/conta-escrow">
-                            Conta Escrow
-                        </Link>
-                        <Link className={S.menuItem} href="/baixe-o-app">
-                            Baixe o App
+                        <div
+                            className={`${S.menuItemDropdown} ${showContaDigital ? S.dropdownOpen : ''}`}
+                            onMouseEnter={handleContaDigitalMouseEnter}
+                            onMouseLeave={handleContaDigitalMouseLeave}
+                        >
+                            <span className={S.menuItem}>
+                                Conta Digital
+                            </span>
+                            {showContaDigital && (
+                                <div
+                                    className={S.solutionsDropdown}
+                                    onMouseEnter={handleContaDigitalMouseEnter}
+                                    onMouseLeave={handleContaDigitalMouseLeave}
+                                >
+                                    <div className={S.dropdownHeader}>
+                                        <h3 className={S.dropdownTitle}>Conta Digital</h3>
+                                        <p className={S.dropdownSubtitle}>Soluções bancárias digitais para pessoas físicas e jurídicas</p>
+                                    </div>
+
+                                    <div className={S.dropdownGrid}>
+                                        <Link href="/conta-digital" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconDeviceMobile />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Conta Digital PF e PJ</h4>
+                                                <p className={S.itemDescription}>Conta digital completa para pessoas físicas e jurídicas</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/conta-escrow" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconLock />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Conta Escrow</h4>
+                                                <p className={S.itemDescription}>Proteja negociações de alto valor com conta garantida</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/baixe-o-app" className={S.dropdownItem}>
+                                            <div className={S.itemIcon}>
+                                                <IconDownload />
+                                            </div>
+                                            <div className={S.itemContent}>
+                                                <h4 className={S.itemTitle}>Baixe o App</h4>
+                                                <p className={S.itemDescription}>Gerencie seu capital de giro direto pelo app</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+
+                                    <div className={S.dropdownFooter}>
+                                        <Link href="/solicitar-proposta" className={S.viewAllLink}>
+                                            Solicitar proposta →
+                                        </Link>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                        <Link className={S.menuItem} href="/contato">
+                            Contato
                         </Link>
                         <div
-                            className={`${S.menuItemDropdown} ${showEmpresa ? S.dropdownOpen : ''}`}
+                            className={`${S.menuItemDropdown} ${S.menuItemDropdownLast} ${showEmpresa ? S.dropdownOpen : ''}`}
                             onMouseEnter={handleEmpresaMouseEnter}
                             onMouseLeave={handleEmpresaMouseLeave}
                         >
@@ -243,7 +408,7 @@ const Navbar = () => {
                             </span>
                             {showEmpresa && (
                                 <div
-                                    className={S.solutionsDropdown}
+                                    className={`${S.solutionsDropdown} ${S.solutionsDropdownLast}`}
                                     onMouseEnter={handleEmpresaMouseEnter}
                                     onMouseLeave={handleEmpresaMouseLeave}
                                 >
@@ -265,7 +430,7 @@ const Navbar = () => {
 
                                         <Link href="/intranet" className={S.dropdownItem}>
                                             <div className={S.itemIcon}>
-                                                <IconSettings />
+                                                <IconServer />
                                             </div>
                                             <div className={S.itemContent}>
                                                 <h4 className={S.itemTitle}>Intranet</h4>
@@ -300,16 +465,6 @@ const Navbar = () => {
                                             <div className={S.itemContent}>
                                                 <h4 className={S.itemTitle}>Parceiros</h4>
                                                 <p className={S.itemDescription}>Conheça nossa rede de parceiros estratégicos</p>
-                                            </div>
-                                        </Link>
-
-                                        <Link href="/contato" className={S.dropdownItem}>
-                                            <div className={S.itemIcon}>
-                                                <IconDeviceMobile />
-                                            </div>
-                                            <div className={S.itemContent}>
-                                                <h4 className={S.itemTitle}>Contato</h4>
-                                                <p className={S.itemDescription}>Entre em contato conosco</p>
                                             </div>
                                         </Link>
                                     </div>
@@ -367,17 +522,61 @@ const Navbar = () => {
                                         <div className={S.drawerSubmenuItems}>
                                             <Link
                                                 className={S.drawerSubmenuItem}
-                                                href="/antecipacao-de-recebiveis"
+                                                href="/antecipacao-de-duplicatas"
                                                 onClick={handleCloseDrawer}
                                             >
-                                                Antecipação de Recebíveis
+                                                Antecipação de Duplicatas
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/antecipacao-de-contratos"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Antecipação de Contratos
                                             </Link>
                                             <Link
                                                 className={S.drawerSubmenuItem}
                                                 href="/estruturacao-customizada"
                                                 onClick={handleCloseDrawer}
                                             >
-                                                Estruturação Customizada
+                                                Operações Estruturadas
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className={S.drawerSubmenu}>
+                                    <div
+                                        className={S.drawerSubmenuTitle}
+                                        onClick={() => setMobileEmprestimosOpen(!mobileEmprestimosOpen)}
+                                    >
+                                        <span>Empréstimos</span>
+                                        <IconChevronDown
+                                            className={`${S.submenuArrow} ${mobileEmprestimosOpen ? S.submenuArrowOpen : ''}`}
+                                        />
+                                    </div>
+                                    {mobileEmprestimosOpen && (
+                                        <div className={S.drawerSubmenuItems}>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/emprestimo-pessoal"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Empréstimo Pessoal
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/emprestimo-veiculo"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Empréstimo Pessoal com Garantia de veículo - Car Equity
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/financiamento-veiculo"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Financiamento de Veículo
                                             </Link>
                                         </div>
                                     )}
@@ -390,26 +589,50 @@ const Navbar = () => {
                                 >
                                     Capital de Giro
                                 </Link>
+
+                                <div className={S.drawerSubmenu}>
+                                    <div
+                                        className={S.drawerSubmenuTitle}
+                                        onClick={() => setMobileContaDigitalOpen(!mobileContaDigitalOpen)}
+                                    >
+                                        <span>Conta Digital</span>
+                                        <IconChevronDown
+                                            className={`${S.submenuArrow} ${mobileContaDigitalOpen ? S.submenuArrowOpen : ''}`}
+                                        />
+                                    </div>
+                                    {mobileContaDigitalOpen && (
+                                        <div className={S.drawerSubmenuItems}>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/conta-digital"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Conta Digital PF e PJ
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/conta-escrow"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Conta Escrow
+                                            </Link>
+                                            <Link
+                                                className={S.drawerSubmenuItem}
+                                                href="/baixe-o-app"
+                                                onClick={handleCloseDrawer}
+                                            >
+                                                Baixe o App
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
+
                                 <Link
                                     className={S.menuItem}
-                                    href="/conta-digital"
+                                    href="/contato"
                                     onClick={handleCloseDrawer}
                                 >
-                                    Conta Digital
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/conta-escrow"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Conta Escrow
-                                </Link>
-                                <Link
-                                    className={S.menuItem}
-                                    href="/baixe-o-app"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Baixe o App
+                                    Contato
                                 </Link>
 
                                 <div className={S.drawerSubmenu}>
@@ -458,13 +681,6 @@ const Navbar = () => {
                                                 onClick={handleCloseDrawer}
                                             >
                                                 Parceiros
-                                            </Link>
-                                            <Link
-                                                className={S.drawerSubmenuItem}
-                                                href="/contato"
-                                                onClick={handleCloseDrawer}
-                                            >
-                                                Contato
                                             </Link>
                                         </div>
                                     )}
