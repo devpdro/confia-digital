@@ -42,7 +42,7 @@ const InvestmentsHeader = () => {
                             whileHover={{ scale: 1.02 }}
                         >
                             <a
-                                href="https://hotinvest.dbs.moneyp.com.br/login"
+                                href="https://confiacapital.internetbanking.moneyp.com.br/acesso"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
