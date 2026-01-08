@@ -19,12 +19,20 @@
     margin: 0 auto;
     padding: 0 1.075rem;
     width: 100%;
+
+    @media (max-width: 768px) {
+        padding: 0;
+        width: 100%;
+    }
 }
 
 .content {
     text-align: center;
+    padding: 0 1.075rem;
 
-    @media (max-width: 768px) {}
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+    }
 }
 
 .logoSection {
@@ -120,20 +128,53 @@
     }
 }
 
-.downloadButton {
+.downloadButtons {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
     margin-bottom: 4.075rem;
+    flex-wrap: wrap;
 
     @media (max-width: 768px) {
         margin-bottom: 1.5rem;
+        gap: 0.2rem;
     }
 }
 
-.appStoreButton {
+.storeButtonApple {
     display: inline-block;
     text-decoration: none;
     transition: all 0.3s ease;
+    height: 50px;
+    width: 130px;
+    flex-shrink: 0;
+    
+    &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        height: 40px;
+        width: 130px;
+    }
+}
+
+.storeButton {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    height: 50px;
+    width: 160px;
+    flex-shrink: 0;
 
     &:hover {
         transform: translateY(-2px);
@@ -141,15 +182,18 @@
     }
 
     img {
-        height: 50px;
-        width: auto;
+        height: 100%;
+        width: 84%;
+        object-fit: contain;
         display: block;
+    }
 
-        @media (max-width: 768px) {
-            height: 40px;
-        }
+    @media (max-width: 768px) {
+        height: 40px;
+        width: 130px;
     }
 }
+
 
 .phonesContainer {
     display: flex;
@@ -167,15 +211,18 @@
     }
 
     @media (max-width: 768px) {
-        gap: 1rem;
-        flex-direction: row;
-        overflow-x: auto;
-        padding: 1rem 0 2rem 0;
-        justify-content: flex-start;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        min-height: 500px;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0 3rem 0;
+        min-height: auto;
+        overflow: visible;
+        width: 100%;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -189,7 +236,12 @@
     }
 
     @media (max-width: 768px) {
-        width: 200px;
-        scroll-snap-align: center;
+        width: 75%;
+        max-width: 280px;
+        min-width: 200px;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 }

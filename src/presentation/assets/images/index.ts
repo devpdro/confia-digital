@@ -53,8 +53,26 @@ import APP_HEADER from './APP_HEADER.png'
 import LOGIN_IMAGE from './LOGIN.png'
 import TELA_1_APP from './TELA_1_APP.png'
 import TELA_2_APP from './TELA_2_APP.png'
+import LOGO_CONFIA_CAPITAL from './logo_confia_capital.webp'
+import CONTA_1 from './conta_1.webp'
+import CONTA_2 from './conta_2.webp'
+import CONTA_3 from './conta_3.webp'
+import CONTA_4 from './conta_4.webp'
+import CONTA_5 from './conta_5.webp'
+import CONTA_6 from './conta_6.webp'
+import APP_STORE_BADGE from './apple.png'
+import GOOGLE_PLAY_BADGE from './google_play.png'
 
 const IMAGE = {
+    LOGO_CONFIA_CAPITAL,
+    CONTA_1,
+    CONTA_2,
+    CONTA_3,
+    CONTA_4,
+    CONTA_5,
+    CONTA_6,
+    APP_STORE_BADGE,
+    GOOGLE_PLAY_BADGE,
     HEADER_IMAGE_MAO,
     LOGIN_IMAGE,
     TELA_1_APP,
