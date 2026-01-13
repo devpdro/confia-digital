@@ -26,3 +26,4 @@ export { default as AntecipacaoDeDuplicatas } from './antecipacao-de-duplicatas/
 export { default as EmprestimoPessoal } from './emprestimo-pessoal/emprestimo-pessoal'
 export { default as EmprestimoVeiculo } from './emprestimo-veiculo/emprestimo-veiculo'
 export { default as FinanciamentoVeiculo } from './financiamento-veiculo/financiamento-veiculo'
+export { default as DataProtection } from './data-protection/data-protection'

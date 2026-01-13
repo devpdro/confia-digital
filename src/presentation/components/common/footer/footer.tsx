@@ -51,6 +51,7 @@ const Footer: React.FC<FooterProps> = ({ themeColor }) => {
                                 <ul className={S.linkList}>
                                     <li><Link href="/termos-de-uso" className={S.link}>Termos de Uso</Link></li>
                                     <li><Link href="/politica-de-privacidade" className={S.link}>Política de Privacidade</Link></li>
+                                    <li><Link href="/protecao-de-dados" className={S.link}>Proteção de Dados</Link></li>
                                     <li><Link href="/codigo-de-conduta" className={S.link}>Código de Conduta</Link></li>
                                     <li><Link href="/regulamentacoes-cvm" className={S.link}>Regulamentações CVM</Link></li>
                                     <li><Link href="/contratos-padrao" className={S.link}>Contratos Padrão</Link></li>

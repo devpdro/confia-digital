@@ -1,0 +1,258 @@
+@import 'src/presentation/styles/themes/light.scss';
+
+.page {
+    min-height: 100vh;
+    padding: 2rem 0;
+    overflow: visible;
+    background-color: #f8fafc;
+
+    @media (max-width: 768px) {
+        padding: 1rem 0;
+    }
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 1.075rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    overflow: visible;
+    height: auto;
+
+    @media (max-width: 768px) {
+        gap: 2rem;
+    }
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+        gap: 0.75rem;
+    }
+}
+
+.header {
+    background-color: transparent;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+        padding: 1.5rem 0;
+    }
+}
+
+.title {
+    color: rgb(2, 5, 83);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    margin: 0 0 2rem 0;
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.headerInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.infoItem {
+    strong {
+        display: block;
+        color: rgb(2, 5, 83);
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: rgb(2, 5, 83);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0.25rem 0;
+        font-family: 'Domine', sans-serif;
+    }
+}
+
+.section {
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    scroll-margin-top: 100px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+
+    &.sectionOpen {
+        background-color: #f3f4f6;
+    }
+
+    &:last-child {
+        margin-bottom: 4rem;
+    }
+
+    @media (max-width: 768px) {
+        border-radius: 3px;
+
+        &:last-child {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.sectionHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    @media (max-width: 768px) {
+        padding: 1.25rem;
+    }
+}
+
+.sectionTitle {
+    color: rgb(2, 5, 83);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+.chevron {
+    color: rgb(2, 5, 83);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.sectionContent {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+
+    @media (max-width: 768px) {
+        padding: 0 1.25rem 1.25rem 1.25rem;
+    }
+}
+
+.paragraph {
+    color: rgb(2, 5, 83);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 1rem 0;
+    font-family: 'Domine', sans-serif;
+    text-align: left;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    strong {
+        color: #010553;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 0.875rem;
+    }
+}
+
+// Animações de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@media (max-width: 640px) {
+    .page {
+        padding: 0.5rem 0;
+    }
+
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+
+
+@media print {
+    .page {
+        background-color: white;
+        padding: 0;
+    }
+
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+
+
+    .content {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+}
+
