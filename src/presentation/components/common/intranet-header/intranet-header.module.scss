@@ -44,7 +44,7 @@
 }
 
 .badge {
-    color: #0D447E;
+    color: rgb(14, 68, 125);
     font-size: 20px;
     font-weight: 500;
     line-height: 30px;
@@ -113,11 +113,11 @@
     padding: 1rem 2rem;
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
-    border-left: 4px solid #0D447E;
+    border-left: 4px solid rgb(14, 68, 125);
     cursor: pointer;
 
     p {
-        color: #0D447E;
+        color: rgb(14, 68, 125);
         font-size: 16px;
         font-weight: 600;
         margin: 0;

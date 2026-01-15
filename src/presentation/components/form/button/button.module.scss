@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--btn1-bg, #0D447E);
+    background-color: var(--btn1-bg, rgb(14, 68, 125));
     color: #fff;
     border-radius: 5px;
     transition: all 0.25s ease;
@@ -71,15 +71,15 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    color: var(--btn2-color, #0D447E);
-    border: 2px solid var(--btn2-color, #0D447E);
+    color: var(--btn2-color, rgb(14, 68, 125));
+    border: 2px solid var(--btn2-color, rgb(14, 68, 125));
     border-radius: 5px;
     transition: all 0.25s ease;
 
     width: var(--btn-width, auto);
 
     &:hover {
-        background-color: var(--btn2-color, #0D447E);
+        background-color: var(--btn2-color, rgb(14, 68, 125));
         color: #fff;
     }
 

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   /* Confia Capital azul */
-  background: radial-gradient(at 50% 60%, #0D447E 0%, #0A0F1E 100%);
+  background: radial-gradient(at 50% 60%, rgb(14, 68, 125) 0%, #0A0F1E 100%);
   overflow: hidden;
   color: #fff;
 }
@@ -184,7 +184,7 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: linear-gradient(180deg, #0D447E 0%, #0A0F1E 100%);
+  background: linear-gradient(180deg, rgb(14, 68, 125) 0%, #0A0F1E 100%);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12) inset;
   flex: 0 0 auto;
 }

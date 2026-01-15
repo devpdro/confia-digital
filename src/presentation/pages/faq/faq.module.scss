@@ -90,7 +90,7 @@
     cursor: pointer;
 
     &.active {
-        color: #0D447E;
+        color: rgb(14, 68, 125);
         font-weight: 600;
     }
 
@@ -156,7 +156,7 @@
     background-color: #f8fafc;
 
     .questionText {
-        color: #264f85;
+        color: rgb(14, 68, 125);
     }
 }
 
@@ -177,15 +177,15 @@
     padding-right: 1rem;
 
     &:hover {
-        background-color: rgba(38, 79, 133, 0.02);
+        background-color: rgba(14, 68, 125, 0.02);
 
         .questionText {
-            color: #264f85;
+            color: rgb(14, 68, 125);
         }
 
         .icon {
             transform: scale(1.05);
-            color: #1a4d7a;
+            color: rgb(14, 68, 125);
         }
     }
 
@@ -224,7 +224,7 @@
     width: 36px;
     height: 36px;
     font-size: 28px;
-    color: #264f85;
+    color: rgb(14, 68, 125);
     cursor: pointer;
     flex-shrink: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -253,7 +253,7 @@
         line-height: 28px;
 
         a {
-            color: #234F85;
+            color: rgb(14, 68, 125);
             text-decoration: underline;
             transition: color 0.2s ease;
 
@@ -300,7 +300,7 @@
     display: flex;
     align-items: center;
     gap: 0.475rem;
-    color: #264f85;
+    color: rgb(14, 68, 125);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -320,7 +320,7 @@
 
     &:hover {
         background-color: #f8fafc;
-        color: #1a4d7a;
+        color: rgb(14, 68, 125);
     }
 
     @media (max-width: 768px) {

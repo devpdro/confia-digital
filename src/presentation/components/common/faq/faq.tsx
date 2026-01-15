@@ -108,7 +108,7 @@ const FAQ: React.FC<FAQProps> = ({
                                             className={`${S.icon} ${isOpen ? S.iconOpen : ''}`}
                                             animate={{
                                                 rotate: isOpen ? 45 : 0,
-                                                color: themeColor ? themeColor : '#264f85',
+                                                color: themeColor ? themeColor : 'rgb(14, 68, 125)',
                                                 scale: isOpen ? 1.1 : 1
                                             }}
                                             transition={{

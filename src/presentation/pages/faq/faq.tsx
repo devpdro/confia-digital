@@ -60,7 +60,7 @@ const Faq = () => {
 
     const categories = [
         { id: 'geral', name: 'Geral' },
-        { id: 'conta-digital', name: 'Conta Digital HotInvest' },
+        { id: 'conta-digital', name: 'Conta Digital' },
         { id: 'securitizacao', name: 'Securitização de Recebíveis' },
         { id: 'estruturacao-customizada', name: 'Estruturação Customizada' },
         { id: 'antecipacao', name: 'Antecipação de Contratos' },
@@ -73,12 +73,12 @@ const Faq = () => {
             {
                 id: 'o-que-e-confia',
                 question: 'O que é a Confia Capital?',
-                answer: 'A Confia Capital é uma securitizadora autorizada pela CVM que transforma recebíveis em liquidez imediata para empresas. Oferecemos também o HotInvest, banco digital gratuito com investimentos automáticos que rendem 150% acima da poupança.'
+                answer: 'A Confia Capital é uma securitizadora autorizada pela CVM que transforma recebíveis em liquidez imediata para empresas. Oferecemos soluções completas de antecipação, conta digital gratuita e investimentos automáticos.'
             },
             {
                 id: 'servicos-oferecidos',
                 question: 'Quais serviços a Confia Capital oferece?',
-                answer: 'Oferecemos securitização de recebíveis (CRI/CRA), antecipação de contratos, conta digital gratuita HotInvest, programa de parcerias, intranet para clientes e soluções completas de liquidez empresarial.'
+                answer: 'Oferecemos securitização de recebíveis (CRI/CRA), antecipação de contratos, conta digital gratuita, programa de parcerias, intranet para clientes e soluções completas de liquidez empresarial.'
             },
             {
                 id: 'diferencial-mercado',
@@ -88,33 +88,33 @@ const Faq = () => {
             {
                 id: 'seguranca-regulamentacao',
                 question: 'A Confia Capital é regulamentada?',
-                answer: 'Sim, somos uma securitizadora autorizada pela CVM (Comissão de Valores Mobiliários) e o HotInvest é regulamentado pelo Banco Central. Seguimos todas as normas de segurança e compliance do mercado financeiro.'
+                answer: 'Sim, somos uma securitizadora autorizada pela CVM (Comissão de Valores Mobiliários) e nossas operações bancárias são regulamentadas pelo Banco Central. Seguimos todas as normas de segurança e compliance do mercado financeiro.'
             },
             {
                 id: 'como-comecar',
                 question: 'Como começar a usar os serviços da Confia Capital?',
-                answer: 'É simples: acesse nosso site, solicite uma proposta ou abra sua conta HotInvest. Nossa equipe analisa seu perfil e oferece as melhores soluções para suas necessidades de liquidez e investimento.'
+                answer: 'É simples: acesse nosso site, solicite uma proposta ou abra sua conta digital. Nossa equipe analisa seu perfil e oferece as melhores soluções para suas necessidades de liquidez e investimento.'
             }
         ],
         'conta-digital': [
             {
                 id: 'conta-gratuita',
-                question: 'A conta HotInvest é realmente gratuita?',
-                answer: '100% gratuita! Zero taxa de manutenção, zero anuidade do cartão, transferências e PIX gratuitos 24h. Não cobramos nada que os bancos tradicionais cobram. Seu dinheiro ainda rende automaticamente 150% acima da poupança.'
+                question: 'A conta digital é realmente gratuita?',
+                answer: '100% gratuita! Zero taxa de manutenção, zero anuidade do cartão, transferências e PIX gratuitos 24h. Não cobramos nada que os bancos tradicionais cobram. Seu dinheiro ainda rende automaticamente acima da poupança.'
             },
             {
                 id: 'rendimento-automatico',
                 question: 'Como funciona o rendimento automático?',
-                answer: 'Seu saldo rende automaticamente todos os dias, sem você fazer nada. O rendimento é 150% superior à poupança, com liquidez diária. Não precisa aplicar ou resgatar - o dinheiro fica disponível e rendendo simultaneamente.'
+                answer: 'Seu saldo rende automaticamente todos os dias, sem você fazer nada. O rendimento é superior à poupança, com liquidez diária. Não precisa aplicar ou resgatar - o dinheiro fica disponível e rendendo simultaneamente.'
             },
             {
-                id: 'abrir-conta-hotinvest',
-                question: 'Como abrir minha conta no HotInvest?',
+                id: 'abrir-conta-digital',
+                question: 'Como abrir minha conta digital?',
                 answer: 'Super simples! Baixe o app, toque em "Criar conta", preencha seus dados pessoais, escolha seu tipo de conta e pronto! Sua conta fica ativa em poucos minutos, sem burocracia ou análise de crédito.'
             },
             {
                 id: 'cartao-sem-anuidade',
-                question: 'O cartão HotInvest tem anuidade?',
+                question: 'O cartão tem anuidade?',
                 answer: 'Não! Cartão de débito e crédito sem anuidade para sempre. Ainda ganha cashback real nas compras e controla tudo pelo app. Sem taxas escondidas, sem surpresas no final do mês.'
             },
             {
@@ -274,8 +274,8 @@ const Faq = () => {
         <div className={S.page}>
             <Meta
                 title="Perguntas Frequentes | Confia Capital - Tire suas dúvidas"
-                description="Encontre respostas para as principais dúvidas sobre securitização, conta digital HotInvest, parcerias e nossos serviços financeiros. Suporte completo para empresas."
-                keywords="perguntas frequentes, FAQ, dúvidas securitização, conta digital, HotInvest, parcerias, CRI CRA, recebíveis, suporte financeiro, Confia Capital"
+                description="Encontre respostas para as principais dúvidas sobre securitização, conta digital, parcerias e nossos serviços financeiros. Suporte completo para empresas."
+                keywords="perguntas frequentes, FAQ, dúvidas securitização, conta digital, parcerias, CRI CRA, recebíveis, suporte financeiro, Confia Capital"
                 image="https://confiacapital.com.br/og-faq.png"
             />
             <div className={S.container}>
@@ -316,7 +316,7 @@ const Faq = () => {
                                         className={`${S.icon} ${expandedItems.includes(faq.id) ? S.iconOpen : ''}`}
                                         animate={{ 
                                             rotate: expandedItems.includes(faq.id) ? 45 : 0,
-                                            color: expandedItems.includes(faq.id) ? '#264f85' : '#264f85',
+                                            color: expandedItems.includes(faq.id) ? 'rgb(14, 68, 125)' : 'rgb(14, 68, 125)',
                                             scale: expandedItems.includes(faq.id) ? 1.1 : 1
                                         }}
                                         transition={{ 
@@ -417,7 +417,7 @@ const Faq = () => {
                                                 className={`${S.icon} ${expandedItems.includes(faq.id) ? S.iconOpen : ''}`}
                                                 animate={{ 
                                                     rotate: expandedItems.includes(faq.id) ? 45 : 0,
-                                                    color: expandedItems.includes(faq.id) ? '#264f85' : '#264f85',
+                                                    color: expandedItems.includes(faq.id) ? 'rgb(14, 68, 125)' : 'rgb(14, 68, 125)',
                                                     scale: expandedItems.includes(faq.id) ? 1.1 : 1
                                                 }}
                                                 transition={{ 

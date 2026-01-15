@@ -43,7 +43,7 @@ const slides = [
         buttonLink: "https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Gostaria%20de%20abrir%20uma%20conta%20na%20Confia%20Digital!",
         backgroundImage: null,
         cardImage: IMAGE.CARTAO,
-        backgroundColor: '#0D447E',
+        backgroundColor: 'rgb(14, 68, 125)',
         buttonStyle: 'white',
         highlight1: { text: "Sem anuidade", subtext: "para sempre", icon: IconGift },
         highlight2: { text: "Cashback", subtext: "em todas compras", icon: IconCreditCard }
