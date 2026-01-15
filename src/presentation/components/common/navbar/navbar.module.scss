@@ -3,12 +3,12 @@
 
 .navbar {
     width: 100%;
-    background-color: #1c1c1c;
+    background-color: rgb(14, 68, 125);
     position: relative;
     z-index: 9999;
 
     &.faqPage {
-        background-color: #ffffff;
+        background-color: rgb(14, 68, 125);
     }
 
     .navbarContent {
