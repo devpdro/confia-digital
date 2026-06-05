@@ -153,7 +153,7 @@ const BaixeOApp = () => {
                             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                         >
                             <a
-                                href="https://apps.apple.com/br/app/confia-capital/id6744622340"
+                                href="https://apps.apple.com/br/app/confia-pay/id6762301254"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={S.storeButtonApple}
@@ -161,7 +161,7 @@ const BaixeOApp = () => {
                                 <img src={IMAGE.APP_STORE_BADGE.src} alt="Download na App Store" />
                             </a>
                             <a
-                                href="https://play.google.com/store/apps/details?id=br.com.hotinvest"
+                                href="https://play.google.com/store/apps/details?id=com.confiapay.cnfiapay"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={S.storeButton}
