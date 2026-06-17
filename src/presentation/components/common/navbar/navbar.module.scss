@@ -98,6 +98,19 @@
                 position: relative;
                 transition: all 0.2s ease;
             }
+
+            .menuItem.active {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background-color: #ffffff;
+                    border-radius: 1px;
+                }
+            }
             
             .menuItemDropdown {
                 position: relative;
