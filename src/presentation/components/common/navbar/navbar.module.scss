@@ -551,7 +551,13 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #ffffff;
+                color: rgb(14, 68, 125);
+                transition: color 0.18s, transform 0.18s;
+
+                &:hover {
+                    color: #0a3a6b;
+                    transform: scale(1.05);
+                }
             }
         }
 
@@ -572,13 +578,21 @@
                 margin-bottom: 1.2rem;
 
                 .menuItem {
-                    color: #ffffff;
+                    color: rgb(14, 68, 125);
                     font-size: 1.13rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     text-decoration: none;
                     padding: 0.2rem 0;
                     transition: color 0.18s;
                     margin-bottom: 0.775rem;
+
+                    &:hover {
+                        color: #0a3a6b;
+                    }
+
+                    &.active {
+                        color: #0a3a6b;
+                    }
                 }
                 
                 .drawerSubmenu {
@@ -590,23 +604,27 @@
                 }
                 
                 .drawerSubmenuTitle {
-                    color: #ffffff;
+                    color: rgb(14, 68, 125);
                     font-size: 1.13rem;
-                    font-weight: 500;
+                    font-weight: 600;
                     padding: 0.2rem 0;
                     margin-bottom: 0.5rem;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     cursor: pointer;
-                    
+                    transition: color 0.18s;
+
+                    &:hover {
+                        color: #0a3a6b;
+                    }
                 }
-                
+
                 .submenuArrow {
                     width: 24px;
                     height: 24px;
                     transition: transform 0.2s ease;
-                    color: #ffffff;
+                    color: rgb(14, 68, 125);
                 }
                 
                 .submenuArrowOpen {
@@ -634,7 +652,7 @@
                 }
                 
                 .drawerSubmenuItem {
-                    color: #374151;
+                    color: #1c1c1c;
                     font-size: 1rem;
                     font-weight: 500;
                     text-decoration: none;
@@ -643,8 +661,8 @@
                     border-left: 2px solid transparent;
 
                     &:hover {
-                        color: #ffffff;
-                        border-left-color: #1c1c1c;
+                        color: rgb(14, 68, 125);
+                        border-left-color: rgb(14, 68, 125);
                         background-color: rgba(14, 68, 125, 0.05);
                     }
                 }
