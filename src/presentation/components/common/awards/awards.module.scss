@@ -79,30 +79,47 @@
 .mediaLogos {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 3rem;
+    gap: 5rem;
     justify-items: center;
     align-items: center;
-    margin: 2.075rem 0;
+    margin: 2.075rem 0 4rem;
 
     @media (max-width: 1184px) {
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.5rem;
     }
 
     @media (max-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
     }
 }
 
 .logoImage {
     width: 100%;
-    max-width: 180px;
+    max-width: 160px;
     height: auto;
     opacity: 1;
     filter: brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2482%) hue-rotate(240deg) brightness(93%) contrast(106%);
 
     @media (max-width: 1184px) {
-        max-width: 150px;
+        max-width: 130px;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 100px;
+    }
+}
+
+.logoImageNoFilter {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    opacity: 1;
+    mix-blend-mode: multiply;
+
+    @media (max-width: 1184px) {
+        max-width: 160px;
     }
 
     @media (max-width: 768px) {

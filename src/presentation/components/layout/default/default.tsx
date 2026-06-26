@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react'
 import { useRouter } from 'next/router'
 
-import { Navbar, Footer, Terms } from 'src/presentation/components'
+import { Navbar, Footer } from 'src/presentation/components'
 
 import { IconBrandWhatsapp } from '@tabler/icons-react'
 
@@ -30,15 +30,9 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
       </a>
 
       {isHotInvest ? (
-        <>
-          <Footer themeColor="#16487E" />
-          <Terms themeColor="#16487E" />
-        </>
+        <Footer themeColor="#16487E" />
       ) : (
-        <>
-          <Footer />
-          <Terms />
-        </>
+        <Footer />
       )}
     </div>
   )

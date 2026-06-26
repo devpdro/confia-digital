@@ -66,18 +66,18 @@ const AWARDS = () => {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                     >
                         {[
-                            { src: IMAGE.BMP.src, alt: "Banco BMP" },
-                            { src: IMAGE.ITAU.src, alt: "Banco Itaú" },
-                            { src: IMAGE.SERASA.src, alt: "Serasa Experian" },
-                            { src: IMAGE.GRAFENO.src, alt: "Grafeno" },
-                            { src: IMAGE.SINFAC.src, alt: "Sinfac" },
-                            { src: IMAGE.TERCON.src, alt: "Tercon" }
+                            { src: IMAGE.CELCOIN.src, alt: "Celcoin" },
+                            { src: IMAGE.UNICO.src, alt: "Unico" },
+                            { src: IMAGE.B3_LOGO.src, alt: "B3" },
+                            { src: IMAGE.SERASA.src, alt: "Serasa" },
+                            { src: IMAGE.LOGO_VAAS.src, alt: "Vaas" },
+                            { src: IMAGE.BMP.src, alt: "Banco BMP" }
                         ].map((logo, index) => (
                             <motion.img 
                                 key={index}
                                 src={logo.src} 
                                 alt={logo.alt} 
-                                className={S.logoImage}
+                                className={logo.noFilter ? S.logoImageNoFilter : S.logoImage}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}

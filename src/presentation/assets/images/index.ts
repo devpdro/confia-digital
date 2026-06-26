@@ -1,6 +1,8 @@
 import AWARD from './AWARD.svg'
 import AWARDS_BAGDES from './AWARDS_BAGDES.png'
+import B3_LOGO from './B3_logo.png'
 import BMP from './BMP.webp'
+import CELCOIN from './CELCOIN.png'
 import CELULAR from './CELULAR.webp'
 import CONTRATO_DINHEIRO from './CONTRATO_DINHEIRO.webp'
 import DINHEIRO from './DINHEIRO.webp'
@@ -53,6 +55,10 @@ import APP_HEADER from './APP_HEADER.png'
 import LOGIN_IMAGE from './LOGIN.png'
 import TELA_1_APP from './TELA_1_APP.png'
 import TELA_2_APP from './TELA_2_APP.png'
+import UNICO from './UNICO.png'
+import VAAS from './vaas.webp'
+import VAAS_LIVE from './vaas_live_logo.jpg'
+import LOGO_VAAS from './LOGO_VAAS.png'
 import LOGO_CONFIA_CAPITAL from './logo_confia_capital.webp'
 import CONTA_1 from './conta_1.webp'
 import CONTA_2 from './conta_2.webp'
@@ -79,7 +85,9 @@ const IMAGE = {
     TELA_2_APP,
     APP_HEADER,
     APP_STORE,
+    B3_LOGO,
     CARTAO,
+    CELCOIN,
     ESTRUTURACAO_AZUL,
     SECURITIZACAO,
     CALCULADORA_CONTRATO,
@@ -128,6 +136,10 @@ const IMAGE = {
     TEMPORARIA,
     TERCON,
     TRES_PESSOAS,
+    UNICO,
+    VAAS,
+    VAAS_LIVE,
+    LOGO_VAAS,
 }
 
 export default IMAGE;
