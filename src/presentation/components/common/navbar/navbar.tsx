@@ -70,7 +70,6 @@ const Navbar = () => {
     const { t, i18n } = useTranslation();
     const router = useRouter();
     const isFaqPage = router.pathname === '/perguntas-frequentes';
-    const isSimuladorPage = router.pathname === '/simulador-ccb';
     const [showLangs, setShowLangs] = useState(false);
     const [showAntecipacao, setShowAntecipacao] = useState(false);
     const [showEmprestimos, setShowEmprestimos] = useState(false);
@@ -340,13 +339,6 @@ const Navbar = () => {
                             Capital de Giro
                         </Link>
                         <div
-                            className={`${S.menuItemDropdown} ${isSimuladorPage ? S.active : ''}`}
-                        >
-                            <Link className={`${S.menuItem} ${isSimuladorPage ? S.active : ''}`} href="/simulador-ccb">
-                                Simulador CCB
-                            </Link>
-                        </div>
-                        <div
                             className={`${S.menuItemDropdown} ${showContaDigital ? S.dropdownOpen : ''}`}
                             onMouseEnter={handleContaDigitalMouseEnter}
                             onMouseLeave={handleContaDigitalMouseLeave}
@@ -596,14 +588,6 @@ const Navbar = () => {
                                     onClick={handleCloseDrawer}
                                 >
                                     Capital de Giro
-                                </Link>
-
-                                <Link
-                                    className={`${S.menuItem} ${isSimuladorPage ? S.active : ''}`}
-                                    href="/simulador-ccb"
-                                    onClick={handleCloseDrawer}
-                                >
-                                    Simulador CCB
                                 </Link>
 
                                 <div className={S.drawerSubmenu}>

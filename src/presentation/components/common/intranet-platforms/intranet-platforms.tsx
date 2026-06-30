@@ -8,6 +8,7 @@ interface IntranetPlatform {
     title: string;
     description: string;
     link: string;
+    external?: boolean;
 }
 
 interface IntranetPlatformsProps {
@@ -24,7 +25,8 @@ const DEFAULT_PLATFORMS: IntranetPlatform[] = [
         ),
         title: "Webmail",
         description: "Acesse e gerencie seus e-mails corporativos de forma rápida.",
-        link: "http://webmail.confiacapital.com.br"
+        link: "http://webmail.confiacapital.com.br",
+        external: true
     },
     {
         icon: (
@@ -37,7 +39,8 @@ const DEFAULT_PLATFORMS: IntranetPlatform[] = [
         ),
         title: "Smart Securities",
         description: "Acompanhe suas operações financeiras de forma completa.",
-        link: "https://www.smartsecurities.com.br/smartsecurities/"
+        link: "https://www.smartsecurities.com.br/smartsecurities/",
+        external: true
     },
     {
         icon: (
@@ -48,7 +51,37 @@ const DEFAULT_PLATFORMS: IntranetPlatform[] = [
         ),
         title: "HotInvest",
         description: "Invista em produtos exclusivos com alta rentabilidade.",
-        link: "https://hotinvest.dbs.moneyp.com.br/login"
+        link: "https://hotinvest.dbs.moneyp.com.br/login",
+        external: true
+    },
+    {
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="3" width="16" height="18" rx="2" stroke="#010553" strokeWidth="2" />
+                <path d="M8 7H16" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                <path d="M8 11H10" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                <path d="M14 11H16" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                <path d="M8 15H10" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                <path d="M14 15H16" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+        ),
+        title: "Simulador CCB",
+        description: "Simule liquidacao antecipada, saldo devedor e parcelas.",
+        link: "/simulador-ccb"
+    },
+    {
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 3H17L21 7V21H7V3Z" stroke="#010553" strokeWidth="2" strokeLinejoin="round" />
+                <path d="M17 3V8H21" stroke="#010553" strokeWidth="2" strokeLinejoin="round" />
+                <path d="M3 7V17H7" stroke="#010553" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 13H18" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+                <path d="M10 17H15" stroke="#010553" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+        ),
+        title: "Calculadora CCB",
+        description: "Monte a memoria de execucao com encargos, custas e acordos.",
+        link: "/calculadora-execucao-ccb"
     }
 ];
 
@@ -92,8 +125,8 @@ const IntranetPlatforms: React.FC<IntranetPlatformsProps> = ({
                             >
                                 <a
                                     href={platform.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    target={platform.external ? "_blank" : undefined}
+                                    rel={platform.external ? "noopener noreferrer" : undefined}
                                     className={S.cardLink}
                                 >
                                     <motion.div 
