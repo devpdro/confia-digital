@@ -26,6 +26,21 @@ const AWARDS_DATA = [
     }
 ];
 
+type MediaLogo = {
+    src: string;
+    alt: string;
+    noFilter?: boolean;
+};
+
+const MEDIA_LOGOS: MediaLogo[] = [
+    { src: IMAGE.CELCOIN.src, alt: "Celcoin" },
+    { src: IMAGE.UNICO.src, alt: "Unico" },
+    { src: IMAGE.B3_LOGO.src, alt: "B3" },
+    { src: IMAGE.SERASA.src, alt: "Serasa" },
+    { src: IMAGE.LOGO_VAAS.src, alt: "Vaas" },
+    { src: IMAGE.BMP.src, alt: "Banco BMP" }
+];
+
 const AWARDS = () => {
     return (
         <section className={S.section}>
@@ -65,14 +80,7 @@ const AWARDS = () => {
                         viewport={{ once: true, margin: "-80px" }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                     >
-                        {[
-                            { src: IMAGE.CELCOIN.src, alt: "Celcoin" },
-                            { src: IMAGE.UNICO.src, alt: "Unico" },
-                            { src: IMAGE.B3_LOGO.src, alt: "B3" },
-                            { src: IMAGE.SERASA.src, alt: "Serasa" },
-                            { src: IMAGE.LOGO_VAAS.src, alt: "Vaas" },
-                            { src: IMAGE.BMP.src, alt: "Banco BMP" }
-                        ].map((logo, index) => (
+                        {MEDIA_LOGOS.map((logo, index) => (
                             <motion.img 
                                 key={index}
                                 src={logo.src} 

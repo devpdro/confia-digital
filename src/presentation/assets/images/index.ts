@@ -56,8 +56,6 @@ import LOGIN_IMAGE from './LOGIN.png'
 import TELA_1_APP from './TELA_1_APP.png'
 import TELA_2_APP from './TELA_2_APP.png'
 import UNICO from './UNICO.png'
-import VAAS from './vaas.webp'
-import VAAS_LIVE from './vaas_live_logo.jpg'
 import LOGO_VAAS from './LOGO_VAAS.png'
 import LOGO_CONFIA_CAPITAL from './logo_confia_capital.webp'
 import CONTA_1 from './conta_1.webp'
@@ -137,8 +135,6 @@ const IMAGE = {
     TERCON,
     TRES_PESSOAS,
     UNICO,
-    VAAS,
-    VAAS_LIVE,
     LOGO_VAAS,
 }
 
