@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import { Button } from 'src/presentation/components';
-import { IMAGE } from 'src/presentation/assets';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { IconDroplet, IconCoin, IconCircleCheck } from '@tabler/icons-react';
+import { Button } from 'src/presentation/components';
+import { IMAGE } from 'src/presentation/assets';
 
 import S from './header.module.scss';
 
@@ -19,8 +18,6 @@ const slides = [
         buttonText: "Solicitar proposta",
         buttonLink: "/solicitar-proposta",
         backgroundImage: IMAGE.HEADER_IMAGE,
-        highlight1: { text: "Sem análise", subtext: "de crédito", icon: IconCircleCheck },
-        highlight2: { text: "Taxas", subtext: "competitivas", icon: IconCoin },
         isWhiteText: true
     },
     {
@@ -31,34 +28,31 @@ const slides = [
         buttonText: "Abrir conta grátis",
         buttonLink: "https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Gostaria%20de%20abrir%20uma%20conta%20na%20Confia%20Digital!",
         backgroundImage: IMAGE.HEADER_IMAGE_MAO,
-        highlight1: { text: "Até 105%", subtext: "do CDI na Conta", icon: IconDroplet },
-        highlight2: { text: "Até 120%", subtext: "do CDI nos Cofrinhos", icon: IconCoin }
+        isWhiteText: false
     }
 ];
 
 const Header = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
-    
-    // Criar array com slides duplicados para loop infinito suave
+
     const infiniteSlides = [...slides, ...slides, ...slides];
-    const startIndex = slides.length; // Começar no meio (primeiro conjunto de slides)
-    
-    const [emblaRef, emblaApi] = useEmblaCarousel({ 
-        loop: false, 
+    const startIndex = slides.length;
+
+    const [emblaRef, emblaApi] = useEmblaCarousel({
+        loop: false,
         duration: 20,
         align: 'center',
         slidesToScroll: 1,
         containScroll: 'trimSnaps',
-        startIndex: startIndex
+        startIndex
     });
 
     const scrollPrev = useCallback(() => {
         if (!emblaApi || isTransitioning) return;
         const currentIndex = emblaApi.selectedScrollSnap();
-        
+
         if (currentIndex === 0) {
-            // Se está no primeiro clone, vai para o último slide real sem animação
             setIsTransitioning(true);
             emblaApi.scrollTo(slides.length * 2 - 1, true);
             setTimeout(() => setIsTransitioning(false), 50);
@@ -70,9 +64,8 @@ const Header = () => {
     const scrollNext = useCallback(() => {
         if (!emblaApi || isTransitioning) return;
         const currentIndex = emblaApi.selectedScrollSnap();
-        
+
         if (currentIndex >= slides.length * 2) {
-            // Se está no último clone, vai para o primeiro slide real sem animação
             setIsTransitioning(true);
             emblaApi.scrollTo(slides.length, true);
             setTimeout(() => setIsTransitioning(false), 50);
@@ -88,23 +81,19 @@ const Header = () => {
         setSelectedIndex(realIndex);
     }, [emblaApi]);
 
-    // Reposicionamento silencioso após a transição terminar
     useEffect(() => {
         if (!emblaApi) return;
-        
+
         const handleSettle = () => {
             if (isTransitioning) return;
             const index = emblaApi.selectedScrollSnap();
-            
-            // Se está no clone inicial, reposiciona para o slide real correspondente
+
             if (index < slides.length) {
                 const targetIndex = index + slides.length;
                 setIsTransitioning(true);
                 emblaApi.scrollTo(targetIndex, true);
                 setTimeout(() => setIsTransitioning(false), 50);
-            } 
-            // Se está no clone final, reposiciona para o slide real correspondente
-            else if (index >= slides.length * 2) {
+            } else if (index >= slides.length * 2) {
                 const targetIndex = index - slides.length;
                 setIsTransitioning(true);
                 emblaApi.scrollTo(targetIndex, true);
@@ -125,7 +114,6 @@ const Header = () => {
         emblaApi.on('reInit', onSelect);
     }, [emblaApi, onSelect]);
 
-    // Auto-play
     useEffect(() => {
         if (!emblaApi) return;
         const interval = setInterval(() => {
@@ -141,25 +129,21 @@ const Header = () => {
                 <div className={S.carouselViewport} ref={emblaRef}>
                     <div className={S.carouselContainerInner}>
                         {infiniteSlides.map((slide, index) => (
-                            <div 
-                                key={`${slide.id}-${index}`} 
+                            <div
+                                key={`${slide.id}-${index}`}
                                 className={S.slide}
-                                style={{ 
-                                    ...(slide.backgroundColor ? {
-                                        backgroundColor: slide.backgroundColor
-                                    } : {
-                                        backgroundImage: `url(${slide.backgroundImage?.src})`,
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                        backgroundRepeat: 'no-repeat'
-                                    }),
+                                style={{
+                                    backgroundImage: `url(${slide.backgroundImage.src})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
                                     borderRadius: '24px',
                                     position: 'relative'
                                 }}
                             >
-                                {!slide.backgroundColor && <div className={S.slideOverlay}></div>}
+                                <div className={S.slideOverlay}></div>
                                 <div className={S.slideContent}>
-                                    <div className={`${S.slideText} ${slide.isWhiteText ? S.slideTextWhite : ''} ${slide.backgroundColor ? S.slideTextWhite : ''}`}>
+                                    <div className={`${S.slideText} ${slide.isWhiteText ? S.slideTextWhite : ''}`}>
                                         <span className={S.badge}>{slide.badge}</span>
                                         <motion.h1
                                             className={S.title}
@@ -170,54 +154,28 @@ const Header = () => {
                                             {slide.title}
                                         </motion.h1>
                                         {slide.buttonLink.startsWith('http') ? (
-                                            <a 
-                                                href={slide.buttonLink} 
-                                                target="_blank" 
+                                            <a
+                                                href={slide.buttonLink}
+                                                target="_blank"
                                                 rel="noopener noreferrer"
-                                                className={`${S.ctaButton} ${slide.buttonStyle === 'white' ? S.ctaButtonWhite : ''}`}
+                                                className={S.ctaButton}
                                             >
                                                 <Button
                                                     typeStyle="btn1"
                                                     label={slide.buttonText}
                                                     size="md"
                                                     width="240px"
-                                                    accentColor={slide.buttonStyle === 'white' ? '#ffffff' : undefined}
                                                 />
                                             </a>
                                         ) : (
-                                            <Link href={slide.buttonLink} className={`${S.ctaButton} ${slide.buttonStyle === 'white' ? S.ctaButtonWhite : ''}`}>
+                                            <Link href={slide.buttonLink} className={S.ctaButton}>
                                                 <Button
                                                     typeStyle="btn1"
                                                     label={slide.buttonText}
                                                     size="md"
                                                     width="240px"
-                                                    accentColor={slide.buttonStyle === 'white' ? '#ffffff' : undefined}
                                                 />
                                             </Link>
-                                        )}
-                                        {slide.backgroundColor && (
-                                            <div className={S.highlights}>
-                                                <div className={S.highlightBox}>
-                                                    {(() => {
-                                                        const IconComponent = slide.highlight1.icon;
-                                                        return <IconComponent className={S.highlightIcon} size={20} stroke={1.5} />;
-                                                    })()}
-                                                    <div>
-                                                        <div className={S.highlightText}>{slide.highlight1.text}</div>
-                                                        <div className={S.highlightSubtext}>{slide.highlight1.subtext}</div>
-                                                    </div>
-                                                </div>
-                                                <div className={S.highlightBox}>
-                                                    {(() => {
-                                                        const IconComponent = slide.highlight2.icon;
-                                                        return <IconComponent className={S.highlightIcon} size={20} stroke={1.5} />;
-                                                    })()}
-                                                    <div>
-                                                        <div className={S.highlightText}>{slide.highlight2.text}</div>
-                                                        <div className={S.highlightSubtext}>{slide.highlight2.subtext}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         )}
                                     </div>
                                 </div>
