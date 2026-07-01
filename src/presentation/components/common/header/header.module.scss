@@ -274,30 +274,6 @@
             }
         }
 
-        .cardImageContainer {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-
-            @media (min-width: 769px) {
-                display: flex;
-            }
-
-            .cardImage {
-                max-width: 400px;
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-
-                @media (max-width: 1184px) {
-                    max-width: 300px;
-                }
-            }
-        }
-
     }
 
     .navButton {

@@ -19,7 +19,7 @@ const FAQ_DATA = [
     {
         id: "2",
         question: "Qual o valor mínimo para uma operação de antecipação?",
-        answer: "Operamos com valores a partir de R$ 500 mil em recebíveis. Para operações menores, recomendamos nossa <a href='#'>solução de Antecipação de Contratos</a> que tem requisitos mais flexíveis."
+        answer: "Para operações menores, recomendamos nossa <a href='#'>solução de Antecipação de Contratos</a> que tem requisitos mais flexíveis."
     },
     {
         id: "3",
@@ -28,23 +28,13 @@ const FAQ_DATA = [
     },
     {
         id: "4",
-        question: "Quais tipos de recebíveis podem ser antecipados?",
-        answer: "Antecipamos duplicatas comerciais, contratos de prestação de serviços, mensalidades educacionais, aluguéis e recebíveis do agronegócio. O importante é ter sacados com bom histórico de pagamento e dispersão adequada da carteira."
-    },
-    {
-        id: "5",
         question: "Quanto tempo leva para liberar os recursos?",
         answer: "O processo completo leva entre 48h e 72h úteis: 24h para análise dos recebíveis, 24h para estruturação jurídica e até 24h adicionais para liberação após assinatura dos contratos."
     },
     {
-        id: "6",
+        id: "5",
         question: "Como é calculada a taxa de antecipação?",
         answer: "A taxa é baseada na qualidade dos seus sacados, prazo médio dos recebíveis, dispersão da carteira e histórico de inadimplência. Fazemos rating interno de cada pagador para precificar adequadamente o risco."
-    },
-    {
-        id: "7",
-        question: "O que acontece se meu cliente não pagar o recebível antecipado?",
-        answer: "Em caso de inadimplência, nossa equipe de cobrança atua na recuperação através de métodos extrajudiciais e judiciais. O risco é assumido por nós, não retornando para sua empresa após a cessão fiduciária."
     }
 ];
 

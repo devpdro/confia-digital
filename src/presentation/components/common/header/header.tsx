@@ -6,7 +6,7 @@ import { IMAGE } from 'src/presentation/assets';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import { IconDroplet, IconCoin, IconCircleCheck, IconGift, IconCreditCard } from '@tabler/icons-react';
+import { IconDroplet, IconCoin, IconCircleCheck } from '@tabler/icons-react';
 
 import S from './header.module.scss';
 
@@ -33,20 +33,6 @@ const slides = [
         backgroundImage: IMAGE.HEADER_IMAGE_MAO,
         highlight1: { text: "Até 105%", subtext: "do CDI na Conta", icon: IconDroplet },
         highlight2: { text: "Até 120%", subtext: "do CDI nos Cofrinhos", icon: IconCoin }
-    },
-    {
-        id: 3,
-        badge: "CARTÃO DE CRÉDITO",
-        title: "Aproveite com 18x sem juros",
-        description: "Cartão de crédito com condições especiais para sua empresa",
-        buttonText: "Abrir conta grátis",
-        buttonLink: "https://api.whatsapp.com/send?phone=5519981062535&text=Ol%C3%A1!%20Gostaria%20de%20abrir%20uma%20conta%20na%20Confia%20Digital!",
-        backgroundImage: null,
-        cardImage: IMAGE.CARTAO,
-        backgroundColor: 'rgb(14, 68, 125)',
-        buttonStyle: 'white',
-        highlight1: { text: "Sem anuidade", subtext: "para sempre", icon: IconGift },
-        highlight2: { text: "Cashback", subtext: "em todas compras", icon: IconCreditCard }
     }
 ];
 
@@ -234,15 +220,6 @@ const Header = () => {
                                             </div>
                                         )}
                                     </div>
-                                    {slide.cardImage && (
-                                        <div className={S.cardImageContainer}>
-                                            <img 
-                                                src={slide.cardImage.src} 
-                                                alt="Cartão de Crédito" 
-                                                className={S.cardImage}
-                                            />
-                                        </div>
-                                    )}
                                 </div>
                             </div>
                         ))}
